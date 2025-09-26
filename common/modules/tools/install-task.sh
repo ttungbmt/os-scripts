@@ -4,7 +4,7 @@
 #
 # USAGE (recommended):
 #   VERSION=3.45.4 \
-#   bash <(curl -fsSL "https://raw.githubusercontent.com/ttungbmt/os-scripts/refs/heads/master/common/modules/tools/install-tash.sh")
+#   bash <(curl -fsSL "https://raw.githubusercontent.com/ttungbmt/os-scripts/refs/heads/master/common/modules/tools/install-task.sh")
 #
 # VARIABLES (override via env):
 #   VERSION  : release version (default: 3.45.4)
