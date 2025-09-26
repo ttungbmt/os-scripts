@@ -1,7 +1,20 @@
 #!/usr/bin/env bash
+# =============================================================================
+# direnv Installer — installs direnv and hooks into bash/zsh
+#
+# USAGE (recommended):
+#   # Override via env vars if needed, then run with process substitution
+#   VERSION=2.34.0 \
+#   bash <(curl -fsSL "https://raw.githubusercontent.com/ttungbmt/os-scripts/refs/heads/master/common/modules/tools/install-direnv.sh")
+#
+# VARIABLES (override via env):
+#   VERSION   : direnv release version (default: 2.34.0)
+# =============================================================================
 
-# Config
+# --- Defaults (user-tunable) ---
 VERSION="${VERSION:-2.34.0}"
+
+# --- Vars (rarely changed) ---
 URL="${URL:-https://github.com/direnv/direnv/releases/download/v${VERSION}/direnv.linux-amd64}"
 BIN_NAME="${BIN_NAME:-direnv}"
 

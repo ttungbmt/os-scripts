@@ -5,18 +5,17 @@
 # USAGE (recommended):
 #   # Override via env vars, then run with process substitution
 #   VERSION=0.8.22 \
-#   bash <(curl -fsSL "https://raw.githubusercontent.com/ttungbmt/os-scripts/refs/heads/master/common/modules/devtools/install-uv.sh")
+#   bash <(curl -fsSL "https://raw.githubusercontent.com/ttungbmt/os-scripts/refs/heads/master/common/modules/tools/install-uv.sh")
 #
 # VARIABLES:
 #   VERSION     : uv release version (default: 0.8.22)
-#
 # =============================================================================
 set -euo pipefail
 
-# --- Defaults (can be overridden by env) ---
+# --- Defaults (user-tunable) ---
 VERSION="${VERSION:-0.8.22}"
 
-# --- Vars (can be overridden by env) ---
+# --- Vars (rarely changed) ---
 URL="${URL:-https://github.com/astral-sh/uv/releases/download/${VERSION}/uv-x86_64-unknown-linux-gnu.tar.gz}"
 BIN_NAMES=(${BIN_NAMES:-uv uvx})
 PREFIX="${PREFIX:-/usr/local/bin}"
