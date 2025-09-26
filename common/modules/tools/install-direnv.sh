@@ -38,12 +38,10 @@ $SUDO_CMD install -m 0755 "$TMP/${BIN_NAME}" "${PREFIX}/${BIN_NAME}"
 [ -f ~/.bashrc ] && grep -Fxq 'eval "$(direnv hook bash)"' ~/.bashrc || { [ -f ~/.bashrc ] && printf '\n# direnv\n%s\n' 'eval "$(direnv hook bash)"' >> ~/.bashrc; }
 [ -f ~/.zshrc ] && grep -Fxq 'eval "$(direnv hook zsh)"' ~/.zshrc || { [ -f ~/.zshrc ] && printf '\n# direnv\n%s\n' 'eval "$(direnv hook zsh)"' >> ~/.zshrc; }
 
-if [ "$APPLIED" -eq 0 ]; then
-  if [ -n "${BASH_VERSION:-}" ]; then
+if [ -n "${BASH_VERSION:-}" ]; then
     [ -f "$HOME/.bashrc" ] && echo "👉 Run: source ~/.bashrc  (or: exec bash)"
-  elif [ -n "${ZSH_VERSION:-}" ]; then
+elif [ -n "${ZSH_VERSION:-}" ]; then
     [ -f "$HOME/.zshrc" ] && echo "👉 Run: source ~/.zshrc  (or: exec zsh)"
-  else
+else
     echo "👉 Open a new shell or source your shell rc file manually."
-  fi
 fi
