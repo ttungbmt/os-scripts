@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # === USER CONFIG (edit here) ===
 USER_NAME="oracle"
-SOURCE="local"
+SOURCE="home"
 TEAM="tungtt"
 ENV="dev"
 PASSPHRASE="${PASSPHRASE:-}"   # để rỗng = không passphrase; hoặc set qua env

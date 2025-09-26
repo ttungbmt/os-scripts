@@ -2,9 +2,9 @@
 
 # === USER CONFIG (edit here) ===
 USER_NAME="${USER_NAME:-oracle}"  # allow override via env
-KEY_PATH="${KEY_PATH:-$HOME/.ssh/local-tungtt-dev/id_ed25519-local-tungtt-dev}"
+KEY_PATH="${KEY_PATH:-$HOME/.ssh/home-tungtt-dev/id_ed25519-home-tungtt-dev}"
 # Fallback hosts if none supplied via env/args/file
-DEFAULT_HOSTS=(100.107.108.9)
+DEFAULT_HOSTS=(192.168.11.11)
 
 # === TEMPLATE CONFIG (rarely change) ===
 SSH_CONNECT_TIMEOUT="${SSH_CONNECT_TIMEOUT:-7}"
