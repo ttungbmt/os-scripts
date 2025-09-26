@@ -20,3 +20,7 @@ $SUDO_CMD install -m 0755 "$TMP/${BIN_NAME}" "${PREFIX}/${BIN_NAME}"
 
 # Verify
 "${BIN_NAME}" version || true
+
+# Hook direnv into your shell.
+[ -f ~/.bashrc ] && grep -Fxq 'eval "$(direnv hook bash)"' ~/.bashrc || { [ -f ~/.bashrc ] && printf '\n# direnv\n%s\n' 'eval "$(direnv hook bash)"' >> ~/.bashrc; }
+[ -f ~/.zshrc ] && grep -Fxq 'eval "$(direnv hook zsh)"' ~/.zshrc || { [ -f ~/.zshrc ] && printf '\n# direnv\n%s\n' 'eval "$(direnv hook zsh)"' >> ~/.zshrc; }
