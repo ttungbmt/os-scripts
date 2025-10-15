@@ -15,7 +15,7 @@ set -euo pipefail
 GH_LATEST_VERSION=$(curl -L -s -H 'Accept: application/json' https://github.com/derailed/k9s/releases/latest | sed -e 's/.*"tag_name":"v\([^"]*\)".*/\1/')
 
 # --- Defaults (user-tunable) ---
-VERSION="${VERSION:-$GITHUB_LATEST_VERSION}"
+VERSION="${VERSION:-$GH_LATEST_VERSION}"
 
 # --- Vars (rarely changed) ---
 OS="linux"
