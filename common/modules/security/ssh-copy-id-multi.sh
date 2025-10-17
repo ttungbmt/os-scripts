@@ -4,7 +4,7 @@
 USER_NAME="${USER_NAME:-oracle}"  # allow override via env
 KEY_PATH="${KEY_PATH:-$HOME/.ssh/home-tungtt-dev/id_ed25519-home-tungtt-dev}"
 # Fallback hosts if none supplied via env/args/file
-DEFAULT_HOSTS=(192.168.11.11)
+DEFAULT_HOSTS=(192.168.11.114 192.168.11.115 192.168.11.116)
 
 # === TEMPLATE CONFIG (rarely change) ===
 SSH_CONNECT_TIMEOUT="${SSH_CONNECT_TIMEOUT:-7}"
