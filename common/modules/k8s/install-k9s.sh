@@ -53,4 +53,3 @@ echo "[OK] Installed ${BIN_DIR}/${BIN_NAME}"
 
 # --- Verify ---
 "${BIN_NAME}" --version || true
-
