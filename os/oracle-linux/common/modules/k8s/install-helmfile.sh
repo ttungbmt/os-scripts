@@ -17,7 +17,7 @@ tar -xzf "$TMP/hf.tgz" -C "$TMP"
 
 # === Install ===
 chmod +x "$TMP/helmfile"
-$SUDO_CMD install -m 0755 "$TMP/helmfile" "${PREFIX}/${NAME}"
+$SUDO_CMD install -m 0755 "$TMP/helmfile" "${PREFIX}/${BIN_NAME}"
 
 # === Verify ===
-"${PREFIX}/${NAME}" --version || true
+"${PREFIX}/${BIN_NAME}" --version || true
