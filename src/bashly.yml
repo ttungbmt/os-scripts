@@ -1,0 +1,19 @@
+name: cli
+help: OS Scripts CLI
+version: 0.1.0
+
+commands:
+- name: install
+  help: Install tools and components
+  commands:
+  - name: kustomize
+    help: Install Kustomize
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: Kustomize version to install (e.g., v5.4.1 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if Kustomize is already installed
