@@ -120,15 +120,42 @@ modules/tools/kustomize/
 └── install.sh
 ```
 
-`install.sh` là Template Method 5 dòng:
+`install.sh` là Template Method ngắn — phải tự bootstrap được cả khi `bash <(curl)` (lúc đó `BASH_SOURCE[0]=/dev/fd/...`, không resolve được path relative):
+
 ```bash
 #!/usr/bin/env bash
 set -Eeuo pipefail
-# shellcheck disable=SC1090
-source "$(dirname "${BASH_SOURCE[0]}")/../../../lib/_loader.sh"   # local
-osx::loader::ensure                                                # auto-fallback online
-osx::module::run "$(dirname "${BASH_SOURCE[0]}")" "$@"
+
+# Bootstrap loader: ưu tiên local repo, fallback tải tarball online.
+__osx_bootstrap() {
+  local self_dir
+  self_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" 2>/dev/null && pwd || echo "")"
+  # 1) local repo: self_dir = .../modules/<domain>/<name>, lib ở self_dir/../../../lib
+  if [ -n "$self_dir" ] && [ -f "$self_dir/../../../lib/_loader.sh" ] && [ -z "${OSX_FORCE_ONLINE:-}" ]; then
+    OSX_HOME="$(cd "$self_dir/../../.." && pwd)"
+  fi
+  # 2) Nếu chưa có OSX_HOME → tải tarball về cache, set OSX_HOME=<cache>/<ref>
+  if [ -z "${OSX_HOME:-}" ] || [ ! -f "$OSX_HOME/lib/_loader.sh" ]; then
+    local ref="${OSX_REF:-master}" cache="${OSX_CACHE_DIR:-$HOME/.osx}"
+    [ -d "$cache/$ref/lib" ] || {
+      mkdir -p "$cache/$ref"
+      curl -fsSL "https://codeload.github.com/ttungbmt/os-scripts/tar.gz/$ref" \
+        | tar -xz --strip-components=1 -C "$cache/$ref"
+    }
+    OSX_HOME="$cache/$ref"
+  fi
+  # shellcheck disable=SC1091
+  . "$OSX_HOME/lib/_loader.sh"
+}
+__osx_bootstrap
+
+# Nếu chạy qua curl, self_dir rỗng → resolve module dir trong cache theo NAME khai báo
+osx::module::run_self "$@"
 ```
+
+`osx::module::run_self` đọc manifest đã được tải về `$OSX_HOME/modules/<domain>/<name>/manifest.sh` và gọi `osx::module::run`. Hai trường hợp:
+- **Local clone**: `self_dir` resolve được, `OSX_HOME` = repo root, manifest cạnh script.
+- **Online curl**: `self_dir` rỗng (`/dev/fd/…`), tarball được tải về cache, `OSX_HOME` = `~/.osx/<ref>`, manifest đọc từ cache. URL curl chứa path `modules/<domain>/<name>/install.sh` nên runner suy ra được module nào (parse `BASH_SOURCE` URL hoặc bằng env `OSX_MODULE` set bởi bootstrap).
 
 ### 6.2 — OS-specific branching (5%)
 
