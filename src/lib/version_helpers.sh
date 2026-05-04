@@ -12,15 +12,16 @@ get_local_version() {
   
   if [ ! -f "$target" ]; then
     target=$(command -v "$tool" 2>/dev/null)
-    if [ -z "$target" ]; then
-      echo ""
-      return
-    fi
   fi
-  
+
   local ver=""
   if type "$fn_name" >/dev/null 2>&1; then
     ver=$("$fn_name" "$target")
+  else
+    if [ -z "$target" ] || [ ! -f "$target" ]; then
+      echo ""
+      return
+    fi
   fi
   
   # Strip leading v

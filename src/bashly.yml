@@ -89,6 +89,30 @@ commands:
       short: -f
       help: Force overwrite if btop is already installed
 
+  - name: zsh
+    help: Install zsh
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: zsh version to install (latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if zsh is already installed
+
+  - name: antidote
+    help: Install antidote (Zsh plugin manager)
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: antidote version/branch to install (latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if antidote is already installed
+
   - name: thefuck
     help: Install thefuck
     flags:
@@ -297,6 +321,12 @@ commands:
 
   - name: btop
     help: Uninstall btop
+
+  - name: zsh
+    help: Uninstall zsh
+
+  - name: antidote
+    help: Uninstall antidote
 
   - name: thefuck
     help: Uninstall thefuck

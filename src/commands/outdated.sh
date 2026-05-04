@@ -5,7 +5,7 @@ if [ -n "$target_tool" ]; then
   tools=("$target_tool" "argocd" "velero" "kubeconform" "krew" "kubent" "sops" "age" "trivy" "kubens" "kubecolor" "popeye" "kube-linter" "kyverno" "conftest" "vault" "kubeseal")
   all=1 # Force check even if not installed
 else
-  tools=("kustomize" "k9s" "kubectl" "fastfetch" "direnv" "thefuck" "btop")
+  tools=("kustomize" "k9s" "kubectl" "fastfetch" "direnv" "thefuck" "btop" "zsh" "antidote")
 fi
 
 echo "Checking for updates..."

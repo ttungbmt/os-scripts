@@ -79,6 +79,8 @@ gt_install_usage() {
   printf "  %s   Install fastfetch\n" "fastfetch  "
   printf "  %s   Install direnv\n" "direnv     "
   printf "  %s   Install btop\n" "btop       "
+  printf "  %s   Install zsh\n" "zsh        "
+  printf "  %s   Install antidote (Zsh plugin manager)\n" "antidote   "
   printf "  %s   Install thefuck\n" "thefuck    "
   printf "  %s   Install argocd\n" "argocd     "
   printf "  %s   Install velero\n" "velero     "
@@ -389,6 +391,88 @@ gt_install_btop_usage() {
     # :flag.usage
     printf "  %s\n" "--force, -f"
     printf "    Force overwrite if btop is already installed\n"
+    echo
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_install_zsh_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt install zsh - Install zsh\n"
+    echo
+
+  else
+    printf "gt install zsh - Install zsh\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt install zsh [OPTIONS]\n"
+  printf "  gt install zsh --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_flags
+    # :flag.usage
+    printf "  %s\n" "--version, -v VERSION"
+    printf "    zsh version to install (latest)\n"
+    printf "    Default: latest\n"
+    echo
+
+    # :flag.usage
+    printf "  %s\n" "--force, -f"
+    printf "    Force overwrite if zsh is already installed\n"
+    echo
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_install_antidote_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt install antidote - Install antidote (Zsh plugin manager)\n"
+    echo
+
+  else
+    printf "gt install antidote - Install antidote (Zsh plugin manager)\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt install antidote [OPTIONS]\n"
+  printf "  gt install antidote --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_flags
+    # :flag.usage
+    printf "  %s\n" "--version, -v VERSION"
+    printf "    antidote version/branch to install (latest)\n"
+    printf "    Default: latest\n"
+    echo
+
+    # :flag.usage
+    printf "  %s\n" "--force, -f"
+    printf "    Force overwrite if antidote is already installed\n"
     echo
 
     # :command.usage_fixed_flags
@@ -1120,6 +1204,8 @@ gt_uninstall_usage() {
   printf "  %s   Uninstall fastfetch\n" "fastfetch  "
   printf "  %s   Uninstall direnv\n" "direnv     "
   printf "  %s   Uninstall btop\n" "btop       "
+  printf "  %s   Uninstall zsh\n" "zsh        "
+  printf "  %s   Uninstall antidote\n" "antidote   "
   printf "  %s   Uninstall thefuck\n" "thefuck    "
   printf "  %s   Uninstall argocd\n" "argocd     "
   printf "  %s   Uninstall velero\n" "velero     "
@@ -1311,6 +1397,64 @@ gt_uninstall_btop_usage() {
   printf "%s\n" "Usage:"
   printf "  gt uninstall btop\n"
   printf "  gt uninstall btop --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_uninstall_zsh_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt uninstall zsh - Uninstall zsh\n"
+    echo
+
+  else
+    printf "gt uninstall zsh - Uninstall zsh\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt uninstall zsh\n"
+  printf "  gt uninstall zsh --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_uninstall_antidote_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt uninstall antidote - Uninstall antidote\n"
+    echo
+
+  else
+    printf "gt uninstall antidote - Uninstall antidote\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt uninstall antidote\n"
+  printf "  gt uninstall antidote --help | -h\n"
   echo
 
   # :command.long_usage
@@ -2284,6 +2428,105 @@ uninstall_tool() {
   fi
 }
 
+# Install a package using the system package manager
+# Usage: install_package "pkg_name"
+install_package() {
+  local pkg="$1"
+  if command -v apt-get >/dev/null 2>&1; then
+    sudo apt-get update -yqq
+    sudo apt-get install -y "$pkg"
+  elif command -v dnf >/dev/null 2>&1; then
+    sudo dnf install -y "$pkg"
+  elif command -v yum >/dev/null 2>&1; then
+    sudo yum install -y "$pkg"
+  elif command -v pacman >/dev/null 2>&1; then
+    sudo pacman -S --noconfirm "$pkg"
+  elif command -v apk >/dev/null 2>&1; then
+    sudo apk add "$pkg"
+  else
+    echo "$(red ✗) Could not detect a supported package manager (apt/dnf/yum/pacman/apk)."
+    return 1
+  fi
+}
+
+# Remove a package using the system package manager
+# Usage: remove_package "pkg_name"
+remove_package() {
+  local pkg="$1"
+  if command -v apt-get >/dev/null 2>&1; then
+    sudo apt-get remove -y "$pkg"
+  elif command -v dnf >/dev/null 2>&1; then
+    sudo dnf remove -y "$pkg"
+  elif command -v yum >/dev/null 2>&1; then
+    sudo yum remove -y "$pkg"
+  elif command -v pacman >/dev/null 2>&1; then
+    sudo pacman -Rs --noconfirm "$pkg"
+  elif command -v apk >/dev/null 2>&1; then
+    sudo apk del "$pkg"
+  else
+    echo "$(red ✗) Could not detect a supported package manager."
+    return 1
+  fi
+}
+
+# Install a tool by cloning a git repository
+# Usage: install_git_repo "https://github.com/user/repo.git" "/dest/path" "branch_or_tag"
+install_git_repo() {
+  local repo_url="$1" dest="$2" version="$3"
+
+  if [ -d "$dest" ]; then
+    echo "Directory $dest already exists. Pulling latest changes..."
+    if [ ! -w "$dest" ]; then
+      sudo git -C "$dest" fetch --tags
+      if [ -n "$version" ] && [ "$version" != "latest" ]; then
+        sudo git -C "$dest" checkout "$version"
+      else
+        sudo git -C "$dest" pull
+      fi
+    else
+      git -C "$dest" fetch --tags
+      if [ -n "$version" ] && [ "$version" != "latest" ]; then
+        git -C "$dest" checkout "$version"
+      else
+        git -C "$dest" pull
+      fi
+    fi
+  else
+    echo "Cloning $repo_url to $dest..."
+    local parent_dir="$(dirname "$dest")"
+    if [ ! -w "$parent_dir" ]; then
+      sudo mkdir -p "$parent_dir"
+      if [ -n "$version" ] && [ "$version" != "latest" ]; then
+        sudo git clone --depth=1 --branch "$version" "$repo_url" "$dest"
+      else
+        sudo git clone --depth=1 "$repo_url" "$dest"
+      fi
+    else
+      mkdir -p "$parent_dir"
+      if [ -n "$version" ] && [ "$version" != "latest" ]; then
+        git clone --depth=1 --branch "$version" "$repo_url" "$dest"
+      else
+        git clone --depth=1 "$repo_url" "$dest"
+      fi
+    fi
+  fi
+}
+
+# Remove a git repository directory
+# Usage: remove_git_repo "/dest/path"
+remove_git_repo() {
+  local dest="$1"
+  if [ -d "$dest" ]; then
+    if [ ! -w "$(dirname "$dest")" ]; then
+      sudo rm -rf "$dest"
+    else
+      rm -rf "$dest"
+    fi
+  else
+    echo "$(yellow Directory $dest does not exist.)"
+  fi
+}
+
 # src/lib/registry/age.sh
 AGE_INSTALL_TYPE="github_release"
 AGE_GITHUB_REPO="FiloSottile/age"
@@ -2294,6 +2537,18 @@ AGE_BIN_PATH="age/age"
 age_fetch_local_version() {
   local target="$1"
   "$target" version --client --short 2>/dev/null | awk '{print $2}' || "$target" --version 2>/dev/null | awk '{print $3}'
+}
+
+# src/lib/registry/antidote.sh
+ANTIDOTE_GITHUB_REPO="mattmc3/antidote"
+
+antidote_fetch_local_version() {
+  local target="/usr/local/share/antidote/.bumpversion.cfg"
+  if [ -f "$target" ]; then
+    grep "current_version =" "$target" | awk -F'=' '{print $2}' | tr -d ' \r\n'
+  else
+    echo ""
+  fi
 }
 
 # src/lib/registry/argocd.sh
@@ -2564,6 +2819,23 @@ velero_fetch_local_version() {
   "$target" version --client --short 2>/dev/null | awk '{print $2}' || "$target" --version 2>/dev/null | awk '{print $3}'
 }
 
+# src/lib/registry/zsh.sh
+zsh_fetch_local_version() {
+  local target="$1"
+  "$target" --version 2>/dev/null | awk '{print $2}' | tr -d ' \r\n'
+}
+
+zsh_fetch_remote_version() {
+  # Since zsh is managed by OS package manager, we return the local version
+
+  # so it always appears up-to-date, as remote versions depend on the distro package cache.
+  if command -v zsh >/dev/null 2>&1; then
+    zsh --version 2>/dev/null | awk '{print $2}' | tr -d ' \r\n'
+  else
+    echo ""
+  fi
+}
+
 # src/lib/version_helpers.sh
 
 # Get the local version of a tool (without 'v' prefix)
@@ -2577,15 +2849,16 @@ get_local_version() {
 
   if [ ! -f "$target" ]; then
     target=$(command -v "$tool" 2>/dev/null)
-    if [ -z "$target" ]; then
-      echo ""
-      return
-    fi
   fi
 
   local ver=""
   if type "$fn_name" >/dev/null 2>&1; then
     ver=$("$fn_name" "$target")
+  else
+    if [ -z "$target" ] || [ ! -f "$target" ]; then
+      echo ""
+      return
+    fi
   fi
 
   # Strip leading v
@@ -2733,6 +3006,67 @@ gt_install_btop_command() {
   # src/commands/install/btop.sh
   export TARGET_TOOL="btop"
   run_generic_install "btop" "${args[--version]}" "${args[--force]}"
+
+}
+
+# :command.function
+gt_install_zsh_command() {
+  # src/commands/install/zsh.sh
+  version=${args[--version]}
+  force=${args[--force]}
+  name="zsh"
+
+  # --- Step 1: Guard against overwrite ---
+  if command -v zsh >/dev/null 2>&1 && [ -z "$force" ]; then
+    echo "$(red Error:) ${name} is already installed at $(command -v zsh)."
+    echo "Use $(bold --force) (or $(bold -f)) to overwrite/reinstall."
+    exit 1
+  fi
+
+  echo "Installing $(cyan_bold "$name") via package manager..."
+
+  # --- Step 2: Install via package manager ---
+  if install_package "$name"; then
+    echo "$(green_bold ✓) $name installed successfully."
+  else
+    echo "$(red ✗ Failed to install $name.)"
+    exit 1
+  fi
+
+}
+
+# :command.function
+gt_install_antidote_command() {
+  # src/commands/install/antidote.sh
+  version=${args[--version]}
+  force=${args[--force]}
+  name="antidote"
+  repo_url="https://github.com/mattmc3/antidote.git"
+  target="/usr/local/share/antidote"
+
+  # --- Step 1: Guard against overwrite ---
+  if [ -d "$target" ] && [ -z "$force" ]; then
+    echo "$(red Error:) ${name} is already installed at ${target}."
+    echo "Use $(bold --force) (or $(bold -f)) to update/overwrite."
+    exit 1
+  fi
+
+  echo "Installing $(cyan_bold "$name")..."
+
+  # --- Step 2: Resolve version ---
+  if [[ "$version" == "latest" ]]; then
+    version=$(github_latest_tag "mattmc3/antidote")
+  fi
+
+  # --- Step 3: Install via git clone ---
+  if install_git_repo "$repo_url" "$target" "$version"; then
+    echo "$(green_bold ✓) $name installed successfully at $target."
+    echo "To use it, add this to your ~/.zshrc:"
+    echo "$(yellow "source ${target}/antidote.zsh")"
+  else
+    echo "$(red ✗ Failed to install $name.)"
+    exit 1
+  fi
 
 }
 
@@ -2915,6 +3249,64 @@ gt_uninstall_btop_command() {
 }
 
 # :command.function
+gt_uninstall_zsh_command() {
+  # src/commands/uninstall/zsh.sh
+  name="zsh"
+
+  if ! command -v zsh >/dev/null 2>&1; then
+    echo "$(yellow ${name} is not installed)."
+    exit 0
+  fi
+
+  echo -n "Are you sure you want to uninstall $(cyan_bold "${name}") via package manager? [y/N] "
+  read -r response
+  if [[ ! "$response" =~ ^[Yy]$ ]]; then
+    echo "Aborted."
+    exit 0
+  fi
+
+  echo "Uninstalling $(cyan_bold "${name}")..."
+
+  if remove_package "$name"; then
+    echo "$(green_bold ✓) ${name} uninstalled successfully."
+  else
+    echo "$(red ✗ Failed to uninstall ${name}.)"
+    exit 1
+  fi
+
+}
+
+# :command.function
+gt_uninstall_antidote_command() {
+  # src/commands/uninstall/antidote.sh
+  name="antidote"
+  target="/usr/local/share/antidote"
+
+  if [ ! -d "$target" ]; then
+    echo "$(yellow ${name} is not installed) at ${target}."
+    exit 0
+  fi
+
+  echo -n "Are you sure you want to uninstall $(cyan_bold "${name}") at $target? [y/N] "
+  read -r response
+  if [[ ! "$response" =~ ^[Yy]$ ]]; then
+    echo "Aborted."
+    exit 0
+  fi
+
+  echo "Uninstalling $(cyan_bold "${name}")..."
+  remove_git_repo "$target"
+
+  if [ ! -d "$target" ]; then
+    echo "$(green_bold ✓) ${name} uninstalled successfully."
+  else
+    echo "$(red ✗ Failed to uninstall ${name}.)"
+    exit 1
+  fi
+
+}
+
+# :command.function
 gt_uninstall_thefuck_command() {
   # src/commands/uninstall/thefuck.sh
   name="thefuck"
@@ -3057,7 +3449,7 @@ gt_outdated_command() {
     tools=("$target_tool" "argocd" "velero" "kubeconform" "krew" "kubent" "sops" "age" "trivy" "kubens" "kubecolor" "popeye" "kube-linter" "kyverno" "conftest" "vault" "kubeseal")
     all=1 # Force check even if not installed
   else
-    tools=("kustomize" "k9s" "kubectl" "fastfetch" "direnv" "thefuck" "btop")
+    tools=("kustomize" "k9s" "kubectl" "fastfetch" "direnv" "thefuck" "btop" "zsh" "antidote")
   fi
 
   echo "Checking for updates..."
@@ -3246,6 +3638,20 @@ gt_install_parse_requirements() {
       action="btop"
       shift
       gt_install_btop_parse_requirements "$@"
+      shift $#
+      ;;
+
+    zsh)
+      action="zsh"
+      shift
+      gt_install_zsh_parse_requirements "$@"
+      shift $#
+      ;;
+
+    antidote)
+      action="antidote"
+      shift
+      gt_install_antidote_parse_requirements "$@"
       shift $#
       ;;
 
@@ -3827,6 +4233,142 @@ gt_install_btop_parse_requirements() {
 
   # :command.command_filter
   action="install btop"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+      # :flag.case
+      --version | -v)
+
+        # :flag.case_arg
+        if [[ -n ${2+x} ]]; then
+          args['--version']="$2"
+          shift
+          shift
+        else
+          printf "%s\n" "--version requires an argument: --version, -v VERSION" >&2
+          exit 1
+        fi
+        ;;
+
+      # :flag.case
+      --force | -f)
+
+        # :flag.case_no_arg
+        args['--force']=1
+        shift
+        ;;
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+  # :command.default_assignments
+  [[ -n ${args['--version']:-} ]] || args['--version']="latest"
+
+}
+
+# :command.parse_requirements
+gt_install_zsh_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_install_zsh_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="install zsh"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+      # :flag.case
+      --version | -v)
+
+        # :flag.case_arg
+        if [[ -n ${2+x} ]]; then
+          args['--version']="$2"
+          shift
+          shift
+        else
+          printf "%s\n" "--version requires an argument: --version, -v VERSION" >&2
+          exit 1
+        fi
+        ;;
+
+      # :flag.case
+      --force | -f)
+
+        # :flag.case_no_arg
+        args['--force']=1
+        shift
+        ;;
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+  # :command.default_assignments
+  [[ -n ${args['--version']:-} ]] || args['--version']="latest"
+
+}
+
+# :command.parse_requirements
+gt_install_antidote_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_install_antidote_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="install antidote"
 
   # :command.parse_requirements_while
   while [[ $# -gt 0 ]]; do
@@ -5097,6 +5639,20 @@ gt_uninstall_parse_requirements() {
       shift $#
       ;;
 
+    zsh)
+      action="zsh"
+      shift
+      gt_uninstall_zsh_parse_requirements "$@"
+      shift $#
+      ;;
+
+    antidote)
+      action="antidote"
+      shift
+      gt_uninstall_antidote_parse_requirements "$@"
+      shift $#
+      ;;
+
     thefuck)
       action="thefuck"
       shift
@@ -5492,6 +6048,94 @@ gt_uninstall_btop_parse_requirements() {
 
   # :command.command_filter
   action="uninstall btop"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
+gt_uninstall_zsh_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_uninstall_zsh_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="uninstall zsh"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
+gt_uninstall_antidote_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_uninstall_antidote_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="uninstall antidote"
 
   # :command.parse_requirements_while
   while [[ $# -gt 0 ]]; do
@@ -6348,6 +6992,8 @@ run() {
     "install fastfetch") gt_install_fastfetch_command ;;
     "install direnv") gt_install_direnv_command ;;
     "install btop") gt_install_btop_command ;;
+    "install zsh") gt_install_zsh_command ;;
+    "install antidote") gt_install_antidote_command ;;
     "install thefuck") gt_install_thefuck_command ;;
     "install argocd") gt_install_argocd_command ;;
     "install velero") gt_install_velero_command ;;
@@ -6372,6 +7018,8 @@ run() {
     "uninstall fastfetch") gt_uninstall_fastfetch_command ;;
     "uninstall direnv") gt_uninstall_direnv_command ;;
     "uninstall btop") gt_uninstall_btop_command ;;
+    "uninstall zsh") gt_uninstall_zsh_command ;;
+    "uninstall antidote") gt_uninstall_antidote_command ;;
     "uninstall thefuck") gt_uninstall_thefuck_command ;;
     "uninstall argocd") gt_uninstall_argocd_command ;;
     "uninstall velero") gt_uninstall_velero_command ;;

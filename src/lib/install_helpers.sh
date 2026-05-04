@@ -110,3 +110,102 @@ uninstall_tool() {
     exit 1
   fi
 }
+
+# Install a package using the system package manager
+# Usage: install_package "pkg_name"
+install_package() {
+  local pkg="$1"
+  if command -v apt-get >/dev/null 2>&1; then
+    sudo apt-get update -yqq
+    sudo apt-get install -y "$pkg"
+  elif command -v dnf >/dev/null 2>&1; then
+    sudo dnf install -y "$pkg"
+  elif command -v yum >/dev/null 2>&1; then
+    sudo yum install -y "$pkg"
+  elif command -v pacman >/dev/null 2>&1; then
+    sudo pacman -S --noconfirm "$pkg"
+  elif command -v apk >/dev/null 2>&1; then
+    sudo apk add "$pkg"
+  else
+    echo "$(red ✗) Could not detect a supported package manager (apt/dnf/yum/pacman/apk)."
+    return 1
+  fi
+}
+
+# Remove a package using the system package manager
+# Usage: remove_package "pkg_name"
+remove_package() {
+  local pkg="$1"
+  if command -v apt-get >/dev/null 2>&1; then
+    sudo apt-get remove -y "$pkg"
+  elif command -v dnf >/dev/null 2>&1; then
+    sudo dnf remove -y "$pkg"
+  elif command -v yum >/dev/null 2>&1; then
+    sudo yum remove -y "$pkg"
+  elif command -v pacman >/dev/null 2>&1; then
+    sudo pacman -Rs --noconfirm "$pkg"
+  elif command -v apk >/dev/null 2>&1; then
+    sudo apk del "$pkg"
+  else
+    echo "$(red ✗) Could not detect a supported package manager."
+    return 1
+  fi
+}
+
+# Install a tool by cloning a git repository
+# Usage: install_git_repo "https://github.com/user/repo.git" "/dest/path" "branch_or_tag"
+install_git_repo() {
+  local repo_url="$1" dest="$2" version="$3"
+  
+  if [ -d "$dest" ]; then
+    echo "Directory $dest already exists. Pulling latest changes..."
+    if [ ! -w "$dest" ]; then
+      sudo git -C "$dest" fetch --tags
+      if [ -n "$version" ] && [ "$version" != "latest" ]; then
+        sudo git -C "$dest" checkout "$version"
+      else
+        sudo git -C "$dest" pull
+      fi
+    else
+      git -C "$dest" fetch --tags
+      if [ -n "$version" ] && [ "$version" != "latest" ]; then
+        git -C "$dest" checkout "$version"
+      else
+        git -C "$dest" pull
+      fi
+    fi
+  else
+    echo "Cloning $repo_url to $dest..."
+    local parent_dir="$(dirname "$dest")"
+    if [ ! -w "$parent_dir" ]; then
+      sudo mkdir -p "$parent_dir"
+      if [ -n "$version" ] && [ "$version" != "latest" ]; then
+        sudo git clone --depth=1 --branch "$version" "$repo_url" "$dest"
+      else
+        sudo git clone --depth=1 "$repo_url" "$dest"
+      fi
+    else
+      mkdir -p "$parent_dir"
+      if [ -n "$version" ] && [ "$version" != "latest" ]; then
+        git clone --depth=1 --branch "$version" "$repo_url" "$dest"
+      else
+        git clone --depth=1 "$repo_url" "$dest"
+      fi
+    fi
+  fi
+}
+
+# Remove a git repository directory
+# Usage: remove_git_repo "/dest/path"
+remove_git_repo() {
+  local dest="$1"
+  if [ -d "$dest" ]; then
+    if [ ! -w "$(dirname "$dest")" ]; then
+      sudo rm -rf "$dest"
+    else
+      rm -rf "$dest"
+    fi
+  else
+    echo "$(yellow Directory $dest does not exist.)"
+  fi
+}
