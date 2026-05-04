@@ -1,6 +1,24 @@
 # Generic installer engine
 # Centralizes download and extraction logic for all tools
 
+_install_from_extracted_dir() {
+  local name="$1" temp_dir="$2" bin_path="$3" target="$4"
+  if [[ -f "$temp_dir/$bin_path" ]]; then
+    install_binary "$temp_dir/$bin_path" "$target"
+  else
+    local found
+    found=$(find "$temp_dir" -type f -name "$name" | head -n 1)
+    if [[ -n "$found" ]]; then
+      install_binary "$found" "$target"
+    else
+      echo "$(red "Could not find binary $name in archive")"
+      ls -la "$temp_dir"
+      rm -rf "$temp_dir"
+      exit 1
+    fi
+  fi
+}
+
 run_generic_install() {
   local name="$1"
   local version="$2"
@@ -107,44 +125,23 @@ run_generic_install() {
     elif [[ "$archive_type" == "tar.gz" ]]; then
       download_file "$download_url" "$temp_dir/archive.tar.gz"
       tar -xzf "$temp_dir/archive.tar.gz" -C "$temp_dir"
-      
       local bin_path_var="${tool_upper}_BIN_PATH"
       local bin_path="${!bin_path_var:-$name}"
-      
-      if [[ -f "$temp_dir/$bin_path" ]]; then
-        install_binary "$temp_dir/$bin_path" "$target"
-      else
-         local found
-         found=$(find "$temp_dir" -type f -name "$name" | head -n 1)
-         if [[ -n "$found" ]]; then
-            install_binary "$found" "$target"
-         else
-            echo "$(red "Could not find binary $name in archive")"
-            ls -la "$temp_dir"
-            rm -rf "$temp_dir"
-            exit 1
-         fi
-      fi
+      bin_path="${bin_path//\$\{DETECT_OS\}/$os_mapped}"
+      bin_path="${bin_path//\$\{DETECT_ARCH\}/$arch_mapped}"
+      bin_path="${bin_path//\$\{VERSION\}/$dl_version}"
+      bin_path="${bin_path//\$\{V_VERSION\}/v$dl_version}"
+      _install_from_extracted_dir "$name" "$temp_dir" "$bin_path" "$target"
     elif [[ "$archive_type" == "zip" ]]; then
       download_file "$download_url" "$temp_dir/archive.zip"
       unzip -q "$temp_dir/archive.zip" -d "$temp_dir"
-      
       local bin_path_var="${tool_upper}_BIN_PATH"
       local bin_path="${!bin_path_var:-$name}"
-      
-      if [[ -f "$temp_dir/$bin_path" ]]; then
-        install_binary "$temp_dir/$bin_path" "$target"
-      else
-         local found
-         found=$(find "$temp_dir" -type f -name "$name" | head -n 1)
-         if [[ -n "$found" ]]; then
-            install_binary "$found" "$target"
-         else
-            echo "$(red "Could not find binary $name in archive")"
-            rm -rf "$temp_dir"
-            exit 1
-         fi
-      fi
+      bin_path="${bin_path//\$\{DETECT_OS\}/$os_mapped}"
+      bin_path="${bin_path//\$\{DETECT_ARCH\}/$arch_mapped}"
+      bin_path="${bin_path//\$\{VERSION\}/$dl_version}"
+      bin_path="${bin_path//\$\{V_VERSION\}/v$dl_version}"
+      _install_from_extracted_dir "$name" "$temp_dir" "$bin_path" "$target"
     fi
     rm -rf "$temp_dir"
     echo "$(green_bold ✓) $name installed successfully: $(bold "v${dl_version}")"

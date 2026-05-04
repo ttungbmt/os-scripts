@@ -1,1 +1,1 @@
-uninstall_tool "direnv" "/usr/local/bin/direnv"
+run_generic_uninstall "direnv"

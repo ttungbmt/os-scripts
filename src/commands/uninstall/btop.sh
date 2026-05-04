@@ -1,1 +1,1 @@
-uninstall_tool "btop" "/usr/local/bin/btop"
+run_generic_uninstall "btop"
