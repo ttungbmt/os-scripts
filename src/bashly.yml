@@ -363,6 +363,20 @@ commands:
     help: Uninstall vault
   - name: kubeseal
     help: Uninstall kubeseal
+- name: setup
+  help: Configure installed tools
+  commands:
+  - name: antidote
+    help: Configure antidote Zsh plugin manager (~/.zshrc and ~/.zsh_plugins.txt)
+    dependencies:
+    - zsh
+    - git
+    flags:
+    - long: --skip-plugins
+      help: Skip seeding ~/.zsh_plugins.txt with recommended plugins
+    - long: --skip-zshrc
+      help: Skip adding antidote bootstrap to ~/.zshrc
+
 - name: outdated
   help: Check for outdated tools
   args:

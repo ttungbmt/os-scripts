@@ -48,6 +48,17 @@ guard_existing() {
   fi
 }
 
+# Require: check if a tool is installed, exit if it is not
+# Usage: require_installed "tool_name" "/path/to/binary_or_dir"
+require_installed() {
+  local name="$1" target="$2"
+  if [ ! -e "$target" ] && ! command -v "$name" >/dev/null 2>&1; then
+    echo "$(red "✗") ${name} is not installed."
+    echo "Please run $(bold "./gt install ${name}") first."
+    exit 1
+  fi
+}
+
 # Move a file to /usr/local/bin, using sudo if necessary
 # Usage: install_binary "/tmp/downloaded_binary" "/usr/local/bin/tool"
 install_binary() {

@@ -36,6 +36,7 @@ gt_usage() {
   printf "%s\n" "Commands:"
   printf "  %s   Install tools and components\n" "install  "
   printf "  %s   Uninstall tools and components\n" "uninstall"
+  printf "  %s   Configure installed tools\n" "setup    "
   printf "  %s   Check for outdated tools\n" "outdated "
   echo
 
@@ -1963,6 +1964,79 @@ gt_uninstall_kubeseal_usage() {
 }
 
 # :command.usage
+gt_setup_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt setup - Configure installed tools\n"
+    echo
+
+  else
+    printf "gt setup - Configure installed tools\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt setup COMMAND\n"
+  printf "  gt setup [COMMAND] --help | -h\n"
+  echo
+  # :command.usage_commands
+  printf "%s\n" "Commands:"
+  printf "  %s   Configure antidote Zsh plugin manager (~/.zshrc and ~/.zsh_plugins.txt)\n" "antidote"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_setup_antidote_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt setup antidote - Configure antidote Zsh plugin manager (~/.zshrc and ~/.zsh_plugins.txt)\n"
+    echo
+
+  else
+    printf "gt setup antidote - Configure antidote Zsh plugin manager (~/.zshrc and ~/.zsh_plugins.txt)\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt setup antidote [OPTIONS]\n"
+  printf "  gt setup antidote --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_flags
+    # :flag.usage
+    printf "  %s\n" "--skip-plugins"
+    printf "    Skip seeding ~/.zsh_plugins.txt with recommended plugins\n"
+    echo
+
+    # :flag.usage
+    printf "  %s\n" "--skip-zshrc"
+    printf "    Skip adding antidote bootstrap to ~/.zshrc\n"
+    echo
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
 gt_outdated_usage() {
   if [[ -n $long_usage ]]; then
     printf "gt outdated - Check for outdated tools\n"
@@ -3440,6 +3514,131 @@ gt_uninstall_kubeseal_command() {
 }
 
 # :command.function
+gt_setup_antidote_command() {
+  # src/commands/setup/antidote.sh
+  skip_plugins=${args[--skip-plugins]}
+  skip_zshrc=${args[--skip-zshrc]}
+
+  name="antidote"
+  zsh_plugins_file="${ZDOTDIR:-$HOME}/.zsh_plugins.txt"
+  zshrc="${ZDOTDIR:-$HOME}/.zshrc"
+
+  echo "Configuring $(cyan_bold "$name")..."
+  echo ""
+
+  # ===================================================================
+  # Step 1: Check antidote installation
+  # ===================================================================
+  echo "$(bold "▸ Step 1/3:") Checking antidote installation..."
+
+  has_antidote=false
+  if [ -f "/usr/local/share/antidote/antidote.zsh" ]; then
+    has_antidote=true
+    antidote_path="/usr/local/share/antidote/antidote.zsh"
+  elif [ -f "${ZDOTDIR:-$HOME}/.antidote/antidote.zsh" ]; then
+    has_antidote=true
+    antidote_path="${ZDOTDIR:-$HOME}/.antidote/antidote.zsh"
+  fi
+
+  if [ "$has_antidote" = false ]; then
+    echo "$(red "✗") antidote is not installed."
+    echo "Please run $(bold "./gt install antidote") first."
+    exit 1
+  fi
+  echo "$(green_bold "✓") antidote found at $antidote_path"
+
+  # ===================================================================
+  # Step 2: Configure ~/.zshrc
+  # ===================================================================
+  echo ""
+  echo "$(bold "▸ Step 2/3:") Configuring $(cyan "$zshrc")..."
+
+  ANTIDOTE_MARKER="# --- antidote bootstrap (managed by os-scripts) ---"
+
+  if [ -n "$skip_zshrc" ]; then
+    echo "$(yellow "⚠") Skipping .zshrc configuration (--skip-zshrc)"
+  elif grep -qF "$ANTIDOTE_MARKER" "$zshrc" 2>/dev/null; then
+    echo "$(yellow "⚠") antidote bootstrap block already exists in $zshrc — skipping"
+  else
+    # Create .zshrc if it doesn't exist
+    [ -f "$zshrc" ] || touch "$zshrc"
+
+    # Append the bootstrap block
+    {
+      echo ""
+      echo "$ANTIDOTE_MARKER"
+      echo "# Source antidote"
+      echo 'if [[ -f /usr/local/share/antidote/antidote.zsh ]]; then'
+      echo '  source /usr/local/share/antidote/antidote.zsh'
+      echo 'elif [[ -f ${ZDOTDIR:-$HOME}/.antidote/antidote.zsh ]]; then'
+      echo '  source ${ZDOTDIR:-$HOME}/.antidote/antidote.zsh'
+      echo 'fi'
+      echo ''
+      echo '# Static plugin loading (fast)'
+      echo 'zsh_plugins=${ZDOTDIR:-$HOME}/.zsh_plugins.txt'
+      echo '[[ -f $zsh_plugins ]] || touch $zsh_plugins'
+      echo 'if [[ ! ${zsh_plugins}.zsh -nt $zsh_plugins ]]; then'
+      echo '  antidote bundle <$zsh_plugins >${zsh_plugins}.zsh'
+      echo 'fi'
+      echo 'source ${zsh_plugins}.zsh'
+      echo 'unset zsh_plugins'
+      echo "# --- end antidote bootstrap ---"
+    } >> "$zshrc"
+    echo "$(green_bold "✓") antidote bootstrap added to $zshrc"
+  fi
+
+  # ===================================================================
+  # Step 3: Seed ~/.zsh_plugins.txt
+  # ===================================================================
+  echo ""
+  echo "$(bold "▸ Step 3/3:") Seeding $(cyan "$zsh_plugins_file")..."
+
+  if [ -n "$skip_plugins" ]; then
+    echo "$(yellow "⚠") Skipping plugin seeding (--skip-plugins)"
+  elif [ -s "$zsh_plugins_file" ]; then
+    echo "$(yellow "⚠") $zsh_plugins_file already has content — skipping (delete it first to re-seed)"
+  else
+    {
+      echo "# === Completion & syntax ==="
+      echo "zsh-users/zsh-completions"
+      echo "zsh-users/zsh-autosuggestions"
+      echo "zsh-users/zsh-syntax-highlighting"
+      echo "zsh-users/zsh-history-substring-search"
+      echo ""
+      echo "# === Oh-My-Zsh libs (selective) ==="
+      echo "ohmyzsh/ohmyzsh path:lib/clipboard.zsh"
+      echo "ohmyzsh/ohmyzsh path:lib/history.zsh"
+      echo "ohmyzsh/ohmyzsh path:lib/key-bindings.zsh"
+      echo ""
+      echo "# === DevOps plugins ==="
+      echo "ohmyzsh/ohmyzsh path:plugins/git"
+      echo "ohmyzsh/ohmyzsh path:plugins/kubectl"
+      echo "ohmyzsh/ohmyzsh path:plugins/docker"
+      echo "ohmyzsh/ohmyzsh path:plugins/helm"
+      echo "ohmyzsh/ohmyzsh path:plugins/terraform"
+      echo ""
+      echo "# === Tools ==="
+      echo "ajeetdsouza/zoxide"
+      echo "Aloxaf/fzf-tab"
+    } > "$zsh_plugins_file"
+    echo "$(green_bold "✓") Seeded $zsh_plugins_file with recommended DevOps plugins"
+  fi
+
+  # ===================================================================
+  # Summary
+  # ===================================================================
+  echo ""
+  echo "$(green_bold "━━━ Configuration complete ━━━")"
+  echo ""
+  echo "Next steps:"
+  echo "  1. Start a new zsh session:  $(bold "exec zsh")"
+  echo "  2. Edit plugins:             $(bold "vim $zsh_plugins_file")"
+  echo "  3. Update plugins:           $(bold "antidote update")"
+  echo "  4. Docs:                     $(bold "docs/antidote-deployment.md")"
+
+}
+
+# :command.function
 gt_outdated_command() {
   # src/commands/outdated.sh
   all=${args[--all]}
@@ -3522,6 +3721,13 @@ parse_requirements() {
       action="uninstall"
       shift
       gt_uninstall_parse_requirements "$@"
+      shift $#
+      ;;
+
+    setup)
+      action="setup"
+      shift
+      gt_setup_parse_requirements "$@"
       shift $#
       ;;
 
@@ -6909,6 +7115,147 @@ gt_uninstall_kubeseal_parse_requirements() {
 }
 
 # :command.parse_requirements
+gt_setup_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_setup_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action=${1:-}
+
+  case $action in
+    -*) ;;
+
+    antidote)
+      action="antidote"
+      shift
+      gt_setup_antidote_parse_requirements "$@"
+      shift $#
+      ;;
+
+    # :command.command_fallback
+    "")
+      gt_setup_usage >&2
+      exit 1
+      ;;
+
+    *)
+      printf "invalid command: %s\n" "$action" >&2
+      exit 1
+      ;;
+
+  esac
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
+gt_setup_antidote_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_setup_antidote_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.dependencies_filter
+  if command -v zsh >/dev/null 2>&1; then
+    deps['zsh']="$(command -v zsh | head -n1)"
+  else
+    printf "missing dependency: zsh\n" >&2
+    exit 1
+  fi
+
+  if command -v git >/dev/null 2>&1; then
+    deps['git']="$(command -v git | head -n1)"
+  else
+    printf "missing dependency: git\n" >&2
+    exit 1
+  fi
+
+  # :command.command_filter
+  action="setup antidote"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+      # :flag.case
+      --skip-plugins)
+
+        # :flag.case_no_arg
+        args['--skip-plugins']=1
+        shift
+        ;;
+
+      # :flag.case
+      --skip-zshrc)
+
+        # :flag.case_no_arg
+        args['--skip-zshrc']=1
+        shift
+        ;;
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
 gt_outdated_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
@@ -7037,6 +7384,8 @@ run() {
     "uninstall conftest") gt_uninstall_conftest_command ;;
     "uninstall vault") gt_uninstall_vault_command ;;
     "uninstall kubeseal") gt_uninstall_kubeseal_command ;;
+    "setup") gt_setup_command ;;
+    "setup antidote") gt_setup_antidote_command ;;
     "outdated") gt_outdated_command ;;
   esac
 }
