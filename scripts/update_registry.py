@@ -1,5 +1,25 @@
 #!/usr/bin/env python3
+"""
+Purpose:
+  A developer tool script that automatically generates installation configuration files for each tool in the `src/lib/registry/` directory.
+  Prevents the need to manually create `.sh` files for dozens of different tools.
+
+How it works:
+  1. Reads the `configs` dictionary containing tool metadata (repo, archive type, file name pattern).
+  2. Loops through each tool and renders a bash script defining configuration constants like `_INSTALL_TYPE`, `_GITHUB_REPO`, `_ASSET_PATTERN`, etc.
+  3. Writes/saves the resulting file to the `src/lib/registry/<tool_name>.sh` directory.
+
+Usage:
+  1. Open this file and add your new tool's metadata to the `configs` dictionary below.
+     (Required keys: 'repo', 'archive', 'pattern'. Optional: 'bin_path', 'url', etc.)
+  2. Run: python scripts/update_registry.py
+  3. The generated script will be saved to `src/lib/registry/<tool_name>.sh`.
+"""
+
 import os
+
+# Root of the project (one level up from scripts/ directory)
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 configs = {
     "argocd": {
@@ -97,7 +117,7 @@ configs = {
 }
 
 for tool, c in configs.items():
-    file_path = f"src/lib/registry/{tool}.sh"
+    file_path = os.path.join(ROOT_DIR, "src", "lib", "registry", f"{tool}.sh")
     tool_upper = tool.upper().replace("-", "_")
     content = f"""{tool_upper}_INSTALL_TYPE="github_release"
 {tool_upper}_GITHUB_REPO="{c.get('repo')}"

@@ -1,7 +1,27 @@
 #!/usr/bin/env python3
+"""
+Purpose:
+  A developer tool script to scaffold automatic configurations.
+  It injects command definitions (like `install <tool>` and `uninstall <tool>`) into the `src/bashly.yml` file.
+  Saves time and minimizes YAML copy-paste/indentation errors compared to manual typing.
+
+How it works:
+  1. Receives a list of tool names from command line arguments.
+  2. Opens the `src/bashly.yml` file and checks if the tool already exists.
+  3. If not, it inserts the corresponding YAML block underneath the `install` and `uninstall` command groups.
+  4. Overwrites the `bashly.yml` file with the updated content.
+
+Usage:
+  1. Run: python scripts/scaffold.py <tool_name>
+  2. Run: `bashly generate` in the project root to generate the actual bash script placeholders.
+"""
+
 import os
 import sys
 import re
+
+# Root of the project (one level up from scripts/ directory)
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def main():
     if len(sys.argv) < 2:
@@ -9,7 +29,7 @@ def main():
         sys.exit(1)
 
     tools = sys.argv[1:]
-    bashly_path = "src/bashly.yml"
+    bashly_path = os.path.join(ROOT_DIR, "src", "bashly.yml")
     with open(bashly_path, "r") as f:
         content = f.read()
 

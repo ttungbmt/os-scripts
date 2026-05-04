@@ -1,4 +1,20 @@
 #!/usr/bin/env python3
+"""
+Purpose:
+  A developer tool script to fetch the latest release asset names from the GitHub API.
+  It helps developers identify the exact file naming pattern used by a tool's author for the Linux x86_64 platform.
+
+How it works:
+  1. Iterates over the `repos` dictionary containing tool names (e.g., argoproj/argo-cd).
+  2. Sends a request to the GitHub API: /repos/{repo}/releases/latest.
+  3. Filters for files containing 'linux' and either 'amd64' or 'x86_64'.
+  4. Prints up to the first 3 matching file names for reference.
+
+Usage:
+  1. Open this file and add the new tool to the `repos` dictionary below.
+  2. Run: python scripts/fetch_assets.py
+"""
+
 import urllib.request
 import json
 

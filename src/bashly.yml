@@ -301,6 +301,94 @@ commands:
     - long: --force
       short: -f
       help: Force overwrite if kubeseal is already installed
+  - name: zoxide
+    help: Install zoxide
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: zoxide version to install (e.g., v0.9.9 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if zoxide is already installed
+  - name: eza
+    help: Install eza
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: eza version to install (e.g., v0.23.4 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if eza is already installed
+  - name: bat
+    help: Install bat
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: bat version to install (e.g., v0.26.1 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if bat is already installed
+  - name: ripgrep
+    help: Install ripgrep
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: ripgrep version to install (e.g., 15.1.0 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if ripgrep is already installed
+  - name: starship
+    help: Install starship
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: starship version to install (e.g., v1.25.1 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if starship is already installed
+  - name: fzf
+    help: Install fzf
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: fzf version to install (e.g., v0.72.0 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if fzf is already installed
+  - name: fd
+    help: Install fd (fast find alternative)
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: fd version to install (e.g., v10.4.2 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if fd is already installed
+  - name: mcfly
+    help: Install mcfly (smart shell history)
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: mcfly version to install (e.g., v0.9.4 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if mcfly is already installed
 - name: uninstall
   help: Uninstall tools and components
   commands:
@@ -363,6 +451,22 @@ commands:
     help: Uninstall vault
   - name: kubeseal
     help: Uninstall kubeseal
+  - name: zoxide
+    help: Uninstall zoxide
+  - name: eza
+    help: Uninstall eza
+  - name: bat
+    help: Uninstall bat
+  - name: ripgrep
+    help: Uninstall ripgrep
+  - name: starship
+    help: Uninstall starship
+  - name: fzf
+    help: Uninstall fzf
+  - name: fd
+    help: Uninstall fd
+  - name: mcfly
+    help: Uninstall mcfly
 - name: setup
   help: Configure installed tools
   commands:
