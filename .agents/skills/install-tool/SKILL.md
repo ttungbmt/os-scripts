@@ -17,6 +17,8 @@ Before starting, confirm these files exist in the project:
 
 - `src/bashly.yml` — CLI command definitions
 - `src/lib/install_helpers.sh` — Shared helper functions
+- `src/lib/version_helpers.sh` — Core engine for checking versions
+- `src/lib/registry/` — Directory containing individual tool version profiles
 - `src/lib/colors.sh` — Color output functions
 - `settings.yml` — Bashly settings with `commands_dir: commands`
 
@@ -149,7 +151,33 @@ Write `src/commands/uninstall/<tool-name>.sh` — this is always a single line:
 uninstall_tool "<tool-name>" "/usr/local/bin/<tool-name>"
 ```
 
-### 6. Generate and validate
+### 6. Create registry file for versioning
+
+Create `src/lib/registry/<tool-name>.sh` to allow the `./cli outdated` command to detect and check this tool's version.
+
+**GitHub-based tool example:**
+```bash
+<TOOL_NAME>_GITHUB_REPO="<owner>/<repo>"
+
+<tool-name>_fetch_local_version() {
+  local target="$1"
+  "$target" --version 2>/dev/null | awk '{print $2}'
+}
+```
+
+**Non-GitHub tool example (e.g. kubectl):**
+```bash
+<tool-name>_fetch_local_version() {
+  local target="$1"
+  "$target" version --client -o yaml 2>/dev/null | grep gitVersion | awk '{print $2}'
+}
+
+<tool-name>_fetch_remote_version() {
+  curl -sL https://api.example.com/stable.txt
+}
+```
+
+### 7. Generate and validate
 
 ```bash
 bashly generate
@@ -199,6 +227,7 @@ Before marking a tool as done:
 - [ ] `bashly.yml` has both `install` and `uninstall` entries
 - [ ] Install script uses `guard_existing`, `detect_platform`, `download_file`, `install_binary`
 - [ ] Uninstall script is a single `uninstall_tool` call
+- [ ] Registry file `src/lib/registry/<tool-name>.sh` is created with local fetch logic
 - [ ] No duplicated logic from `install_helpers.sh`
 - [ ] `bashly generate` runs without errors
 - [ ] `./cli install <tool> --help` shows correct flags

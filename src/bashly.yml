@@ -54,6 +54,206 @@ commands:
       short: -f
       help: Force overwrite if fastfetch is already installed
 
+  - name: direnv
+    help: Install direnv
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: direnv version to install (e.g., v2.32.1 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if direnv is already installed
+
+  - name: thefuck
+    help: Install thefuck
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: thefuck version to install (e.g., 3.32 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if thefuck is already installed
+
+  - name: argocd
+    help: Install argocd
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: argocd version to install (e.g., v1.0.0 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if argocd is already installed
+  - name: velero
+    help: Install velero
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: velero version to install (e.g., v1.0.0 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if velero is already installed
+  - name: kubeconform
+    help: Install kubeconform
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: kubeconform version to install (e.g., v1.0.0 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if kubeconform is already installed
+  - name: krew
+    help: Install krew
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: krew version to install (e.g., v1.0.0 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if krew is already installed
+  - name: kubent
+    help: Install kubent
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: kubent version to install (e.g., v1.0.0 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if kubent is already installed
+  - name: sops
+    help: Install sops
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: sops version to install (e.g., v1.0.0 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if sops is already installed
+  - name: age
+    help: Install age
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: age version to install (e.g., v1.0.0 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if age is already installed
+  - name: trivy
+    help: Install trivy
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: trivy version to install (e.g., v1.0.0 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if trivy is already installed
+  - name: kubens
+    help: Install kubens
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: kubens version to install (e.g., v1.0.0 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if kubens is already installed
+  - name: kubecolor
+    help: Install kubecolor
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: kubecolor version to install (e.g., v1.0.0 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if kubecolor is already installed
+  - name: popeye
+    help: Install popeye
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: popeye version to install (e.g., v1.0.0 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if popeye is already installed
+  - name: kube-linter
+    help: Install kube-linter
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: kube-linter version to install (e.g., v1.0.0 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if kube-linter is already installed
+  - name: kyverno
+    help: Install kyverno
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: kyverno version to install (e.g., v1.0.0 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if kyverno is already installed
+  - name: conftest
+    help: Install conftest
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: conftest version to install (e.g., v1.0.0 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if conftest is already installed
+  - name: vault
+    help: Install vault
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: vault version to install (e.g., v1.0.0 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if vault is already installed
+  - name: kubeseal
+    help: Install kubeseal
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: kubeseal version to install (e.g., v1.0.0 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if kubeseal is already installed
 - name: uninstall
   help: Uninstall tools and components
   commands:
@@ -68,3 +268,51 @@ commands:
 
   - name: fastfetch
     help: Uninstall fastfetch
+
+  - name: direnv
+    help: Uninstall direnv
+
+  - name: thefuck
+    help: Uninstall thefuck
+
+  - name: argocd
+    help: Uninstall argocd
+  - name: velero
+    help: Uninstall velero
+  - name: kubeconform
+    help: Uninstall kubeconform
+  - name: krew
+    help: Uninstall krew
+  - name: kubent
+    help: Uninstall kubent
+  - name: sops
+    help: Uninstall sops
+  - name: age
+    help: Uninstall age
+  - name: trivy
+    help: Uninstall trivy
+  - name: kubens
+    help: Uninstall kubens
+  - name: kubecolor
+    help: Uninstall kubecolor
+  - name: popeye
+    help: Uninstall popeye
+  - name: kube-linter
+    help: Uninstall kube-linter
+  - name: kyverno
+    help: Uninstall kyverno
+  - name: conftest
+    help: Uninstall conftest
+  - name: vault
+    help: Uninstall vault
+  - name: kubeseal
+    help: Uninstall kubeseal
+- name: outdated
+  help: Check for outdated tools
+  args:
+  - name: tool
+    help: Specific tool to check (optional)
+  flags:
+  - long: --all
+    short: -a
+    help: Check all tools, even those not currently installed
