@@ -1,4 +1,4 @@
-name: cli
+name: gt
 help: OS Scripts CLI
 version: 0.1.0
 
@@ -6,6 +6,17 @@ commands:
 - name: install
   help: Install tools and components
   commands:
+  - name: multi
+    help: Install multiple tools at once (comma or space separated)
+    args:
+    - name: tools
+      help: List of tools to install (e.g., kustomize k9s or kustomize,k9s)
+      required: true
+      repeatable: true
+    flags:
+    - long: --force
+      short: -f
+      help: Force overwrite if tools are already installed
   - name: kustomize
     help: Install Kustomize
     flags:
@@ -65,6 +76,18 @@ commands:
     - long: --force
       short: -f
       help: Force overwrite if direnv is already installed
+
+  - name: btop
+    help: Install btop
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: btop version to install (e.g., v1.4.0 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if btop is already installed
 
   - name: thefuck
     help: Install thefuck
@@ -271,6 +294,9 @@ commands:
 
   - name: direnv
     help: Uninstall direnv
+
+  - name: btop
+    help: Uninstall btop
 
   - name: thefuck
     help: Uninstall thefuck

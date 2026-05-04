@@ -1,4 +1,7 @@
 KUSTOMIZE_GITHUB_REPO="kubernetes-sigs/kustomize"
+KUSTOMIZE_ARCHIVE_TYPE="tar.gz"
+KUSTOMIZE_ASSET_PATTERN="kustomize_\${V_VERSION}_\${DETECT_OS}_\${DETECT_ARCH}.tar.gz"
+KUSTOMIZE_TAG_PREFIX="kustomize/v"
 
 kustomize_fetch_local_version() {
   local target="$1"

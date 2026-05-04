@@ -93,6 +93,13 @@ uninstall_tool() {
     exit 0
   fi
 
+  echo -n "Are you sure you want to uninstall $(cyan_bold "${name}") at $target? [y/N] "
+  read -r response
+  if [[ ! "$response" =~ ^[Yy]$ ]]; then
+    echo "Aborted."
+    exit 0
+  fi
+
   echo "Uninstalling $(cyan_bold "${name}")..."
   remove_binary "$target"
 

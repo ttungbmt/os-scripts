@@ -1,3 +1,6 @@
+THEFUCK_INSTALL_TYPE="pip"
+THEFUCK_PIP_PKG="thefuck"
+
 thefuck_fetch_local_version() {
   local target="$1"
   "$target" --version 2>/dev/null | awk '{print $2}'

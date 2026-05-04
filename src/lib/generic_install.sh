@@ -36,7 +36,11 @@ run_generic_install() {
 
     # Step 2: Resolve version
     if [[ "$version" == "latest" ]]; then
-      version=$(github_latest_tag "$repo")
+      if type "${name}_fetch_remote_version" &>/dev/null; then
+        version=$("${name}_fetch_remote_version")
+      else
+        version=$(github_latest_tag "$repo")
+      fi
     fi
 
     local dl_version="$version"
@@ -70,7 +74,7 @@ run_generic_install() {
 
     # Determine tag for download URL
     local tag_prefix_var="${tool_upper}_TAG_PREFIX"
-    local tag_prefix="${!tag_prefix_var:-v}"
+    local tag_prefix="${!tag_prefix_var-v}"
     
     # If the tag from API already includes the prefix, don't duplicate it. 
     # But since github_latest_tag returns exact tag, if user provided 'latest', it is exact.
