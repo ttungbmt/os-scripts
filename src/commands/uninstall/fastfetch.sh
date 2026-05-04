@@ -1,1 +1,1 @@
-uninstall_tool "fastfetch" "/usr/local/bin/fastfetch"
+run_generic_uninstall "fastfetch"

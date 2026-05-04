@@ -1,1 +1,1 @@
-uninstall_tool "kustomize" "/usr/local/bin/kustomize"
+run_generic_uninstall "kustomize"
