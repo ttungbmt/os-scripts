@@ -17,3 +17,54 @@ commands:
     - long: --force
       short: -f
       help: Force overwrite if Kustomize is already installed
+
+  - name: k9s
+    help: Install k9s
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: k9s version to install (e.g., v0.32.4 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if k9s is already installed
+
+  - name: kubectl
+    help: Install kubectl
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: kubectl version to install (e.g., v1.30.0 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if kubectl is already installed
+
+  - name: fastfetch
+    help: Install fastfetch
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: fastfetch version to install (e.g., v2.62.1 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if fastfetch is already installed
+
+- name: uninstall
+  help: Uninstall tools and components
+  commands:
+  - name: kustomize
+    help: Uninstall Kustomize
+
+  - name: k9s
+    help: Uninstall k9s
+
+  - name: kubectl
+    help: Uninstall kubectl
+
+  - name: fastfetch
+    help: Uninstall fastfetch
