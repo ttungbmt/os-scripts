@@ -1,4 +1,4 @@
-# 🚀 Modern Production DevOps Platform Toolkit v3
+# Modern Production DevOps Platform Toolkit
 
 > Bộ công cụ hiện đại cho DevOps, SysAdmin, Platform Engineering, Kubernetes Operations, GitOps, DevSecOps, Air-gap và Production Troubleshooting.
 >
@@ -6,7 +6,41 @@
 
 ---
 
-## 1. Mục tiêu thiết kế
+## 1. Tools quản lý bởi `gt` CLI
+
+25 tool được cài đặt/gỡ cài đặt/kiểm tra phiên bản bằng `gt install <tool>` / `gt uninstall <tool>` / `gt outdated`:
+
+| Tool | Nhóm | Lệnh `gt` |
+|---|---|---|
+| `kubectl` | Kubernetes CLI | ✓ |
+| `k9s` | Kubernetes TUI | ✓ |
+| `kustomize` | K8s overlay/patch | ✓ |
+| `krew` | kubectl plugin manager | ✓ |
+| `kubent` | Deprecated API checker | ✓ |
+| `kubens` | Namespace switcher | ✓ |
+| `kubecolor` | kubectl color output | ✓ |
+| `kyverno` | Policy-as-code | ✓ |
+| `kube-linter` | Manifest best practices | ✓ |
+| `popeye` | Cluster health audit | ✓ |
+| `kubeseal` | Sealed Secrets | ✓ |
+| `kubeconform` | Manifest schema validation | ✓ |
+| `conftest` | Policy testing (OPA) | ✓ |
+| `argocd` | GitOps CD | ✓ |
+| `velero` | K8s backup/restore | ✓ |
+| `sops` | Git secret encryption | ✓ |
+| `age` | Encryption key backend | ✓ |
+| `trivy` | Vulnerability scanner | ✓ |
+| `vault` | Secrets management | ✓ |
+| `direnv` | Per-project env loader | ✓ |
+| `btop` | System monitor TUI | ✓ |
+| `fastfetch` | System info display | ✓ |
+| `zsh` | Shell (via package manager) | ✓ |
+| `antidote` | Zsh plugin manager | ✓ |
+| `thefuck` | CLI auto-correct | ✓ |
+
+---
+
+## 2. Mục tiêu thiết kế
 
 | Nguyên tắc | Ý nghĩa |
 |---|---|
@@ -22,7 +56,7 @@
 
 ---
 
-## 2. Quy ước ưu tiên
+## 3. Quy ước ưu tiên
 
 | Mức | Ý nghĩa | Cách hiểu |
 |---|---|---|
@@ -38,7 +72,7 @@
 
 ---
 
-## 3. Quy ước đọc cột `Ưu tiên lựa chọn`
+## 4. Quy ước đọc cột `Ưu tiên lựa chọn`
 
 | Cú pháp | Ý nghĩa | Ví dụ |
 |---|---|---|
@@ -50,34 +84,34 @@
 
 ---
 
-# 4. Executive Summary
+## 5. Executive Summary
 
 | Nhóm năng lực | Ưu tiên lựa chọn | Mức | Lý do |
 |---|---|---:|---|
-| GitOps CD | `argocd > flux` | P0 PROD K8S | Argo CD là default tốt nhất nếu cần UI, diff, sync, audit và vận hành dễ cho platform team; Flux phù hợp GitOps nhẹ, automation mạnh |
-| Backup/DR | `velero + etcdctl + restic/kopia` | P0 PROD K8S | Velero backup/restore K8s resources/PV; etcdctl snapshot control plane; restic/kopia backup file-level |
-| Policy-as-code | `kyverno + ValidatingAdmissionPolicy/CEL > gatekeeper/opa` | P0 SEC K8S | Kyverno cho policy K8s đầy đủ; VAP/CEL cho validation đơn giản, nhẹ; OPA/Gatekeeper cho Rego/enterprise policy |
-| Secret delivery | `external-secrets > secrets-store-csi-driver` | P0 SEC K8S | ESO sync thành Kubernetes Secret dễ dùng; CSI Driver phù hợp mount secret/cert dạng file |
-| Git secret encryption | `sops + age > kubeseal` | P0 SEC AIR | SOPS + age linh hoạt cho GitOps; kubeseal đơn giản nhưng kém linh hoạt hơn |
-| Supply chain security | `trivy + syft + cosign + buildx attestations` | P0 SEC | Trivy scan; Syft tạo SBOM; Cosign ký/verify; buildx tạo SBOM/provenance attestations |
-| Manifest safety | `kubeconform + kube-linter` | P0/P2 K8S | kubeconform validate schema/CRD; kube-linter check best practices |
-| Upgrade safety | `kubent > pluto` | P0 PROD K8S | Check deprecated API trước khi upgrade cluster |
-| Registry/Air-gap | `skopeo + crane + oras` | P0 AIR | Skopeo copy/sync image; Crane remote image ops; ORAS OCI artifact |
-| K8s daily ops | `kubectl + k9s + stern + kubecolor + krew` | P1 K8S | kubectl core; k9s TUI; stern logs; kubecolor readability; krew plugin manager |
-| K8s deployment | `helmfile > helm > kustomize raw` | P0 K8S | helmfile cho nhiều app/env; helm cho chart đơn; kustomize raw cho patch/overlay |
-| IaC/Config | `opentofu / terraform > terragrunt`, `ansible` | P1 PROD | Chọn OpenTofu hoặc Terraform làm engine; Terragrunt là wrapper; Ansible cho VM/bare-metal |
-| Observability CLI | `btop > bottom > htop > top`, `lnav`, `termshark > tcpdump` | P1 PROD | btop tốt nhất cho daily monitor; bottom vẫn tốt; htop/top fallback; lnav log; termshark/tcpdump network |
-| Local lab | `kind > k3d > minikube` | P1 LAB | kind cho CI/test chuẩn K8s; k3d nhẹ nhanh; minikube học/demo |
+| GitOps CD | `argocd / flux` | P0 PROD K8S | ArgoCD nếu cần UI/diff/audit/vận hành dễ; Flux nếu muốn controller-native thuần GitOps, không cần UI |
+| Backup/DR | `velero + etcdctl + restic/kopia` | P0 PROD K8S | Velero backup K8s resource/PV; etcdctl snapshot control plane (chỉ khi self-managed); restic/kopia backup file-level |
+| Policy-as-code | `ValidatingAdmissionPolicy/CEL + kyverno > gatekeeper/opa` | P0 SEC K8S | VAP/CEL native K8s cho rule đơn giản; Kyverno cho policy phức tạp, mutating, generate; OPA/Gatekeeper cho Rego/enterprise |
+| Secret delivery | `external-secrets > secrets-store-csi-driver` | P0 SEC K8S | ESO sync thành Kubernetes Secret dễ dùng nhất; CSI Driver phù hợp mount secret/cert trực tiếp vào filesystem |
+| Git secret encryption | `sops + age > kubeseal` | P0 SEC AIR | SOPS + age linh hoạt, hỗ trợ nhiều backend (age/pgp/kms/azure); kubeseal chỉ hợp nếu đã dùng Sealed Secrets controller |
+| Supply chain security | `trivy + syft + cosign + buildx attestations` | P0 SEC | Trivy scan CVE/IaC/K8s; Syft tạo SBOM; Cosign ký/verify; buildx gắn SBOM/provenance vào build |
+| Manifest safety | `kubeconform + kube-linter` | P0/P2 K8S | kubeconform validate schema/CRD (CI gate); kube-linter check best practices (không thay thế nhau) |
+| Upgrade safety | `kubent > pluto` | P0 PROD K8S | kubent check deprecated API đang dùng trong cluster thật; pluto cho static analysis trong CI |
+| Registry/Air-gap | `skopeo + crane + oras` | P0 AIR | skopeo copy/sync image giữa registry; crane inspect/mutate; oras push/pull OCI artifact |
+| K8s daily ops | `kubectl + k9s + stern + kubecolor + krew` | P1 K8S | kubectl core bắt buộc; k9s TUI debug; stern logs multi-pod; kubecolor readability; krew plugin manager |
+| K8s deployment | `helmfile > helm > kustomize raw` | P0 K8S | helmfile quản lý nhiều release/env; helm cho chart đơn; kustomize khi không dùng chart hoặc cần overlay |
+| IaC/Config | `opentofu / terraform > terragrunt`, `ansible` | P1 PROD | Chọn OpenTofu (FOSS) hoặc Terraform làm IaC engine; Terragrunt wrapper cho DRY; Ansible cho VM/bare-metal/OS |
+| Observability CLI | `btop > htop > top`, `lnav`, `termshark > tcpdump` | P1 PROD | btop daily monitor; htop/top fallback sẵn có; lnav parse/search log; termshark TUI; tcpdump bắt buộc biết |
+| Local lab | `kind > k3d > minikube` | P1 LAB | kind chuẩn K8s API, tốt nhất cho CI; k3d nhẹ nhanh; minikube học/demo |
 
 ---
 
-# 5. Profile Matrix
+## 6. Profile Matrix
 
 | Profile | Mục tiêu | Tool nên có |
 |---|---|---|
 | Workstation | Máy cá nhân DevOps/Platform Engineer | `zsh`, `starship`, `mise`, `chezmoi`, `atuin`, `eza`, `bat`, `fd`, `ripgrep`, `fzf`, `lazygit`, `k9s`, `btop` |
 | Jumpbox/Bastion | Máy trung gian vào production | `tmux`, `kubectl`, `helm`, `k9s`, `stern`, `jq`, `yq`, `sops`, `age`, `trivy`, `tcpdump`, `mtr`, `htop/top` |
-| CI Runner | Build/test/scan/deploy pipeline | `git`, `docker`, `buildx`, `skopeo`, `crane`, `trivy`, `syft`, `cosign`, `gitleaks`, `kubeconform`, `helmfile` |
+| CI Runner | Build/test/scan/deploy pipeline | `git`, `docker`, `buildx`, `skopeo`, `crane`, `oras`, `trivy`, `syft`, `cosign`, `gitleaks`, `kubeconform`, `helmfile` |
 | K8s Admin | Quản trị cluster | `kubectl`, `k9s`, `helm`, `helmfile`, `kustomize`, `krew`, `kubent`, `popeye`, `velero`, `kyverno` |
 | Security/DevSecOps | Scan, policy, compliance | `trivy`, `gitleaks`, `syft`, `grype`, `cosign`, `semgrep`, `checkov`, `kyverno`, `conftest` |
 | Air-gap Ops | Môi trường offline/private registry | `skopeo`, `crane`, `oras`, `helm`, `helmfile`, `trivy`, `syft`, `cosign`, `rclone`, `rsync` |
@@ -85,24 +119,28 @@
 
 ---
 
-# 6. Best Default Choices — Các nhóm dễ nhầm
+## 7. Best Default Choices — Các nhóm dễ nhầm
 
 | Nhóm | Best default | Không nên hiểu nhầm |
 |---|---|---|
-| System monitor | `btop` | `bottom` vẫn tốt, nhưng không phải default đẹp/dễ nhất |
-| GitOps | `argocd` | `flux` không kém, chỉ khác style: nhẹ/controller-native hơn |
-| Policy | `kyverno` | Với rule đơn giản nên tận dụng thêm `ValidatingAdmissionPolicy/CEL` |
-| Secret delivery | `external-secrets` | CSI Driver vẫn tốt nếu app cần secret dạng file/cert |
-| Manifest check | `kubeconform` | Không thay thế `kube-linter`; nên dùng cả hai |
-| Supply chain | `trivy + syft + cosign` | Nên thêm build provenance/SBOM từ `buildx` |
-| Registry/air-gap | `skopeo` | `crane` và `oras` là bổ trợ rất đáng có, không phải thay thế hoàn toàn |
-| Backup K8s | `velero` | Không thay thế backup database-native |
-| IaC | `opentofu / terraform` | `terragrunt` là wrapper, không phải engine chính |
-| Local K8s | `kind` | `k3d` nhanh hơn cho K3s, nhưng `kind` hợp CI/K8s chuẩn hơn |
+| System monitor | `btop` | `bottom` vẫn tốt nhưng ít maintained; `htop`/`top` vẫn cần biết vì có sẵn trên mọi server |
+| GitOps | `argocd` | `flux` không kém — chọn theo team preference; Flux phù hợp GitOps thuần controller-native, không cần UI |
+| Policy | `kyverno` | Với rule validation đơn giản nên dùng `ValidatingAdmissionPolicy/CEL` native K8s thay vì tốn thêm sidecar |
+| Container runtime | `docker` vẫn là chuẩn | `nerdctl` tốt nhưng chỉ phù hợp nếu runtime là containerd không có dockerd |
+| K8s production | Managed K8s (EKS/GKE/AKS) | On-prem dùng `rke2`; self-managed trên cloud hiếm khi cần thiết |
+| Secret delivery | `external-secrets` | CSI Driver vẫn tốt nếu app cần secret dạng file/cert/mount trực tiếp |
+| Manifest check | `kubeconform + kube-linter` (cả hai) | `kubeconform` validate schema, `kube-linter` lint best practices — không thay thế nhau |
+| Supply chain | `trivy + syft + cosign` | Cần thêm build provenance/SBOM attestation từ `buildx` để đủ supply chain |
+| Registry/air-gap | `skopeo` cho copy | `crane` cho inspect/ops, `oras` cho OCI artifact — bổ trợ nhau, không thay thế hoàn toàn |
+| Backup K8s | `velero` | Không thay thế backup native của database (PostgreSQL WAL, MySQL binlog, Kafka) |
+| IaC | `opentofu / terraform` | `terragrunt` là DRY wrapper, không phải engine; không cần Terragrunt nếu module đơn giản |
+| Local K8s | `kind` | `k3d` nhanh hơn nhưng là K3s (không phải K8s chuẩn); `kind` hợp CI test chính xác hơn |
+| Secrets backend | `vault` là mature default | `openbao` nếu muốn FOSS hoàn toàn sau HashiCorp BSL; `infisical` nếu ưu tiên DX |
+| Runtime debug K8s | `kubectl debug` trước | Không cần `inspektor-gadget` cho hầu hết case; chỉ dùng khi cần eBPF/kernel trace |
 
 ---
 
-# 7. Terminal, Shell & Productivity
+## 8. Terminal, Shell & Productivity
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
@@ -118,7 +156,7 @@
 
 ---
 
-# 8. Modern Core CLI
+## 9. Modern Core CLI
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Thay thế cho | Quy tắc chọn |
 |---|---|---:|---|---|
@@ -136,7 +174,7 @@
 
 ---
 
-# 9. Text Processing & Automation
+## 10. Text Processing & Automation
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
@@ -149,7 +187,7 @@
 
 ---
 
-# 10. Editor & Developer CLI
+## 11. Editor & Developer CLI
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
@@ -160,7 +198,7 @@
 
 ---
 
-# 11. Git & CI/CD Workflow
+## 12. Git & CI/CD Workflow
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
@@ -175,22 +213,22 @@
 
 ---
 
-# 12. Container, Registry & OCI
+## 13. Container, Registry & OCI
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
-| Container CLI | `nerdctl > docker` | P1 | Workstation/CI/K8s | `nerdctl` cho containerd/K8s; `docker` phổ biến cho dev/local |
-| Low-level containerd | `ctr` | P2 | Admin | Debug sâu containerd |
+| Container CLI | `docker / nerdctl` | P1 | Workstation/CI/K8s | `docker` là chuẩn phổ biến nhất cho dev/local; `nerdctl` tương thích Docker CLI nhưng native containerd, phù hợp K8s node / non-Docker runtime |
+| Low-level containerd | `ctr` | P2 | Admin | Debug sâu containerd, không phải daily use |
 | Container TUI | `lazydocker > docker ps/logs` | P2 | Workstation | Tốt cho local/debug nhanh, không core production |
 | Image analyzer | `dive` | P2 | Workstation/CI | Soi image layer, tối ưu size |
 | Registry ops | `skopeo + crane + oras` | P0 AIR | CI/Air-gap | `skopeo` copy image; `crane` inspect/ops; `oras` OCI artifact |
-| Image build | `buildx > docker build` | P1 | CI | `buildx` cho multi-arch/cache/SBOM/provenance |
-| Build engine | `buildkit` | P1 | CI | Build hiện đại, cache tốt |
-| Go image build | `ko` | P3 | CI | Dành cho Go app, không cần Dockerfile |
+| Image build | `buildx > docker build` | P1 | CI | `buildx` cho multi-arch/cache/SBOM/provenance attestation |
+| Build engine | `buildkit` | P1 | CI | Backend build hiện đại, cache layer tốt |
+| Go image build | `ko` | P3 | CI | Dành riêng Go app, không cần Dockerfile |
 
 ---
 
-# 13. Kubernetes Daily Operations
+## 14. Kubernetes Daily Operations
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
@@ -205,7 +243,7 @@
 
 ---
 
-# 14. Kubernetes Production Control
+## 15. Kubernetes Production Control
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
@@ -218,24 +256,25 @@
 | Manifest safety | `kubeconform + kube-linter` | P0/P2 K8S | CI | `kubeconform` validate schema; `kube-linter` check best practice |
 | Policy-as-code | `kyverno + ValidatingAdmissionPolicy/CEL > gatekeeper/opa` | P0 SEC K8S | Platform | `kyverno` đầy đủ; VAP/CEL nhẹ cho rule đơn giản; OPA/Gatekeeper cho Rego |
 | Policy test | `conftest > custom scripts` | P2 SEC | CI | Test policy trước deploy |
-| Runtime debug | `inspektor-gadget > manual nsenter/tcpdump` | P2 PROD | Admin | eBPF debug sâu |
-| CNI debug | `cilium + hubble` | P2 K8S | Admin | Nếu dùng Cilium |
+| Runtime debug | `kubectl debug > inspektor-gadget > nsenter/tcpdump` | P2 PROD | Admin | `kubectl debug` ephemeral container không cần cài thêm; `inspektor-gadget` cho eBPF deep trace; `nsenter/tcpdump` khi SSH được vào node |
+| CNI debug | `cilium + hubble` | P2 K8S | Admin | Chỉ relevant nếu cluster dùng Cilium CNI |
 
 ---
 
-# 15. Local Kubernetes & Cluster Lifecycle
+## 16. Local Kubernetes & Cluster Lifecycle
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
-| Local Kubernetes | `kind > k3d > minikube` | P1 LAB | Workstation/CI | `kind` chuẩn CI/test; `k3d` nhẹ; `minikube` học/demo |
-| Production K8s | `rke2 > kubeadm > kops` | P1 PROD | Admin | `rke2` hợp on-prem/enterprise; `kops` chỉ ưu tiên nếu AWS |
-| Lightweight K8s | `k3s > microk8s` | P2 | Admin/LAB | Edge/lab/small cluster |
-| Immutable K8s OS | `talosctl` | P2 PROD | Admin | Nghiên cứu cho cluster hiện đại, immutable |
-| Cluster bootstrap | `kubeadm` | P2 | Admin | Nên biết để hiểu nền Kubernetes |
+| Local Kubernetes | `kind > k3d > minikube` | P1 LAB | Workstation/CI | `kind` chuẩn CI/test; `k3d` nhẹ nhanh; `minikube` học/demo |
+| Managed K8s (Cloud) | `EKS / GKE / AKS` | P0 PROD | Platform | **Ưu tiên số 1 trên cloud** — không cần tự quản control plane; dùng cloud CLI tương ứng (`eksctl`, `gcloud`, `az`) |
+| Production K8s (On-prem) | `rke2 > kubeadm` | P1 PROD | Admin | `rke2` hợp on-prem/enterprise, hardened mặc định; `kubeadm` nền tảng cần biết; `kops` chỉ dùng nếu bắt buộc self-managed trên AWS |
+| Lightweight K8s | `k3s > microk8s` | P2 | Admin/LAB | Edge/IoT/lab/small cluster |
+| Immutable K8s OS | `talosctl` | P2 PROD | Admin | Hướng tới cluster immutable, API-only; phù hợp đội muốn bỏ SSH vào node |
+| Cluster bootstrap | `kubeadm` | P2 | Admin | Nền tảng tất cả managed installer dùng; nên biết để troubleshoot |
 
 ---
 
-# 16. Infrastructure as Code & Config Management
+## 17. Infrastructure as Code & Config Management
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
@@ -247,19 +286,19 @@
 
 ---
 
-# 17. Secrets Management
+## 18. Secrets Management
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
 | Git secret | `sops + age > kubeseal` | P0 SEC AIR | GitOps/CI | `sops+age` linh hoạt hơn; `kubeseal` đơn giản |
-| Secret backend | `infisical / vault / openbao` | P1 SEC | Platform | Chọn một backend chính theo chiến lược tổ chức |
+| Secret backend | `vault / openbao / infisical` | P1 SEC | Platform | `vault` mature, enterprise-grade; `openbao` là OSS fork của Vault sau HashiCorp license change; `infisical` modern UX, developer-friendly |
 | K8s secret delivery | `external-secrets > secrets-store-csi-driver` | P0 SEC K8S | Platform | ESO sync secret; CSI mount secret/cert |
 | Kustomize + SOPS | `ksops` | P2 SEC | GitOps | Dùng khi Kustomize cần decrypt secret |
 | Infisical K8s | `infisical-operator > infisical CLI manual sync` | P2 SEC K8S | Platform | Nếu chọn Infisical làm backend chính |
 
 ---
 
-# 18. Security & Software Supply Chain
+## 19. Security & Software Supply Chain
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
@@ -272,11 +311,11 @@
 | SAST | `semgrep > sonarqube community` | P2 SEC | CI | `semgrep` nhẹ, dễ CI; SonarQube hợp dashboard/code quality |
 | IaC security | `checkov > tfsec` | P2 SEC | CI | `checkov` rộng hơn; `tfsec` tập trung Terraform |
 | Cert/PKI | `step > openssl` | P2 SEC | Admin | `step` dễ dùng hơn; `openssl` vẫn cần biết |
-| Network scan | `nmap > rustscan` | P1/P3 SEC | Admin | `nmap` chuẩn audit; `rustscan` nhanh nhưng dùng cẩn trọng |
+| Network scan | `nmap > rustscan` | P2/P3 SEC | Admin | `nmap` chuẩn cho network audit; `rustscan` (P3) nhanh hơn nhưng dễ trigger IDS/firewall nếu dùng sai ngữ cảnh |
 
 ---
 
-# 19. Backup, Restore & Disaster Recovery
+## 20. Backup, Restore & Disaster Recovery
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
@@ -290,16 +329,17 @@
 
 ---
 
-# 20. Networking, API & Observability CLI
+## 21. Networking, API & Observability CLI
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
 | System monitor | `btop > bottom > htop > top` | P1 | Admin | `btop` tốt nhất cho daily monitor; `bottom` vẫn tốt; `htop/top` fallback |
 | Log viewer | `lnav > less/tail` | P1 PROD | Admin | `lnav` parse/search/merge log tốt |
-| Network path | `trippy > mtr > traceroute/ping` | P2 | Admin | `trippy` hiện đại; `mtr/ping` phổ biến |
-| DNS lookup | `doggo > dig > nslookup` | P2 | Admin | `doggo` dễ đọc; `dig` chuẩn hơn khi debug sâu |
-| Packet debug | `termshark > tcpdump` | P2/P0 PROD | Admin | `termshark` xem trực quan; `tcpdump` bắt gói, bắt buộc biết |
-| HTTP/API | `httpie > curl` | P2/P0 | Admin/Dev | `httpie` dễ đọc; `curl` bắt buộc cho script/debug |
+| Ping/reachability | `ping` | P0 | Admin | Bắt buộc biết; có sẵn trên mọi hệ thống |
+| Network path | `trippy > mtr > traceroute` | P2/P1 | Admin | `trippy` đẹp, hiện đại; `mtr` phổ biến, hợp bastion; `traceroute` fallback |
+| DNS lookup | `doggo > dig > nslookup` | P2 | Admin | `doggo` dễ đọc output; `dig` chuẩn khi debug sâu, scripting |
+| Packet debug | `termshark > tcpdump` | P2/P0 PROD | Admin | `termshark` TUI xem trực quan; `tcpdump` bắt gói raw, bắt buộc biết trên production |
+| HTTP/API | `httpie > curl` | P2/P0 | Admin/Dev | `httpie` dễ đọc output; `curl` bắt buộc cho script/automation/debug |
 | gRPC | `grpcurl` | P2 | Microservices | Cần nếu có gRPC |
 | WebSocket | `websocat` | P2 | Microservices | Cần nếu có WebSocket |
 | Load test | `k6 > hey > ab` | P2 | QA/Platform | `k6` scriptable; `hey` test nhanh |
@@ -307,7 +347,7 @@
 
 ---
 
-# 21. Database, Queue & Data CLI
+## 22. Database, Queue & Data CLI
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
@@ -321,7 +361,7 @@
 
 ---
 
-# 22. Remote Access & Transfer
+## 23. Remote Access & Transfer
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
@@ -335,7 +375,7 @@
 
 ---
 
-# 23. AI CLI & Local LLM
+## 24. AI CLI & Local LLM
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
@@ -346,26 +386,29 @@
 
 ---
 
-# 24. Tool nên loại khỏi core hoặc hạ mức ưu tiên
+## 25. Điều chỉnh ưu tiên và lỗi hiểu nhầm phổ biến
 
-| Tool | Điều chỉnh | Lý do |
+| Tool / Nhóm | Điều chỉnh | Lý do |
 |---|---|---|
-| `supabase` | Hạ xuống P3 | Quá project-specific, không phải database CLI chung |
-| `thefuck` | Không cài production | Tiện local nhưng không cần trên server |
-| `rustscan` | Hạ xuống P3 | Scan nhanh, dễ gây cảnh báo nếu dùng sai |
-| `kops` | Hạ xuống P3 | Chỉ core nếu dùng AWS/kOps |
-| `zellij` | Giữ P2 local | Server production vẫn nên ưu tiên `tmux` |
-| `lazydocker` | Giữ P2 local | Production nên ưu tiên CLI chuẩn và audit được |
-| AI CLI | Không cài bastion/prod | Tránh rủi ro lộ log/secret |
-| `yq > jq` | Đổi thành `jq + yq` | JSON và YAML đều quan trọng |
-| `sops > age` | Đổi thành `sops + age` | `age` là key backend, không thay thế trực tiếp `sops` |
-| `k9s > kubectl` | Đổi thành `kubectl + k9s` | `kubectl` là core, `k9s` là TUI hỗ trợ |
-| `bottom` làm default | Đổi thành `btop > bottom > htop > top` | `btop` trực quan hơn cho daily monitoring |
-| `kubeconform > kube-linter` | Đổi thành `kubeconform + kube-linter` | Một tool validate schema, một tool lint best practices |
+| `supabase` | Hạ xuống P3, không cài mặc định | Project-specific; không phải database CLI chung |
+| `thefuck` | Chỉ workstation, không cài production | Tiện dev/local nhưng không cần trên server |
+| `rustscan` | Hạ xuống P3 | Nhanh nhưng dễ trigger IDS/firewall; dùng `nmap` trên production |
+| `kops` | Hạ xuống P3 | Chỉ relevant nếu self-managed K8s trên AWS; hầu hết nên dùng EKS |
+| `zellij` | Giữ P2 local only | Production vẫn nên ưu tiên `tmux` (audit trail, ổn định, universal) |
+| `lazydocker` | Giữ P2 local only | Production ưu tiên CLI chuẩn để audit được |
+| AI CLI (claude, aichat) | Không cài bastion/production | Rủi ro lộ kubeconfig/secret qua API request |
+| `nerdctl > docker` ❌ | Sửa thành `docker / nerdctl` | docker vẫn là chuẩn phổ biến nhất; nerdctl chỉ khi containerd không có dockerd |
+| `yq > jq` ❌ | Sửa thành `jq + yq` | JSON và YAML đều quan trọng, không thay thế nhau |
+| `sops > age` ❌ | Sửa thành `sops + age` | `age` là key backend; `sops` là encryption wrapper; dùng chung, không phải thay thế |
+| `k9s > kubectl` ❌ | Sửa thành `kubectl + k9s` | `kubectl` là core, `k9s` là TUI hỗ trợ; mất `kubectl` = mất script/CI |
+| `kubeconform > kube-linter` ❌ | Sửa thành `kubeconform + kube-linter` | Khác mục đích: schema validation vs best practice lint |
+| `bottom` làm default | Đổi thành `btop > htop > top` | `bottom` ít maintained; `btop` trực quan hơn; `top`/`htop` luôn có sẵn |
+| `kyverno` trước `VAP/CEL` | Đổi thứ tự: `VAP/CEL + kyverno` | Rule đơn giản dùng VAP/CEL native không tốn sidecar; Kyverno cho policy phức tạp |
+| `rke2 > kubeadm > kops` cho production | Thêm managed K8s làm ưu tiên đầu | Cloud production: EKS/GKE/AKS trước; on-prem: rke2 |
 
 ---
 
-# 25. Recommended Installation Order
+## 26. Recommended Installation Order
 
 | Phase | Mục tiêu | Tool |
 |---|---|---|
@@ -381,7 +424,7 @@
 
 ---
 
-# 26. Opinionated Production Stack
+## 27. Opinionated Production Stack
 
 | Layer | Recommended Stack |
 |---|---|
@@ -404,7 +447,7 @@
 
 ---
 
-# 27. Top 35 Tools For Production DevOps
+## 28. Top 35 Tools For Production DevOps
 
 | Rank | Tool | Nhóm | Vì sao ưu tiên |
 |---:|---|---|---|
@@ -446,7 +489,7 @@
 
 ---
 
-# 28. Recommended CI Security Gates
+## 29. Recommended CI Security Gates
 
 | Stage | Ưu tiên lựa chọn | Gate |
 |---|---|---|
@@ -466,7 +509,7 @@
 
 ---
 
-# 29. Production Core YAML
+## 30. Production Core YAML
 
 ```yaml
 production_core:
@@ -609,7 +652,7 @@ production_core:
 
 ---
 
-# 30. Kết luận
+## 31. Kết luận
 
 Bản toolkit này chuyển trọng tâm từ:
 
