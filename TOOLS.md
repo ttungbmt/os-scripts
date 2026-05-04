@@ -1,4 +1,4 @@
-# 🚀 Modern Production DevOps Platform Toolkit v3
+# Modern Production DevOps Platform Toolkit
 
 > Bộ công cụ hiện đại cho DevOps, SysAdmin, Platform Engineering, Kubernetes Operations, GitOps, DevSecOps, Air-gap và Production Troubleshooting.
 >
@@ -6,7 +6,41 @@
 
 ---
 
-## 1. Mục tiêu thiết kế
+## 1. Tools quản lý bởi `gt` CLI
+
+25 tool được cài đặt/gỡ cài đặt/kiểm tra phiên bản bằng `gt install <tool>` / `gt uninstall <tool>` / `gt outdated`:
+
+| Tool | Nhóm | Lệnh `gt` |
+|---|---|---|
+| `kubectl` | Kubernetes CLI | ✓ |
+| `k9s` | Kubernetes TUI | ✓ |
+| `kustomize` | K8s overlay/patch | ✓ |
+| `krew` | kubectl plugin manager | ✓ |
+| `kubent` | Deprecated API checker | ✓ |
+| `kubens` | Namespace switcher | ✓ |
+| `kubecolor` | kubectl color output | ✓ |
+| `kyverno` | Policy-as-code | ✓ |
+| `kube-linter` | Manifest best practices | ✓ |
+| `popeye` | Cluster health audit | ✓ |
+| `kubeseal` | Sealed Secrets | ✓ |
+| `kubeconform` | Manifest schema validation | ✓ |
+| `conftest` | Policy testing (OPA) | ✓ |
+| `argocd` | GitOps CD | ✓ |
+| `velero` | K8s backup/restore | ✓ |
+| `sops` | Git secret encryption | ✓ |
+| `age` | Encryption key backend | ✓ |
+| `trivy` | Vulnerability scanner | ✓ |
+| `vault` | Secrets management | ✓ |
+| `direnv` | Per-project env loader | ✓ |
+| `btop` | System monitor TUI | ✓ |
+| `fastfetch` | System info display | ✓ |
+| `zsh` | Shell (via package manager) | ✓ |
+| `antidote` | Zsh plugin manager | ✓ |
+| `thefuck` | CLI auto-correct | ✓ |
+
+---
+
+## 2. Mục tiêu thiết kế
 
 | Nguyên tắc | Ý nghĩa |
 |---|---|
@@ -22,7 +56,7 @@
 
 ---
 
-## 2. Quy ước ưu tiên
+## 3. Quy ước ưu tiên
 
 | Mức | Ý nghĩa | Cách hiểu |
 |---|---|---|
@@ -38,7 +72,7 @@
 
 ---
 
-## 3. Quy ước đọc cột `Ưu tiên lựa chọn`
+## 4. Quy ước đọc cột `Ưu tiên lựa chọn`
 
 | Cú pháp | Ý nghĩa | Ví dụ |
 |---|---|---|
@@ -50,7 +84,7 @@
 
 ---
 
-# 4. Executive Summary
+## 5. Executive Summary
 
 | Nhóm năng lực | Ưu tiên lựa chọn | Mức | Lý do |
 |---|---|---:|---|
@@ -71,7 +105,7 @@
 
 ---
 
-# 5. Profile Matrix
+## 6. Profile Matrix
 
 | Profile | Mục tiêu | Tool nên có |
 |---|---|---|
@@ -85,7 +119,7 @@
 
 ---
 
-# 6. Best Default Choices — Các nhóm dễ nhầm
+## 7. Best Default Choices — Các nhóm dễ nhầm
 
 | Nhóm | Best default | Không nên hiểu nhầm |
 |---|---|---|
@@ -102,7 +136,7 @@
 
 ---
 
-# 7. Terminal, Shell & Productivity
+## 8. Terminal, Shell & Productivity
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
@@ -118,7 +152,7 @@
 
 ---
 
-# 8. Modern Core CLI
+## 9. Modern Core CLI
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Thay thế cho | Quy tắc chọn |
 |---|---|---:|---|---|
@@ -136,7 +170,7 @@
 
 ---
 
-# 9. Text Processing & Automation
+## 10. Text Processing & Automation
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
@@ -149,7 +183,7 @@
 
 ---
 
-# 10. Editor & Developer CLI
+## 11. Editor & Developer CLI
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
@@ -160,7 +194,7 @@
 
 ---
 
-# 11. Git & CI/CD Workflow
+## 12. Git & CI/CD Workflow
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
@@ -175,7 +209,7 @@
 
 ---
 
-# 12. Container, Registry & OCI
+## 13. Container, Registry & OCI
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
@@ -190,7 +224,7 @@
 
 ---
 
-# 13. Kubernetes Daily Operations
+## 14. Kubernetes Daily Operations
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
@@ -205,7 +239,7 @@
 
 ---
 
-# 14. Kubernetes Production Control
+## 15. Kubernetes Production Control
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
@@ -223,7 +257,7 @@
 
 ---
 
-# 15. Local Kubernetes & Cluster Lifecycle
+## 16. Local Kubernetes & Cluster Lifecycle
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
@@ -235,7 +269,7 @@
 
 ---
 
-# 16. Infrastructure as Code & Config Management
+## 17. Infrastructure as Code & Config Management
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
@@ -247,7 +281,7 @@
 
 ---
 
-# 17. Secrets Management
+## 18. Secrets Management
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
@@ -259,7 +293,7 @@
 
 ---
 
-# 18. Security & Software Supply Chain
+## 19. Security & Software Supply Chain
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
@@ -276,7 +310,7 @@
 
 ---
 
-# 19. Backup, Restore & Disaster Recovery
+## 20. Backup, Restore & Disaster Recovery
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
@@ -290,7 +324,7 @@
 
 ---
 
-# 20. Networking, API & Observability CLI
+## 21. Networking, API & Observability CLI
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
@@ -307,7 +341,7 @@
 
 ---
 
-# 21. Database, Queue & Data CLI
+## 22. Database, Queue & Data CLI
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
@@ -321,7 +355,7 @@
 
 ---
 
-# 22. Remote Access & Transfer
+## 23. Remote Access & Transfer
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
@@ -335,7 +369,7 @@
 
 ---
 
-# 23. AI CLI & Local LLM
+## 24. AI CLI & Local LLM
 
 | Nhóm | Ưu tiên lựa chọn | Mức | Profile | Quy tắc chọn |
 |---|---|---:|---|---|
@@ -346,7 +380,7 @@
 
 ---
 
-# 24. Tool nên loại khỏi core hoặc hạ mức ưu tiên
+## 25. Tool nên loại khỏi core hoặc hạ mức ưu tiên
 
 | Tool | Điều chỉnh | Lý do |
 |---|---|---|
@@ -365,7 +399,7 @@
 
 ---
 
-# 25. Recommended Installation Order
+## 26. Recommended Installation Order
 
 | Phase | Mục tiêu | Tool |
 |---|---|---|
@@ -381,7 +415,7 @@
 
 ---
 
-# 26. Opinionated Production Stack
+## 27. Opinionated Production Stack
 
 | Layer | Recommended Stack |
 |---|---|
@@ -404,7 +438,7 @@
 
 ---
 
-# 27. Top 35 Tools For Production DevOps
+## 28. Top 35 Tools For Production DevOps
 
 | Rank | Tool | Nhóm | Vì sao ưu tiên |
 |---:|---|---|---|
@@ -446,7 +480,7 @@
 
 ---
 
-# 28. Recommended CI Security Gates
+## 29. Recommended CI Security Gates
 
 | Stage | Ưu tiên lựa chọn | Gate |
 |---|---|---|
@@ -466,7 +500,7 @@
 
 ---
 
-# 29. Production Core YAML
+## 30. Production Core YAML
 
 ```yaml
 production_core:
@@ -609,7 +643,7 @@ production_core:
 
 ---
 
-# 30. Kết luận
+## 31. Kết luận
 
 Bản toolkit này chuyển trọng tâm từ:
 
