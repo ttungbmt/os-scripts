@@ -65,6 +65,14 @@ gt_usage() {
     printf "    Override curl download timeout in seconds (default 30)\n"
     echo
 
+    # :command.usage_examples
+    printf "%s\n" "Examples:"
+    printf "  gt install kubectl\n"
+    printf "  gt install kubectl --version v1.30.0\n"
+    printf "  gt install multi kubectl k9s argocd\n"
+    printf "  gt outdated --all\n"
+    echo
+
     # :command.footer
     printf "Repo:    https://github.com/ttungbmt/os-scripts\nRoadmap: see ROADMAPS.md\n\n"
     echo
@@ -196,6 +204,13 @@ gt_install_multi_usage() {
     # :argument.usage
     printf "  %s\n" "TOOLS..."
     printf "    List of tools to install (e.g., kustomize k9s or kustomize,k9s)\n"
+    echo
+
+    # :command.usage_examples
+    printf "%s\n" "Examples:"
+    printf "  gt install multi kubectl k9s argocd\n"
+    printf "  gt install multi kubectl,k9s,argocd\n"
+    printf "  gt install multi --force kubectl k9s\n"
     echo
 
   fi
@@ -4047,6 +4062,12 @@ gt_setup_multi_usage() {
     printf "    List of tools to configure (e.g., zoxide mcfly fzf)\n"
     echo
 
+    # :command.usage_examples
+    printf "%s\n" "Examples:"
+    printf "  gt setup multi zoxide mcfly fzf\n"
+    printf "  gt setup multi --skip-shell zoxide mcfly\n"
+    echo
+
   fi
 }
 
@@ -4085,6 +4106,12 @@ gt_setup_antidote_usage() {
     # :command.usage_fixed_flags
     printf "  %s\n" "--help, -h"
     printf "    Show this help\n"
+    echo
+
+    # :command.usage_examples
+    printf "%s\n" "Examples:"
+    printf "  gt setup antidote\n"
+    printf "  gt setup antidote --skip-zshrc\n"
     echo
 
   fi
@@ -4130,6 +4157,12 @@ gt_setup_starship_usage() {
     # :command.usage_fixed_flags
     printf "  %s\n" "--help, -h"
     printf "    Show this help\n"
+    echo
+
+    # :command.usage_examples
+    printf "%s\n" "Examples:"
+    printf "  gt setup starship --preset tokyo-night\n"
+    printf "  gt setup starship --preset gruvbox-rainbow --force-config\n"
     echo
 
   fi

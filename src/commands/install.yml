@@ -3,6 +3,10 @@ help: Install tools and components
 commands:
 - name: multi
   help: Install multiple tools at once (comma or space separated)
+  examples:
+  - gt install multi kubectl k9s argocd
+  - gt install multi kubectl,k9s,argocd
+  - gt install multi --force kubectl k9s
   args:
   - name: tools
     help: List of tools to install (e.g., kustomize k9s or kustomize,k9s)

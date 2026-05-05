@@ -16,6 +16,12 @@ footer: |
   Repo:    https://github.com/ttungbmt/os-scripts
   Roadmap: see ROADMAPS.md
 
+examples:
+- gt install kubectl
+- gt install kubectl --version v1.30.0
+- gt install multi kubectl k9s argocd
+- gt outdated --all
+
 commands:
 - import: src/commands/install.yml
 - import: src/commands/uninstall.yml
