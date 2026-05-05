@@ -44,7 +44,7 @@ echo "$(bold "▸ Step 3/3:") Seeding $(cyan "$zsh_plugins_file")..."
 if [ -n "$skip_plugins" ]; then
   echo "$(yellow "⚠") Skipping plugin seeding (--skip-plugins)"
 else
-  seed_file "$zsh_plugins_file" "$(template_antidote_plugins)"
+  seed_file "$zsh_plugins_file" "$(template_antidote_plugins "$(pwd)")"
 fi
 
 # ===================================================================
@@ -54,11 +54,7 @@ echo ""
 echo "$(green_bold "━━━ Configuration complete ━━━")"
 echo ""
 echo "Next steps:"
-echo "  1. Configure prompt + tool integrations (per-tool, idempotent):"
-echo "       $(bold "./gt setup starship")"
-echo "       $(bold "./gt setup zoxide")    $(bold "./gt setup mcfly")    $(bold "./gt setup fzf")"
-echo "       $(bold "./gt setup direnv")    $(bold "./gt setup thefuck")"
-echo "  2. Start a new zsh session:  $(bold "exec zsh")"
-echo "  3. Edit plugins:             $(bold "vim $zsh_plugins_file")"
-echo "  4. Update plugins:           $(bold "antidote update")"
-echo "  5. Docs:                     $(bold "docs/antidote-deployment.md")"
+echo "  1. Start a new zsh session:  $(bold "exec zsh")"
+echo "  2. Edit plugins:             $(bold "vim $zsh_plugins_file")"
+echo "  3. Update plugins:           $(bold "antidote update")"
+echo "  4. Docs:                     $(bold "docs/antidote-deployment.md")"

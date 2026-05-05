@@ -57,7 +57,8 @@ EOF
 #   6. fast-syntax-highlighting BEFORE zsh-history-substring-search
 #   7. getantidote/use-omz required for OMZ subplugins that depend on OMZ libs
 template_antidote_plugins() {
-  cat <<'EOF'
+  local gt_repo="$1"
+  cat <<EOF
 # ─── Completions library (fpath only — must precede any compinit) ───
 zsh-users/zsh-completions path:src kind:fpath
 
@@ -103,5 +104,13 @@ zdharma-continuum/fast-syntax-highlighting
 
 # ─── History search (MUST be the last widget-binding plugin) ───
 zsh-users/zsh-history-substring-search
+
+# ─── OS Scripts Local Integrations (Cached Shell Init) ───
+$gt_repo/src/zsh-plugins/zoxide
+$gt_repo/src/zsh-plugins/mcfly
+$gt_repo/src/zsh-plugins/fzf
+$gt_repo/src/zsh-plugins/direnv
+$gt_repo/src/zsh-plugins/thefuck
+$gt_repo/src/zsh-plugins/starship
 EOF
 }

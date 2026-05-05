@@ -1,27 +1,7 @@
 ## Starship setup templates
 ## This file is located in 'src/lib/templates/starship.sh'
 
-# Returns the bootstrap block to be injected into ~/.zshrc
-template_starship_zshrc() {
-  cat <<'EOF'
-# --- starship init (managed by os-scripts) ---
-if (( $+commands[starship] )); then
-  eval "$(starship init zsh)"
-fi
-# --- end starship init ---
-EOF
-}
 
-# Returns the bootstrap block to be injected into ~/.bashrc
-template_starship_bashrc() {
-  cat <<'EOF'
-# --- starship init (managed by os-scripts) ---
-if command -v starship >/dev/null 2>&1; then
-  eval "$(starship init bash)"
-fi
-# --- end starship init ---
-EOF
-}
 
 # Returns a curated default ~/.config/starship.toml tuned for devops workflows.
 # Requires a Nerd Font for glyphs. Disable individual modules by setting

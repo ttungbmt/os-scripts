@@ -10,5 +10,9 @@ kustomize_fetch_local_version() {
 }
 
 kustomize_fetch_remote_version() {
-  curl -s "https://api.github.com/repos/${KUSTOMIZE_GITHUB_REPO}/releases/latest" | grep '"tag_name":' | sed -E 's/.*"kustomize\/v?([^"]+)".*/\1/'
+  local api_opts=(-s "https://api.github.com/repos/${KUSTOMIZE_GITHUB_REPO}/releases/latest")
+  if [[ -n "$GITHUB_TOKEN" ]]; then
+    api_opts=(-s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/repos/${KUSTOMIZE_GITHUB_REPO}/releases/latest")
+  fi
+  curl "${api_opts[@]}" | grep '"tag_name":' | sed -E 's/.*"kustomize\/v?([^"]+)".*/\1/'
 }

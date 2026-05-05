@@ -62,7 +62,11 @@ get_remote_version() {
     # Use indirect reference to get the repo value
     local repo_val="${!repo_var}"
     if [ -n "$repo_val" ]; then
-      ver=$(curl -s "https://api.github.com/repos/${repo_val}/releases/latest" | grep '"tag_name":' | sed -E 's/.*"v?([^"]+)".*/\1/')
+      local api_opts=(-s "https://api.github.com/repos/${repo_val}/releases/latest")
+      if [[ -n "$GITHUB_TOKEN" ]]; then
+        api_opts=(-s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/repos/${repo_val}/releases/latest")
+      fi
+      ver=$(curl "${api_opts[@]}" | grep '"tag_name":' | sed -E 's/.*"v?([^"]+)".*/\1/')
     fi
   fi
 

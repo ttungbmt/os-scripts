@@ -686,47 +686,15 @@ commands:
       help: Skip adding antidote bootstrap to ~/.zshrc
 
   - name: starship
-    help: Configure starship prompt (~/.config/starship.toml + shell init)
+    help: Configure starship prompt (~/.config/starship.toml)
     flags:
     - long: --preset
       arg: name
       help: 'Apply a built-in starship preset (e.g. tokyo-night, pure-preset, gruvbox-rainbow). Run `starship preset list` to see all.'
     - long: --skip-config
       help: Skip seeding ~/.config/starship.toml
-    - long: --skip-shell
-      help: Skip injecting starship init into shell rc files
     - long: --force-config
       help: Overwrite ~/.config/starship.toml even if it already has content
-
-  - name: zoxide
-    help: Configure zoxide (smarter cd) — inject init into ~/.zshrc and ~/.bashrc
-    flags:
-    - long: --skip-shell
-      help: Skip injecting zoxide init into shell rc files
-
-  - name: mcfly
-    help: Configure mcfly (smart shell history) — inject init into ~/.zshrc and ~/.bashrc
-    flags:
-    - long: --skip-shell
-      help: Skip injecting mcfly init into shell rc files
-
-  - name: fzf
-    help: Configure fzf shell integration (Ctrl-R / Ctrl-T / Alt-C) for zsh + bash
-    flags:
-    - long: --skip-shell
-      help: Skip injecting fzf init into shell rc files
-
-  - name: direnv
-    help: Configure direnv shell hook for zsh + bash
-    flags:
-    - long: --skip-shell
-      help: Skip injecting direnv hook into shell rc files
-
-  - name: thefuck
-    help: Configure thefuck alias (`fuck` to fix the last command) for zsh + bash
-    flags:
-    - long: --skip-shell
-      help: Skip injecting thefuck alias into shell rc files
 
 - name: outdated
   help: Check for outdated tools

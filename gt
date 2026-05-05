@@ -3693,12 +3693,7 @@ gt_setup_usage() {
   printf "%s\n" "Commands:"
   printf "  %s   Configure multiple tools at once (comma or space separated)\n" "multi   "
   printf "  %s   Configure antidote Zsh plugin manager (~/.zshrc and ~/.zsh_plugins.txt)\n" "antidote"
-  printf "  %s   Configure starship prompt (~/.config/starship.toml + shell init)\n" "starship"
-  printf "  %s   Configure zoxide (smarter cd) — inject init into ~/.zshrc and ~/.bashrc\n" "zoxide  "
-  printf "  %s   Configure mcfly (smart shell history) — inject init into ~/.zshrc and ~/.bashrc\n" "mcfly   "
-  printf "  %s   Configure fzf shell integration (Ctrl-R / Ctrl-T / Alt-C) for zsh + bash\n" "fzf     "
-  printf "  %s   Configure direnv shell hook for zsh + bash\n" "direnv  "
-  printf "  %s   Configure thefuck alias (\`fuck\` to fix the last command) for zsh + bash\n" "thefuck "
+  printf "  %s   Configure starship prompt (~/.config/starship.toml)\n" "starship"
   echo
 
   # :command.long_usage
@@ -3799,11 +3794,11 @@ gt_setup_antidote_usage() {
 # :command.usage
 gt_setup_starship_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt setup starship - Configure starship prompt (~/.config/starship.toml + shell init)\n"
+    printf "gt setup starship - Configure starship prompt (~/.config/starship.toml)\n"
     echo
 
   else
-    printf "gt setup starship - Configure starship prompt (~/.config/starship.toml + shell init)\n"
+    printf "gt setup starship - Configure starship prompt (~/.config/starship.toml)\n"
     echo
 
   fi
@@ -3829,188 +3824,8 @@ gt_setup_starship_usage() {
     echo
 
     # :flag.usage
-    printf "  %s\n" "--skip-shell"
-    printf "    Skip injecting starship init into shell rc files\n"
-    echo
-
-    # :flag.usage
     printf "  %s\n" "--force-config"
     printf "    Overwrite ~/.config/starship.toml even if it already has content\n"
-    echo
-
-    # :command.usage_fixed_flags
-    printf "  %s\n" "--help, -h"
-    printf "    Show this help\n"
-    echo
-
-  fi
-}
-
-# :command.usage
-gt_setup_zoxide_usage() {
-  if [[ -n $long_usage ]]; then
-    printf "gt setup zoxide - Configure zoxide (smarter cd) — inject init into ~/.zshrc and ~/.bashrc\n"
-    echo
-
-  else
-    printf "gt setup zoxide - Configure zoxide (smarter cd) — inject init into ~/.zshrc and ~/.bashrc\n"
-    echo
-
-  fi
-
-  printf "%s\n" "Usage:"
-  printf "  gt setup zoxide [OPTIONS]\n"
-  printf "  gt setup zoxide --help | -h\n"
-  echo
-
-  # :command.long_usage
-  if [[ -n $long_usage ]]; then
-    printf "%s\n" "Options:"
-
-    # :command.usage_flags
-    # :flag.usage
-    printf "  %s\n" "--skip-shell"
-    printf "    Skip injecting zoxide init into shell rc files\n"
-    echo
-
-    # :command.usage_fixed_flags
-    printf "  %s\n" "--help, -h"
-    printf "    Show this help\n"
-    echo
-
-  fi
-}
-
-# :command.usage
-gt_setup_mcfly_usage() {
-  if [[ -n $long_usage ]]; then
-    printf "gt setup mcfly - Configure mcfly (smart shell history) — inject init into ~/.zshrc and ~/.bashrc\n"
-    echo
-
-  else
-    printf "gt setup mcfly - Configure mcfly (smart shell history) — inject init into ~/.zshrc and ~/.bashrc\n"
-    echo
-
-  fi
-
-  printf "%s\n" "Usage:"
-  printf "  gt setup mcfly [OPTIONS]\n"
-  printf "  gt setup mcfly --help | -h\n"
-  echo
-
-  # :command.long_usage
-  if [[ -n $long_usage ]]; then
-    printf "%s\n" "Options:"
-
-    # :command.usage_flags
-    # :flag.usage
-    printf "  %s\n" "--skip-shell"
-    printf "    Skip injecting mcfly init into shell rc files\n"
-    echo
-
-    # :command.usage_fixed_flags
-    printf "  %s\n" "--help, -h"
-    printf "    Show this help\n"
-    echo
-
-  fi
-}
-
-# :command.usage
-gt_setup_fzf_usage() {
-  if [[ -n $long_usage ]]; then
-    printf "gt setup fzf - Configure fzf shell integration (Ctrl-R / Ctrl-T / Alt-C) for zsh + bash\n"
-    echo
-
-  else
-    printf "gt setup fzf - Configure fzf shell integration (Ctrl-R / Ctrl-T / Alt-C) for zsh + bash\n"
-    echo
-
-  fi
-
-  printf "%s\n" "Usage:"
-  printf "  gt setup fzf [OPTIONS]\n"
-  printf "  gt setup fzf --help | -h\n"
-  echo
-
-  # :command.long_usage
-  if [[ -n $long_usage ]]; then
-    printf "%s\n" "Options:"
-
-    # :command.usage_flags
-    # :flag.usage
-    printf "  %s\n" "--skip-shell"
-    printf "    Skip injecting fzf init into shell rc files\n"
-    echo
-
-    # :command.usage_fixed_flags
-    printf "  %s\n" "--help, -h"
-    printf "    Show this help\n"
-    echo
-
-  fi
-}
-
-# :command.usage
-gt_setup_direnv_usage() {
-  if [[ -n $long_usage ]]; then
-    printf "gt setup direnv - Configure direnv shell hook for zsh + bash\n"
-    echo
-
-  else
-    printf "gt setup direnv - Configure direnv shell hook for zsh + bash\n"
-    echo
-
-  fi
-
-  printf "%s\n" "Usage:"
-  printf "  gt setup direnv [OPTIONS]\n"
-  printf "  gt setup direnv --help | -h\n"
-  echo
-
-  # :command.long_usage
-  if [[ -n $long_usage ]]; then
-    printf "%s\n" "Options:"
-
-    # :command.usage_flags
-    # :flag.usage
-    printf "  %s\n" "--skip-shell"
-    printf "    Skip injecting direnv hook into shell rc files\n"
-    echo
-
-    # :command.usage_fixed_flags
-    printf "  %s\n" "--help, -h"
-    printf "    Show this help\n"
-    echo
-
-  fi
-}
-
-# :command.usage
-gt_setup_thefuck_usage() {
-  if [[ -n $long_usage ]]; then
-    printf "gt setup thefuck - Configure thefuck alias (\`fuck\` to fix the last command) for zsh + bash\n"
-    echo
-
-  else
-    printf "gt setup thefuck - Configure thefuck alias (\`fuck\` to fix the last command) for zsh + bash\n"
-    echo
-
-  fi
-
-  printf "%s\n" "Usage:"
-  printf "  gt setup thefuck [OPTIONS]\n"
-  printf "  gt setup thefuck --help | -h\n"
-  echo
-
-  # :command.long_usage
-  if [[ -n $long_usage ]]; then
-    printf "%s\n" "Options:"
-
-    # :command.usage_flags
-    # :flag.usage
-    printf "  %s\n" "--skip-shell"
-    printf "    Skip injecting thefuck alias into shell rc files\n"
     echo
 
     # :command.usage_fixed_flags
@@ -4691,6 +4506,11 @@ eza_fetch_local_version() {
   "$target" --version 2>/dev/null | head -1 | awk '{print $2}'
 }
 
+eza_fetch_local_version() {
+  local target="$1"
+  "$target" --version 2>/dev/null | awk 'NR==2 {print $1}'
+}
+
 # src/lib/registry/fastfetch.sh
 FASTFETCH_GITHUB_REPO="fastfetch-cli/fastfetch"
 FASTFETCH_ARCHIVE_TYPE="tar.gz"
@@ -4859,7 +4679,11 @@ kustomize_fetch_local_version() {
 }
 
 kustomize_fetch_remote_version() {
-  curl -s "https://api.github.com/repos/${KUSTOMIZE_GITHUB_REPO}/releases/latest" | grep '"tag_name":' | sed -E 's/.*"kustomize\/v?([^"]+)".*/\1/'
+  local api_opts=(-s "https://api.github.com/repos/${KUSTOMIZE_GITHUB_REPO}/releases/latest")
+  if [[ -n "$GITHUB_TOKEN" ]]; then
+    api_opts=(-s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/repos/${KUSTOMIZE_GITHUB_REPO}/releases/latest")
+  fi
+  curl "${api_opts[@]}" | grep '"tag_name":' | sed -E 's/.*"kustomize\/v?([^"]+)".*/\1/'
 }
 
 # src/lib/registry/kyverno.sh
@@ -4939,6 +4763,11 @@ starship_fetch_local_version() {
   "$target" --version 2>/dev/null | awk '{print $2}'
 }
 
+starship_fetch_local_version() {
+  local target="$1"
+  "$target" --version 2>/dev/null | head -n1 | awk '{print $2}'
+}
+
 # src/lib/registry/thefuck.sh
 THEFUCK_INSTALL_TYPE="pip"
 THEFUCK_PIP_PKG="thefuck"
@@ -4976,14 +4805,24 @@ trino_fetch_local_version() {
 TRIVY_INSTALL_TYPE="github_release"
 TRIVY_GITHUB_REPO="aquasecurity/trivy"
 TRIVY_ARCHIVE_TYPE="tar.gz"
-TRIVY_ASSET_PATTERN="trivy_\${VERSION}_\${DETECT_OS}_\${DETECT_ARCH}.tar.gz"
+TRIVY_ASSET_PATTERN="trivy_\${VERSION}_\${DETECT_OS}-\${DETECT_ARCH}.tar.gz"
 TRIVY_OS_MAP_linux="Linux"
 TRIVY_OS_MAP_darwin="macOS"
 TRIVY_ARCH_MAP_amd64="64bit"
 TRIVY_ARCH_MAP_arm64="ARM64"
 
+trivy_fetch_local_version() {
+  local target="$1"
+  "$target" --version 2>/dev/null | head -n1 | awk '{print $2}'
+}
+
 # src/lib/registry/uv.sh
 UV_GITHUB_REPO="astral-sh/uv"
+UV_ARCHIVE_TYPE="tar.gz"
+UV_ASSET_PATTERN="uv-\${DETECT_ARCH}-unknown-\${DETECT_OS}-gnu.tar.gz"
+UV_ARCH_MAP_amd64="x86_64"
+UV_ARCH_MAP_arm64="aarch64"
+UV_BIN_PATH="uv-\${DETECT_ARCH}-unknown-\${DETECT_OS}-gnu/uv"
 
 uv_fetch_local_version() {
   local target="$1"
@@ -5163,7 +5002,8 @@ EOF
 #   6. fast-syntax-highlighting BEFORE zsh-history-substring-search
 #   7. getantidote/use-omz required for OMZ subplugins that depend on OMZ libs
 template_antidote_plugins() {
-  cat <<'EOF'
+  local gt_repo="$1"
+  cat <<EOF
 # ─── Completions library (fpath only — must precede any compinit) ───
 zsh-users/zsh-completions path:src kind:fpath
 
@@ -5209,149 +5049,18 @@ zdharma-continuum/fast-syntax-highlighting
 
 # ─── History search (MUST be the last widget-binding plugin) ───
 zsh-users/zsh-history-substring-search
-EOF
-}
 
-# src/lib/templates/shell_tools.sh
-
-# ─────────────────────────────────────────────────────────── zoxide
-template_zoxide_zshrc() {
-  cat <<'EOF'
-# --- zoxide init (managed by os-scripts) ---
-if (( $+commands[zoxide] )); then
-  eval "$(zoxide init zsh)"
-fi
-# --- end zoxide init ---
-EOF
-}
-
-template_zoxide_bashrc() {
-  cat <<'EOF'
-# --- zoxide init (managed by os-scripts) ---
-if command -v zoxide >/dev/null 2>&1; then
-  eval "$(zoxide init bash)"
-fi
-# --- end zoxide init ---
-EOF
-}
-
-# ─────────────────────────────────────────────────────────── mcfly
-template_mcfly_zshrc() {
-  cat <<'EOF'
-# --- mcfly init (managed by os-scripts) ---
-if (( $+commands[mcfly] )); then
-  eval "$(mcfly init zsh)"
-fi
-# --- end mcfly init ---
-EOF
-}
-
-template_mcfly_bashrc() {
-  cat <<'EOF'
-# --- mcfly init (managed by os-scripts) ---
-if command -v mcfly >/dev/null 2>&1; then
-  eval "$(mcfly init bash)"
-fi
-# --- end mcfly init ---
-EOF
-}
-
-# ─────────────────────────────────────────────────────────── direnv
-template_direnv_zshrc() {
-  cat <<'EOF'
-# --- direnv hook (managed by os-scripts) ---
-if (( $+commands[direnv] )); then
-  eval "$(direnv hook zsh)"
-fi
-# --- end direnv hook ---
-EOF
-}
-
-template_direnv_bashrc() {
-  cat <<'EOF'
-# --- direnv hook (managed by os-scripts) ---
-if command -v direnv >/dev/null 2>&1; then
-  eval "$(direnv hook bash)"
-fi
-# --- end direnv hook ---
-EOF
-}
-
-# ─────────────────────────────────────────────────────────── thefuck
-template_thefuck_zshrc() {
-  cat <<'EOF'
-# --- thefuck alias (managed by os-scripts) ---
-if (( $+commands[thefuck] )); then
-  eval "$(thefuck --alias)"
-fi
-# --- end thefuck alias ---
-EOF
-}
-
-template_thefuck_bashrc() {
-  cat <<'EOF'
-# --- thefuck alias (managed by os-scripts) ---
-if command -v thefuck >/dev/null 2>&1; then
-  eval "$(thefuck --alias)"
-fi
-# --- end thefuck alias ---
-EOF
-}
-
-# ─────────────────────────────────────────────────────────── fzf
-# fzf >= v0.48 ships built-in shell integration via `fzf --zsh|--bash`.
-# Older versions write ~/.fzf.{zsh,bash} during install — fall back to those.
-template_fzf_zshrc() {
-  cat <<'EOF'
-# --- fzf init (managed by os-scripts) ---
-if (( $+commands[fzf] )); then
-  if fzf --zsh >/dev/null 2>&1; then
-    eval "$(fzf --zsh)"
-  elif [[ -f ~/.fzf.zsh ]]; then
-    source ~/.fzf.zsh
-  fi
-fi
-# --- end fzf init ---
-EOF
-}
-
-template_fzf_bashrc() {
-  cat <<'EOF'
-# --- fzf init (managed by os-scripts) ---
-if command -v fzf >/dev/null 2>&1; then
-  if fzf --bash >/dev/null 2>&1; then
-    eval "$(fzf --bash)"
-  elif [ -f ~/.fzf.bash ]; then
-    source ~/.fzf.bash
-  fi
-fi
-# --- end fzf init ---
+# ─── OS Scripts Local Integrations (Cached Shell Init) ───
+$gt_repo/src/zsh-plugins/zoxide
+$gt_repo/src/zsh-plugins/mcfly
+$gt_repo/src/zsh-plugins/fzf
+$gt_repo/src/zsh-plugins/direnv
+$gt_repo/src/zsh-plugins/thefuck
+$gt_repo/src/zsh-plugins/starship
 EOF
 }
 
 # src/lib/templates/starship.sh
-
-# Returns the bootstrap block to be injected into ~/.zshrc
-template_starship_zshrc() {
-  cat <<'EOF'
-# --- starship init (managed by os-scripts) ---
-if (( $+commands[starship] )); then
-  eval "$(starship init zsh)"
-fi
-# --- end starship init ---
-EOF
-}
-
-# Returns the bootstrap block to be injected into ~/.bashrc
-template_starship_bashrc() {
-  cat <<'EOF'
-# --- starship init (managed by os-scripts) ---
-if command -v starship >/dev/null 2>&1; then
-  eval "$(starship init bash)"
-fi
-# --- end starship init ---
-EOF
-}
 
 # Returns a curated default ~/.config/starship.toml tuned for devops workflows.
 # Requires a Nerd Font for glyphs. Disable individual modules by setting
@@ -5580,7 +5289,11 @@ get_remote_version() {
     # Use indirect reference to get the repo value
     local repo_val="${!repo_var}"
     if [ -n "$repo_val" ]; then
-      ver=$(curl -s "https://api.github.com/repos/${repo_val}/releases/latest" | grep '"tag_name":' | sed -E 's/.*"v?([^"]+)".*/\1/')
+      local api_opts=(-s "https://api.github.com/repos/${repo_val}/releases/latest")
+      if [[ -n "$GITHUB_TOKEN" ]]; then
+        api_opts=(-s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/repos/${repo_val}/releases/latest")
+      fi
+      ver=$(curl "${api_opts[@]}" | grep '"tag_name":' | sed -E 's/.*"v?([^"]+)".*/\1/')
     fi
   fi
 
@@ -7453,7 +7166,7 @@ gt_setup_antidote_command() {
   if [ -n "$skip_plugins" ]; then
     echo "$(yellow "⚠") Skipping plugin seeding (--skip-plugins)"
   else
-    seed_file "$zsh_plugins_file" "$(template_antidote_plugins)"
+    seed_file "$zsh_plugins_file" "$(template_antidote_plugins "$(pwd)")"
   fi
 
   # ===================================================================
@@ -7463,14 +7176,10 @@ gt_setup_antidote_command() {
   echo "$(green_bold "━━━ Configuration complete ━━━")"
   echo ""
   echo "Next steps:"
-  echo "  1. Configure prompt + tool integrations (per-tool, idempotent):"
-  echo "       $(bold "./gt setup starship")"
-  echo "       $(bold "./gt setup zoxide")    $(bold "./gt setup mcfly")    $(bold "./gt setup fzf")"
-  echo "       $(bold "./gt setup direnv")    $(bold "./gt setup thefuck")"
-  echo "  2. Start a new zsh session:  $(bold "exec zsh")"
-  echo "  3. Edit plugins:             $(bold "vim $zsh_plugins_file")"
-  echo "  4. Update plugins:           $(bold "antidote update")"
-  echo "  5. Docs:                     $(bold "docs/antidote-deployment.md")"
+  echo "  1. Start a new zsh session:  $(bold "exec zsh")"
+  echo "  2. Edit plugins:             $(bold "vim $zsh_plugins_file")"
+  echo "  3. Update plugins:           $(bold "antidote update")"
+  echo "  4. Docs:                     $(bold "docs/antidote-deployment.md")"
 
 }
 
@@ -7479,15 +7188,10 @@ gt_setup_starship_command() {
   # src/commands/setup/starship.sh
   preset=${args[--preset]}
   skip_config=${args[--skip-config]}
-  skip_shell=${args[--skip-shell]}
   force_config=${args[--force-config]}
 
   name="starship"
   config_file="${STARSHIP_CONFIG:-${XDG_CONFIG_HOME:-$HOME/.config}/starship.toml}"
-  zshrc="${ZDOTDIR:-$HOME}/.zshrc"
-  bashrc="$HOME/.bashrc"
-
-  STARSHIP_MARKER="# --- starship init (managed by os-scripts) ---"
 
   echo "Configuring $(cyan_bold "$name")..."
   echo ""
@@ -7495,7 +7199,7 @@ gt_setup_starship_command() {
   # ===================================================================
   # Step 1: Check starship installation
   # ===================================================================
-  echo "$(bold "▸ Step 1/3:") Checking starship installation..."
+  echo "$(bold "▸ Step 1/2:") Checking starship installation..."
 
   starship_bin=$(command -v starship 2>/dev/null || true)
   require_installed "starship" "$starship_bin"
@@ -7506,7 +7210,7 @@ gt_setup_starship_command() {
   # Step 2: Seed ~/.config/starship.toml
   # ===================================================================
   echo ""
-  echo "$(bold "▸ Step 2/3:") Seeding $(cyan "$config_file")..."
+  echo "$(bold "▸ Step 2/2:") Seeding $(cyan "$config_file")..."
 
   if [ -n "$skip_config" ]; then
     echo "$(yellow "⚠") Skipping config (--skip-config)"
@@ -7533,28 +7237,6 @@ gt_setup_starship_command() {
   fi
 
   # ===================================================================
-  # Step 3: Inject init line into shell rc files
-  # ===================================================================
-  echo ""
-  echo "$(bold "▸ Step 3/3:") Configuring shell init..."
-
-  if [ -n "$skip_shell" ]; then
-    echo "$(yellow "⚠") Skipping shell init (--skip-shell)"
-  else
-    if [ -f "$zshrc" ]; then
-      inject_config_block "$zshrc" "$STARSHIP_MARKER" "$(template_starship_zshrc)"
-    else
-      echo "$(yellow "⚠") $zshrc does not exist — skipping zsh"
-    fi
-
-    if [ -f "$bashrc" ]; then
-      inject_config_block "$bashrc" "$STARSHIP_MARKER" "$(template_starship_bashrc)"
-    else
-      echo "$(yellow "⚠") $bashrc does not exist — skipping bash"
-    fi
-  fi
-
-  # ===================================================================
   # Summary
   # ===================================================================
   echo ""
@@ -7570,163 +7252,24 @@ gt_setup_starship_command() {
 }
 
 # :command.function
-gt_setup_zoxide_command() {
-  # src/commands/setup/zoxide.sh
-  skip_shell=${args[--skip-shell]}
-
-  name="zoxide"
-  echo "Configuring $(cyan_bold "$name")..."
-  echo ""
-
-  require_installed "$name" "$(command -v "$name" 2>/dev/null)"
-  echo "$(green_bold "✓") $name found at $(command -v "$name")"
-
-  if [ -n "$skip_shell" ]; then
-    echo "$(yellow "⚠") Skipping shell init (--skip-shell)"
-  else
-    echo ""
-    setup_shell_tool "$name" \
-      "# --- zoxide init (managed by os-scripts) ---" \
-      "$(template_zoxide_zshrc)" \
-      "$(template_zoxide_bashrc)"
-  fi
-
-  echo ""
-  echo "$(green_bold "✓") $name configured. Reload your shell: $(bold "exec \$SHELL")"
-  echo "  Tip: jump to a recent dir with $(bold "z <pattern>") or $(bold "zi") for interactive picker."
-
-}
-
-# :command.function
-gt_setup_mcfly_command() {
-  # src/commands/setup/mcfly.sh
-  skip_shell=${args[--skip-shell]}
-
-  name="mcfly"
-  echo "Configuring $(cyan_bold "$name")..."
-  echo ""
-
-  require_installed "$name" "$(command -v "$name" 2>/dev/null)"
-  echo "$(green_bold "✓") $name found at $(command -v "$name")"
-
-  if [ -n "$skip_shell" ]; then
-    echo "$(yellow "⚠") Skipping shell init (--skip-shell)"
-  else
-    echo ""
-    setup_shell_tool "$name" \
-      "# --- mcfly init (managed by os-scripts) ---" \
-      "$(template_mcfly_zshrc)" \
-      "$(template_mcfly_bashrc)"
-  fi
-
-  echo ""
-  echo "$(green_bold "✓") $name configured. Reload your shell: $(bold "exec \$SHELL")"
-  echo "  Tip: $(bold "Ctrl-R") opens fuzzy history search; set $(bold "MCFLY_FUZZY=2") in your rc for fuzzy match."
-
-}
-
-# :command.function
-gt_setup_fzf_command() {
-  # src/commands/setup/fzf.sh
-  skip_shell=${args[--skip-shell]}
-
-  name="fzf"
-  echo "Configuring $(cyan_bold "$name")..."
-  echo ""
-
-  require_installed "$name" "$(command -v "$name" 2>/dev/null)"
-  fzf_version=$(fzf --version 2>/dev/null | awk '{print $1}')
-  echo "$(green_bold "✓") $name found at $(command -v "$name") (v${fzf_version:-unknown})"
-
-  if [ -n "$skip_shell" ]; then
-    echo "$(yellow "⚠") Skipping shell init (--skip-shell)"
-  else
-    echo ""
-    setup_shell_tool "$name" \
-      "# --- fzf init (managed by os-scripts) ---" \
-      "$(template_fzf_zshrc)" \
-      "$(template_fzf_bashrc)"
-
-    if ! fzf --zsh >/dev/null 2>&1; then
-      echo ""
-      echo "$(yellow "⚠") fzf < v0.48 — falling back to ~/.fzf.{zsh,bash}."
-      echo "  Run $(bold "$(dirname "$(command -v fzf)")/../share/fzf/install --all") if those files don't exist."
-    fi
-  fi
-
-  echo ""
-  echo "$(green_bold "✓") $name configured. Reload your shell: $(bold "exec \$SHELL")"
-  echo "  Tip: $(bold "Ctrl-R") fuzzy history, $(bold "Ctrl-T") fuzzy file picker, $(bold "Alt-C") fuzzy cd."
-
-}
-
-# :command.function
-gt_setup_direnv_command() {
-  # src/commands/setup/direnv.sh
-  skip_shell=${args[--skip-shell]}
-
-  name="direnv"
-  echo "Configuring $(cyan_bold "$name")..."
-  echo ""
-
-  require_installed "$name" "$(command -v "$name" 2>/dev/null)"
-  echo "$(green_bold "✓") $name found at $(command -v "$name")"
-
-  if [ -n "$skip_shell" ]; then
-    echo "$(yellow "⚠") Skipping shell init (--skip-shell)"
-  else
-    echo ""
-    setup_shell_tool "$name" \
-      "# --- direnv hook (managed by os-scripts) ---" \
-      "$(template_direnv_zshrc)" \
-      "$(template_direnv_bashrc)"
-  fi
-
-  echo ""
-  echo "$(green_bold "✓") $name configured. Reload your shell: $(bold "exec \$SHELL")"
-  echo "  Tip: drop a $(bold ".envrc") in any project, then $(bold "direnv allow") to activate."
-
-}
-
-# :command.function
-gt_setup_thefuck_command() {
-  # src/commands/setup/thefuck.sh
-  skip_shell=${args[--skip-shell]}
-
-  name="thefuck"
-  echo "Configuring $(cyan_bold "$name")..."
-  echo ""
-
-  require_installed "$name" "$(command -v "$name" 2>/dev/null)"
-  echo "$(green_bold "✓") $name found at $(command -v "$name")"
-
-  if [ -n "$skip_shell" ]; then
-    echo "$(yellow "⚠") Skipping shell init (--skip-shell)"
-  else
-    echo ""
-    setup_shell_tool "$name" \
-      "# --- thefuck alias (managed by os-scripts) ---" \
-      "$(template_thefuck_zshrc)" \
-      "$(template_thefuck_bashrc)"
-  fi
-
-  echo ""
-  echo "$(green_bold "✓") $name configured. Reload your shell: $(bold "exec \$SHELL")"
-  echo "  Tip: type $(bold "fuck") after a failed command to get a correction suggestion."
-
-}
-
-# :command.function
 gt_outdated_command() {
   # src/commands/outdated.sh
   all=${args[--all]}
   target_tool=${args[tool]}
 
+  # Dynamically get the list of available tools from the help menu
+  available_tools=()
+  while read -r tool; do
+    if [[ -n "$tool" && "$tool" != "multi" ]]; then
+      available_tools+=("$tool")
+    fi
+  done < <("$0" install --help | awk '/^  [a-z0-9A-Z]/{print $1}')
+
   if [ -n "$target_tool" ]; then
-    tools=("$target_tool" "argocd" "velero" "kubeconform" "krew" "kubent" "sops" "age" "trivy" "kubens" "kubecolor" "popeye" "kube-linter" "kyverno" "conftest" "vault" "kubeseal")
+    tools=("$target_tool")
     all=1 # Force check even if not installed
   else
-    tools=("kustomize" "k9s" "kubectl" "fastfetch" "direnv" "thefuck" "btop" "zsh" "antidote")
+    tools=("${available_tools[@]}")
   fi
 
   echo "Checking for updates..."
@@ -14210,41 +13753,6 @@ gt_setup_parse_requirements() {
       shift $#
       ;;
 
-    zoxide)
-      action="zoxide"
-      shift
-      gt_setup_zoxide_parse_requirements "$@"
-      shift $#
-      ;;
-
-    mcfly)
-      action="mcfly"
-      shift
-      gt_setup_mcfly_parse_requirements "$@"
-      shift $#
-      ;;
-
-    fzf)
-      action="fzf"
-      shift
-      gt_setup_fzf_parse_requirements "$@"
-      shift $#
-      ;;
-
-    direnv)
-      action="direnv"
-      shift
-      gt_setup_direnv_parse_requirements "$@"
-      shift $#
-      ;;
-
-    thefuck)
-      action="thefuck"
-      shift
-      gt_setup_thefuck_parse_requirements "$@"
-      shift $#
-      ;;
-
     # :command.command_fallback
     "")
       gt_setup_usage >&2
@@ -14466,273 +13974,10 @@ gt_setup_starship_parse_requirements() {
         ;;
 
       # :flag.case
-      --skip-shell)
-
-        # :flag.case_no_arg
-        args['--skip-shell']=1
-        shift
-        ;;
-
-      # :flag.case
       --force-config)
 
         # :flag.case_no_arg
         args['--force-config']=1
-        shift
-        ;;
-
-      -?*)
-        printf "invalid option: %s\n" "$key" >&2
-        exit 1
-        ;;
-
-      *)
-        # :command.parse_requirements_case
-        # :command.parse_requirements_case_simple
-        printf "invalid argument: %s\n" "$key" >&2
-        exit 1
-
-        ;;
-
-    esac
-  done
-
-}
-
-# :command.parse_requirements
-gt_setup_zoxide_parse_requirements() {
-  # :command.fixed_flags_filter
-  while [[ $# -gt 0 ]]; do
-    case "${1:-}" in
-      --help | -h)
-        long_usage=yes
-        gt_setup_zoxide_usage
-        exit
-        ;;
-
-      *)
-        break
-        ;;
-
-    esac
-  done
-
-  # :command.command_filter
-  action="setup zoxide"
-
-  # :command.parse_requirements_while
-  while [[ $# -gt 0 ]]; do
-    key="$1"
-    case "$key" in
-      # :flag.case
-      --skip-shell)
-
-        # :flag.case_no_arg
-        args['--skip-shell']=1
-        shift
-        ;;
-
-      -?*)
-        printf "invalid option: %s\n" "$key" >&2
-        exit 1
-        ;;
-
-      *)
-        # :command.parse_requirements_case
-        # :command.parse_requirements_case_simple
-        printf "invalid argument: %s\n" "$key" >&2
-        exit 1
-
-        ;;
-
-    esac
-  done
-
-}
-
-# :command.parse_requirements
-gt_setup_mcfly_parse_requirements() {
-  # :command.fixed_flags_filter
-  while [[ $# -gt 0 ]]; do
-    case "${1:-}" in
-      --help | -h)
-        long_usage=yes
-        gt_setup_mcfly_usage
-        exit
-        ;;
-
-      *)
-        break
-        ;;
-
-    esac
-  done
-
-  # :command.command_filter
-  action="setup mcfly"
-
-  # :command.parse_requirements_while
-  while [[ $# -gt 0 ]]; do
-    key="$1"
-    case "$key" in
-      # :flag.case
-      --skip-shell)
-
-        # :flag.case_no_arg
-        args['--skip-shell']=1
-        shift
-        ;;
-
-      -?*)
-        printf "invalid option: %s\n" "$key" >&2
-        exit 1
-        ;;
-
-      *)
-        # :command.parse_requirements_case
-        # :command.parse_requirements_case_simple
-        printf "invalid argument: %s\n" "$key" >&2
-        exit 1
-
-        ;;
-
-    esac
-  done
-
-}
-
-# :command.parse_requirements
-gt_setup_fzf_parse_requirements() {
-  # :command.fixed_flags_filter
-  while [[ $# -gt 0 ]]; do
-    case "${1:-}" in
-      --help | -h)
-        long_usage=yes
-        gt_setup_fzf_usage
-        exit
-        ;;
-
-      *)
-        break
-        ;;
-
-    esac
-  done
-
-  # :command.command_filter
-  action="setup fzf"
-
-  # :command.parse_requirements_while
-  while [[ $# -gt 0 ]]; do
-    key="$1"
-    case "$key" in
-      # :flag.case
-      --skip-shell)
-
-        # :flag.case_no_arg
-        args['--skip-shell']=1
-        shift
-        ;;
-
-      -?*)
-        printf "invalid option: %s\n" "$key" >&2
-        exit 1
-        ;;
-
-      *)
-        # :command.parse_requirements_case
-        # :command.parse_requirements_case_simple
-        printf "invalid argument: %s\n" "$key" >&2
-        exit 1
-
-        ;;
-
-    esac
-  done
-
-}
-
-# :command.parse_requirements
-gt_setup_direnv_parse_requirements() {
-  # :command.fixed_flags_filter
-  while [[ $# -gt 0 ]]; do
-    case "${1:-}" in
-      --help | -h)
-        long_usage=yes
-        gt_setup_direnv_usage
-        exit
-        ;;
-
-      *)
-        break
-        ;;
-
-    esac
-  done
-
-  # :command.command_filter
-  action="setup direnv"
-
-  # :command.parse_requirements_while
-  while [[ $# -gt 0 ]]; do
-    key="$1"
-    case "$key" in
-      # :flag.case
-      --skip-shell)
-
-        # :flag.case_no_arg
-        args['--skip-shell']=1
-        shift
-        ;;
-
-      -?*)
-        printf "invalid option: %s\n" "$key" >&2
-        exit 1
-        ;;
-
-      *)
-        # :command.parse_requirements_case
-        # :command.parse_requirements_case_simple
-        printf "invalid argument: %s\n" "$key" >&2
-        exit 1
-
-        ;;
-
-    esac
-  done
-
-}
-
-# :command.parse_requirements
-gt_setup_thefuck_parse_requirements() {
-  # :command.fixed_flags_filter
-  while [[ $# -gt 0 ]]; do
-    case "${1:-}" in
-      --help | -h)
-        long_usage=yes
-        gt_setup_thefuck_usage
-        exit
-        ;;
-
-      *)
-        break
-        ;;
-
-    esac
-  done
-
-  # :command.command_filter
-  action="setup thefuck"
-
-  # :command.parse_requirements_while
-  while [[ $# -gt 0 ]]; do
-    key="$1"
-    case "$key" in
-      # :flag.case
-      --skip-shell)
-
-        # :flag.case_no_arg
-        args['--skip-shell']=1
         shift
         ;;
 
@@ -14935,11 +14180,6 @@ run() {
     "setup multi") gt_setup_multi_command ;;
     "setup antidote") gt_setup_antidote_command ;;
     "setup starship") gt_setup_starship_command ;;
-    "setup zoxide") gt_setup_zoxide_command ;;
-    "setup mcfly") gt_setup_mcfly_command ;;
-    "setup fzf") gt_setup_fzf_command ;;
-    "setup direnv") gt_setup_direnv_command ;;
-    "setup thefuck") gt_setup_thefuck_command ;;
     "outdated") gt_outdated_command ;;
   esac
 }

@@ -1,11 +1,19 @@
 all=${args[--all]}
 target_tool=${args[tool]}
 
+# Dynamically get the list of available tools from the help menu
+available_tools=()
+while read -r tool; do
+  if [[ -n "$tool" && "$tool" != "multi" ]]; then
+    available_tools+=("$tool")
+  fi
+done < <("$0" install --help | awk '/^  [a-z0-9A-Z]/{print $1}')
+
 if [ -n "$target_tool" ]; then
-  tools=("$target_tool" "argocd" "velero" "kubeconform" "krew" "kubent" "sops" "age" "trivy" "kubens" "kubecolor" "popeye" "kube-linter" "kyverno" "conftest" "vault" "kubeseal")
+  tools=("$target_tool")
   all=1 # Force check even if not installed
 else
-  tools=("kustomize" "k9s" "kubectl" "fastfetch" "direnv" "thefuck" "btop" "zsh" "antidote")
+  tools=("${available_tools[@]}")
 fi
 
 echo "Checking for updates..."

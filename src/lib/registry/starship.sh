@@ -4,3 +4,8 @@ starship_fetch_local_version() {
   local target="$1"
   "$target" --version 2>/dev/null | awk '{print $2}'
 }
+
+starship_fetch_local_version() {
+  local target="$1"
+  "$target" --version 2>/dev/null | head -n1 | awk '{print $2}'
+}
