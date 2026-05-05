@@ -550,6 +550,38 @@ commands:
     - long: --force
       short: -f
       help: Force overwrite if uv is already installed
+  - name: bashly
+    help: Install bashly (Bash CLI generator)
+    dependencies:
+    - gem
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: bashly version to install (e.g., 1.3.8 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if bashly is already installed
+  - name: gem
+    help: Install RubyGems (gem)
+    flags:
+    - long: --force
+      short: -f
+      help: Force reinstall gem
+  - name: claude
+    help: Install claude (Claude Code CLI)
+    dependencies:
+    - npm
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: claude version to install (e.g., 2.1.128 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if claude is already installed
 - name: uninstall
   help: Uninstall tools and components
   commands:
@@ -660,6 +692,16 @@ commands:
     help: Uninstall gum
   - name: uv
     help: Uninstall uv
+  - name: bashly
+    help: Uninstall bashly
+    dependencies:
+    - gem
+  - name: gem
+    help: Uninstall gem
+  - name: claude
+    help: Uninstall claude
+    dependencies:
+    - npm
 - name: setup
   help: Configure installed tools
   commands:

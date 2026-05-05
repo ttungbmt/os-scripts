@@ -44,7 +44,12 @@ echo "$(bold "▸ Step 3/3:") Seeding $(cyan "$zsh_plugins_file")..."
 if [ -n "$skip_plugins" ]; then
   echo "$(yellow "⚠") Skipping plugin seeding (--skip-plugins)"
 else
-  seed_file "$zsh_plugins_file" "$(template_antidote_plugins "$(pwd)")"
+  local_plugin_dir="${XDG_CONFIG_HOME:-$HOME/.config}/gt/zsh-plugins"
+  mkdir -p "$local_plugin_dir"
+  cp -r "$(pwd)/src/zsh-plugins/"* "$local_plugin_dir/"
+  echo "$(green "✓") Copied local zsh-plugins to $local_plugin_dir"
+
+  seed_file "$zsh_plugins_file" "$(template_antidote_plugins "$local_plugin_dir")"
 fi
 
 # ===================================================================
