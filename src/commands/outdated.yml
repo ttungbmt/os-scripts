@@ -1,0 +1,9 @@
+name: outdated
+help: Check for outdated tools
+args:
+- name: tool
+  help: Specific tool to check (optional)
+flags:
+- long: --all
+  short: -a
+  help: Check all tools, even those not currently installed

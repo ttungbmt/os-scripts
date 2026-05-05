@@ -1,0 +1,36 @@
+name: setup
+help: Configure installed tools
+commands:
+- name: multi
+  help: Configure multiple tools at once (comma or space separated)
+  args:
+  - name: tools
+    help: List of tools to configure (e.g., zoxide mcfly fzf)
+    required: true
+    repeatable: true
+  flags:
+  - long: --skip-shell
+    help: Skip injecting init into shell rc files for all tools
+
+- name: antidote
+  help: Configure antidote Zsh plugin manager (~/.zshrc and ~/.zsh_plugins.txt)
+  dependencies:
+  - zsh
+  - git
+  flags:
+  - long: --skip-plugins
+    help: Skip seeding ~/.zsh_plugins.txt with recommended plugins
+  - long: --skip-zshrc
+    help: Skip adding antidote bootstrap to ~/.zshrc
+
+- name: starship
+  help: Configure starship prompt (~/.config/starship.toml)
+  flags:
+  - long: --preset
+    arg: name
+    help: 'Apply a built-in starship preset (e.g. tokyo-night, pure-preset, gruvbox-rainbow). Run `starship preset list` to see all.'
+  - long: --skip-config
+    help: Skip seeding ~/.config/starship.toml
+  - long: --force-config
+    help: Overwrite ~/.config/starship.toml even if it already has content
+
