@@ -126,6 +126,7 @@ gt_install_usage() {
   printf "  %s   Install bashly (Bash CLI generator)\n" "bashly     "
   printf "  %s   Install RubyGems (gem)\n" "gem        "
   printf "  %s   Install claude (Claude Code CLI)\n" "claude     "
+  printf "  %s   Install talisman (git hook secrets scanner)\n" "talisman   "
   echo
 
   # :command.long_usage
@@ -2292,6 +2293,47 @@ gt_install_claude_usage() {
 }
 
 # :command.usage
+gt_install_talisman_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt install talisman - Install talisman (git hook secrets scanner)\n"
+    echo
+
+  else
+    printf "gt install talisman - Install talisman (git hook secrets scanner)\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt install talisman [OPTIONS]\n"
+  printf "  gt install talisman --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_flags
+    # :flag.usage
+    printf "  %s\n" "--version, -v VERSION"
+    printf "    talisman version to install (e.g., v1.37.0 or latest)\n"
+    printf "    Default: latest\n"
+    echo
+
+    # :flag.usage
+    printf "  %s\n" "--force, -f"
+    printf "    Force overwrite if talisman is already installed\n"
+    echo
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
 gt_uninstall_usage() {
   if [[ -n $long_usage ]]; then
     printf "gt uninstall - Uninstall tools and components\n"
@@ -2361,6 +2403,7 @@ gt_uninstall_usage() {
   printf "  %s   Uninstall bashly\n" "bashly     "
   printf "  %s   Uninstall gem\n" "gem        "
   printf "  %s   Uninstall claude\n" "claude     "
+  printf "  %s   Uninstall talisman\n" "talisman   "
   echo
 
   # :command.long_usage
@@ -3884,6 +3927,35 @@ gt_uninstall_claude_usage() {
 }
 
 # :command.usage
+gt_uninstall_talisman_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt uninstall talisman - Uninstall talisman\n"
+    echo
+
+  else
+    printf "gt uninstall talisman - Uninstall talisman\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt uninstall talisman\n"
+  printf "  gt uninstall talisman --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
 gt_setup_usage() {
   if [[ -n $long_usage ]]; then
     printf "gt setup - Configure installed tools\n"
@@ -5012,6 +5084,14 @@ starship_fetch_local_version() {
 starship_fetch_local_version() {
   local target="$1"
   "$target" --version 2>/dev/null | head -n1 | awk '{print $2}'
+}
+
+# src/lib/registry/talisman.sh
+TALISMAN_GITHUB_REPO="thoughtworks/talisman"
+
+talisman_fetch_local_version() {
+  local target="$1"
+  "$target" --version 2>/dev/null | awk '{print $2}'
 }
 
 # src/lib/registry/thefuck.sh
@@ -6983,6 +7063,50 @@ gt_install_claude_command() {
 }
 
 # :command.function
+gt_install_talisman_command() {
+  # src/commands/install/talisman.sh
+  version=${args[--version]}
+  force=${args[--force]}
+  name="talisman"
+  target="/usr/local/bin/talisman"
+
+  # --- Step 1: Guard against overwrite ---
+  guard_existing "$name" "$target" "$force"
+
+  echo "Installing $(cyan_bold "$name") ($(yellow "$version"))..."
+
+  # --- Step 2: Resolve version ---
+  if [[ "$version" == "latest" ]]; then
+    version=$(github_latest_tag "thoughtworks/talisman")
+  fi
+
+  if [[ "$version" == v* ]]; then
+    version="${version:1}"
+  fi
+
+  # --- Step 3: Detect platform ---
+  detect_platform
+
+  # --- Step 4: Build download URL ---
+  download_url="https://github.com/thoughtworks/talisman/releases/download/v${version}/talisman_${DETECT_OS}_${DETECT_ARCH}"
+
+  # --- Step 5: Download & Install ---
+  temp_dir=$(mktemp -d)
+  download_file "$download_url" "$temp_dir/$name"
+
+  if [ -f "$temp_dir/$name" ]; then
+    install_binary "$temp_dir/$name" "$target"
+    rm -rf "$temp_dir"
+    echo "$(green_bold ✓) $name installed successfully: $(bold "v${version}")"
+  else
+    echo "$(red ✗ Failed to install $name.)"
+    rm -rf "$temp_dir"
+    exit 1
+  fi
+
+}
+
+# :command.function
 gt_uninstall_kustomize_command() {
   # src/commands/uninstall/kustomize.sh
   run_generic_uninstall "kustomize"
@@ -7501,6 +7625,13 @@ gt_uninstall_claude_command() {
     echo "$(red ✗ Failed to uninstall ${name}.)"
     exit 1
   fi
+
+}
+
+# :command.function
+gt_uninstall_talisman_command() {
+  # src/commands/uninstall/talisman.sh
+  uninstall_tool "talisman" "/usr/local/bin/talisman"
 
 }
 
@@ -8221,6 +8352,13 @@ gt_install_parse_requirements() {
       action="claude"
       shift
       gt_install_claude_parse_requirements "$@"
+      shift $#
+      ;;
+
+    talisman)
+      action="talisman"
+      shift
+      gt_install_talisman_parse_requirements "$@"
       shift $#
       ;;
 
@@ -11808,6 +11946,74 @@ gt_install_claude_parse_requirements() {
 }
 
 # :command.parse_requirements
+gt_install_talisman_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_install_talisman_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="install talisman"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+      # :flag.case
+      --version | -v)
+
+        # :flag.case_arg
+        if [[ -n ${2+x} ]]; then
+          args['--version']="$2"
+          shift
+          shift
+        else
+          printf "%s\n" "--version requires an argument: --version, -v VERSION" >&2
+          exit 1
+        fi
+        ;;
+
+      # :flag.case
+      --force | -f)
+
+        # :flag.case_no_arg
+        args['--force']=1
+        shift
+        ;;
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+  # :command.default_assignments
+  [[ -n ${args['--version']:-} ]] || args['--version']="latest"
+
+}
+
+# :command.parse_requirements
 gt_uninstall_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
@@ -12192,6 +12398,13 @@ gt_uninstall_parse_requirements() {
       action="claude"
       shift
       gt_uninstall_claude_parse_requirements "$@"
+      shift $#
+      ;;
+
+    talisman)
+      action="talisman"
+      shift
+      gt_uninstall_talisman_parse_requirements "$@"
       shift $#
       ;;
 
@@ -14536,6 +14749,50 @@ gt_uninstall_claude_parse_requirements() {
 }
 
 # :command.parse_requirements
+gt_uninstall_talisman_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_uninstall_talisman_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="uninstall talisman"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
 gt_setup_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
@@ -14956,6 +15213,7 @@ run() {
     "install bashly") gt_install_bashly_command ;;
     "install gem") gt_install_gem_command ;;
     "install claude") gt_install_claude_command ;;
+    "install talisman") gt_install_talisman_command ;;
     "uninstall") gt_uninstall_command ;;
     "uninstall kustomize") gt_uninstall_kustomize_command ;;
     "uninstall k9s") gt_uninstall_k9s_command ;;
@@ -15009,6 +15267,7 @@ run() {
     "uninstall bashly") gt_uninstall_bashly_command ;;
     "uninstall gem") gt_uninstall_gem_command ;;
     "uninstall claude") gt_uninstall_claude_command ;;
+    "uninstall talisman") gt_uninstall_talisman_command ;;
     "setup") gt_setup_command ;;
     "setup multi") gt_setup_multi_command ;;
     "setup antidote") gt_setup_antidote_command ;;

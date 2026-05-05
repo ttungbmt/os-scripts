@@ -1,27 +1,5 @@
 # OS Scripts
 
-## Install bashly
-
-apt - Ubuntu / Debian
-
-```shell
-sudo apt -y update
-sudo apt -y install build-essential libyaml-dev ruby-dev
-sudo gem install bashly
-```
-
-dnf - Fedora / CentOS / Red Hat
-
-```shell
-sudo dnf -y update
-sudo dnf -y install @development-tools libyaml-devel ruby-devel
-gem install bashly
-```
-
-```shell
-bashly generate
-```
-
 ## Reference
 
 - https://bashly.dev

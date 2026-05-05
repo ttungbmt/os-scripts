@@ -582,6 +582,17 @@ commands:
     - long: --force
       short: -f
       help: Force overwrite if claude is already installed
+  - name: talisman
+    help: Install talisman (git hook secrets scanner)
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: talisman version to install (e.g., v1.37.0 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if talisman is already installed
 - name: uninstall
   help: Uninstall tools and components
   commands:
@@ -702,6 +713,8 @@ commands:
     help: Uninstall claude
     dependencies:
     - npm
+  - name: talisman
+    help: Uninstall talisman
 - name: setup
   help: Configure installed tools
   commands:
