@@ -6149,7 +6149,7 @@ ohmyzsh/ohmyzsh path:plugins/eza
 ohmyzsh/ohmyzsh path:plugins/zoxide
 
 # Shell tools / dotfile management
-ohmyzsh/ohmyzsh path:plugins/thefuck
+ohmyzsh/ohmyzsh path:plugins/thefuck conditional:"command -v thefuck >/dev/null"
 ohmyzsh/ohmyzsh path:plugins/chezmoi
 ohmyzsh/ohmyzsh path:plugins/tailscale
 ohmyzsh/ohmyzsh path:plugins/starship
