@@ -27,3 +27,10 @@ commands:
 - import: src/commands/uninstall.yml
 - import: src/commands/setup.yml
 - import: src/commands/outdated.yml
+- name: completions
+  help: Generate shell completion script
+  args:
+  - name: shell
+    help: Shell type (bash or zsh)
+    allowed: [bash, zsh]
+    default: bash
