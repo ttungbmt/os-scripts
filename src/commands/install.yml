@@ -101,6 +101,8 @@ commands:
 - name: vault
   help: Install vault
   flags: *std_install_flags
+  dependencies:
+  - unzip
 - name: kubeseal
   help: Install kubeseal
   flags: *std_install_flags

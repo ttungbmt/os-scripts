@@ -1,6 +1,20 @@
 name: gt
-help: OS Scripts CLI
+help: OS Scripts CLI — Install & manage DevOps tools
 version: 0.1.0
+
+environment_variables:
+- name: GITHUB_TOKEN
+  help: "GitHub API token (raises rate limit 60→5000 req/hr for `gt outdated`)"
+- name: GT_DOWNLOAD_TIMEOUT
+  help: "Override curl download timeout in seconds (default 30)"
+
+dependencies:
+- curl
+- tar
+
+footer: |
+  Repo:    https://github.com/ttungbmt/os-scripts
+  Roadmap: see ROADMAPS.md
 
 commands:
 - import: src/commands/install.yml

@@ -18,11 +18,11 @@ version_command() {
 # :command.usage
 gt_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt - OS Scripts CLI\n"
+    printf "gt - OS Scripts CLI — Install & manage DevOps tools\n"
     echo
 
   else
-    printf "gt - OS Scripts CLI\n"
+    printf "gt - OS Scripts CLI — Install & manage DevOps tools\n"
     echo
 
   fi
@@ -50,6 +50,23 @@ gt_usage() {
     echo
     printf "  %s\n" "--version, -v"
     printf "    Show version number\n"
+    echo
+
+    # :command.usage_environment_variables
+    printf "%s\n" "Environment Variables:"
+
+    # :environment_variable.usage
+    printf "  %s\n" "GITHUB_TOKEN"
+    printf "    GitHub API token (raises rate limit 60→5000 req/hr for \`gt outdated\`)\n"
+    echo
+
+    # :environment_variable.usage
+    printf "  %s\n" "GT_DOWNLOAD_TIMEOUT"
+    printf "    Override curl download timeout in seconds (default 30)\n"
+    echo
+
+    # :command.footer
+    printf "Repo:    https://github.com/ttungbmt/os-scripts\nRoadmap: see ROADMAPS.md\n\n"
     echo
 
   fi
@@ -7890,6 +7907,26 @@ parse_requirements() {
     esac
   done
 
+  # :command.environment_variables_filter
+
+  env_var_names+=("GITHUB_TOKEN")
+  env_var_names+=("GT_DOWNLOAD_TIMEOUT")
+
+  # :command.dependencies_filter
+  if command -v curl >/dev/null 2>&1; then
+    deps['curl']="$(command -v curl | head -n1)"
+  else
+    printf "missing dependency: curl\n" >&2
+    exit 1
+  fi
+
+  if command -v tar >/dev/null 2>&1; then
+    deps['tar']="$(command -v tar | head -n1)"
+  else
+    printf "missing dependency: tar\n" >&2
+    exit 1
+  fi
+
   # :command.command_filter
   action=${1:-}
 
@@ -10042,6 +10079,14 @@ gt_install_vault_parse_requirements() {
 
     esac
   done
+
+  # :command.dependencies_filter
+  if command -v unzip >/dev/null 2>&1; then
+    deps['unzip']="$(command -v unzip | head -n1)"
+  else
+    printf "missing dependency: unzip\n" >&2
+    exit 1
+  fi
 
   # :command.command_filter
   action="install vault"
