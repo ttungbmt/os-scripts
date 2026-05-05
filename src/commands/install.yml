@@ -14,398 +14,126 @@ commands:
     help: Force overwrite if tools are already installed
 - name: kustomize
   help: Install Kustomize
-  flags:
+  flags: &std_install_flags
   - long: --version
     short: -v
     arg: version
-    help: Kustomize version to install (e.g., v5.4.1 or latest)
+    help: "Version to install (e.g., latest)"
     default: latest
   - long: --force
     short: -f
-    help: Force overwrite if Kustomize is already installed
+    help: "Force overwrite if already installed"
 
 - name: k9s
   help: Install k9s
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: k9s version to install (e.g., v0.32.4 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if k9s is already installed
+  flags: *std_install_flags
 
 - name: kubectl
   help: Install kubectl
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: kubectl version to install (e.g., v1.30.0 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if kubectl is already installed
+  flags: *std_install_flags
 
 - name: fastfetch
   help: Install fastfetch
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: fastfetch version to install (e.g., v2.62.1 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if fastfetch is already installed
+  flags: *std_install_flags
 
 - name: direnv
   help: Install direnv
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: direnv version to install (e.g., v2.32.1 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if direnv is already installed
+  flags: *std_install_flags
 
 - name: btop
   help: Install btop
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: btop version to install (e.g., v1.4.0 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if btop is already installed
+  flags: *std_install_flags
 
 - name: zsh
   help: Install zsh
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: zsh version to install (latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if zsh is already installed
+  flags: *std_install_flags
 
 - name: antidote
   help: Install antidote (Zsh plugin manager)
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: antidote version/branch to install (latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if antidote is already installed
+  flags: *std_install_flags
 
 - name: thefuck
   help: Install thefuck
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: thefuck version to install (e.g., 3.32 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if thefuck is already installed
+  flags: *std_install_flags
 
 - name: argocd
   help: Install argocd
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: argocd version to install (e.g., v1.0.0 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if argocd is already installed
+  flags: *std_install_flags
 - name: velero
   help: Install velero
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: velero version to install (e.g., v1.0.0 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if velero is already installed
+  flags: *std_install_flags
 - name: kubeconform
   help: Install kubeconform
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: kubeconform version to install (e.g., v1.0.0 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if kubeconform is already installed
+  flags: *std_install_flags
 - name: krew
   help: Install krew
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: krew version to install (e.g., v1.0.0 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if krew is already installed
+  flags: *std_install_flags
 - name: kubent
   help: Install kubent
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: kubent version to install (e.g., v1.0.0 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if kubent is already installed
+  flags: *std_install_flags
 - name: sops
   help: Install sops
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: sops version to install (e.g., v1.0.0 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if sops is already installed
+  flags: *std_install_flags
 - name: age
   help: Install age
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: age version to install (e.g., v1.0.0 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if age is already installed
+  flags: *std_install_flags
 - name: trivy
   help: Install trivy
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: trivy version to install (e.g., v1.0.0 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if trivy is already installed
+  flags: *std_install_flags
 - name: kubens
   help: Install kubens
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: kubens version to install (e.g., v1.0.0 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if kubens is already installed
+  flags: *std_install_flags
 - name: kubecolor
   help: Install kubecolor
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: kubecolor version to install (e.g., v1.0.0 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if kubecolor is already installed
+  flags: *std_install_flags
 - name: popeye
   help: Install popeye
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: popeye version to install (e.g., v1.0.0 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if popeye is already installed
+  flags: *std_install_flags
 - name: kube-linter
   help: Install kube-linter
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: kube-linter version to install (e.g., v1.0.0 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if kube-linter is already installed
+  flags: *std_install_flags
 - name: kyverno
   help: Install kyverno
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: kyverno version to install (e.g., v1.0.0 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if kyverno is already installed
+  flags: *std_install_flags
 - name: conftest
   help: Install conftest
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: conftest version to install (e.g., v1.0.0 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if conftest is already installed
+  flags: *std_install_flags
 - name: vault
   help: Install vault
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: vault version to install (e.g., v1.0.0 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if vault is already installed
+  flags: *std_install_flags
 - name: kubeseal
   help: Install kubeseal
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: kubeseal version to install (e.g., v1.0.0 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if kubeseal is already installed
+  flags: *std_install_flags
 - name: zoxide
   help: Install zoxide
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: zoxide version to install (e.g., v0.9.9 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if zoxide is already installed
+  flags: *std_install_flags
 - name: eza
   help: Install eza
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: eza version to install (e.g., v0.23.4 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if eza is already installed
+  flags: *std_install_flags
 - name: bat
   help: Install bat
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: bat version to install (e.g., v0.26.1 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if bat is already installed
+  flags: *std_install_flags
 - name: ripgrep
   help: Install ripgrep
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: ripgrep version to install (e.g., 15.1.0 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if ripgrep is already installed
+  flags: *std_install_flags
 - name: starship
   help: Install starship
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: starship version to install (e.g., v1.25.1 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if starship is already installed
+  flags: *std_install_flags
 - name: fzf
   help: Install fzf
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: fzf version to install (e.g., v0.72.0 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if fzf is already installed
+  flags: *std_install_flags
 - name: fd
   help: Install fd (fast find alternative)
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: fd version to install (e.g., v10.4.2 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if fd is already installed
+  flags: *std_install_flags
 - name: mcfly
   help: Install mcfly (smart shell history)
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: mcfly version to install (e.g., v0.9.4 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if mcfly is already installed
+  flags: *std_install_flags
 - name: infisical
   help: Install infisical CLI
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: infisical version to install (e.g., v0.43.79 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if infisical is already installed
+  flags: *std_install_flags
 - name: ksops
   help: Install ksops (kustomize-sops KRM plugin)
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: ksops version to install (e.g., v4.5.1 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if ksops is already installed
+  flags: *std_install_flags
 - name: skopeo
   help: Install skopeo (container image tool)
   flags:
@@ -414,37 +142,13 @@ commands:
     help: Force reinstall skopeo
 - name: helmfile
   help: Install helmfile
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: helmfile version to install (e.g., v1.5.0 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if helmfile is already installed
+  flags: *std_install_flags
 - name: helm
   help: Install helm
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: helm version to install (e.g., v3.17.3 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if helm is already installed
+  flags: *std_install_flags
 - name: chezmoi
   help: Install chezmoi (dotfile manager)
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: chezmoi version to install (e.g., v2.70.2 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if chezmoi is already installed
+  flags: *std_install_flags
 - name: tmux
   help: Install tmux (terminal multiplexer)
   flags:
@@ -459,92 +163,28 @@ commands:
     help: Force reinstall rsync
 - name: trino
   help: Install trino CLI
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: trino version to install (e.g., 480 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if trino is already installed
+  flags: *std_install_flags
 - name: nerdctl
   help: Install nerdctl (containerd CLI)
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: nerdctl version to install (e.g., v2.2.2 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if nerdctl is already installed
+  flags: *std_install_flags
 - name: viddy
   help: Install viddy (modern watch command)
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: viddy version to install (e.g., v1.3.0 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if viddy is already installed
+  flags: *std_install_flags
 - name: hyperfine
   help: Install hyperfine (benchmarking tool)
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: hyperfine version to install (e.g., v1.19.0 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if hyperfine is already installed
+  flags: *std_install_flags
 - name: jq
   help: Install jq (JSON processor)
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: jq version to install (e.g., jq-1.8.1 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if jq is already installed
+  flags: *std_install_flags
 - name: yq
   help: Install yq (YAML processor)
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: yq version to install (e.g., v4.53.2 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if yq is already installed
+  flags: *std_install_flags
 - name: gum
   help: Install gum (glamorous shell scripts)
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: gum version to install (e.g., v0.17.0 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if gum is already installed
+  flags: *std_install_flags
 - name: uv
   help: Install uv (Python package manager)
-  flags:
-  - long: --version
-    short: -v
-    arg: version
-    help: uv version to install (e.g., 0.11.8 or latest)
-    default: latest
-  - long: --force
-    short: -f
-    help: Force overwrite if uv is already installed
+  flags: *std_install_flags
 - name: bashly
   help: Install bashly (Bash CLI generator)
   dependencies:
