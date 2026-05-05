@@ -26,6 +26,8 @@ commands:
   flags:
   - long: --skip-plugins
     help: Skip seeding ~/.zsh_plugins.txt with recommended plugins
+  - long: --force-plugins
+    help: Overwrite ~/.zsh_plugins.txt even if it already has content
   - long: --skip-zshrc
     help: Skip adding antidote bootstrap to ~/.zshrc
 

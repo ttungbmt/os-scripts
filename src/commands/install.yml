@@ -290,3 +290,15 @@ commands:
   - long: --force
     short: -f
     help: Force overwrite if copilot is already installed
+
+- name: tailscale
+  help: Install tailscale
+  flags:
+  - long: --version
+    short: -v
+    arg: version
+    help: tailscale version to install (e.g., 1.66.4 or latest)
+    default: latest
+  - long: --force
+    short: -f
+    help: Force overwrite if tailscale is already installed

@@ -42,26 +42,30 @@ EOF
 
 # Returns the default curated list of Zsh plugins for ~/.zsh_plugins.txt.
 #
-# Architecture: zephyr (foundation) + OMZ (tool-specific only) + curated extras.
-# zephyr is the antidote author's own modular replacement for OMZ libs — faster
-# startup, no legacy cruft. We still pull in OMZ for plugins zephyr intentionally
-# omits (docker, git aliases, sudo widget, extract, command-not-found …).
+# Architecture: 7-phase load order (DO NOT reorder without understanding each phase).
 #
-# Order is significant — DO NOT reorder without understanding why:
-#   1. fpath-only plugins (zsh-completions) BEFORE any plugin that runs compinit
-#   2. zephyr foundation modules before zephyr's `completion` module
-#   3. zephyr/completion runs compinit, so it must come before fzf-tab
-#   4. zsh-vi-mode AFTER zephyr/editor so its bindings win
-#   5. fzf-tab AFTER compinit but BEFORE plugins that wrap the Tab widget
-#      (autosuggestions, fast-syntax-highlighting)
-#   6. fast-syntax-highlighting BEFORE zsh-history-substring-search
-#   7. getantidote/use-omz required for OMZ subplugins that depend on OMZ libs
+# Phase 1 — fpath augmentation   : zsh-completions (kind:fpath, before compinit)
+# Phase 2 — Shell foundation     : zephyr modules; /completion fires compinit last
+# Phase 3 — Widget layer         : vi-mode → fzf-tab → ZLE ergonomics (post-compinit)
+# Phase 4 — OMZ plugins          : use-omz first, then alias/completion plugins
+# Phase 5 — Alias-aware extras   : forgit, you-should-use (after OMZ aliases exist)
+# Phase 6 — Completion UI + hist : autosuggestions → fast-syntax-highlight → hist-search
+# Phase 7 — Local integrations   : os-scripts cached inits (mcfly …)
+#
+# Key constraints:
+#   • zsh-vi-mode re-initialises the line editor — must come before fzf-tab / ZLE plugins
+#   • fzf-tab hooks Tab before any other plugin wraps it (after compinit)
+#   • fast-syntax-highlighting must precede zsh-history-substring-search
+#   • zsh-history-substring-search MUST be the last widget-binding plugin
+#   • getantidote/use-omz required for all OMZ subplugins that depend on OMZ libs
 template_antidote_plugins() {
   cat <<EOF
-# ─── Completions library (fpath only — must precede any compinit) ───
+# ══ Phase 1 — fpath augmentation (before compinit) ═══════════════════════════
 zsh-users/zsh-completions path:src kind:fpath
 
-# ─── Zephyr foundation (modular replacement for OMZ libs / supercharge) ───
+# ══ Phase 2 — Shell foundation ═══════════════════════════════════════════════
+# zephyr: modular replacement for OMZ libs — faster startup, no legacy cruft.
+# /completion is last because it calls compinit.
 mattmc3/zephyr path:plugins/environment
 mattmc3/zephyr path:plugins/editor
 mattmc3/zephyr path:plugins/history
@@ -69,47 +73,73 @@ mattmc3/zephyr path:plugins/directory
 mattmc3/zephyr path:plugins/utility
 mattmc3/zephyr path:plugins/completion
 
-# ─── Vi mode (after zephyr/editor so its bindings win; zvm_after_init re-binds) ───
+# ══ Phase 3 — Widget layer (post-compinit; strict order within phase) ════════
+# vi-mode re-initialises the line editor — must win over zephyr/editor bindings.
+# zvm_after_init() in .zshrc re-binds autosuggestions + history-search after it.
 jeffreytse/zsh-vi-mode
 
-# ─── fzf-powered tab completion (after compinit, before widget wrappers) ───
+# fzf-tab hooks Tab widget before any other plugin can wrap it.
 Aloxaf/fzf-tab
 
-# ─── Editing ergonomics ───
+# ZLE ergonomics — initialised after compinit and vi-mode.
 hlissner/zsh-autopair
 olets/zsh-abbr
 
-# ─── Oh-my-zsh atomic plugins (use-omz wires up OMZ runtime libs) ───
+# ══ Phase 4 — OMZ plugins (order-agnostic within groups) ═════════════════════
 getantidote/use-omz
+
+# Shell utility
 ohmyzsh/ohmyzsh path:plugins/extract
 ohmyzsh/ohmyzsh path:plugins/sudo
 ohmyzsh/ohmyzsh path:plugins/colored-man-pages
 ohmyzsh/ohmyzsh path:plugins/command-not-found
+ohmyzsh/ohmyzsh path:plugins/profiles
+
+# Remote / terminal
+ohmyzsh/ohmyzsh path:plugins/ssh
+ohmyzsh/ohmyzsh path:plugins/mosh
+ohmyzsh/ohmyzsh path:plugins/tmux
+
+# SCM
 ohmyzsh/ohmyzsh path:plugins/git
+ohmyzsh/ohmyzsh path:plugins/gh
+
+# Containers / orchestration
 ohmyzsh/ohmyzsh path:plugins/docker
 ohmyzsh/ohmyzsh path:plugins/docker-compose
+ohmyzsh/ohmyzsh path:plugins/kubectl
+ohmyzsh/ohmyzsh path:plugins/kubectx
+ohmyzsh/ohmyzsh path:plugins/k9s
+ohmyzsh/ohmyzsh path:plugins/vagrant
 
-# ─── fzf + git workflow (gd, glo, gss, gcf, ga, gi …) ───
-wfxr/forgit
+# Languages / runtimes
+ohmyzsh/ohmyzsh path:plugins/python
+ohmyzsh/ohmyzsh path:plugins/dbt
+ohmyzsh/ohmyzsh path:plugins/ansible
+ohmyzsh/ohmyzsh path:plugins/mise
 
-# ─── Reminds you of existing aliases / functions ───
-MichaelAquilina/zsh-you-should-use
+# Navigation / environment
+ohmyzsh/ohmyzsh path:plugins/direnv
+ohmyzsh/ohmyzsh path:plugins/fzf
+ohmyzsh/ohmyzsh path:plugins/eza
+ohmyzsh/ohmyzsh path:plugins/zoxide
 
-# ─── Autosuggestions (fish-style, must be before syntax highlighting) ───
-zsh-users/zsh-autosuggestions
+# Shell tools / dotfile management
+ohmyzsh/ohmyzsh path:plugins/thefuck
+ohmyzsh/ohmyzsh path:plugins/chezmoi
+ohmyzsh/ohmyzsh path:plugins/tailscale
+ohmyzsh/ohmyzsh path:plugins/starship
 
-# ─── Syntax highlighting (must be before history-substring-search) ───
-zdharma-continuum/fast-syntax-highlighting
+# ══ Phase 5 — Alias-aware extras (after OMZ defines aliases) ═════════════════
+wfxr/forgit                              # fzf + git workflow (gd, glo, gss …)
+MichaelAquilina/zsh-you-should-use       # nudges you toward existing aliases
 
-# ─── History search (MUST be the last widget-binding plugin) ───
-zsh-users/zsh-history-substring-search
+# ══ Phase 6 — Completion UI + history (strict order) ═════════════════════════
+zsh-users/zsh-autosuggestions            # fish-style; before syntax highlighting
+zdharma-continuum/fast-syntax-highlighting  # before history-substring-search
+zsh-users/zsh-history-substring-search      # MUST be last widget-binding plugin
 
-# ─── OS Scripts Local Integrations (Cached Shell Init) ───
-ttungbmt/os-scripts path:plugins/zsh-zoxide
+# ══ Phase 7 — Local integrations ═════════════════════════════════════════════
 ttungbmt/os-scripts path:plugins/zsh-mcfly
-ttungbmt/os-scripts path:plugins/zsh-fzf
-ttungbmt/os-scripts path:plugins/zsh-direnv
-ttungbmt/os-scripts path:plugins/zsh-thefuck
-ttungbmt/os-scripts path:plugins/zsh-starship
 EOF
 }

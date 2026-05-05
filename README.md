@@ -1,5 +1,11 @@
 # OS Scripts
 
+```shell
+docker compose build
+docker compose run --rm shell bash
+docker compose run --rm test
+```
+
 ## Reference
 
 - https://bashly.dev

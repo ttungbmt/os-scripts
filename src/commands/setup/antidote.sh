@@ -1,4 +1,5 @@
 skip_plugins=${args[--skip-plugins]}
+force_plugins=${args[--force-plugins]}
 skip_zshrc=${args[--skip-zshrc]}
 
 name="antidote"
@@ -44,6 +45,9 @@ echo "$(bold "▸ Step 3/3:") Seeding $(cyan "$zsh_plugins_file")..."
 if [ -n "$skip_plugins" ]; then
   echo "$(yellow "⚠") Skipping plugin seeding (--skip-plugins)"
 else
+  if [ -n "$force_plugins" ] && [ -f "$zsh_plugins_file" ]; then
+    rm -f "$zsh_plugins_file"
+  fi
   seed_file "$zsh_plugins_file" "$(template_antidote_plugins)"
 fi
 

@@ -166,3 +166,6 @@ commands:
 
 - name: copilot
   help: Uninstall copilot
+
+- name: tailscale
+  help: Uninstall tailscale
