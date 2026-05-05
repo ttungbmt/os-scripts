@@ -6974,7 +6974,7 @@ gt_install_claude_command() {
     npm_pkg="@anthropic-ai/claude-code"
   fi
 
-  if sudo npm install -g "$npm_pkg"; then
+  if npm install -g "$npm_pkg"; then
     echo "$(green_bold ✓) $name installed successfully."
   else
     echo "$(red ✗ Failed to install $name.)"
@@ -7496,7 +7496,7 @@ gt_uninstall_claude_command() {
 
   echo "Uninstalling $(cyan_bold "${name}") via npm..."
 
-  if sudo npm uninstall -g @anthropic-ai/claude-code; then
+  if npm uninstall -g @anthropic-ai/claude-code; then
     echo "$(green_bold ✓) ${name} uninstalled."
   else
     echo "$(red ✗ Failed to uninstall ${name}.)"
