@@ -16,6 +16,7 @@ commands:
   - long: --force
     short: -f
     help: Force overwrite if tools are already installed
+
 - name: kustomize
   help: Install Kustomize
   flags: &std_install_flags
