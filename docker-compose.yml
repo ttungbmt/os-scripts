@@ -1,0 +1,23 @@
+services:
+  shell:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    environment:
+      - GITHUB_TOKEN
+    stdin_open: true
+    tty: true
+
+  test:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    environment:
+      - GITHUB_TOKEN
+    command: ["/workspace/docker/smoke-test.sh"]
