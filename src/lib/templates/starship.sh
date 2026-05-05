@@ -46,6 +46,9 @@ $git_branch\
 $git_status\
 $git_state\
 $kubernetes\
+$aws\
+$gcloud\
+$azure\
 $docker_context\
 $package\
 $nodejs\
@@ -94,14 +97,14 @@ stashed    = "$"
 
 [kubernetes]
 disabled         = false
-symbol           = "󱃾 "
+symbol           = "☸ "
 style            = "bold blue"
 format           = '[$symbol$context( \($namespace\))]($style) '
 detect_files     = ['k8s', 'kubeconfig', 'Chart.yaml']
 detect_extensions = ['yaml', 'yml']
 contexts = [
-  { context_pattern = "(?i).*prod.*",  style = "bold red", context_alias = "PROD ⚠" },
-  { context_pattern = "(?i).*stag.*",  style = "bold yellow" },
+  { context_pattern = ".*[pP][rR][oO][dD].*",  style = "bold red", context_alias = "PROD ⚠" },
+  { context_pattern = ".*[sS][tT][aA][gG].*",  style = "bold yellow" },
 ]
 
 [docker_context]
@@ -109,8 +112,23 @@ symbol          = " "
 style           = "bold blue"
 only_with_files = true
 
+[aws]
+symbol = "☁️  "
+style  = "bold yellow"
+format = '[$symbol($profile )(\($region\) )]($style)'
+
+[gcloud]
+symbol = "☁️  "
+style  = "bold blue"
+format = '[$symbol$account(@$domain)(\($region\))]($style) '
+
+[azure]
+symbol = "☁️  "
+style  = "bold blue"
+format = '[$symbol($subscription)]($style) '
+
 [package]
-symbol = "󰏗 "
+symbol = "📦 "
 style  = "208"
 
 [nodejs]
@@ -134,7 +152,7 @@ symbol = " "
 style  = "bold red"
 
 [terraform]
-symbol = "󱁢 "
+symbol = "💠 "
 style  = "bold purple"
 
 [os]

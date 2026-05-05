@@ -3691,6 +3691,7 @@ gt_setup_usage() {
   echo
   # :command.usage_commands
   printf "%s\n" "Commands:"
+  printf "  %s   Configure multiple tools at once (comma or space separated)\n" "multi   "
   printf "  %s   Configure antidote Zsh plugin manager (~/.zshrc and ~/.zsh_plugins.txt)\n" "antidote"
   printf "  %s   Configure starship prompt (~/.config/starship.toml + shell init)\n" "starship"
   printf "  %s   Configure zoxide (smarter cd) — inject init into ~/.zshrc and ~/.bashrc\n" "zoxide  "
@@ -3707,6 +3708,49 @@ gt_setup_usage() {
     # :command.usage_fixed_flags
     printf "  %s\n" "--help, -h"
     printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_setup_multi_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt setup multi - Configure multiple tools at once (comma or space separated)\n"
+    echo
+
+  else
+    printf "gt setup multi - Configure multiple tools at once (comma or space separated)\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt setup multi TOOLS... [OPTIONS]\n"
+  printf "  gt setup multi --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_flags
+    # :flag.usage
+    printf "  %s\n" "--skip-shell"
+    printf "    Skip injecting init into shell rc files for all tools\n"
+    echo
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+    # :command.usage_args
+    printf "%s\n" "Arguments:"
+
+    # :argument.usage
+    printf "  %s\n" "TOOLS..."
+    printf "    List of tools to configure (e.g., zoxide mcfly fzf)\n"
     echo
 
   fi
@@ -4355,14 +4399,31 @@ detect_platform() {
 # Returns: tag string (e.g. "v0.50.18")
 github_latest_tag() {
   local repo="$1"
-  local tag
-  tag=$(curl -s "https://api.github.com/repos/${repo}/releases/latest" \
-    | grep '"tag_name":' \
-    | sed -E 's/.*"([^"]+)".*/\1/')
+  local tag=""
+  local api_url="https://api.github.com/repos/${repo}/releases/latest"
+  local api_opts=(-s "$api_url")
+
+  if [[ -n "$GITHUB_TOKEN" ]]; then
+    api_opts=(-s -H "Authorization: Bearer $GITHUB_TOKEN" "$api_url")
+  fi
+
+  tag=$(curl "${api_opts[@]}" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+
+  # If API fails (e.g. rate limit), fallback to following the /releases/latest redirect
+  if [[ -z "$tag" ]]; then
+    local url
+    url=$(curl -sLI -o /dev/null -w '%{url_effective}' "https://github.com/${repo}/releases/latest")
+    tag="${url##*/}"
+    if [[ "$tag" == "latest" || "$tag" == "releases" ]]; then
+      tag=""
+    fi
+  fi
+
   if [ -z "$tag" ]; then
-    echo "$(red Error:) Could not fetch latest version for ${repo}."
+    echo "$(red Error:) Could not fetch latest version for ${repo}." >&2
     exit 1
   fi
+
   echo "$tag"
 }
 
@@ -5315,6 +5376,9 @@ $git_branch\
 $git_status\
 $git_state\
 $kubernetes\
+$aws\
+$gcloud\
+$azure\
 $docker_context\
 $package\
 $nodejs\
@@ -5363,14 +5427,14 @@ stashed    = "$"
 
 [kubernetes]
 disabled         = false
-symbol           = "󱃾 "
+symbol           = "☸ "
 style            = "bold blue"
 format           = '[$symbol$context( \($namespace\))]($style) '
 detect_files     = ['k8s', 'kubeconfig', 'Chart.yaml']
 detect_extensions = ['yaml', 'yml']
 contexts = [
-  { context_pattern = "(?i).*prod.*",  style = "bold red", context_alias = "PROD ⚠" },
-  { context_pattern = "(?i).*stag.*",  style = "bold yellow" },
+  { context_pattern = ".*[pP][rR][oO][dD].*",  style = "bold red", context_alias = "PROD ⚠" },
+  { context_pattern = ".*[sS][tT][aA][gG].*",  style = "bold yellow" },
 ]
 
 [docker_context]
@@ -5378,8 +5442,23 @@ symbol          = " "
 style           = "bold blue"
 only_with_files = true
 
+[aws]
+symbol = "☁️  "
+style  = "bold yellow"
+format = '[$symbol($profile )(\($region\) )]($style)'
+
+[gcloud]
+symbol = "☁️  "
+style  = "bold blue"
+format = '[$symbol$account(@$domain)(\($region\))]($style) '
+
+[azure]
+symbol = "☁️  "
+style  = "bold blue"
+format = '[$symbol($subscription)]($style) '
+
 [package]
-symbol = "󰏗 "
+symbol = "📦 "
 style  = "208"
 
 [nodejs]
@@ -5403,7 +5482,7 @@ symbol = " "
 style  = "bold red"
 
 [terraform]
-symbol = "󱁢 "
+symbol = "💠 "
 style  = "bold purple"
 
 [os]
@@ -7275,6 +7354,53 @@ gt_uninstall_gum_command() {
 gt_uninstall_uv_command() {
   # src/commands/uninstall/uv.sh
   uninstall_tool "uv" "/usr/local/bin/uv"
+
+}
+
+# :command.function
+gt_setup_multi_command() {
+  # src/commands/setup/multi.sh
+  skip_shell=${args[--skip-shell]}
+  eval "raw_tools=(${args['tools']})"
+
+  # Process both space-separated and comma-separated inputs
+  tools=()
+  for t in "${raw_tools[@]}"; do
+    IFS=',' read -ra split_tools <<< "$t"
+    for st in "${split_tools[@]}"; do
+      if [[ -n "$st" ]]; then
+        tools+=("$st")
+      fi
+    done
+  done
+
+  for tool in "${tools[@]}"; do
+    # We call the internal bashly generated command function for that tool if it exists
+    if declare -F "gt_setup_${tool}_command" > /dev/null; then
+      echo "==========================================="
+      echo "Configuring: $(cyan_bold "$tool")"
+      echo "==========================================="
+
+      # We clear existing args first
+      local orig_args
+      orig_args=$(declare -p args)
+
+      # Prepare args for the specific tool command
+      if [[ -n "$skip_shell" ]]; then
+        args['--skip-shell']=1
+      fi
+
+      # Call the internal function in a subshell to prevent 'exit' from killing the loop
+      ( gt_setup_${tool}_command ) || true
+
+      # Restore args
+      eval "$orig_args"
+      echo ""
+    else
+      echo "$(red "Error:") Tool '$(cyan_bold "$tool")' does not have a setup command or is not found."
+      echo ""
+    fi
+  done
 
 }
 
@@ -14063,6 +14189,13 @@ gt_setup_parse_requirements() {
   case $action in
     -*) ;;
 
+    multi)
+      action="multi"
+      shift
+      gt_setup_multi_parse_requirements "$@"
+      shift $#
+      ;;
+
     antidote)
       action="antidote"
       shift
@@ -14145,6 +14278,69 @@ gt_setup_parse_requirements() {
 
     esac
   done
+
+}
+
+# :command.parse_requirements
+gt_setup_multi_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_setup_multi_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="setup multi"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+      # :flag.case
+      --skip-shell)
+
+        # :flag.case_no_arg
+        args['--skip-shell']=1
+        shift
+        ;;
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_repeatable
+        # :argument.case_repeatable
+        escaped="$(printf '%q' "$1")"
+        if [[ -z ${args['tools']+x} ]]; then
+          args['tools']="$escaped"
+        else
+          args['tools']="${args['tools']} $escaped"
+
+        fi
+        shift
+
+        ;;
+
+    esac
+  done
+  # :command.required_args_filter
+  if [[ -z ${args['tools']+x} ]]; then
+    printf "missing required argument: TOOLS\nusage: gt setup multi TOOLS... [OPTIONS]\n" >&2
+    exit 1
+  fi
 
 }
 
@@ -14736,6 +14932,7 @@ run() {
     "uninstall gum") gt_uninstall_gum_command ;;
     "uninstall uv") gt_uninstall_uv_command ;;
     "setup") gt_setup_command ;;
+    "setup multi") gt_setup_multi_command ;;
     "setup antidote") gt_setup_antidote_command ;;
     "setup starship") gt_setup_starship_command ;;
     "setup zoxide") gt_setup_zoxide_command ;;

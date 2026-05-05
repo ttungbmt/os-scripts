@@ -663,6 +663,17 @@ commands:
 - name: setup
   help: Configure installed tools
   commands:
+  - name: multi
+    help: Configure multiple tools at once (comma or space separated)
+    args:
+    - name: tools
+      help: List of tools to configure (e.g., zoxide mcfly fzf)
+      required: true
+      repeatable: true
+    flags:
+    - long: --skip-shell
+      help: Skip injecting init into shell rc files for all tools
+
   - name: antidote
     help: Configure antidote Zsh plugin manager (~/.zshrc and ~/.zsh_plugins.txt)
     dependencies:

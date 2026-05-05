@@ -26,14 +26,31 @@ detect_platform() {
 # Returns: tag string (e.g. "v0.50.18")
 github_latest_tag() {
   local repo="$1"
-  local tag
-  tag=$(curl -s "https://api.github.com/repos/${repo}/releases/latest" \
-    | grep '"tag_name":' \
-    | sed -E 's/.*"([^"]+)".*/\1/')
+  local tag=""
+  local api_url="https://api.github.com/repos/${repo}/releases/latest"
+  local api_opts=(-s "$api_url")
+  
+  if [[ -n "$GITHUB_TOKEN" ]]; then
+    api_opts=(-s -H "Authorization: Bearer $GITHUB_TOKEN" "$api_url")
+  fi
+
+  tag=$(curl "${api_opts[@]}" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+  
+  # If API fails (e.g. rate limit), fallback to following the /releases/latest redirect
+  if [[ -z "$tag" ]]; then
+    local url
+    url=$(curl -sLI -o /dev/null -w '%{url_effective}' "https://github.com/${repo}/releases/latest")
+    tag="${url##*/}"
+    if [[ "$tag" == "latest" || "$tag" == "releases" ]]; then
+      tag=""
+    fi
+  fi
+
   if [ -z "$tag" ]; then
-    echo "$(red Error:) Could not fetch latest version for ${repo}."
+    echo "$(red Error:) Could not fetch latest version for ${repo}." >&2
     exit 1
   fi
+  
   echo "$tag"
 }
 
