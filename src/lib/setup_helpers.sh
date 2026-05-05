@@ -5,15 +5,15 @@
 # Usage: inject_config_block "$target_file" "$marker" "$content"
 inject_config_block() {
   local target_file="$1" marker="$2" content="$3"
-  
+
   if grep -qF "$marker" "$target_file" 2>/dev/null; then
     echo "$(yellow "⚠") Config block already exists in $target_file — skipping"
     return 0
   fi
-  
+
   # Create file if it doesn't exist
   [ -f "$target_file" ] || touch "$target_file"
-  
+
   # Append the content
   printf '\n%s\n' "$content" >> "$target_file"
   echo "$(green_bold "✓") Config block added to $target_file"
@@ -45,15 +45,15 @@ setup_shell_tool() {
 # Usage: seed_file "$target_file" "$content"
 seed_file() {
   local target_file="$1" content="$2"
-  
+
   if [ -s "$target_file" ]; then
     echo "$(yellow "⚠") $target_file already has content — skipping (delete it first to re-seed)"
     return 0
   fi
-  
+
   # Create parent directories if they don't exist
   mkdir -p "$(dirname "$target_file")"
-  
+
   # Write content
   printf '%s\n' "$content" > "$target_file"
   echo "$(green_bold "✓") Seeded $target_file"

@@ -53,9 +53,9 @@ get_remote_version() {
   local fn_name
   fn_name="$(echo "$tool" | tr '-' '_')_fetch_remote_version"
   local repo_var="${tool_upper}_GITHUB_REPO"
-  
+
   local ver=""
-  
+
   if type "$fn_name" >/dev/null 2>&1; then
     ver=$("$fn_name")
   else
@@ -74,6 +74,6 @@ get_remote_version() {
   if [[ "$ver" == v* ]]; then
     ver="${ver:1}"
   fi
-  
+
   echo "$ver"
 }

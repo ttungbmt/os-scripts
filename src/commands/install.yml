@@ -63,134 +63,174 @@ commands:
 - name: argocd
   help: Install argocd
   flags: *std_install_flags
+
 - name: velero
   help: Install velero
   flags: *std_install_flags
+
 - name: kubeconform
   help: Install kubeconform
   flags: *std_install_flags
+
 - name: krew
   help: Install krew
   flags: *std_install_flags
+
 - name: kubent
   help: Install kubent
   flags: *std_install_flags
+
 - name: sops
   help: Install sops
   flags: *std_install_flags
+
 - name: age
   help: Install age
   flags: *std_install_flags
+
 - name: trivy
   help: Install trivy
   flags: *std_install_flags
+
 - name: kubens
   help: Install kubens
   flags: *std_install_flags
+
 - name: kubecolor
   help: Install kubecolor
   flags: *std_install_flags
+
 - name: popeye
   help: Install popeye
   flags: *std_install_flags
+
 - name: kube-linter
   help: Install kube-linter
   flags: *std_install_flags
+
 - name: kyverno
   help: Install kyverno
   flags: *std_install_flags
+
 - name: conftest
   help: Install conftest
   flags: *std_install_flags
+
 - name: vault
   help: Install vault
   flags: *std_install_flags
   dependencies:
   - unzip
+
 - name: kubeseal
   help: Install kubeseal
   flags: *std_install_flags
+
 - name: zoxide
   help: Install zoxide
   flags: *std_install_flags
+
 - name: eza
   help: Install eza
   flags: *std_install_flags
+
 - name: bat
   help: Install bat
   flags: *std_install_flags
+
 - name: ripgrep
   help: Install ripgrep
   flags: *std_install_flags
+
 - name: starship
   help: Install starship
   flags: *std_install_flags
+
 - name: fzf
   help: Install fzf
   flags: *std_install_flags
+
 - name: fd
   help: Install fd (fast find alternative)
   flags: *std_install_flags
+
 - name: mcfly
   help: Install mcfly (smart shell history)
   flags: *std_install_flags
+
 - name: infisical
   help: Install infisical CLI
   flags: *std_install_flags
+
 - name: ksops
   help: Install ksops (kustomize-sops KRM plugin)
   flags: *std_install_flags
+
 - name: skopeo
   help: Install skopeo (container image tool)
   flags:
   - long: --force
     short: -f
     help: Force reinstall skopeo
+
 - name: helmfile
   help: Install helmfile
   flags: *std_install_flags
+
 - name: helm
   help: Install helm
   flags: *std_install_flags
+
 - name: chezmoi
   help: Install chezmoi (dotfile manager)
   flags: *std_install_flags
+
 - name: tmux
   help: Install tmux (terminal multiplexer)
   flags:
   - long: --force
     short: -f
     help: Force reinstall tmux
+
 - name: rsync
   help: Install rsync
   flags:
   - long: --force
     short: -f
     help: Force reinstall rsync
+
 - name: trino
   help: Install trino CLI
   flags: *std_install_flags
+
 - name: nerdctl
   help: Install nerdctl (containerd CLI)
   flags: *std_install_flags
+
 - name: viddy
   help: Install viddy (modern watch command)
   flags: *std_install_flags
+
 - name: hyperfine
   help: Install hyperfine (benchmarking tool)
   flags: *std_install_flags
+
 - name: jq
   help: Install jq (JSON processor)
   flags: *std_install_flags
+
 - name: yq
   help: Install yq (YAML processor)
   flags: *std_install_flags
+
 - name: gum
   help: Install gum (glamorous shell scripts)
   flags: *std_install_flags
+
 - name: uv
   help: Install uv (Python package manager)
   flags: *std_install_flags
+
 - name: bashly
   help: Install bashly (Bash CLI generator)
   dependencies:
@@ -204,12 +244,14 @@ commands:
   - long: --force
     short: -f
     help: Force overwrite if bashly is already installed
+
 - name: gem
   help: Install RubyGems (gem)
   flags:
   - long: --force
     short: -f
     help: Force reinstall gem
+
 - name: claude
   help: Install claude (Claude Code CLI)
   dependencies:
@@ -223,6 +265,7 @@ commands:
   - long: --force
     short: -f
     help: Force overwrite if claude is already installed
+
 - name: talisman
   help: Install talisman (git hook secrets scanner)
   flags:

@@ -29,13 +29,13 @@ github_latest_tag() {
   local tag=""
   local api_url="https://api.github.com/repos/${repo}/releases/latest"
   local api_opts=(-s "$api_url")
-  
+
   if [[ -n "$GITHUB_TOKEN" ]]; then
     api_opts=(-s -H "Authorization: Bearer $GITHUB_TOKEN" "$api_url")
   fi
 
   tag=$(curl "${api_opts[@]}" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
-  
+
   # If API fails (e.g. rate limit), fallback to following the /releases/latest redirect
   if [[ -z "$tag" ]]; then
     local url
@@ -50,7 +50,7 @@ github_latest_tag() {
     echo "$(red Error:) Could not fetch latest version for ${repo}." >&2
     exit 1
   fi
-  
+
   echo "$tag"
 }
 
@@ -184,7 +184,7 @@ remove_package() {
 # Usage: install_git_repo "https://github.com/user/repo.git" "/dest/path" "branch_or_tag"
 install_git_repo() {
   local repo_url="$1" dest="$2" version="$3"
-  
+
   if [ -d "$dest" ]; then
     echo "Directory $dest already exists. Pulling latest changes..."
     if [ ! -w "$dest" ]; then

@@ -30,93 +30,136 @@ commands:
 
 - name: argocd
   help: Uninstall argocd
+
 - name: velero
   help: Uninstall velero
+
 - name: kubeconform
   help: Uninstall kubeconform
+
 - name: krew
   help: Uninstall krew
+
 - name: kubent
   help: Uninstall kubent
+
 - name: sops
   help: Uninstall sops
+
 - name: age
   help: Uninstall age
+
 - name: trivy
   help: Uninstall trivy
+
 - name: kubens
   help: Uninstall kubens
+
 - name: kubecolor
   help: Uninstall kubecolor
+
 - name: popeye
   help: Uninstall popeye
+
 - name: kube-linter
   help: Uninstall kube-linter
+
 - name: kyverno
   help: Uninstall kyverno
+
 - name: conftest
   help: Uninstall conftest
+
 - name: vault
   help: Uninstall vault
+
 - name: kubeseal
   help: Uninstall kubeseal
+
 - name: zoxide
   help: Uninstall zoxide
+
 - name: eza
   help: Uninstall eza
+
 - name: bat
   help: Uninstall bat
+
 - name: ripgrep
   help: Uninstall ripgrep
+
 - name: starship
   help: Uninstall starship
+
 - name: fzf
   help: Uninstall fzf
+
 - name: fd
   help: Uninstall fd
+
 - name: mcfly
   help: Uninstall mcfly
+
 - name: infisical
   help: Uninstall infisical
+
 - name: ksops
   help: Uninstall ksops
+
 - name: skopeo
   help: Uninstall skopeo
+
 - name: helmfile
   help: Uninstall helmfile
+
 - name: helm
   help: Uninstall helm
+
 - name: chezmoi
   help: Uninstall chezmoi
+
 - name: tmux
   help: Uninstall tmux
+
 - name: rsync
   help: Uninstall rsync
+
 - name: trino
   help: Uninstall trino
+
 - name: nerdctl
   help: Uninstall nerdctl
+
 - name: viddy
   help: Uninstall viddy
+
 - name: hyperfine
   help: Uninstall hyperfine
+
 - name: jq
   help: Uninstall jq
+
 - name: yq
   help: Uninstall yq
+
 - name: gum
   help: Uninstall gum
+
 - name: uv
   help: Uninstall uv
+
 - name: bashly
   help: Uninstall bashly
   dependencies:
   - gem
+
 - name: gem
   help: Uninstall gem
+
 - name: claude
   help: Uninstall claude
   dependencies:
   - npm
+
 - name: talisman
   help: Uninstall talisman
