@@ -389,6 +389,167 @@ commands:
     - long: --force
       short: -f
       help: Force overwrite if mcfly is already installed
+  - name: infisical
+    help: Install infisical CLI
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: infisical version to install (e.g., v0.43.79 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if infisical is already installed
+  - name: ksops
+    help: Install ksops (kustomize-sops KRM plugin)
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: ksops version to install (e.g., v4.5.1 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if ksops is already installed
+  - name: skopeo
+    help: Install skopeo (container image tool)
+    flags:
+    - long: --force
+      short: -f
+      help: Force reinstall skopeo
+  - name: helmfile
+    help: Install helmfile
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: helmfile version to install (e.g., v1.5.0 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if helmfile is already installed
+  - name: helm
+    help: Install helm
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: helm version to install (e.g., v3.17.3 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if helm is already installed
+  - name: chezmoi
+    help: Install chezmoi (dotfile manager)
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: chezmoi version to install (e.g., v2.70.2 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if chezmoi is already installed
+  - name: tmux
+    help: Install tmux (terminal multiplexer)
+    flags:
+    - long: --force
+      short: -f
+      help: Force reinstall tmux
+  - name: rsync
+    help: Install rsync
+    flags:
+    - long: --force
+      short: -f
+      help: Force reinstall rsync
+  - name: trino
+    help: Install trino CLI
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: trino version to install (e.g., 480 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if trino is already installed
+  - name: nerdctl
+    help: Install nerdctl (containerd CLI)
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: nerdctl version to install (e.g., v2.2.2 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if nerdctl is already installed
+  - name: viddy
+    help: Install viddy (modern watch command)
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: viddy version to install (e.g., v1.3.0 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if viddy is already installed
+  - name: hyperfine
+    help: Install hyperfine (benchmarking tool)
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: hyperfine version to install (e.g., v1.19.0 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if hyperfine is already installed
+  - name: jq
+    help: Install jq (JSON processor)
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: jq version to install (e.g., jq-1.8.1 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if jq is already installed
+  - name: yq
+    help: Install yq (YAML processor)
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: yq version to install (e.g., v4.53.2 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if yq is already installed
+  - name: gum
+    help: Install gum (glamorous shell scripts)
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: gum version to install (e.g., v0.17.0 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if gum is already installed
+  - name: uv
+    help: Install uv (Python package manager)
+    flags:
+    - long: --version
+      short: -v
+      arg: version
+      help: uv version to install (e.g., 0.11.8 or latest)
+      default: latest
+    - long: --force
+      short: -f
+      help: Force overwrite if uv is already installed
 - name: uninstall
   help: Uninstall tools and components
   commands:
@@ -467,6 +628,38 @@ commands:
     help: Uninstall fd
   - name: mcfly
     help: Uninstall mcfly
+  - name: infisical
+    help: Uninstall infisical
+  - name: ksops
+    help: Uninstall ksops
+  - name: skopeo
+    help: Uninstall skopeo
+  - name: helmfile
+    help: Uninstall helmfile
+  - name: helm
+    help: Uninstall helm
+  - name: chezmoi
+    help: Uninstall chezmoi
+  - name: tmux
+    help: Uninstall tmux
+  - name: rsync
+    help: Uninstall rsync
+  - name: trino
+    help: Uninstall trino
+  - name: nerdctl
+    help: Uninstall nerdctl
+  - name: viddy
+    help: Uninstall viddy
+  - name: hyperfine
+    help: Uninstall hyperfine
+  - name: jq
+    help: Uninstall jq
+  - name: yq
+    help: Uninstall yq
+  - name: gum
+    help: Uninstall gum
+  - name: uv
+    help: Uninstall uv
 - name: setup
   help: Configure installed tools
   commands:
@@ -480,6 +673,49 @@ commands:
       help: Skip seeding ~/.zsh_plugins.txt with recommended plugins
     - long: --skip-zshrc
       help: Skip adding antidote bootstrap to ~/.zshrc
+
+  - name: starship
+    help: Configure starship prompt (~/.config/starship.toml + shell init)
+    flags:
+    - long: --preset
+      arg: name
+      help: 'Apply a built-in starship preset (e.g. tokyo-night, pure-preset, gruvbox-rainbow). Run `starship preset list` to see all.'
+    - long: --skip-config
+      help: Skip seeding ~/.config/starship.toml
+    - long: --skip-shell
+      help: Skip injecting starship init into shell rc files
+    - long: --force-config
+      help: Overwrite ~/.config/starship.toml even if it already has content
+
+  - name: zoxide
+    help: Configure zoxide (smarter cd) — inject init into ~/.zshrc and ~/.bashrc
+    flags:
+    - long: --skip-shell
+      help: Skip injecting zoxide init into shell rc files
+
+  - name: mcfly
+    help: Configure mcfly (smart shell history) — inject init into ~/.zshrc and ~/.bashrc
+    flags:
+    - long: --skip-shell
+      help: Skip injecting mcfly init into shell rc files
+
+  - name: fzf
+    help: Configure fzf shell integration (Ctrl-R / Ctrl-T / Alt-C) for zsh + bash
+    flags:
+    - long: --skip-shell
+      help: Skip injecting fzf init into shell rc files
+
+  - name: direnv
+    help: Configure direnv shell hook for zsh + bash
+    flags:
+    - long: --skip-shell
+      help: Skip injecting direnv hook into shell rc files
+
+  - name: thefuck
+    help: Configure thefuck alias (`fuck` to fix the last command) for zsh + bash
+    flags:
+    - long: --skip-shell
+      help: Skip injecting thefuck alias into shell rc files
 
 - name: outdated
   help: Check for outdated tools

@@ -107,6 +107,22 @@ gt_install_usage() {
   printf "  %s   Install fzf\n" "fzf        "
   printf "  %s   Install fd (fast find alternative)\n" "fd         "
   printf "  %s   Install mcfly (smart shell history)\n" "mcfly      "
+  printf "  %s   Install infisical CLI\n" "infisical  "
+  printf "  %s   Install ksops (kustomize-sops KRM plugin)\n" "ksops      "
+  printf "  %s   Install skopeo (container image tool)\n" "skopeo     "
+  printf "  %s   Install helmfile\n" "helmfile   "
+  printf "  %s   Install helm\n" "helm       "
+  printf "  %s   Install chezmoi (dotfile manager)\n" "chezmoi    "
+  printf "  %s   Install tmux (terminal multiplexer)\n" "tmux       "
+  printf "  %s   Install rsync\n" "rsync      "
+  printf "  %s   Install trino CLI\n" "trino      "
+  printf "  %s   Install nerdctl (containerd CLI)\n" "nerdctl    "
+  printf "  %s   Install viddy (modern watch command)\n" "viddy      "
+  printf "  %s   Install hyperfine (benchmarking tool)\n" "hyperfine  "
+  printf "  %s   Install jq (JSON processor)\n" "jq         "
+  printf "  %s   Install yq (YAML processor)\n" "yq         "
+  printf "  %s   Install gum (glamorous shell scripts)\n" "gum        "
+  printf "  %s   Install uv (Python package manager)\n" "uv         "
   echo
 
   # :command.long_usage
@@ -1518,6 +1534,644 @@ gt_install_mcfly_usage() {
 }
 
 # :command.usage
+gt_install_infisical_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt install infisical - Install infisical CLI\n"
+    echo
+
+  else
+    printf "gt install infisical - Install infisical CLI\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt install infisical [OPTIONS]\n"
+  printf "  gt install infisical --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_flags
+    # :flag.usage
+    printf "  %s\n" "--version, -v VERSION"
+    printf "    infisical version to install (e.g., v0.43.79 or latest)\n"
+    printf "    Default: latest\n"
+    echo
+
+    # :flag.usage
+    printf "  %s\n" "--force, -f"
+    printf "    Force overwrite if infisical is already installed\n"
+    echo
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_install_ksops_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt install ksops - Install ksops (kustomize-sops KRM plugin)\n"
+    echo
+
+  else
+    printf "gt install ksops - Install ksops (kustomize-sops KRM plugin)\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt install ksops [OPTIONS]\n"
+  printf "  gt install ksops --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_flags
+    # :flag.usage
+    printf "  %s\n" "--version, -v VERSION"
+    printf "    ksops version to install (e.g., v4.5.1 or latest)\n"
+    printf "    Default: latest\n"
+    echo
+
+    # :flag.usage
+    printf "  %s\n" "--force, -f"
+    printf "    Force overwrite if ksops is already installed\n"
+    echo
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_install_skopeo_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt install skopeo - Install skopeo (container image tool)\n"
+    echo
+
+  else
+    printf "gt install skopeo - Install skopeo (container image tool)\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt install skopeo [OPTIONS]\n"
+  printf "  gt install skopeo --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_flags
+    # :flag.usage
+    printf "  %s\n" "--force, -f"
+    printf "    Force reinstall skopeo\n"
+    echo
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_install_helmfile_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt install helmfile - Install helmfile\n"
+    echo
+
+  else
+    printf "gt install helmfile - Install helmfile\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt install helmfile [OPTIONS]\n"
+  printf "  gt install helmfile --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_flags
+    # :flag.usage
+    printf "  %s\n" "--version, -v VERSION"
+    printf "    helmfile version to install (e.g., v1.5.0 or latest)\n"
+    printf "    Default: latest\n"
+    echo
+
+    # :flag.usage
+    printf "  %s\n" "--force, -f"
+    printf "    Force overwrite if helmfile is already installed\n"
+    echo
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_install_helm_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt install helm - Install helm\n"
+    echo
+
+  else
+    printf "gt install helm - Install helm\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt install helm [OPTIONS]\n"
+  printf "  gt install helm --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_flags
+    # :flag.usage
+    printf "  %s\n" "--version, -v VERSION"
+    printf "    helm version to install (e.g., v3.17.3 or latest)\n"
+    printf "    Default: latest\n"
+    echo
+
+    # :flag.usage
+    printf "  %s\n" "--force, -f"
+    printf "    Force overwrite if helm is already installed\n"
+    echo
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_install_chezmoi_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt install chezmoi - Install chezmoi (dotfile manager)\n"
+    echo
+
+  else
+    printf "gt install chezmoi - Install chezmoi (dotfile manager)\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt install chezmoi [OPTIONS]\n"
+  printf "  gt install chezmoi --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_flags
+    # :flag.usage
+    printf "  %s\n" "--version, -v VERSION"
+    printf "    chezmoi version to install (e.g., v2.70.2 or latest)\n"
+    printf "    Default: latest\n"
+    echo
+
+    # :flag.usage
+    printf "  %s\n" "--force, -f"
+    printf "    Force overwrite if chezmoi is already installed\n"
+    echo
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_install_tmux_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt install tmux - Install tmux (terminal multiplexer)\n"
+    echo
+
+  else
+    printf "gt install tmux - Install tmux (terminal multiplexer)\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt install tmux [OPTIONS]\n"
+  printf "  gt install tmux --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_flags
+    # :flag.usage
+    printf "  %s\n" "--force, -f"
+    printf "    Force reinstall tmux\n"
+    echo
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_install_rsync_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt install rsync - Install rsync\n"
+    echo
+
+  else
+    printf "gt install rsync - Install rsync\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt install rsync [OPTIONS]\n"
+  printf "  gt install rsync --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_flags
+    # :flag.usage
+    printf "  %s\n" "--force, -f"
+    printf "    Force reinstall rsync\n"
+    echo
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_install_trino_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt install trino - Install trino CLI\n"
+    echo
+
+  else
+    printf "gt install trino - Install trino CLI\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt install trino [OPTIONS]\n"
+  printf "  gt install trino --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_flags
+    # :flag.usage
+    printf "  %s\n" "--version, -v VERSION"
+    printf "    trino version to install (e.g., 480 or latest)\n"
+    printf "    Default: latest\n"
+    echo
+
+    # :flag.usage
+    printf "  %s\n" "--force, -f"
+    printf "    Force overwrite if trino is already installed\n"
+    echo
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_install_nerdctl_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt install nerdctl - Install nerdctl (containerd CLI)\n"
+    echo
+
+  else
+    printf "gt install nerdctl - Install nerdctl (containerd CLI)\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt install nerdctl [OPTIONS]\n"
+  printf "  gt install nerdctl --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_flags
+    # :flag.usage
+    printf "  %s\n" "--version, -v VERSION"
+    printf "    nerdctl version to install (e.g., v2.2.2 or latest)\n"
+    printf "    Default: latest\n"
+    echo
+
+    # :flag.usage
+    printf "  %s\n" "--force, -f"
+    printf "    Force overwrite if nerdctl is already installed\n"
+    echo
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_install_viddy_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt install viddy - Install viddy (modern watch command)\n"
+    echo
+
+  else
+    printf "gt install viddy - Install viddy (modern watch command)\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt install viddy [OPTIONS]\n"
+  printf "  gt install viddy --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_flags
+    # :flag.usage
+    printf "  %s\n" "--version, -v VERSION"
+    printf "    viddy version to install (e.g., v1.3.0 or latest)\n"
+    printf "    Default: latest\n"
+    echo
+
+    # :flag.usage
+    printf "  %s\n" "--force, -f"
+    printf "    Force overwrite if viddy is already installed\n"
+    echo
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_install_hyperfine_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt install hyperfine - Install hyperfine (benchmarking tool)\n"
+    echo
+
+  else
+    printf "gt install hyperfine - Install hyperfine (benchmarking tool)\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt install hyperfine [OPTIONS]\n"
+  printf "  gt install hyperfine --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_flags
+    # :flag.usage
+    printf "  %s\n" "--version, -v VERSION"
+    printf "    hyperfine version to install (e.g., v1.19.0 or latest)\n"
+    printf "    Default: latest\n"
+    echo
+
+    # :flag.usage
+    printf "  %s\n" "--force, -f"
+    printf "    Force overwrite if hyperfine is already installed\n"
+    echo
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_install_jq_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt install jq - Install jq (JSON processor)\n"
+    echo
+
+  else
+    printf "gt install jq - Install jq (JSON processor)\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt install jq [OPTIONS]\n"
+  printf "  gt install jq --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_flags
+    # :flag.usage
+    printf "  %s\n" "--version, -v VERSION"
+    printf "    jq version to install (e.g., jq-1.8.1 or latest)\n"
+    printf "    Default: latest\n"
+    echo
+
+    # :flag.usage
+    printf "  %s\n" "--force, -f"
+    printf "    Force overwrite if jq is already installed\n"
+    echo
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_install_yq_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt install yq - Install yq (YAML processor)\n"
+    echo
+
+  else
+    printf "gt install yq - Install yq (YAML processor)\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt install yq [OPTIONS]\n"
+  printf "  gt install yq --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_flags
+    # :flag.usage
+    printf "  %s\n" "--version, -v VERSION"
+    printf "    yq version to install (e.g., v4.53.2 or latest)\n"
+    printf "    Default: latest\n"
+    echo
+
+    # :flag.usage
+    printf "  %s\n" "--force, -f"
+    printf "    Force overwrite if yq is already installed\n"
+    echo
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_install_gum_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt install gum - Install gum (glamorous shell scripts)\n"
+    echo
+
+  else
+    printf "gt install gum - Install gum (glamorous shell scripts)\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt install gum [OPTIONS]\n"
+  printf "  gt install gum --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_flags
+    # :flag.usage
+    printf "  %s\n" "--version, -v VERSION"
+    printf "    gum version to install (e.g., v0.17.0 or latest)\n"
+    printf "    Default: latest\n"
+    echo
+
+    # :flag.usage
+    printf "  %s\n" "--force, -f"
+    printf "    Force overwrite if gum is already installed\n"
+    echo
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_install_uv_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt install uv - Install uv (Python package manager)\n"
+    echo
+
+  else
+    printf "gt install uv - Install uv (Python package manager)\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt install uv [OPTIONS]\n"
+  printf "  gt install uv --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_flags
+    # :flag.usage
+    printf "  %s\n" "--version, -v VERSION"
+    printf "    uv version to install (e.g., 0.11.8 or latest)\n"
+    printf "    Default: latest\n"
+    echo
+
+    # :flag.usage
+    printf "  %s\n" "--force, -f"
+    printf "    Force overwrite if uv is already installed\n"
+    echo
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
 gt_uninstall_usage() {
   if [[ -n $long_usage ]]; then
     printf "gt uninstall - Uninstall tools and components\n"
@@ -1568,6 +2222,22 @@ gt_uninstall_usage() {
   printf "  %s   Uninstall fzf\n" "fzf        "
   printf "  %s   Uninstall fd\n" "fd         "
   printf "  %s   Uninstall mcfly\n" "mcfly      "
+  printf "  %s   Uninstall infisical\n" "infisical  "
+  printf "  %s   Uninstall ksops\n" "ksops      "
+  printf "  %s   Uninstall skopeo\n" "skopeo     "
+  printf "  %s   Uninstall helmfile\n" "helmfile   "
+  printf "  %s   Uninstall helm\n" "helm       "
+  printf "  %s   Uninstall chezmoi\n" "chezmoi    "
+  printf "  %s   Uninstall tmux\n" "tmux       "
+  printf "  %s   Uninstall rsync\n" "rsync      "
+  printf "  %s   Uninstall trino\n" "trino      "
+  printf "  %s   Uninstall nerdctl\n" "nerdctl    "
+  printf "  %s   Uninstall viddy\n" "viddy      "
+  printf "  %s   Uninstall hyperfine\n" "hyperfine  "
+  printf "  %s   Uninstall jq\n" "jq         "
+  printf "  %s   Uninstall yq\n" "yq         "
+  printf "  %s   Uninstall gum\n" "gum        "
+  printf "  %s   Uninstall uv\n" "uv         "
   echo
 
   # :command.long_usage
@@ -2540,6 +3210,470 @@ gt_uninstall_mcfly_usage() {
 }
 
 # :command.usage
+gt_uninstall_infisical_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt uninstall infisical - Uninstall infisical\n"
+    echo
+
+  else
+    printf "gt uninstall infisical - Uninstall infisical\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt uninstall infisical\n"
+  printf "  gt uninstall infisical --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_uninstall_ksops_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt uninstall ksops - Uninstall ksops\n"
+    echo
+
+  else
+    printf "gt uninstall ksops - Uninstall ksops\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt uninstall ksops\n"
+  printf "  gt uninstall ksops --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_uninstall_skopeo_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt uninstall skopeo - Uninstall skopeo\n"
+    echo
+
+  else
+    printf "gt uninstall skopeo - Uninstall skopeo\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt uninstall skopeo\n"
+  printf "  gt uninstall skopeo --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_uninstall_helmfile_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt uninstall helmfile - Uninstall helmfile\n"
+    echo
+
+  else
+    printf "gt uninstall helmfile - Uninstall helmfile\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt uninstall helmfile\n"
+  printf "  gt uninstall helmfile --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_uninstall_helm_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt uninstall helm - Uninstall helm\n"
+    echo
+
+  else
+    printf "gt uninstall helm - Uninstall helm\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt uninstall helm\n"
+  printf "  gt uninstall helm --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_uninstall_chezmoi_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt uninstall chezmoi - Uninstall chezmoi\n"
+    echo
+
+  else
+    printf "gt uninstall chezmoi - Uninstall chezmoi\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt uninstall chezmoi\n"
+  printf "  gt uninstall chezmoi --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_uninstall_tmux_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt uninstall tmux - Uninstall tmux\n"
+    echo
+
+  else
+    printf "gt uninstall tmux - Uninstall tmux\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt uninstall tmux\n"
+  printf "  gt uninstall tmux --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_uninstall_rsync_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt uninstall rsync - Uninstall rsync\n"
+    echo
+
+  else
+    printf "gt uninstall rsync - Uninstall rsync\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt uninstall rsync\n"
+  printf "  gt uninstall rsync --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_uninstall_trino_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt uninstall trino - Uninstall trino\n"
+    echo
+
+  else
+    printf "gt uninstall trino - Uninstall trino\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt uninstall trino\n"
+  printf "  gt uninstall trino --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_uninstall_nerdctl_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt uninstall nerdctl - Uninstall nerdctl\n"
+    echo
+
+  else
+    printf "gt uninstall nerdctl - Uninstall nerdctl\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt uninstall nerdctl\n"
+  printf "  gt uninstall nerdctl --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_uninstall_viddy_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt uninstall viddy - Uninstall viddy\n"
+    echo
+
+  else
+    printf "gt uninstall viddy - Uninstall viddy\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt uninstall viddy\n"
+  printf "  gt uninstall viddy --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_uninstall_hyperfine_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt uninstall hyperfine - Uninstall hyperfine\n"
+    echo
+
+  else
+    printf "gt uninstall hyperfine - Uninstall hyperfine\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt uninstall hyperfine\n"
+  printf "  gt uninstall hyperfine --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_uninstall_jq_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt uninstall jq - Uninstall jq\n"
+    echo
+
+  else
+    printf "gt uninstall jq - Uninstall jq\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt uninstall jq\n"
+  printf "  gt uninstall jq --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_uninstall_yq_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt uninstall yq - Uninstall yq\n"
+    echo
+
+  else
+    printf "gt uninstall yq - Uninstall yq\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt uninstall yq\n"
+  printf "  gt uninstall yq --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_uninstall_gum_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt uninstall gum - Uninstall gum\n"
+    echo
+
+  else
+    printf "gt uninstall gum - Uninstall gum\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt uninstall gum\n"
+  printf "  gt uninstall gum --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_uninstall_uv_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt uninstall uv - Uninstall uv\n"
+    echo
+
+  else
+    printf "gt uninstall uv - Uninstall uv\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt uninstall uv\n"
+  printf "  gt uninstall uv --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
 gt_setup_usage() {
   if [[ -n $long_usage ]]; then
     printf "gt setup - Configure installed tools\n"
@@ -2558,6 +3692,12 @@ gt_setup_usage() {
   # :command.usage_commands
   printf "%s\n" "Commands:"
   printf "  %s   Configure antidote Zsh plugin manager (~/.zshrc and ~/.zsh_plugins.txt)\n" "antidote"
+  printf "  %s   Configure starship prompt (~/.config/starship.toml + shell init)\n" "starship"
+  printf "  %s   Configure zoxide (smarter cd) — inject init into ~/.zshrc and ~/.bashrc\n" "zoxide  "
+  printf "  %s   Configure mcfly (smart shell history) — inject init into ~/.zshrc and ~/.bashrc\n" "mcfly   "
+  printf "  %s   Configure fzf shell integration (Ctrl-R / Ctrl-T / Alt-C) for zsh + bash\n" "fzf     "
+  printf "  %s   Configure direnv shell hook for zsh + bash\n" "direnv  "
+  printf "  %s   Configure thefuck alias (\`fuck\` to fix the last command) for zsh + bash\n" "thefuck "
   echo
 
   # :command.long_usage
@@ -2602,6 +3742,231 @@ gt_setup_antidote_usage() {
     # :flag.usage
     printf "  %s\n" "--skip-zshrc"
     printf "    Skip adding antidote bootstrap to ~/.zshrc\n"
+    echo
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_setup_starship_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt setup starship - Configure starship prompt (~/.config/starship.toml + shell init)\n"
+    echo
+
+  else
+    printf "gt setup starship - Configure starship prompt (~/.config/starship.toml + shell init)\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt setup starship [OPTIONS]\n"
+  printf "  gt setup starship --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_flags
+    # :flag.usage
+    printf "  %s\n" "--preset NAME"
+    printf "    Apply a built-in starship preset (e.g. tokyo-night, pure-preset,\n    gruvbox-rainbow). Run \`starship preset list\` to see all.\n"
+    echo
+
+    # :flag.usage
+    printf "  %s\n" "--skip-config"
+    printf "    Skip seeding ~/.config/starship.toml\n"
+    echo
+
+    # :flag.usage
+    printf "  %s\n" "--skip-shell"
+    printf "    Skip injecting starship init into shell rc files\n"
+    echo
+
+    # :flag.usage
+    printf "  %s\n" "--force-config"
+    printf "    Overwrite ~/.config/starship.toml even if it already has content\n"
+    echo
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_setup_zoxide_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt setup zoxide - Configure zoxide (smarter cd) — inject init into ~/.zshrc and ~/.bashrc\n"
+    echo
+
+  else
+    printf "gt setup zoxide - Configure zoxide (smarter cd) — inject init into ~/.zshrc and ~/.bashrc\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt setup zoxide [OPTIONS]\n"
+  printf "  gt setup zoxide --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_flags
+    # :flag.usage
+    printf "  %s\n" "--skip-shell"
+    printf "    Skip injecting zoxide init into shell rc files\n"
+    echo
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_setup_mcfly_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt setup mcfly - Configure mcfly (smart shell history) — inject init into ~/.zshrc and ~/.bashrc\n"
+    echo
+
+  else
+    printf "gt setup mcfly - Configure mcfly (smart shell history) — inject init into ~/.zshrc and ~/.bashrc\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt setup mcfly [OPTIONS]\n"
+  printf "  gt setup mcfly --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_flags
+    # :flag.usage
+    printf "  %s\n" "--skip-shell"
+    printf "    Skip injecting mcfly init into shell rc files\n"
+    echo
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_setup_fzf_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt setup fzf - Configure fzf shell integration (Ctrl-R / Ctrl-T / Alt-C) for zsh + bash\n"
+    echo
+
+  else
+    printf "gt setup fzf - Configure fzf shell integration (Ctrl-R / Ctrl-T / Alt-C) for zsh + bash\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt setup fzf [OPTIONS]\n"
+  printf "  gt setup fzf --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_flags
+    # :flag.usage
+    printf "  %s\n" "--skip-shell"
+    printf "    Skip injecting fzf init into shell rc files\n"
+    echo
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_setup_direnv_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt setup direnv - Configure direnv shell hook for zsh + bash\n"
+    echo
+
+  else
+    printf "gt setup direnv - Configure direnv shell hook for zsh + bash\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt setup direnv [OPTIONS]\n"
+  printf "  gt setup direnv --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_flags
+    # :flag.usage
+    printf "  %s\n" "--skip-shell"
+    printf "    Skip injecting direnv hook into shell rc files\n"
+    echo
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gt_setup_thefuck_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gt setup thefuck - Configure thefuck alias (\`fuck\` to fix the last command) for zsh + bash\n"
+    echo
+
+  else
+    printf "gt setup thefuck - Configure thefuck alias (\`fuck\` to fix the last command) for zsh + bash\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gt setup thefuck [OPTIONS]\n"
+  printf "  gt setup thefuck --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_flags
+    # :flag.usage
+    printf "  %s\n" "--skip-shell"
+    printf "    Skip injecting thefuck alias into shell rc files\n"
     echo
 
     # :command.usage_fixed_flags
@@ -3232,6 +4597,14 @@ btop_fetch_local_version() {
   "$target" --version 2>/dev/null | head -n 1 | awk '{print $3}' | cut -d'+' -f1 | sed 's/\x1b\[[0-9;]*m//g' | tr -d ' \r\n'
 }
 
+# src/lib/registry/chezmoi.sh
+CHEZMOI_GITHUB_REPO="twpayne/chezmoi"
+
+chezmoi_fetch_local_version() {
+  local target="$1"
+  "$target" --version 2>/dev/null | awk '{print $3}'
+}
+
 # src/lib/registry/conftest.sh
 CONFTEST_INSTALL_TYPE="github_release"
 CONFTEST_GITHUB_REPO="open-policy-agent/conftest"
@@ -3286,6 +4659,54 @@ fzf_fetch_local_version() {
   "$target" --version 2>/dev/null | awk '{print $1}'
 }
 
+# src/lib/registry/gum.sh
+GUM_GITHUB_REPO="charmbracelet/gum"
+
+gum_fetch_local_version() {
+  local target="$1"
+  "$target" --version 2>/dev/null | awk '{print $3}'
+}
+
+# src/lib/registry/helm.sh
+HELM_GITHUB_REPO="helm/helm"
+
+helm_fetch_local_version() {
+  local target="$1"
+  "$target" version --short 2>/dev/null | awk -F+ '{print $1}'
+}
+
+# src/lib/registry/helmfile.sh
+HELMFILE_GITHUB_REPO="helmfile/helmfile"
+
+helmfile_fetch_local_version() {
+  local target="$1"
+  "$target" --version 2>/dev/null | awk '{print $3}'
+}
+
+# src/lib/registry/hyperfine.sh
+HYPERFINE_GITHUB_REPO="sharkdp/hyperfine"
+
+hyperfine_fetch_local_version() {
+  local target="$1"
+  "$target" --version 2>/dev/null | awk '{print $2}'
+}
+
+# src/lib/registry/infisical.sh
+INFISICAL_GITHUB_REPO="Infisical/cli"
+
+infisical_fetch_local_version() {
+  local target="$1"
+  "$target" --version 2>/dev/null | awk '{print $3}'
+}
+
+# src/lib/registry/jq.sh
+JQ_GITHUB_REPO="jqlang/jq"
+
+jq_fetch_local_version() {
+  local target="$1"
+  "$target" --version 2>/dev/null | awk '{print $1}'
+}
+
 # src/lib/registry/k9s.sh
 K9S_GITHUB_REPO="derailed/k9s"
 K9S_ARCHIVE_TYPE="tar.gz"
@@ -3304,6 +4725,14 @@ KREW_GITHUB_REPO="kubernetes-sigs/krew"
 KREW_ARCHIVE_TYPE="tar.gz"
 KREW_ASSET_PATTERN="krew-\${DETECT_OS}_\${DETECT_ARCH}.tar.gz"
 KREW_BIN_PATH="krew-\${DETECT_OS}_\${DETECT_ARCH}"
+
+# src/lib/registry/ksops.sh
+KSOPS_GITHUB_REPO="viaduct-ai/kustomize-sops"
+
+ksops_fetch_local_version() {
+  local target="$1"
+  "$target" --version 2>/dev/null | awk '{print $3}'
+}
 
 # src/lib/registry/kube-linter.sh
 KUBE_LINTER_INSTALL_TYPE="github_release"
@@ -3388,6 +4817,14 @@ mcfly_fetch_local_version() {
   "$target" --version 2>/dev/null | awk '{print $2}'
 }
 
+# src/lib/registry/nerdctl.sh
+NERDCTL_GITHUB_REPO="containerd/nerdctl"
+
+nerdctl_fetch_local_version() {
+  local target="$1"
+  "$target" --version 2>/dev/null | awk '{print $3}'
+}
+
 # src/lib/registry/popeye.sh
 POPEYE_INSTALL_TYPE="github_release"
 POPEYE_GITHUB_REPO="derailed/popeye"
@@ -3401,6 +4838,30 @@ RIPGREP_INSTALL_TARGET="/usr/local/bin/rg"
 ripgrep_fetch_local_version() {
   local target="$1"
   "$target" --version 2>/dev/null | head -1 | awk '{print $2}'
+}
+
+# src/lib/registry/rsync.sh
+rsync_fetch_local_version() {
+  local target="$1"
+  "$target" --version 2>/dev/null | head -n 1 | awk '{print $3}'
+}
+
+rsync_fetch_remote_version() {
+  if command -v rsync >/dev/null 2>&1; then
+    rsync --version 2>/dev/null | head -n 1 | awk '{print $3}'
+  fi
+}
+
+# src/lib/registry/skopeo.sh
+skopeo_fetch_local_version() {
+  local target="$1"
+  "$target" --version 2>/dev/null | awk '{print $3}'
+}
+
+skopeo_fetch_remote_version() {
+  if command -v skopeo >/dev/null 2>&1; then
+    skopeo --version 2>/dev/null | awk '{print $3}'
+  fi
 }
 
 # src/lib/registry/sops.sh
@@ -3430,6 +4891,26 @@ thefuck_fetch_remote_version() {
   curl -s "https://pypi.org/pypi/thefuck/json" | sed -n 's/.*"version":"\([^"]*\)".*/\1/p' | head -n 1
 }
 
+# src/lib/registry/tmux.sh
+tmux_fetch_local_version() {
+  local target="$1"
+  "$target" -V 2>/dev/null | awk '{print $2}'
+}
+
+tmux_fetch_remote_version() {
+  if command -v tmux >/dev/null 2>&1; then
+    tmux -V 2>/dev/null | awk '{print $2}'
+  fi
+}
+
+# src/lib/registry/trino.sh
+TRINO_GITHUB_REPO="trinodb/trino"
+
+trino_fetch_local_version() {
+  local target="$1"
+  "$target" --version 2>/dev/null | awk '{print $3}'
+}
+
 # src/lib/registry/trivy.sh
 TRIVY_INSTALL_TYPE="github_release"
 TRIVY_GITHUB_REPO="aquasecurity/trivy"
@@ -3439,6 +4920,14 @@ TRIVY_OS_MAP_linux="Linux"
 TRIVY_OS_MAP_darwin="macOS"
 TRIVY_ARCH_MAP_amd64="64bit"
 TRIVY_ARCH_MAP_arm64="ARM64"
+
+# src/lib/registry/uv.sh
+UV_GITHUB_REPO="astral-sh/uv"
+
+uv_fetch_local_version() {
+  local target="$1"
+  "$target" --version 2>/dev/null | awk '{print $2}'
+}
 
 # src/lib/registry/vault.sh
 VAULT_INSTALL_TYPE="github_release"
@@ -3453,6 +4942,22 @@ VELERO_GITHUB_REPO="vmware-tanzu/velero"
 VELERO_ARCHIVE_TYPE="tar.gz"
 VELERO_ASSET_PATTERN="velero-v\${VERSION}-\${DETECT_OS}-\${DETECT_ARCH}.tar.gz"
 VELERO_BIN_PATH="velero-v\${VERSION}-\${DETECT_OS}-\${DETECT_ARCH}/velero"
+
+# src/lib/registry/viddy.sh
+VIDDY_GITHUB_REPO="sachaos/viddy"
+
+viddy_fetch_local_version() {
+  local target="$1"
+  "$target" --version 2>/dev/null | awk '{print $3}'
+}
+
+# src/lib/registry/yq.sh
+YQ_GITHUB_REPO="mikefarah/yq"
+
+yq_fetch_local_version() {
+  local target="$1"
+  "$target" --version 2>/dev/null | awk '{print $NF}'
+}
 
 # src/lib/registry/zoxide.sh
 ZOXIDE_GITHUB_REPO="ajeetdsouza/zoxide"
@@ -3499,6 +5004,28 @@ inject_config_block() {
   echo "$(green_bold "✓") Config block added to $target_file"
 }
 
+# Inject a tool's shell-init block into both ~/.zshrc and ~/.bashrc.
+# Skips files that don't exist (i.e. shells the user doesn't use). Idempotent
+# via the marker passed to inject_config_block.
+# Usage: setup_shell_tool "name" "$marker" "$zsh_block" "$bash_block"
+setup_shell_tool() {
+  local name="$1" marker="$2" zsh_block="$3" bash_block="$4"
+  local zshrc="${ZDOTDIR:-$HOME}/.zshrc"
+  local bashrc="$HOME/.bashrc"
+
+  if [ -f "$zshrc" ]; then
+    inject_config_block "$zshrc" "$marker" "$zsh_block"
+  else
+    echo "$(yellow "⚠") $zshrc does not exist — skipping zsh"
+  fi
+
+  if [ -f "$bashrc" ]; then
+    inject_config_block "$bashrc" "$marker" "$bash_block"
+  else
+    echo "$(yellow "⚠") $bashrc does not exist — skipping bash"
+  fi
+}
+
 # Seed a file with content if the file is empty or does not exist
 # Usage: seed_file "$target_file" "$content"
 seed_file() {
@@ -3523,14 +5050,26 @@ seed_file() {
 template_antidote_zshrc() {
   cat <<'EOF'
 # --- antidote bootstrap (managed by os-scripts) ---
-# Source antidote
-if [[ -f /usr/local/share/antidote/antidote.zsh ]]; then
-  source /usr/local/share/antidote/antidote.zsh
-elif [[ -f ${ZDOTDIR:-$HOME}/.antidote/antidote.zsh ]]; then
-  source ${ZDOTDIR:-$HOME}/.antidote/antidote.zsh
-fi
+for _antidote_path in \
+  /opt/homebrew/opt/antidote/share/antidote/antidote.zsh \
+  /usr/local/opt/antidote/share/antidote/antidote.zsh \
+  /usr/local/share/antidote/antidote.zsh \
+  ${ZDOTDIR:-$HOME}/.antidote/antidote.zsh; do
+  [[ -f $_antidote_path ]] && { source "$_antidote_path"; break; }
+done
+unset _antidote_path
 
-# Static plugin loading (fast)
+# zsh-vi-mode defers init to first prompt and overwrites earlier bindkeys.
+# Re-bind autosuggestions / history-substring-search inside its post-init hook.
+function zvm_after_init() {
+  bindkey '^[[A' history-substring-search-up    2>/dev/null
+  bindkey '^[[B' history-substring-search-down  2>/dev/null
+  bindkey '^P'   history-substring-search-up    2>/dev/null
+  bindkey '^N'   history-substring-search-down  2>/dev/null
+  bindkey '^ '   autosuggest-accept             2>/dev/null
+}
+
+# Static plugin loading — recompile bundle when source list changes
 zsh_plugins=${ZDOTDIR:-$HOME}/.zsh_plugins.txt
 [[ -f $zsh_plugins ]] || touch $zsh_plugins
 if [[ ! ${zsh_plugins}.zsh -nt $zsh_plugins ]]; then
@@ -3539,54 +5078,363 @@ fi
 source ${zsh_plugins}.zsh
 unset zsh_plugins
 
-# Initialize zoxide if installed
-if (( $+commands[zoxide] )); then
-  eval "$(zoxide init zsh)"
-fi
-
-# Initialize fzf if installed
-if (( $+commands[fzf] )); then
-  eval "$(fzf --zsh)"
-fi
-
-# Initialize direnv if installed
-if (( $+commands[direnv] )); then
-  eval "$(direnv hook zsh)"
-fi
-
-# Initialize thefuck if installed
-if (( $+commands[thefuck] )); then
-  eval "$(thefuck --alias)"
-fi
-
-# Initialize mcfly (smart history) if installed
-if (( $+commands[mcfly] )); then
-  eval "$(mcfly init zsh)"
-fi
-
-# Initialize starship prompt if installed
-if (( $+commands[starship] )); then
-  eval "$(starship init zsh)"
-fi
+# NOTE: per-tool shell init (starship, zoxide, mcfly, fzf, direnv, thefuck …)
+# is owned by `gt setup <tool>` — each writes its own marker block in this rc
+# file so the plugin manager stays decoupled from individual tool integrations.
 # --- end antidote bootstrap ---
 EOF
 }
 
-# Returns the default curated list of Zsh plugins for ~/.zsh_plugins.txt
+# Returns the default curated list of Zsh plugins for ~/.zsh_plugins.txt.
+#
+# Architecture: zephyr (foundation) + OMZ (tool-specific only) + curated extras.
+# zephyr is the antidote author's own modular replacement for OMZ libs — faster
+# startup, no legacy cruft. We still pull in OMZ for plugins zephyr intentionally
+# omits (docker, git aliases, sudo widget, extract, command-not-found …).
+#
+# Order is significant — DO NOT reorder without understanding why:
+#   1. fpath-only plugins (zsh-completions) BEFORE any plugin that runs compinit
+#   2. zephyr foundation modules before zephyr's `completion` module
+#   3. zephyr/completion runs compinit, so it must come before fzf-tab
+#   4. zsh-vi-mode AFTER zephyr/editor so its bindings win
+#   5. fzf-tab AFTER compinit but BEFORE plugins that wrap the Tab widget
+#      (autosuggestions, fast-syntax-highlighting)
+#   6. fast-syntax-highlighting BEFORE zsh-history-substring-search
+#   7. getantidote/use-omz required for OMZ subplugins that depend on OMZ libs
 template_antidote_plugins() {
   cat <<'EOF'
+# ─── Completions library (fpath only — must precede any compinit) ───
+zsh-users/zsh-completions path:src kind:fpath
+
+# ─── Zephyr foundation (modular replacement for OMZ libs / supercharge) ───
+mattmc3/zephyr path:plugins/environment
+mattmc3/zephyr path:plugins/editor
+mattmc3/zephyr path:plugins/history
+mattmc3/zephyr path:plugins/directory
+mattmc3/zephyr path:plugins/utility
+mattmc3/zephyr path:plugins/completion
+
+# ─── Vi mode (after zephyr/editor so its bindings win; zvm_after_init re-binds) ───
 jeffreytse/zsh-vi-mode
+
+# ─── fzf-powered tab completion (after compinit, before widget wrappers) ───
+Aloxaf/fzf-tab
+
+# ─── Editing ergonomics ───
+hlissner/zsh-autopair
 olets/zsh-abbr
 
+# ─── Oh-my-zsh atomic plugins (use-omz wires up OMZ runtime libs) ───
+getantidote/use-omz
+ohmyzsh/ohmyzsh path:plugins/extract
+ohmyzsh/ohmyzsh path:plugins/sudo
+ohmyzsh/ohmyzsh path:plugins/colored-man-pages
+ohmyzsh/ohmyzsh path:plugins/command-not-found
+ohmyzsh/ohmyzsh path:plugins/git
+ohmyzsh/ohmyzsh path:plugins/docker
+ohmyzsh/ohmyzsh path:plugins/docker-compose
+
+# ─── fzf + git workflow (gd, glo, gss, gcf, ga, gi …) ───
+wfxr/forgit
+
+# ─── Reminds you of existing aliases / functions ───
 MichaelAquilina/zsh-you-should-use
 
-zsh-users/zsh-completions
+# ─── Autosuggestions (fish-style, must be before syntax highlighting) ───
 zsh-users/zsh-autosuggestions
-zsh-users/zsh-syntax-highlighting
-zsh-users/zsh-history-substring-search
-zdharma-continuum/history-search-multi-word
+
+# ─── Syntax highlighting (must be before history-substring-search) ───
 zdharma-continuum/fast-syntax-highlighting
-zap-zsh/supercharge
+
+# ─── History search (MUST be the last widget-binding plugin) ───
+zsh-users/zsh-history-substring-search
+EOF
+}
+
+# src/lib/templates/shell_tools.sh
+
+# ─────────────────────────────────────────────────────────── zoxide
+template_zoxide_zshrc() {
+  cat <<'EOF'
+# --- zoxide init (managed by os-scripts) ---
+if (( $+commands[zoxide] )); then
+  eval "$(zoxide init zsh)"
+fi
+# --- end zoxide init ---
+EOF
+}
+
+template_zoxide_bashrc() {
+  cat <<'EOF'
+# --- zoxide init (managed by os-scripts) ---
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init bash)"
+fi
+# --- end zoxide init ---
+EOF
+}
+
+# ─────────────────────────────────────────────────────────── mcfly
+template_mcfly_zshrc() {
+  cat <<'EOF'
+# --- mcfly init (managed by os-scripts) ---
+if (( $+commands[mcfly] )); then
+  eval "$(mcfly init zsh)"
+fi
+# --- end mcfly init ---
+EOF
+}
+
+template_mcfly_bashrc() {
+  cat <<'EOF'
+# --- mcfly init (managed by os-scripts) ---
+if command -v mcfly >/dev/null 2>&1; then
+  eval "$(mcfly init bash)"
+fi
+# --- end mcfly init ---
+EOF
+}
+
+# ─────────────────────────────────────────────────────────── direnv
+template_direnv_zshrc() {
+  cat <<'EOF'
+# --- direnv hook (managed by os-scripts) ---
+if (( $+commands[direnv] )); then
+  eval "$(direnv hook zsh)"
+fi
+# --- end direnv hook ---
+EOF
+}
+
+template_direnv_bashrc() {
+  cat <<'EOF'
+# --- direnv hook (managed by os-scripts) ---
+if command -v direnv >/dev/null 2>&1; then
+  eval "$(direnv hook bash)"
+fi
+# --- end direnv hook ---
+EOF
+}
+
+# ─────────────────────────────────────────────────────────── thefuck
+template_thefuck_zshrc() {
+  cat <<'EOF'
+# --- thefuck alias (managed by os-scripts) ---
+if (( $+commands[thefuck] )); then
+  eval "$(thefuck --alias)"
+fi
+# --- end thefuck alias ---
+EOF
+}
+
+template_thefuck_bashrc() {
+  cat <<'EOF'
+# --- thefuck alias (managed by os-scripts) ---
+if command -v thefuck >/dev/null 2>&1; then
+  eval "$(thefuck --alias)"
+fi
+# --- end thefuck alias ---
+EOF
+}
+
+# ─────────────────────────────────────────────────────────── fzf
+# fzf >= v0.48 ships built-in shell integration via `fzf --zsh|--bash`.
+# Older versions write ~/.fzf.{zsh,bash} during install — fall back to those.
+template_fzf_zshrc() {
+  cat <<'EOF'
+# --- fzf init (managed by os-scripts) ---
+if (( $+commands[fzf] )); then
+  if fzf --zsh >/dev/null 2>&1; then
+    eval "$(fzf --zsh)"
+  elif [[ -f ~/.fzf.zsh ]]; then
+    source ~/.fzf.zsh
+  fi
+fi
+# --- end fzf init ---
+EOF
+}
+
+template_fzf_bashrc() {
+  cat <<'EOF'
+# --- fzf init (managed by os-scripts) ---
+if command -v fzf >/dev/null 2>&1; then
+  if fzf --bash >/dev/null 2>&1; then
+    eval "$(fzf --bash)"
+  elif [ -f ~/.fzf.bash ]; then
+    source ~/.fzf.bash
+  fi
+fi
+# --- end fzf init ---
+EOF
+}
+
+# src/lib/templates/starship.sh
+
+# Returns the bootstrap block to be injected into ~/.zshrc
+template_starship_zshrc() {
+  cat <<'EOF'
+# --- starship init (managed by os-scripts) ---
+if (( $+commands[starship] )); then
+  eval "$(starship init zsh)"
+fi
+# --- end starship init ---
+EOF
+}
+
+# Returns the bootstrap block to be injected into ~/.bashrc
+template_starship_bashrc() {
+  cat <<'EOF'
+# --- starship init (managed by os-scripts) ---
+if command -v starship >/dev/null 2>&1; then
+  eval "$(starship init bash)"
+fi
+# --- end starship init ---
+EOF
+}
+
+# Returns a curated default ~/.config/starship.toml tuned for devops workflows.
+# Requires a Nerd Font for glyphs. Disable individual modules by setting
+# `disabled = true` or remove them from the `format` string.
+template_starship_config() {
+  cat <<'EOF'
+# ~/.config/starship.toml — managed by os-scripts
+# Curated default for devops workflows. Requires a Nerd Font:
+#   https://www.nerdfonts.com
+# Browse alternative presets:  starship preset list
+# Apply a preset:              starship preset tokyo-night -o ~/.config/starship.toml
+# Full reference:              https://starship.rs/config/
+
+"$schema" = "https://starship.rs/config-schema.json"
+
+# Two-line layout: context on top, prompt char on a fresh line
+format = """
+$os\
+$username\
+$directory\
+$git_branch\
+$git_status\
+$git_state\
+$kubernetes\
+$docker_context\
+$package\
+$nodejs\
+$python\
+$golang\
+$rust\
+$java\
+$terraform\
+$cmd_duration\
+$line_break\
+$character"""
+
+add_newline = true
+command_timeout = 1500
+scan_timeout = 30
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol   = "[❯](bold red)"
+vimcmd_symbol  = "[❮](bold green)"
+
+[directory]
+style             = "bold cyan"
+truncation_length = 4
+truncate_to_repo  = true
+read_only         = " "
+read_only_style   = "red"
+home_symbol       = "~"
+
+[git_branch]
+symbol = " "
+style  = "bold purple"
+format = "on [$symbol$branch]($style) "
+
+[git_status]
+style      = "bold red"
+ahead      = "⇡${count}"
+behind     = "⇣${count}"
+diverged   = "⇕⇡${ahead_count}⇣${behind_count}"
+conflicted = "="
+modified   = "!"
+staged     = "+"
+untracked  = "?"
+deleted    = "✘"
+stashed    = "$"
+
+[kubernetes]
+disabled         = false
+symbol           = "󱃾 "
+style            = "bold blue"
+format           = '[$symbol$context( \($namespace\))]($style) '
+detect_files     = ['k8s', 'kubeconfig', 'Chart.yaml']
+detect_extensions = ['yaml', 'yml']
+contexts = [
+  { context_pattern = "(?i).*prod.*",  style = "bold red", context_alias = "PROD ⚠" },
+  { context_pattern = "(?i).*stag.*",  style = "bold yellow" },
+]
+
+[docker_context]
+symbol          = " "
+style           = "bold blue"
+only_with_files = true
+
+[package]
+symbol = "󰏗 "
+style  = "208"
+
+[nodejs]
+symbol = " "
+style  = "bold green"
+
+[python]
+symbol = " "
+style  = "bold yellow"
+
+[golang]
+symbol = " "
+style  = "bold cyan"
+
+[rust]
+symbol = " "
+style  = "bold red"
+
+[java]
+symbol = " "
+style  = "bold red"
+
+[terraform]
+symbol = "󱁢 "
+style  = "bold purple"
+
+[os]
+disabled = false
+[os.symbols]
+Alpine   = " "
+Arch     = " "
+CentOS   = " "
+Debian   = " "
+Fedora   = " "
+Linux    = " "
+Macos    = " "
+NixOS    = " "
+Raspbian = " "
+Ubuntu   = " "
+Windows  = " "
+
+[cmd_duration]
+min_time = 2000
+format   = "took [$duration](bold yellow) "
+
+[username]
+show_always = false
+style_user  = "bold yellow"
+style_root  = "bold red"
+format      = "[$user]($style)@"
+
+[hostname]
+ssh_only = true
+style    = "bold green"
+format   = "[$hostname]($style) "
 EOF
 }
 
@@ -4427,6 +6275,578 @@ gt_install_mcfly_command() {
 }
 
 # :command.function
+gt_install_infisical_command() {
+  # src/commands/install/infisical.sh
+  version=${args[--version]}
+  force=${args[--force]}
+  name="infisical"
+  target="/usr/local/bin/infisical"
+
+  guard_existing "$name" "$target" "$force"
+  echo "Installing $(cyan_bold "$name") ($(yellow "$version"))..."
+
+  if [[ "$version" == "latest" ]]; then
+    version=$(github_latest_tag "Infisical/cli")
+  fi
+  if [[ "$version" == v* ]]; then
+    version="${version:1}"
+  fi
+
+  detect_platform
+  arch="$DETECT_ARCH"
+
+  # Asset: cli_{ver}_linux_amd64.tar.gz — bare infisical inside
+  download_url="https://github.com/Infisical/cli/releases/download/v${version}/cli_${version}_linux_${arch}.tar.gz"
+
+  temp_dir=$(mktemp -d)
+  download_file "$download_url" "$temp_dir/infisical.tar.gz"
+  tar -xzf "$temp_dir/infisical.tar.gz" -C "$temp_dir" infisical
+
+  if [ -f "$temp_dir/infisical" ]; then
+    install_binary "$temp_dir/infisical" "$target"
+    rm -rf "$temp_dir"
+    echo "$(green_bold ✓) $name installed successfully: $(bold "v${version}")"
+  else
+    rm -rf "$temp_dir"; echo "$(red ✗ Failed to install $name.)"; exit 1
+  fi
+
+}
+
+# :command.function
+gt_install_ksops_command() {
+  # src/commands/install/ksops.sh
+  version=${args[--version]}
+  force=${args[--force]}
+  name="ksops"
+  target="/usr/local/bin/ksops"
+
+  guard_existing "$name" "$target" "$force"
+  echo "Installing $(cyan_bold "$name") ($(yellow "$version"))..."
+
+  if [[ "$version" == "latest" ]]; then
+    version=$(github_latest_tag "viaduct-ai/kustomize-sops")
+  fi
+  if [[ "$version" == v* ]]; then
+    version="${version:1}"
+  fi
+
+  detect_platform
+  arch="x86_64"
+  if [[ "$DETECT_ARCH" == "arm64" ]]; then arch="arm64"; fi
+  os="Linux"
+  if [[ "$DETECT_OS" == "darwin" ]]; then os="Darwin"; fi
+
+  # Asset: ksops_{ver}_Linux_x86_64.tar.gz — bare ksops inside
+  download_url="https://github.com/viaduct-ai/kustomize-sops/releases/download/v${version}/ksops_${version}_${os}_${arch}.tar.gz"
+
+  temp_dir=$(mktemp -d)
+  download_file "$download_url" "$temp_dir/ksops.tar.gz"
+  tar -xzf "$temp_dir/ksops.tar.gz" -C "$temp_dir" ksops
+
+  if [ -f "$temp_dir/ksops" ]; then
+    install_binary "$temp_dir/ksops" "$target"
+    rm -rf "$temp_dir"
+    echo "$(green_bold ✓) $name installed successfully: $(bold "v${version}")"
+  else
+    rm -rf "$temp_dir"; echo "$(red ✗ Failed to install $name.)"; exit 1
+  fi
+
+}
+
+# :command.function
+gt_install_skopeo_command() {
+  # src/commands/install/skopeo.sh
+  force=${args[--force]}
+  name="skopeo"
+
+  if command -v skopeo >/dev/null 2>&1 && [ -z "$force" ]; then
+    echo "$(red Error:) ${name} is already installed at $(command -v skopeo)."
+    echo "Use $(bold --force) (or $(bold -f)) to overwrite/reinstall."
+    exit 1
+  fi
+
+  echo "Installing $(cyan_bold "$name") via package manager..."
+
+  if install_package "$name"; then
+    echo "$(green_bold ✓) $name installed successfully."
+  else
+    echo "$(red ✗ Failed to install $name.)"; exit 1
+  fi
+
+}
+
+# :command.function
+gt_install_helmfile_command() {
+  # src/commands/install/helmfile.sh
+  version=${args[--version]}
+  force=${args[--force]}
+  name="helmfile"
+  target="/usr/local/bin/helmfile"
+
+  guard_existing "$name" "$target" "$force"
+  echo "Installing $(cyan_bold "$name") ($(yellow "$version"))..."
+
+  if [[ "$version" == "latest" ]]; then
+    version=$(github_latest_tag "helmfile/helmfile")
+  fi
+  if [[ "$version" == v* ]]; then
+    version="${version:1}"
+  fi
+
+  detect_platform
+  arch="$DETECT_ARCH"
+
+  # Asset: helmfile_{ver}_linux_amd64.tar.gz — bare helmfile inside
+  download_url="https://github.com/helmfile/helmfile/releases/download/v${version}/helmfile_${version}_linux_${arch}.tar.gz"
+
+  temp_dir=$(mktemp -d)
+  download_file "$download_url" "$temp_dir/helmfile.tar.gz"
+  tar -xzf "$temp_dir/helmfile.tar.gz" -C "$temp_dir" helmfile
+
+  if [ -f "$temp_dir/helmfile" ]; then
+    install_binary "$temp_dir/helmfile" "$target"
+    rm -rf "$temp_dir"
+    echo "$(green_bold ✓) $name installed successfully: $(bold "v${version}")"
+  else
+    rm -rf "$temp_dir"; echo "$(red ✗ Failed to install $name.)"; exit 1
+  fi
+
+}
+
+# :command.function
+gt_install_helm_command() {
+  # src/commands/install/helm.sh
+  version=${args[--version]}
+  force=${args[--force]}
+  name="helm"
+  target="/usr/local/bin/helm"
+
+  guard_existing "$name" "$target" "$force"
+  echo "Installing $(cyan_bold "$name") ($(yellow "$version"))..."
+
+  if [[ "$version" == "latest" ]]; then
+    version=$(github_latest_tag "helm/helm")
+  fi
+  # helm URL always includes v prefix
+  if [[ "$version" != v* ]]; then
+    version="v${version}"
+  fi
+
+  detect_platform
+  arch="$DETECT_ARCH"
+  os="$DETECT_OS"
+
+  # Asset: helm-v{ver}-linux-amd64.tar.gz — binary at linux-amd64/helm
+  download_url="https://get.helm.sh/helm-${version}-${os}-${arch}.tar.gz"
+
+  temp_dir=$(mktemp -d)
+  download_file "$download_url" "$temp_dir/helm.tar.gz"
+  tar -xzf "$temp_dir/helm.tar.gz" -C "$temp_dir" "${os}-${arch}/helm"
+
+  binary_path="${os}-${arch}/helm"
+  if [ -f "$temp_dir/$binary_path" ]; then
+    install_binary "$temp_dir/$binary_path" "$target"
+    rm -rf "$temp_dir"
+    echo "$(green_bold ✓) $name installed successfully: $(bold "${version}")"
+  else
+    rm -rf "$temp_dir"; echo "$(red ✗ Failed to install $name.)"; exit 1
+  fi
+
+}
+
+# :command.function
+gt_install_chezmoi_command() {
+  # src/commands/install/chezmoi.sh
+  version=${args[--version]}
+  force=${args[--force]}
+  name="chezmoi"
+  target="/usr/local/bin/chezmoi"
+
+  guard_existing "$name" "$target" "$force"
+  echo "Installing $(cyan_bold "$name") ($(yellow "$version"))..."
+
+  if [[ "$version" == "latest" ]]; then
+    version=$(github_latest_tag "twpayne/chezmoi")
+  fi
+  if [[ "$version" == v* ]]; then
+    version="${version:1}"
+  fi
+
+  detect_platform
+  arch="$DETECT_ARCH"
+  os="$DETECT_OS"
+
+  # Asset: chezmoi_{ver}_linux_amd64.tar.gz — bare chezmoi inside
+  download_url="https://github.com/twpayne/chezmoi/releases/download/v${version}/chezmoi_${version}_${os}_${arch}.tar.gz"
+
+  temp_dir=$(mktemp -d)
+  download_file "$download_url" "$temp_dir/chezmoi.tar.gz"
+  tar -xzf "$temp_dir/chezmoi.tar.gz" -C "$temp_dir" chezmoi
+
+  if [ -f "$temp_dir/chezmoi" ]; then
+    install_binary "$temp_dir/chezmoi" "$target"
+    rm -rf "$temp_dir"
+    echo "$(green_bold ✓) $name installed successfully: $(bold "v${version}")"
+  else
+    rm -rf "$temp_dir"; echo "$(red ✗ Failed to install $name.)"; exit 1
+  fi
+
+}
+
+# :command.function
+gt_install_tmux_command() {
+  # src/commands/install/tmux.sh
+  force=${args[--force]}
+  name="tmux"
+
+  if command -v tmux >/dev/null 2>&1 && [ -z "$force" ]; then
+    echo "$(red Error:) ${name} is already installed at $(command -v tmux)."
+    echo "Use $(bold --force) (or $(bold -f)) to overwrite/reinstall."
+    exit 1
+  fi
+
+  echo "Installing $(cyan_bold "$name") via package manager..."
+
+  if install_package "$name"; then
+    echo "$(green_bold ✓) $name installed successfully."
+  else
+    echo "$(red ✗ Failed to install $name.)"; exit 1
+  fi
+
+}
+
+# :command.function
+gt_install_rsync_command() {
+  # src/commands/install/rsync.sh
+  force=${args[--force]}
+  name="rsync"
+
+  if command -v rsync >/dev/null 2>&1 && [ -z "$force" ]; then
+    echo "$(red Error:) ${name} is already installed at $(command -v rsync)."
+    echo "Use $(bold --force) (or $(bold -f)) to overwrite/reinstall."
+    exit 1
+  fi
+
+  echo "Installing $(cyan_bold "$name") via package manager..."
+
+  if install_package "$name"; then
+    echo "$(green_bold ✓) $name installed successfully."
+  else
+    echo "$(red ✗ Failed to install $name.)"; exit 1
+  fi
+
+}
+
+# :command.function
+gt_install_trino_command() {
+  # src/commands/install/trino.sh
+  version=${args[--version]}
+  force=${args[--force]}
+  name="trino"
+  target="/usr/local/bin/trino"
+
+  guard_existing "$name" "$target" "$force"
+  echo "Installing $(cyan_bold "$name") ($(yellow "$version"))..."
+
+  if [[ "$version" == "latest" ]]; then
+    version=$(github_latest_tag "trinodb/trino")
+  fi
+  # trino tags have no v prefix (e.g., 480)
+  version="${version#v}"
+
+  # Asset: trino-cli-{ver}-executable.jar (self-executable jar)
+  download_url="https://repo1.maven.org/maven2/io/trino/trino-cli/${version}/trino-cli-${version}-executable.jar"
+
+  temp_dir=$(mktemp -d)
+  download_file "$download_url" "$temp_dir/trino"
+
+  if [ -f "$temp_dir/trino" ]; then
+    install_binary "$temp_dir/trino" "$target"
+    rm -rf "$temp_dir"
+    echo "$(green_bold ✓) $name installed successfully: $(bold "${version}")"
+  else
+    rm -rf "$temp_dir"; echo "$(red ✗ Failed to install $name.)"; exit 1
+  fi
+
+}
+
+# :command.function
+gt_install_nerdctl_command() {
+  # src/commands/install/nerdctl.sh
+  version=${args[--version]}
+  force=${args[--force]}
+  name="nerdctl"
+  target="/usr/local/bin/nerdctl"
+
+  guard_existing "$name" "$target" "$force"
+  echo "Installing $(cyan_bold "$name") ($(yellow "$version"))..."
+
+  if [[ "$version" == "latest" ]]; then
+    version=$(github_latest_tag "containerd/nerdctl")
+  fi
+  if [[ "$version" == v* ]]; then
+    version="${version:1}"
+  fi
+
+  detect_platform
+  arch="$DETECT_ARCH"
+
+  # Asset: nerdctl-{ver}-linux-amd64.tar.gz — bare nerdctl inside
+  download_url="https://github.com/containerd/nerdctl/releases/download/v${version}/nerdctl-${version}-linux-${arch}.tar.gz"
+
+  temp_dir=$(mktemp -d)
+  download_file "$download_url" "$temp_dir/nerdctl.tar.gz"
+  tar -xzf "$temp_dir/nerdctl.tar.gz" -C "$temp_dir" nerdctl
+
+  if [ -f "$temp_dir/nerdctl" ]; then
+    install_binary "$temp_dir/nerdctl" "$target"
+    rm -rf "$temp_dir"
+    echo "$(green_bold ✓) $name installed successfully: $(bold "v${version}")"
+  else
+    rm -rf "$temp_dir"; echo "$(red ✗ Failed to install $name.)"; exit 1
+  fi
+
+}
+
+# :command.function
+gt_install_viddy_command() {
+  # src/commands/install/viddy.sh
+  version=${args[--version]}
+  force=${args[--force]}
+  name="viddy"
+  target="/usr/local/bin/viddy"
+
+  guard_existing "$name" "$target" "$force"
+  echo "Installing $(cyan_bold "$name") ($(yellow "$version"))..."
+
+  if [[ "$version" == "latest" ]]; then
+    version=$(github_latest_tag "sachaos/viddy")
+  fi
+  # viddy URL includes v prefix
+  if [[ "$version" != v* ]]; then
+    version="v${version}"
+  fi
+
+  detect_platform
+  # viddy uses x86_64/arm64
+  arch="x86_64"
+  if [[ "$DETECT_ARCH" == "arm64" ]]; then arch="arm64"; fi
+  os="linux"
+  if [[ "$DETECT_OS" == "darwin" ]]; then os="darwin"; fi
+
+  # Asset: viddy-v{ver}-linux-x86_64.tar.gz — bare viddy inside
+  download_url="https://github.com/sachaos/viddy/releases/download/${version}/viddy-${version}-${os}-${arch}.tar.gz"
+
+  temp_dir=$(mktemp -d)
+  download_file "$download_url" "$temp_dir/viddy.tar.gz"
+  tar -xzf "$temp_dir/viddy.tar.gz" -C "$temp_dir" viddy
+
+  if [ -f "$temp_dir/viddy" ]; then
+    install_binary "$temp_dir/viddy" "$target"
+    rm -rf "$temp_dir"
+    echo "$(green_bold ✓) $name installed successfully: $(bold "${version}")"
+  else
+    rm -rf "$temp_dir"; echo "$(red ✗ Failed to install $name.)"; exit 1
+  fi
+
+}
+
+# :command.function
+gt_install_hyperfine_command() {
+  # src/commands/install/hyperfine.sh
+  version=${args[--version]}
+  force=${args[--force]}
+  name="hyperfine"
+  target="/usr/local/bin/hyperfine"
+
+  guard_existing "$name" "$target" "$force"
+  echo "Installing $(cyan_bold "$name") ($(yellow "$version"))..."
+
+  if [[ "$version" == "latest" ]]; then
+    version=$(github_latest_tag "sharkdp/hyperfine")
+  fi
+  if [[ "$version" != v* ]]; then
+    version="v${version}"
+  fi
+
+  detect_platform
+  arch="x86_64"
+  if [[ "$DETECT_ARCH" == "arm64" ]]; then arch="aarch64"; fi
+
+  # Asset: hyperfine-v{ver}-x86_64-unknown-linux-musl.tar.gz
+  # Binary nested: hyperfine-v{ver}-x86_64-.../hyperfine
+  download_url="https://github.com/sharkdp/hyperfine/releases/download/${version}/hyperfine-${version}-${arch}-unknown-linux-musl.tar.gz"
+  binary_path="hyperfine-${version}-${arch}-unknown-linux-musl/hyperfine"
+
+  temp_dir=$(mktemp -d)
+  download_file "$download_url" "$temp_dir/hyperfine.tar.gz"
+  tar -xzf "$temp_dir/hyperfine.tar.gz" -C "$temp_dir" "$binary_path"
+
+  if [ -f "$temp_dir/$binary_path" ]; then
+    install_binary "$temp_dir/$binary_path" "$target"
+    rm -rf "$temp_dir"
+    echo "$(green_bold ✓) $name installed successfully: $(bold "${version}")"
+  else
+    rm -rf "$temp_dir"; echo "$(red ✗ Failed to install $name.)"; exit 1
+  fi
+
+}
+
+# :command.function
+gt_install_jq_command() {
+  # src/commands/install/jq.sh
+  version=${args[--version]}
+  force=${args[--force]}
+  name="jq"
+  target="/usr/local/bin/jq"
+
+  guard_existing "$name" "$target" "$force"
+  echo "Installing $(cyan_bold "$name") ($(yellow "$version"))..."
+
+  if [[ "$version" == "latest" ]]; then
+    version=$(github_latest_tag "jqlang/jq")
+  fi
+  # jq tags are like 'jq-1.8.1' — strip prefix for display but keep for URL
+  tag="$version"
+
+  detect_platform
+  arch="$DETECT_ARCH"
+  os="$DETECT_OS"
+
+  # Asset: bare binary jq-linux-amd64 (no archive)
+  download_url="https://github.com/jqlang/jq/releases/download/${tag}/jq-${os}-${arch}"
+
+  temp_dir=$(mktemp -d)
+  download_file "$download_url" "$temp_dir/jq"
+
+  if [ -f "$temp_dir/jq" ]; then
+    install_binary "$temp_dir/jq" "$target"
+    rm -rf "$temp_dir"
+    echo "$(green_bold ✓) $name installed successfully: $(bold "${tag}")"
+  else
+    rm -rf "$temp_dir"; echo "$(red ✗ Failed to install $name.)"; exit 1
+  fi
+
+}
+
+# :command.function
+gt_install_yq_command() {
+  # src/commands/install/yq.sh
+  version=${args[--version]}
+  force=${args[--force]}
+  name="yq"
+  target="/usr/local/bin/yq"
+
+  guard_existing "$name" "$target" "$force"
+  echo "Installing $(cyan_bold "$name") ($(yellow "$version"))..."
+
+  if [[ "$version" == "latest" ]]; then
+    version=$(github_latest_tag "mikefarah/yq")
+  fi
+
+  detect_platform
+  arch="$DETECT_ARCH"
+  os="$DETECT_OS"
+
+  # Asset: bare binary yq_linux_amd64 (no archive)
+  download_url="https://github.com/mikefarah/yq/releases/download/${version}/yq_${os}_${arch}"
+
+  temp_dir=$(mktemp -d)
+  download_file "$download_url" "$temp_dir/yq"
+
+  if [ -f "$temp_dir/yq" ]; then
+    install_binary "$temp_dir/yq" "$target"
+    rm -rf "$temp_dir"
+    echo "$(green_bold ✓) $name installed successfully: $(bold "${version}")"
+  else
+    rm -rf "$temp_dir"; echo "$(red ✗ Failed to install $name.)"; exit 1
+  fi
+
+}
+
+# :command.function
+gt_install_gum_command() {
+  # src/commands/install/gum.sh
+  version=${args[--version]}
+  force=${args[--force]}
+  name="gum"
+  target="/usr/local/bin/gum"
+
+  guard_existing "$name" "$target" "$force"
+  echo "Installing $(cyan_bold "$name") ($(yellow "$version"))..."
+
+  if [[ "$version" == "latest" ]]; then
+    version=$(github_latest_tag "charmbracelet/gum")
+  fi
+  if [[ "$version" == v* ]]; then
+    version="${version:1}"
+  fi
+
+  detect_platform
+  # gum uses x86_64/arm64, Linux/Darwin capitalized
+  arch="x86_64"
+  if [[ "$DETECT_ARCH" == "arm64" ]]; then arch="arm64"; fi
+  os="Linux"
+  if [[ "$DETECT_OS" == "darwin" ]]; then os="Darwin"; fi
+
+  # Asset: gum_{ver}_Linux_x86_64.tar.gz — nested gum_{ver}_Linux_x86_64/gum
+  download_url="https://github.com/charmbracelet/gum/releases/download/v${version}/gum_${version}_${os}_${arch}.tar.gz"
+  binary_path="gum_${version}_${os}_${arch}/gum"
+
+  temp_dir=$(mktemp -d)
+  download_file "$download_url" "$temp_dir/gum.tar.gz"
+  tar -xzf "$temp_dir/gum.tar.gz" -C "$temp_dir" "$binary_path"
+
+  if [ -f "$temp_dir/$binary_path" ]; then
+    install_binary "$temp_dir/$binary_path" "$target"
+    rm -rf "$temp_dir"
+    echo "$(green_bold ✓) $name installed successfully: $(bold "v${version}")"
+  else
+    rm -rf "$temp_dir"; echo "$(red ✗ Failed to install $name.)"; exit 1
+  fi
+
+}
+
+# :command.function
+gt_install_uv_command() {
+  # src/commands/install/uv.sh
+  version=${args[--version]}
+  force=${args[--force]}
+  name="uv"
+  target="/usr/local/bin/uv"
+
+  guard_existing "$name" "$target" "$force"
+  echo "Installing $(cyan_bold "$name") ($(yellow "$version"))..."
+
+  if [[ "$version" == "latest" ]]; then
+    version=$(github_latest_tag "astral-sh/uv")
+  fi
+  # uv tags have no v prefix (e.g., 0.11.8)
+  version="${version#v}"
+
+  detect_platform
+  arch="x86_64"
+  if [[ "$DETECT_ARCH" == "arm64" ]]; then arch="aarch64"; fi
+
+  # Asset: uv-x86_64-unknown-linux-musl.tar.gz — nested uv-x86_64-.../uv
+  download_url="https://github.com/astral-sh/uv/releases/download/${version}/uv-${arch}-unknown-linux-musl.tar.gz"
+  binary_path="uv-${arch}-unknown-linux-musl/uv"
+
+  temp_dir=$(mktemp -d)
+  download_file "$download_url" "$temp_dir/uv.tar.gz"
+  tar -xzf "$temp_dir/uv.tar.gz" -C "$temp_dir" "$binary_path"
+
+  if [ -f "$temp_dir/$binary_path" ]; then
+    install_binary "$temp_dir/$binary_path" "$target"
+    rm -rf "$temp_dir"
+    echo "$(green_bold ✓) $name installed successfully: $(bold "${version}")"
+  else
+    rm -rf "$temp_dir"; echo "$(red ✗ Failed to install $name.)"; exit 1
+  fi
+
+}
+
+# :command.function
 gt_uninstall_kustomize_command() {
   # src/commands/uninstall/kustomize.sh
   run_generic_uninstall "kustomize"
@@ -4702,6 +7122,163 @@ gt_uninstall_mcfly_command() {
 }
 
 # :command.function
+gt_uninstall_infisical_command() {
+  # src/commands/uninstall/infisical.sh
+  uninstall_tool "infisical" "/usr/local/bin/infisical"
+
+}
+
+# :command.function
+gt_uninstall_ksops_command() {
+  # src/commands/uninstall/ksops.sh
+  uninstall_tool "ksops" "/usr/local/bin/ksops"
+
+}
+
+# :command.function
+gt_uninstall_skopeo_command() {
+  # src/commands/uninstall/skopeo.sh
+  name="skopeo"
+
+  if ! command -v skopeo >/dev/null 2>&1; then
+    echo "$(yellow ${name} is not installed.)"
+    exit 0
+  fi
+
+  echo -n "Are you sure you want to uninstall $(cyan_bold "${name}")? [y/N] "
+  read -r response
+  if [[ ! "$response" =~ ^[Yy]$ ]]; then
+    echo "Aborted."
+    exit 0
+  fi
+
+  remove_package "$name"
+  echo "$(green_bold ✓) ${name} uninstalled."
+
+}
+
+# :command.function
+gt_uninstall_helmfile_command() {
+  # src/commands/uninstall/helmfile.sh
+  uninstall_tool "helmfile" "/usr/local/bin/helmfile"
+
+}
+
+# :command.function
+gt_uninstall_helm_command() {
+  # src/commands/uninstall/helm.sh
+  uninstall_tool "helm" "/usr/local/bin/helm"
+
+}
+
+# :command.function
+gt_uninstall_chezmoi_command() {
+  # src/commands/uninstall/chezmoi.sh
+  uninstall_tool "chezmoi" "/usr/local/bin/chezmoi"
+
+}
+
+# :command.function
+gt_uninstall_tmux_command() {
+  # src/commands/uninstall/tmux.sh
+  name="tmux"
+
+  if ! command -v tmux >/dev/null 2>&1; then
+    echo "$(yellow ${name} is not installed.)"
+    exit 0
+  fi
+
+  echo -n "Are you sure you want to uninstall $(cyan_bold "${name}")? [y/N] "
+  read -r response
+  if [[ ! "$response" =~ ^[Yy]$ ]]; then
+    echo "Aborted."
+    exit 0
+  fi
+
+  remove_package "$name"
+  echo "$(green_bold ✓) ${name} uninstalled."
+
+}
+
+# :command.function
+gt_uninstall_rsync_command() {
+  # src/commands/uninstall/rsync.sh
+  name="rsync"
+
+  if ! command -v rsync >/dev/null 2>&1; then
+    echo "$(yellow ${name} is not installed.)"
+    exit 0
+  fi
+
+  echo -n "Are you sure you want to uninstall $(cyan_bold "${name}")? [y/N] "
+  read -r response
+  if [[ ! "$response" =~ ^[Yy]$ ]]; then
+    echo "Aborted."
+    exit 0
+  fi
+
+  remove_package "$name"
+  echo "$(green_bold ✓) ${name} uninstalled."
+
+}
+
+# :command.function
+gt_uninstall_trino_command() {
+  # src/commands/uninstall/trino.sh
+  uninstall_tool "trino" "/usr/local/bin/trino"
+
+}
+
+# :command.function
+gt_uninstall_nerdctl_command() {
+  # src/commands/uninstall/nerdctl.sh
+  uninstall_tool "nerdctl" "/usr/local/bin/nerdctl"
+
+}
+
+# :command.function
+gt_uninstall_viddy_command() {
+  # src/commands/uninstall/viddy.sh
+  uninstall_tool "viddy" "/usr/local/bin/viddy"
+
+}
+
+# :command.function
+gt_uninstall_hyperfine_command() {
+  # src/commands/uninstall/hyperfine.sh
+  uninstall_tool "hyperfine" "/usr/local/bin/hyperfine"
+
+}
+
+# :command.function
+gt_uninstall_jq_command() {
+  # src/commands/uninstall/jq.sh
+  uninstall_tool "jq" "/usr/local/bin/jq"
+
+}
+
+# :command.function
+gt_uninstall_yq_command() {
+  # src/commands/uninstall/yq.sh
+  uninstall_tool "yq" "/usr/local/bin/yq"
+
+}
+
+# :command.function
+gt_uninstall_gum_command() {
+  # src/commands/uninstall/gum.sh
+  uninstall_tool "gum" "/usr/local/bin/gum"
+
+}
+
+# :command.function
+gt_uninstall_uv_command() {
+  # src/commands/uninstall/uv.sh
+  uninstall_tool "uv" "/usr/local/bin/uv"
+
+}
+
+# :command.function
 gt_setup_antidote_command() {
   # src/commands/setup/antidote.sh
   skip_plugins=${args[--skip-plugins]}
@@ -4760,10 +7337,256 @@ gt_setup_antidote_command() {
   echo "$(green_bold "━━━ Configuration complete ━━━")"
   echo ""
   echo "Next steps:"
-  echo "  1. Start a new zsh session:  $(bold "exec zsh")"
-  echo "  2. Edit plugins:             $(bold "vim $zsh_plugins_file")"
-  echo "  3. Update plugins:           $(bold "antidote update")"
-  echo "  4. Docs:                     $(bold "docs/antidote-deployment.md")"
+  echo "  1. Configure prompt + tool integrations (per-tool, idempotent):"
+  echo "       $(bold "./gt setup starship")"
+  echo "       $(bold "./gt setup zoxide")    $(bold "./gt setup mcfly")    $(bold "./gt setup fzf")"
+  echo "       $(bold "./gt setup direnv")    $(bold "./gt setup thefuck")"
+  echo "  2. Start a new zsh session:  $(bold "exec zsh")"
+  echo "  3. Edit plugins:             $(bold "vim $zsh_plugins_file")"
+  echo "  4. Update plugins:           $(bold "antidote update")"
+  echo "  5. Docs:                     $(bold "docs/antidote-deployment.md")"
+
+}
+
+# :command.function
+gt_setup_starship_command() {
+  # src/commands/setup/starship.sh
+  preset=${args[--preset]}
+  skip_config=${args[--skip-config]}
+  skip_shell=${args[--skip-shell]}
+  force_config=${args[--force-config]}
+
+  name="starship"
+  config_file="${STARSHIP_CONFIG:-${XDG_CONFIG_HOME:-$HOME/.config}/starship.toml}"
+  zshrc="${ZDOTDIR:-$HOME}/.zshrc"
+  bashrc="$HOME/.bashrc"
+
+  STARSHIP_MARKER="# --- starship init (managed by os-scripts) ---"
+
+  echo "Configuring $(cyan_bold "$name")..."
+  echo ""
+
+  # ===================================================================
+  # Step 1: Check starship installation
+  # ===================================================================
+  echo "$(bold "▸ Step 1/3:") Checking starship installation..."
+
+  starship_bin=$(command -v starship 2>/dev/null || true)
+  require_installed "starship" "$starship_bin"
+  starship_version=$(starship --version 2>/dev/null | awk 'NR==1 {print $2}')
+  echo "$(green_bold "✓") starship found at $starship_bin (v${starship_version:-unknown})"
+
+  # ===================================================================
+  # Step 2: Seed ~/.config/starship.toml
+  # ===================================================================
+  echo ""
+  echo "$(bold "▸ Step 2/3:") Seeding $(cyan "$config_file")..."
+
+  if [ -n "$skip_config" ]; then
+    echo "$(yellow "⚠") Skipping config (--skip-config)"
+  else
+    mkdir -p "$(dirname "$config_file")"
+
+    if [ -n "$force_config" ] && [ -f "$config_file" ]; then
+      rm -f "$config_file"
+    fi
+
+    if [ -n "$preset" ]; then
+      if [ -s "$config_file" ]; then
+        echo "$(yellow "⚠") $config_file already has content — use $(bold --force-config) to overwrite"
+      elif starship preset "$preset" -o "$config_file" 2>/dev/null; then
+        echo "$(green_bold "✓") Applied preset $(bold "$preset") to $config_file"
+      else
+        echo "$(red "✗") Unknown preset: $(bold "$preset")"
+        echo "  Run $(bold "starship preset list") to see available presets."
+        exit 1
+      fi
+    else
+      seed_file "$config_file" "$(template_starship_config)"
+    fi
+  fi
+
+  # ===================================================================
+  # Step 3: Inject init line into shell rc files
+  # ===================================================================
+  echo ""
+  echo "$(bold "▸ Step 3/3:") Configuring shell init..."
+
+  if [ -n "$skip_shell" ]; then
+    echo "$(yellow "⚠") Skipping shell init (--skip-shell)"
+  else
+    if [ -f "$zshrc" ]; then
+      inject_config_block "$zshrc" "$STARSHIP_MARKER" "$(template_starship_zshrc)"
+    else
+      echo "$(yellow "⚠") $zshrc does not exist — skipping zsh"
+    fi
+
+    if [ -f "$bashrc" ]; then
+      inject_config_block "$bashrc" "$STARSHIP_MARKER" "$(template_starship_bashrc)"
+    else
+      echo "$(yellow "⚠") $bashrc does not exist — skipping bash"
+    fi
+  fi
+
+  # ===================================================================
+  # Summary
+  # ===================================================================
+  echo ""
+  echo "$(green_bold "━━━ Configuration complete ━━━")"
+  echo ""
+  echo "Next steps:"
+  echo "  1. Reload shell:        $(bold "exec \$SHELL")"
+  echo "  2. Edit config:         $(bold "vim $config_file")"
+  echo "  3. Browse presets:      $(bold "starship preset list")"
+  echo "  4. Apply preset later:  $(bold "starship preset tokyo-night -o $config_file")"
+  echo "  5. Docs:                $(bold "https://starship.rs/config/")"
+
+}
+
+# :command.function
+gt_setup_zoxide_command() {
+  # src/commands/setup/zoxide.sh
+  skip_shell=${args[--skip-shell]}
+
+  name="zoxide"
+  echo "Configuring $(cyan_bold "$name")..."
+  echo ""
+
+  require_installed "$name" "$(command -v "$name" 2>/dev/null)"
+  echo "$(green_bold "✓") $name found at $(command -v "$name")"
+
+  if [ -n "$skip_shell" ]; then
+    echo "$(yellow "⚠") Skipping shell init (--skip-shell)"
+  else
+    echo ""
+    setup_shell_tool "$name" \
+      "# --- zoxide init (managed by os-scripts) ---" \
+      "$(template_zoxide_zshrc)" \
+      "$(template_zoxide_bashrc)"
+  fi
+
+  echo ""
+  echo "$(green_bold "✓") $name configured. Reload your shell: $(bold "exec \$SHELL")"
+  echo "  Tip: jump to a recent dir with $(bold "z <pattern>") or $(bold "zi") for interactive picker."
+
+}
+
+# :command.function
+gt_setup_mcfly_command() {
+  # src/commands/setup/mcfly.sh
+  skip_shell=${args[--skip-shell]}
+
+  name="mcfly"
+  echo "Configuring $(cyan_bold "$name")..."
+  echo ""
+
+  require_installed "$name" "$(command -v "$name" 2>/dev/null)"
+  echo "$(green_bold "✓") $name found at $(command -v "$name")"
+
+  if [ -n "$skip_shell" ]; then
+    echo "$(yellow "⚠") Skipping shell init (--skip-shell)"
+  else
+    echo ""
+    setup_shell_tool "$name" \
+      "# --- mcfly init (managed by os-scripts) ---" \
+      "$(template_mcfly_zshrc)" \
+      "$(template_mcfly_bashrc)"
+  fi
+
+  echo ""
+  echo "$(green_bold "✓") $name configured. Reload your shell: $(bold "exec \$SHELL")"
+  echo "  Tip: $(bold "Ctrl-R") opens fuzzy history search; set $(bold "MCFLY_FUZZY=2") in your rc for fuzzy match."
+
+}
+
+# :command.function
+gt_setup_fzf_command() {
+  # src/commands/setup/fzf.sh
+  skip_shell=${args[--skip-shell]}
+
+  name="fzf"
+  echo "Configuring $(cyan_bold "$name")..."
+  echo ""
+
+  require_installed "$name" "$(command -v "$name" 2>/dev/null)"
+  fzf_version=$(fzf --version 2>/dev/null | awk '{print $1}')
+  echo "$(green_bold "✓") $name found at $(command -v "$name") (v${fzf_version:-unknown})"
+
+  if [ -n "$skip_shell" ]; then
+    echo "$(yellow "⚠") Skipping shell init (--skip-shell)"
+  else
+    echo ""
+    setup_shell_tool "$name" \
+      "# --- fzf init (managed by os-scripts) ---" \
+      "$(template_fzf_zshrc)" \
+      "$(template_fzf_bashrc)"
+
+    if ! fzf --zsh >/dev/null 2>&1; then
+      echo ""
+      echo "$(yellow "⚠") fzf < v0.48 — falling back to ~/.fzf.{zsh,bash}."
+      echo "  Run $(bold "$(dirname "$(command -v fzf)")/../share/fzf/install --all") if those files don't exist."
+    fi
+  fi
+
+  echo ""
+  echo "$(green_bold "✓") $name configured. Reload your shell: $(bold "exec \$SHELL")"
+  echo "  Tip: $(bold "Ctrl-R") fuzzy history, $(bold "Ctrl-T") fuzzy file picker, $(bold "Alt-C") fuzzy cd."
+
+}
+
+# :command.function
+gt_setup_direnv_command() {
+  # src/commands/setup/direnv.sh
+  skip_shell=${args[--skip-shell]}
+
+  name="direnv"
+  echo "Configuring $(cyan_bold "$name")..."
+  echo ""
+
+  require_installed "$name" "$(command -v "$name" 2>/dev/null)"
+  echo "$(green_bold "✓") $name found at $(command -v "$name")"
+
+  if [ -n "$skip_shell" ]; then
+    echo "$(yellow "⚠") Skipping shell init (--skip-shell)"
+  else
+    echo ""
+    setup_shell_tool "$name" \
+      "# --- direnv hook (managed by os-scripts) ---" \
+      "$(template_direnv_zshrc)" \
+      "$(template_direnv_bashrc)"
+  fi
+
+  echo ""
+  echo "$(green_bold "✓") $name configured. Reload your shell: $(bold "exec \$SHELL")"
+  echo "  Tip: drop a $(bold ".envrc") in any project, then $(bold "direnv allow") to activate."
+
+}
+
+# :command.function
+gt_setup_thefuck_command() {
+  # src/commands/setup/thefuck.sh
+  skip_shell=${args[--skip-shell]}
+
+  name="thefuck"
+  echo "Configuring $(cyan_bold "$name")..."
+  echo ""
+
+  require_installed "$name" "$(command -v "$name" 2>/dev/null)"
+  echo "$(green_bold "✓") $name found at $(command -v "$name")"
+
+  if [ -n "$skip_shell" ]; then
+    echo "$(yellow "⚠") Skipping shell init (--skip-shell)"
+  else
+    echo ""
+    setup_shell_tool "$name" \
+      "# --- thefuck alias (managed by os-scripts) ---" \
+      "$(template_thefuck_zshrc)" \
+      "$(template_thefuck_bashrc)"
+  fi
+
+  echo ""
+  echo "$(green_bold "✓") $name configured. Reload your shell: $(bold "exec \$SHELL")"
+  echo "  Tip: type $(bold "fuck") after a failed command to get a correction suggestion."
 
 }
 
@@ -5162,6 +7985,118 @@ gt_install_parse_requirements() {
       action="mcfly"
       shift
       gt_install_mcfly_parse_requirements "$@"
+      shift $#
+      ;;
+
+    infisical)
+      action="infisical"
+      shift
+      gt_install_infisical_parse_requirements "$@"
+      shift $#
+      ;;
+
+    ksops)
+      action="ksops"
+      shift
+      gt_install_ksops_parse_requirements "$@"
+      shift $#
+      ;;
+
+    skopeo)
+      action="skopeo"
+      shift
+      gt_install_skopeo_parse_requirements "$@"
+      shift $#
+      ;;
+
+    helmfile)
+      action="helmfile"
+      shift
+      gt_install_helmfile_parse_requirements "$@"
+      shift $#
+      ;;
+
+    helm)
+      action="helm"
+      shift
+      gt_install_helm_parse_requirements "$@"
+      shift $#
+      ;;
+
+    chezmoi)
+      action="chezmoi"
+      shift
+      gt_install_chezmoi_parse_requirements "$@"
+      shift $#
+      ;;
+
+    tmux)
+      action="tmux"
+      shift
+      gt_install_tmux_parse_requirements "$@"
+      shift $#
+      ;;
+
+    rsync)
+      action="rsync"
+      shift
+      gt_install_rsync_parse_requirements "$@"
+      shift $#
+      ;;
+
+    trino)
+      action="trino"
+      shift
+      gt_install_trino_parse_requirements "$@"
+      shift $#
+      ;;
+
+    nerdctl)
+      action="nerdctl"
+      shift
+      gt_install_nerdctl_parse_requirements "$@"
+      shift $#
+      ;;
+
+    viddy)
+      action="viddy"
+      shift
+      gt_install_viddy_parse_requirements "$@"
+      shift $#
+      ;;
+
+    hyperfine)
+      action="hyperfine"
+      shift
+      gt_install_hyperfine_parse_requirements "$@"
+      shift $#
+      ;;
+
+    jq)
+      action="jq"
+      shift
+      gt_install_jq_parse_requirements "$@"
+      shift $#
+      ;;
+
+    yq)
+      action="yq"
+      shift
+      gt_install_yq_parse_requirements "$@"
+      shift $#
+      ;;
+
+    gum)
+      action="gum"
+      shift
+      gt_install_gum_parse_requirements "$@"
+      shift $#
+      ;;
+
+    uv)
+      action="uv"
+      shift
+      gt_install_uv_parse_requirements "$@"
       shift $#
       ;;
 
@@ -7509,6 +10444,1043 @@ gt_install_mcfly_parse_requirements() {
 }
 
 # :command.parse_requirements
+gt_install_infisical_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_install_infisical_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="install infisical"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+      # :flag.case
+      --version | -v)
+
+        # :flag.case_arg
+        if [[ -n ${2+x} ]]; then
+          args['--version']="$2"
+          shift
+          shift
+        else
+          printf "%s\n" "--version requires an argument: --version, -v VERSION" >&2
+          exit 1
+        fi
+        ;;
+
+      # :flag.case
+      --force | -f)
+
+        # :flag.case_no_arg
+        args['--force']=1
+        shift
+        ;;
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+  # :command.default_assignments
+  [[ -n ${args['--version']:-} ]] || args['--version']="latest"
+
+}
+
+# :command.parse_requirements
+gt_install_ksops_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_install_ksops_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="install ksops"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+      # :flag.case
+      --version | -v)
+
+        # :flag.case_arg
+        if [[ -n ${2+x} ]]; then
+          args['--version']="$2"
+          shift
+          shift
+        else
+          printf "%s\n" "--version requires an argument: --version, -v VERSION" >&2
+          exit 1
+        fi
+        ;;
+
+      # :flag.case
+      --force | -f)
+
+        # :flag.case_no_arg
+        args['--force']=1
+        shift
+        ;;
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+  # :command.default_assignments
+  [[ -n ${args['--version']:-} ]] || args['--version']="latest"
+
+}
+
+# :command.parse_requirements
+gt_install_skopeo_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_install_skopeo_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="install skopeo"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+      # :flag.case
+      --force | -f)
+
+        # :flag.case_no_arg
+        args['--force']=1
+        shift
+        ;;
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
+gt_install_helmfile_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_install_helmfile_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="install helmfile"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+      # :flag.case
+      --version | -v)
+
+        # :flag.case_arg
+        if [[ -n ${2+x} ]]; then
+          args['--version']="$2"
+          shift
+          shift
+        else
+          printf "%s\n" "--version requires an argument: --version, -v VERSION" >&2
+          exit 1
+        fi
+        ;;
+
+      # :flag.case
+      --force | -f)
+
+        # :flag.case_no_arg
+        args['--force']=1
+        shift
+        ;;
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+  # :command.default_assignments
+  [[ -n ${args['--version']:-} ]] || args['--version']="latest"
+
+}
+
+# :command.parse_requirements
+gt_install_helm_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_install_helm_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="install helm"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+      # :flag.case
+      --version | -v)
+
+        # :flag.case_arg
+        if [[ -n ${2+x} ]]; then
+          args['--version']="$2"
+          shift
+          shift
+        else
+          printf "%s\n" "--version requires an argument: --version, -v VERSION" >&2
+          exit 1
+        fi
+        ;;
+
+      # :flag.case
+      --force | -f)
+
+        # :flag.case_no_arg
+        args['--force']=1
+        shift
+        ;;
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+  # :command.default_assignments
+  [[ -n ${args['--version']:-} ]] || args['--version']="latest"
+
+}
+
+# :command.parse_requirements
+gt_install_chezmoi_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_install_chezmoi_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="install chezmoi"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+      # :flag.case
+      --version | -v)
+
+        # :flag.case_arg
+        if [[ -n ${2+x} ]]; then
+          args['--version']="$2"
+          shift
+          shift
+        else
+          printf "%s\n" "--version requires an argument: --version, -v VERSION" >&2
+          exit 1
+        fi
+        ;;
+
+      # :flag.case
+      --force | -f)
+
+        # :flag.case_no_arg
+        args['--force']=1
+        shift
+        ;;
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+  # :command.default_assignments
+  [[ -n ${args['--version']:-} ]] || args['--version']="latest"
+
+}
+
+# :command.parse_requirements
+gt_install_tmux_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_install_tmux_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="install tmux"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+      # :flag.case
+      --force | -f)
+
+        # :flag.case_no_arg
+        args['--force']=1
+        shift
+        ;;
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
+gt_install_rsync_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_install_rsync_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="install rsync"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+      # :flag.case
+      --force | -f)
+
+        # :flag.case_no_arg
+        args['--force']=1
+        shift
+        ;;
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
+gt_install_trino_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_install_trino_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="install trino"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+      # :flag.case
+      --version | -v)
+
+        # :flag.case_arg
+        if [[ -n ${2+x} ]]; then
+          args['--version']="$2"
+          shift
+          shift
+        else
+          printf "%s\n" "--version requires an argument: --version, -v VERSION" >&2
+          exit 1
+        fi
+        ;;
+
+      # :flag.case
+      --force | -f)
+
+        # :flag.case_no_arg
+        args['--force']=1
+        shift
+        ;;
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+  # :command.default_assignments
+  [[ -n ${args['--version']:-} ]] || args['--version']="latest"
+
+}
+
+# :command.parse_requirements
+gt_install_nerdctl_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_install_nerdctl_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="install nerdctl"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+      # :flag.case
+      --version | -v)
+
+        # :flag.case_arg
+        if [[ -n ${2+x} ]]; then
+          args['--version']="$2"
+          shift
+          shift
+        else
+          printf "%s\n" "--version requires an argument: --version, -v VERSION" >&2
+          exit 1
+        fi
+        ;;
+
+      # :flag.case
+      --force | -f)
+
+        # :flag.case_no_arg
+        args['--force']=1
+        shift
+        ;;
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+  # :command.default_assignments
+  [[ -n ${args['--version']:-} ]] || args['--version']="latest"
+
+}
+
+# :command.parse_requirements
+gt_install_viddy_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_install_viddy_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="install viddy"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+      # :flag.case
+      --version | -v)
+
+        # :flag.case_arg
+        if [[ -n ${2+x} ]]; then
+          args['--version']="$2"
+          shift
+          shift
+        else
+          printf "%s\n" "--version requires an argument: --version, -v VERSION" >&2
+          exit 1
+        fi
+        ;;
+
+      # :flag.case
+      --force | -f)
+
+        # :flag.case_no_arg
+        args['--force']=1
+        shift
+        ;;
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+  # :command.default_assignments
+  [[ -n ${args['--version']:-} ]] || args['--version']="latest"
+
+}
+
+# :command.parse_requirements
+gt_install_hyperfine_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_install_hyperfine_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="install hyperfine"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+      # :flag.case
+      --version | -v)
+
+        # :flag.case_arg
+        if [[ -n ${2+x} ]]; then
+          args['--version']="$2"
+          shift
+          shift
+        else
+          printf "%s\n" "--version requires an argument: --version, -v VERSION" >&2
+          exit 1
+        fi
+        ;;
+
+      # :flag.case
+      --force | -f)
+
+        # :flag.case_no_arg
+        args['--force']=1
+        shift
+        ;;
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+  # :command.default_assignments
+  [[ -n ${args['--version']:-} ]] || args['--version']="latest"
+
+}
+
+# :command.parse_requirements
+gt_install_jq_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_install_jq_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="install jq"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+      # :flag.case
+      --version | -v)
+
+        # :flag.case_arg
+        if [[ -n ${2+x} ]]; then
+          args['--version']="$2"
+          shift
+          shift
+        else
+          printf "%s\n" "--version requires an argument: --version, -v VERSION" >&2
+          exit 1
+        fi
+        ;;
+
+      # :flag.case
+      --force | -f)
+
+        # :flag.case_no_arg
+        args['--force']=1
+        shift
+        ;;
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+  # :command.default_assignments
+  [[ -n ${args['--version']:-} ]] || args['--version']="latest"
+
+}
+
+# :command.parse_requirements
+gt_install_yq_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_install_yq_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="install yq"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+      # :flag.case
+      --version | -v)
+
+        # :flag.case_arg
+        if [[ -n ${2+x} ]]; then
+          args['--version']="$2"
+          shift
+          shift
+        else
+          printf "%s\n" "--version requires an argument: --version, -v VERSION" >&2
+          exit 1
+        fi
+        ;;
+
+      # :flag.case
+      --force | -f)
+
+        # :flag.case_no_arg
+        args['--force']=1
+        shift
+        ;;
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+  # :command.default_assignments
+  [[ -n ${args['--version']:-} ]] || args['--version']="latest"
+
+}
+
+# :command.parse_requirements
+gt_install_gum_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_install_gum_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="install gum"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+      # :flag.case
+      --version | -v)
+
+        # :flag.case_arg
+        if [[ -n ${2+x} ]]; then
+          args['--version']="$2"
+          shift
+          shift
+        else
+          printf "%s\n" "--version requires an argument: --version, -v VERSION" >&2
+          exit 1
+        fi
+        ;;
+
+      # :flag.case
+      --force | -f)
+
+        # :flag.case_no_arg
+        args['--force']=1
+        shift
+        ;;
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+  # :command.default_assignments
+  [[ -n ${args['--version']:-} ]] || args['--version']="latest"
+
+}
+
+# :command.parse_requirements
+gt_install_uv_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_install_uv_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="install uv"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+      # :flag.case
+      --version | -v)
+
+        # :flag.case_arg
+        if [[ -n ${2+x} ]]; then
+          args['--version']="$2"
+          shift
+          shift
+        else
+          printf "%s\n" "--version requires an argument: --version, -v VERSION" >&2
+          exit 1
+        fi
+        ;;
+
+      # :flag.case
+      --force | -f)
+
+        # :flag.case_no_arg
+        args['--force']=1
+        shift
+        ;;
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+  # :command.default_assignments
+  [[ -n ${args['--version']:-} ]] || args['--version']="latest"
+
+}
+
+# :command.parse_requirements
 gt_uninstall_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
@@ -7760,6 +11732,118 @@ gt_uninstall_parse_requirements() {
       action="mcfly"
       shift
       gt_uninstall_mcfly_parse_requirements "$@"
+      shift $#
+      ;;
+
+    infisical)
+      action="infisical"
+      shift
+      gt_uninstall_infisical_parse_requirements "$@"
+      shift $#
+      ;;
+
+    ksops)
+      action="ksops"
+      shift
+      gt_uninstall_ksops_parse_requirements "$@"
+      shift $#
+      ;;
+
+    skopeo)
+      action="skopeo"
+      shift
+      gt_uninstall_skopeo_parse_requirements "$@"
+      shift $#
+      ;;
+
+    helmfile)
+      action="helmfile"
+      shift
+      gt_uninstall_helmfile_parse_requirements "$@"
+      shift $#
+      ;;
+
+    helm)
+      action="helm"
+      shift
+      gt_uninstall_helm_parse_requirements "$@"
+      shift $#
+      ;;
+
+    chezmoi)
+      action="chezmoi"
+      shift
+      gt_uninstall_chezmoi_parse_requirements "$@"
+      shift $#
+      ;;
+
+    tmux)
+      action="tmux"
+      shift
+      gt_uninstall_tmux_parse_requirements "$@"
+      shift $#
+      ;;
+
+    rsync)
+      action="rsync"
+      shift
+      gt_uninstall_rsync_parse_requirements "$@"
+      shift $#
+      ;;
+
+    trino)
+      action="trino"
+      shift
+      gt_uninstall_trino_parse_requirements "$@"
+      shift $#
+      ;;
+
+    nerdctl)
+      action="nerdctl"
+      shift
+      gt_uninstall_nerdctl_parse_requirements "$@"
+      shift $#
+      ;;
+
+    viddy)
+      action="viddy"
+      shift
+      gt_uninstall_viddy_parse_requirements "$@"
+      shift $#
+      ;;
+
+    hyperfine)
+      action="hyperfine"
+      shift
+      gt_uninstall_hyperfine_parse_requirements "$@"
+      shift $#
+      ;;
+
+    jq)
+      action="jq"
+      shift
+      gt_uninstall_jq_parse_requirements "$@"
+      shift $#
+      ;;
+
+    yq)
+      action="yq"
+      shift
+      gt_uninstall_yq_parse_requirements "$@"
+      shift $#
+      ;;
+
+    gum)
+      action="gum"
+      shift
+      gt_uninstall_gum_parse_requirements "$@"
+      shift $#
+      ;;
+
+    uv)
+      action="uv"
+      shift
+      gt_uninstall_uv_parse_requirements "$@"
       shift $#
       ;;
 
@@ -9252,6 +13336,710 @@ gt_uninstall_mcfly_parse_requirements() {
 }
 
 # :command.parse_requirements
+gt_uninstall_infisical_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_uninstall_infisical_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="uninstall infisical"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
+gt_uninstall_ksops_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_uninstall_ksops_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="uninstall ksops"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
+gt_uninstall_skopeo_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_uninstall_skopeo_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="uninstall skopeo"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
+gt_uninstall_helmfile_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_uninstall_helmfile_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="uninstall helmfile"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
+gt_uninstall_helm_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_uninstall_helm_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="uninstall helm"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
+gt_uninstall_chezmoi_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_uninstall_chezmoi_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="uninstall chezmoi"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
+gt_uninstall_tmux_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_uninstall_tmux_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="uninstall tmux"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
+gt_uninstall_rsync_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_uninstall_rsync_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="uninstall rsync"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
+gt_uninstall_trino_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_uninstall_trino_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="uninstall trino"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
+gt_uninstall_nerdctl_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_uninstall_nerdctl_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="uninstall nerdctl"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
+gt_uninstall_viddy_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_uninstall_viddy_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="uninstall viddy"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
+gt_uninstall_hyperfine_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_uninstall_hyperfine_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="uninstall hyperfine"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
+gt_uninstall_jq_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_uninstall_jq_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="uninstall jq"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
+gt_uninstall_yq_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_uninstall_yq_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="uninstall yq"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
+gt_uninstall_gum_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_uninstall_gum_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="uninstall gum"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
+gt_uninstall_uv_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_uninstall_uv_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="uninstall uv"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
 gt_setup_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
@@ -9279,6 +14067,48 @@ gt_setup_parse_requirements() {
       action="antidote"
       shift
       gt_setup_antidote_parse_requirements "$@"
+      shift $#
+      ;;
+
+    starship)
+      action="starship"
+      shift
+      gt_setup_starship_parse_requirements "$@"
+      shift $#
+      ;;
+
+    zoxide)
+      action="zoxide"
+      shift
+      gt_setup_zoxide_parse_requirements "$@"
+      shift $#
+      ;;
+
+    mcfly)
+      action="mcfly"
+      shift
+      gt_setup_mcfly_parse_requirements "$@"
+      shift $#
+      ;;
+
+    fzf)
+      action="fzf"
+      shift
+      gt_setup_fzf_parse_requirements "$@"
+      shift $#
+      ;;
+
+    direnv)
+      action="direnv"
+      shift
+      gt_setup_direnv_parse_requirements "$@"
+      shift $#
+      ;;
+
+    thefuck)
+      action="thefuck"
+      shift
+      gt_setup_thefuck_parse_requirements "$@"
       shift $#
       ;;
 
@@ -9371,6 +14201,342 @@ gt_setup_antidote_parse_requirements() {
 
         # :flag.case_no_arg
         args['--skip-zshrc']=1
+        shift
+        ;;
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
+gt_setup_starship_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_setup_starship_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="setup starship"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+      # :flag.case
+      --preset)
+
+        # :flag.case_arg
+        if [[ -n ${2+x} ]]; then
+          args['--preset']="$2"
+          shift
+          shift
+        else
+          printf "%s\n" "--preset requires an argument: --preset NAME" >&2
+          exit 1
+        fi
+        ;;
+
+      # :flag.case
+      --skip-config)
+
+        # :flag.case_no_arg
+        args['--skip-config']=1
+        shift
+        ;;
+
+      # :flag.case
+      --skip-shell)
+
+        # :flag.case_no_arg
+        args['--skip-shell']=1
+        shift
+        ;;
+
+      # :flag.case
+      --force-config)
+
+        # :flag.case_no_arg
+        args['--force-config']=1
+        shift
+        ;;
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
+gt_setup_zoxide_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_setup_zoxide_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="setup zoxide"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+      # :flag.case
+      --skip-shell)
+
+        # :flag.case_no_arg
+        args['--skip-shell']=1
+        shift
+        ;;
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
+gt_setup_mcfly_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_setup_mcfly_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="setup mcfly"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+      # :flag.case
+      --skip-shell)
+
+        # :flag.case_no_arg
+        args['--skip-shell']=1
+        shift
+        ;;
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
+gt_setup_fzf_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_setup_fzf_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="setup fzf"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+      # :flag.case
+      --skip-shell)
+
+        # :flag.case_no_arg
+        args['--skip-shell']=1
+        shift
+        ;;
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
+gt_setup_direnv_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_setup_direnv_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="setup direnv"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+      # :flag.case
+      --skip-shell)
+
+        # :flag.case_no_arg
+        args['--skip-shell']=1
+        shift
+        ;;
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
+gt_setup_thefuck_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gt_setup_thefuck_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="setup thefuck"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+      # :flag.case
+      --skip-shell)
+
+        # :flag.case_no_arg
+        args['--skip-shell']=1
         shift
         ;;
 
@@ -9503,6 +14669,22 @@ run() {
     "install fzf") gt_install_fzf_command ;;
     "install fd") gt_install_fd_command ;;
     "install mcfly") gt_install_mcfly_command ;;
+    "install infisical") gt_install_infisical_command ;;
+    "install ksops") gt_install_ksops_command ;;
+    "install skopeo") gt_install_skopeo_command ;;
+    "install helmfile") gt_install_helmfile_command ;;
+    "install helm") gt_install_helm_command ;;
+    "install chezmoi") gt_install_chezmoi_command ;;
+    "install tmux") gt_install_tmux_command ;;
+    "install rsync") gt_install_rsync_command ;;
+    "install trino") gt_install_trino_command ;;
+    "install nerdctl") gt_install_nerdctl_command ;;
+    "install viddy") gt_install_viddy_command ;;
+    "install hyperfine") gt_install_hyperfine_command ;;
+    "install jq") gt_install_jq_command ;;
+    "install yq") gt_install_yq_command ;;
+    "install gum") gt_install_gum_command ;;
+    "install uv") gt_install_uv_command ;;
     "uninstall") gt_uninstall_command ;;
     "uninstall kustomize") gt_uninstall_kustomize_command ;;
     "uninstall k9s") gt_uninstall_k9s_command ;;
@@ -9537,8 +14719,30 @@ run() {
     "uninstall fzf") gt_uninstall_fzf_command ;;
     "uninstall fd") gt_uninstall_fd_command ;;
     "uninstall mcfly") gt_uninstall_mcfly_command ;;
+    "uninstall infisical") gt_uninstall_infisical_command ;;
+    "uninstall ksops") gt_uninstall_ksops_command ;;
+    "uninstall skopeo") gt_uninstall_skopeo_command ;;
+    "uninstall helmfile") gt_uninstall_helmfile_command ;;
+    "uninstall helm") gt_uninstall_helm_command ;;
+    "uninstall chezmoi") gt_uninstall_chezmoi_command ;;
+    "uninstall tmux") gt_uninstall_tmux_command ;;
+    "uninstall rsync") gt_uninstall_rsync_command ;;
+    "uninstall trino") gt_uninstall_trino_command ;;
+    "uninstall nerdctl") gt_uninstall_nerdctl_command ;;
+    "uninstall viddy") gt_uninstall_viddy_command ;;
+    "uninstall hyperfine") gt_uninstall_hyperfine_command ;;
+    "uninstall jq") gt_uninstall_jq_command ;;
+    "uninstall yq") gt_uninstall_yq_command ;;
+    "uninstall gum") gt_uninstall_gum_command ;;
+    "uninstall uv") gt_uninstall_uv_command ;;
     "setup") gt_setup_command ;;
     "setup antidote") gt_setup_antidote_command ;;
+    "setup starship") gt_setup_starship_command ;;
+    "setup zoxide") gt_setup_zoxide_command ;;
+    "setup mcfly") gt_setup_mcfly_command ;;
+    "setup fzf") gt_setup_fzf_command ;;
+    "setup direnv") gt_setup_direnv_command ;;
+    "setup thefuck") gt_setup_thefuck_command ;;
     "outdated") gt_outdated_command ;;
   esac
 }

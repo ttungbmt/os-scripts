@@ -33,23 +33,9 @@ fi
 source ${zsh_plugins}.zsh
 unset zsh_plugins
 
-# Tool integrations (no-op if the binary is missing)
-(( $+commands[zoxide]   )) && eval "$(zoxide init zsh)"
-(( $+commands[mcfly]    )) && eval "$(mcfly init zsh)"
-(( $+commands[direnv]   )) && eval "$(direnv hook zsh)"
-(( $+commands[thefuck]  )) && eval "$(thefuck --alias)"
-
-# fzf: built-in zsh integration on v0.48+, legacy ~/.fzf.zsh otherwise
-if (( $+commands[fzf] )); then
-  if fzf --zsh >/dev/null 2>&1; then
-    eval "$(fzf --zsh)"
-  elif [[ -f ~/.fzf.zsh ]]; then
-    source ~/.fzf.zsh
-  fi
-fi
-
-# Starship must be last so nothing overrides PROMPT
-(( $+commands[starship] )) && eval "$(starship init zsh)"
+# NOTE: per-tool shell init (starship, zoxide, mcfly, fzf, direnv, thefuck …)
+# is owned by `gt setup <tool>` — each writes its own marker block in this rc
+# file so the plugin manager stays decoupled from individual tool integrations.
 # --- end antidote bootstrap ---
 EOF
 }
