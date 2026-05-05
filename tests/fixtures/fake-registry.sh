@@ -1,0 +1,5 @@
+FAKETOOL_REPO="example/faketool"
+FAKETOOL_VERSION="v1.2.3"
+FAKETOOL_INSTALL_TYPE="binary"
+FAKETOOL_ASSET_URL="https://example.com/faketool/\${VERSION}/faketool-\${DETECT_OS}-\${DETECT_ARCH}"
+FAKETOOL_BIN_PATH="faketool"
