@@ -278,3 +278,15 @@ commands:
   - long: --force
     short: -f
     help: Force overwrite if talisman is already installed
+
+- name: copilot
+  help: Install copilot
+  flags:
+  - long: --version
+    short: -v
+    arg: version
+    help: copilot version to install (e.g., 0.1.36 or latest)
+    default: latest
+  - long: --force
+    short: -f
+    help: Force overwrite if copilot is already installed

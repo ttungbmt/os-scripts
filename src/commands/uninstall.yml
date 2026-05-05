@@ -163,3 +163,6 @@ commands:
 
 - name: talisman
   help: Uninstall talisman
+
+- name: copilot
+  help: Uninstall copilot
