@@ -5296,12 +5296,12 @@ zdharma-continuum/fast-syntax-highlighting
 zsh-users/zsh-history-substring-search
 
 # ─── OS Scripts Local Integrations (Cached Shell Init) ───
-ttungbmt/os-scripts path:src/zsh-plugins/zoxide
-ttungbmt/os-scripts path:src/zsh-plugins/mcfly
-ttungbmt/os-scripts path:src/zsh-plugins/fzf
-ttungbmt/os-scripts path:src/zsh-plugins/direnv
-ttungbmt/os-scripts path:src/zsh-plugins/thefuck
-ttungbmt/os-scripts path:src/zsh-plugins/starship
+ttungbmt/os-scripts path:plugins/zsh-zoxide
+ttungbmt/os-scripts path:plugins/zsh-mcfly
+ttungbmt/os-scripts path:plugins/zsh-fzf
+ttungbmt/os-scripts path:plugins/zsh-direnv
+ttungbmt/os-scripts path:plugins/zsh-thefuck
+ttungbmt/os-scripts path:plugins/zsh-starship
 EOF
 }
 
