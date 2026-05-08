@@ -56,3 +56,40 @@ setup() {
   [ "$status" -eq 0 ]
   [[ "$output" == *"mise use -g npm:fake-tool@1.2.3"* ]]
 }
+
+@test "run_generic_uninstall with mise type reports not installed when binary missing" {
+  source "${GT_PROJECT_ROOT}/src/lib/generic_uninstall.sh"
+
+  FAKE_INSTALL_TYPE="mise"
+  FAKE_MISE_PKG="npm:fake-tool"
+
+  # On the test machine, "fake" won't exist — command -v returns empty naturally
+  run run_generic_uninstall "fake"
+  [ "$status" -eq 0 ]
+  [[ "$output" == *"is not installed"* ]]
+}
+
+@test "run_generic_uninstall with mise type calls mise uninstall with package" {
+  source "${GT_PROJECT_ROOT}/src/lib/generic_uninstall.sh"
+
+  FAKE_INSTALL_TYPE="mise"
+  FAKE_MISE_PKG="npm:fake-tool"
+
+  # Stub mise
+  mise() { echo "mise $*"; return 0; }
+  export -f mise
+
+  # Wrap command so "command -v fake" returns a path, other uses fall through
+  command() {
+    if [[ "$1" == "-v" && "$2" == "fake" ]]; then
+      echo "/usr/bin/fake"
+      return 0
+    fi
+    builtin command "$@"
+  }
+  export -f command
+
+  run run_generic_uninstall "fake"
+  [ "$status" -eq 0 ]
+  [[ "$output" == *"mise uninstall npm:fake-tool"* ]]
+}

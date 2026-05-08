@@ -24,6 +24,22 @@ run_generic_uninstall() {
       echo "$(red ✗ Failed to uninstall $name.)"
       exit 1
     fi
+  elif [[ "$install_type" == "mise" ]]; then
+    local mise_pkg_var="${tool_upper}_MISE_PKG"
+    local mise_pkg="${!mise_pkg_var}"
+
+    if ! command -v "$name" >/dev/null 2>&1; then
+      echo "$(cyan_bold "$name") is not installed."
+      exit 0
+    fi
+
+    echo "Uninstalling $(cyan_bold "$name") via mise..."
+    if mise uninstall "$mise_pkg"; then
+      echo "$(green_bold ✓) $name uninstalled successfully."
+    else
+      echo "$(red ✗ Failed to uninstall $name.)"
+      exit 1
+    fi
   else
     # Standard binary uninstall
     uninstall_tool "$name" "$target"
