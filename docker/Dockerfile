@@ -5,19 +5,28 @@ RUN apt-get update && apt-get install -y \
     curl \
     tar \
     unzip \
-    git \
     bash \
-    zsh \
+    sudo \
     python3-pip \
-    ruby-full \
     && rm -rf /var/lib/apt/lists/*
 
-# Node.js 20 LTS (for claude via npm)
-RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
-    && apt-get install -y nodejs \
-    && rm -rf /var/lib/apt/lists/*
-
-# Bats for running unit tests inside container
-RUN npm install -g bats
+# Create non-root user 'ubuntu' (UID 1000) with passwordless sudo – mirrors WSL
+RUN groupadd -g 1000 ubuntu \
+    && useradd -m -u 1000 -g ubuntu -s /bin/zsh ubuntu \
+    && echo 'ubuntu ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers.d/ubuntu \
+    && chmod 0440 /etc/sudoers.d/ubuntu
 
 WORKDIR /workspace
+RUN chown ubuntu:ubuntu /workspace
+
+# Copy gc CLI to support the gc command inside the container
+COPY gc /usr/local/bin/gc
+RUN chmod +x /usr/local/bin/gc
+
+USER ubuntu
+
+RUN gc install multi git bats
+RUN gc install multi gem
+RUN gc install multi bashly
+RUN gc install multi zsh antidote
+RUN gc install multi mise node

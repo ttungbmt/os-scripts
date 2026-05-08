@@ -1,0 +1,8 @@
+MISE_INSTALL_TYPE="github_release"
+MISE_GITHUB_REPO="jdx/mise"
+MISE_ARCHIVE_TYPE="binary"
+MISE_ASSET_PATTERN="mise-v\${VERSION}-\${DETECT_OS}-\${DETECT_ARCH}"
+MISE_ARCH_MAP_amd64="x64"
+MISE_ARCH_MAP_arm64="arm64"
+MISE_OS_MAP_linux="linux"
+MISE_OS_MAP_darwin="macos"

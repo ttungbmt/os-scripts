@@ -14,7 +14,7 @@ done
 
 for tool in "${tools[@]}"; do
   # We call the internal bashly generated command function for that tool if it exists
-  if declare -F "gt_setup_${tool}_command" > /dev/null; then
+  if declare -F "gc_setup_${tool}_command" > /dev/null; then
     echo "==========================================="
     echo "Configuring: $(cyan_bold "$tool")"
     echo "==========================================="
@@ -29,7 +29,7 @@ for tool in "${tools[@]}"; do
     fi
     
     # Call the internal function in a subshell to prevent 'exit' from killing the loop
-    ( gt_setup_${tool}_command ) || true
+    ( gc_setup_${tool}_command ) || true
     
     # Restore args
     eval "$orig_args"

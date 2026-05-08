@@ -22,6 +22,9 @@ commands:
 - name: zsh
   help: Uninstall zsh
 
+- name: git
+  help: Uninstall git
+
 - name: antidote
   help: Uninstall antidote
 
@@ -84,6 +87,9 @@ commands:
 
 - name: bat
   help: Uninstall bat
+
+- name: bats
+  help: Uninstall bats
 
 - name: ripgrep
   help: Uninstall ripgrep
@@ -155,6 +161,9 @@ commands:
 
 - name: gem
   help: Uninstall gem
+
+- name: mise
+  help: Uninstall mise
 
 - name: claude
   help: Uninstall claude

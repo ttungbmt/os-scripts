@@ -16,13 +16,13 @@ for tool in "${tools[@]}"; do
   # Check if the tool exists in our registry
   registry_file="src/lib/registry/${tool}.sh"
   
-  if [ -f "$registry_file" ] || declare -F "gt_install_${tool}_command" > /dev/null; then
+  if [ -f "$registry_file" ] || declare -F "gc_install_${tool}_command" > /dev/null; then
     echo "==========================================="
     echo "Installing: $(cyan_bold "$tool")"
     echo "==========================================="
     
     # We call the internal bashly generated command function for that tool if it exists
-    if declare -F "gt_install_${tool}_command" > /dev/null; then
+    if declare -F "gc_install_${tool}_command" > /dev/null; then
       # Setup arguments exactly as the command expects
       # We clear existing args first
       local orig_args
@@ -35,7 +35,7 @@ for tool in "${tools[@]}"; do
       fi
       
       # Call the internal function in a subshell to prevent 'exit' from killing the loop
-      ( gt_install_${tool}_command ) || true
+      ( gc_install_${tool}_command ) || true
       
       # Restore args
       eval "$orig_args"

@@ -53,6 +53,10 @@ commands:
   help: Install zsh
   flags: *std_install_flags
 
+- name: git
+  help: Install git
+  flags: *std_install_flags
+
 - name: antidote
   help: Install antidote (Zsh plugin manager)
   flags: *std_install_flags
@@ -137,6 +141,10 @@ commands:
 
 - name: bat
   help: Install bat
+  flags: *std_install_flags
+
+- name: bats
+  help: Install bats (Bash Automated Testing System)
   flags: *std_install_flags
 
 - name: ripgrep
@@ -252,6 +260,18 @@ commands:
   - long: --force
     short: -f
     help: Force reinstall gem
+
+- name: mise
+  help: Install mise (dev tools manager)
+  flags:
+  - long: --version
+    short: -v
+    arg: version
+    help: mise version to install (e.g., latest)
+    default: latest
+  - long: --force
+    short: -f
+    help: Force overwrite if mise is already installed
 
 - name: claude
   help: Install claude (Claude Code CLI)

@@ -4,8 +4,9 @@ services:
       context: .
       dockerfile: docker/Dockerfile
     volumes:
-      - .:/workspace
-    working_dir: /workspace
+      - .:/home/ubuntu/workspace
+    working_dir: /home/ubuntu/workspace
+    user: ubuntu
     environment:
       - GITHUB_TOKEN
     stdin_open: true

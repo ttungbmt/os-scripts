@@ -71,7 +71,7 @@ require_installed() {
   local name="$1" target="$2"
   if [ ! -e "$target" ] && ! command -v "$name" >/dev/null 2>&1; then
     echo "$(red "✗") ${name} is not installed."
-    echo "Please run $(bold "./gt install ${name}") first."
+    echo "Please run $(bold "./gc install ${name}") first."
     exit 1
   fi
 }

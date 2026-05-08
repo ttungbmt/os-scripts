@@ -1,0 +1,26 @@
+# https://taskfile.dev
+
+version: '3'
+
+silent: true
+
+tasks:
+  build:
+    desc: Build the Docker containers
+    cmds:
+      - docker compose build shell
+
+  up:
+    desc: Start the Docker containers in the background
+    cmds:
+      - docker compose up -d shell
+
+  down:
+    desc: Stop and remove the Docker containers
+    cmds:
+      - docker compose down
+
+  shell:
+    desc: Access the interactive shell inside the container
+    cmds:
+      - docker compose exec shell bash
