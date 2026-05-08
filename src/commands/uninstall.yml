@@ -158,8 +158,6 @@ commands:
 
 - name: claude
   help: Uninstall claude
-  dependencies:
-  - npm
 
 - name: talisman
   help: Uninstall talisman

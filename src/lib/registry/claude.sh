@@ -1,5 +1,5 @@
-CLAUDE_INSTALL_TYPE="npm"
-CLAUDE_NPM_PKG="@anthropic-ai/claude-code"
+CLAUDE_INSTALL_TYPE="mise"
+CLAUDE_MISE_PKG="npm:@anthropic-ai/claude-code"
 
 claude_fetch_local_version() {
   local target="$1"
@@ -7,5 +7,5 @@ claude_fetch_local_version() {
 }
 
 claude_fetch_remote_version() {
-  npm view @anthropic-ai/claude-code version 2>/dev/null
+  mise latest npm:@anthropic-ai/claude-code 2>/dev/null
 }
