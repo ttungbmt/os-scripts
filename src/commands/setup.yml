@@ -45,3 +45,13 @@ commands:
   - long: --force-config
     help: Overwrite ~/.config/starship.toml even if it already has content
 
+- name: claude
+  help: Configure Claude Code (~/.claude/settings.json)
+  examples:
+  - gc setup claude
+  - gc setup claude --force-config
+  flags:
+  - long: --skip-config
+    help: Skip seeding ~/.claude/settings.json
+  - long: --force-config
+    help: Overwrite ~/.claude/settings.json even if it already has content

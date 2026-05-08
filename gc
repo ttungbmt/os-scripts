@@ -16,21 +16,21 @@ version_command() {
 }
 
 # :command.usage
-gt_usage() {
+gc_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt - OS Scripts CLI — Install & manage DevOps tools\n"
+    printf "gc - OS Scripts CLI — Install & manage DevOps tools\n"
     echo
 
   else
-    printf "gt - OS Scripts CLI — Install & manage DevOps tools\n"
+    printf "gc - OS Scripts CLI — Install & manage DevOps tools\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt COMMAND\n"
-  printf "  gt [COMMAND] --help | -h\n"
-  printf "  gt --version | -v\n"
+  printf "  gc COMMAND\n"
+  printf "  gc [COMMAND] --help | -h\n"
+  printf "  gc --version | -v\n"
   echo
   # :command.usage_commands
   printf "%s\n" "Commands:"
@@ -82,20 +82,20 @@ gt_usage() {
 }
 
 # :command.usage
-gt_install_usage() {
+gc_install_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install - Install tools and components\n"
+    printf "gc install - Install tools and components\n"
     echo
 
   else
-    printf "gt install - Install tools and components\n"
+    printf "gc install - Install tools and components\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install COMMAND\n"
-  printf "  gt install [COMMAND] --help | -h\n"
+  printf "  gc install COMMAND\n"
+  printf "  gc install [COMMAND] --help | -h\n"
   echo
   # :command.usage_commands
   printf "%s\n" "Commands:"
@@ -170,20 +170,20 @@ gt_install_usage() {
 }
 
 # :command.usage
-gt_install_multi_usage() {
+gc_install_multi_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install multi - Install multiple tools at once (comma or space separated)\n"
+    printf "gc install multi - Install multiple tools at once (comma or space separated)\n"
     echo
 
   else
-    printf "gt install multi - Install multiple tools at once (comma or space separated)\n"
+    printf "gc install multi - Install multiple tools at once (comma or space separated)\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install multi TOOLS... [OPTIONS]\n"
-  printf "  gt install multi --help | -h\n"
+  printf "  gc install multi TOOLS... [OPTIONS]\n"
+  printf "  gc install multi --help | -h\n"
   echo
 
   # :command.long_usage
@@ -220,20 +220,20 @@ gt_install_multi_usage() {
 }
 
 # :command.usage
-gt_install_kustomize_usage() {
+gc_install_kustomize_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install kustomize - Install Kustomize\n"
+    printf "gc install kustomize - Install Kustomize\n"
     echo
 
   else
-    printf "gt install kustomize - Install Kustomize\n"
+    printf "gc install kustomize - Install Kustomize\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install kustomize [OPTIONS]\n"
-  printf "  gt install kustomize --help | -h\n"
+  printf "  gc install kustomize [OPTIONS]\n"
+  printf "  gc install kustomize --help | -h\n"
   echo
 
   # :command.long_usage
@@ -261,20 +261,20 @@ gt_install_kustomize_usage() {
 }
 
 # :command.usage
-gt_install_k9s_usage() {
+gc_install_k9s_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install k9s - Install k9s\n"
+    printf "gc install k9s - Install k9s\n"
     echo
 
   else
-    printf "gt install k9s - Install k9s\n"
+    printf "gc install k9s - Install k9s\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install k9s [OPTIONS]\n"
-  printf "  gt install k9s --help | -h\n"
+  printf "  gc install k9s [OPTIONS]\n"
+  printf "  gc install k9s --help | -h\n"
   echo
 
   # :command.long_usage
@@ -302,20 +302,20 @@ gt_install_k9s_usage() {
 }
 
 # :command.usage
-gt_install_kubectl_usage() {
+gc_install_kubectl_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install kubectl - Install kubectl\n"
+    printf "gc install kubectl - Install kubectl\n"
     echo
 
   else
-    printf "gt install kubectl - Install kubectl\n"
+    printf "gc install kubectl - Install kubectl\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install kubectl [OPTIONS]\n"
-  printf "  gt install kubectl --help | -h\n"
+  printf "  gc install kubectl [OPTIONS]\n"
+  printf "  gc install kubectl --help | -h\n"
   echo
 
   # :command.long_usage
@@ -343,20 +343,20 @@ gt_install_kubectl_usage() {
 }
 
 # :command.usage
-gt_install_fastfetch_usage() {
+gc_install_fastfetch_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install fastfetch - Install fastfetch\n"
+    printf "gc install fastfetch - Install fastfetch\n"
     echo
 
   else
-    printf "gt install fastfetch - Install fastfetch\n"
+    printf "gc install fastfetch - Install fastfetch\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install fastfetch [OPTIONS]\n"
-  printf "  gt install fastfetch --help | -h\n"
+  printf "  gc install fastfetch [OPTIONS]\n"
+  printf "  gc install fastfetch --help | -h\n"
   echo
 
   # :command.long_usage
@@ -384,20 +384,20 @@ gt_install_fastfetch_usage() {
 }
 
 # :command.usage
-gt_install_direnv_usage() {
+gc_install_direnv_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install direnv - Install direnv\n"
+    printf "gc install direnv - Install direnv\n"
     echo
 
   else
-    printf "gt install direnv - Install direnv\n"
+    printf "gc install direnv - Install direnv\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install direnv [OPTIONS]\n"
-  printf "  gt install direnv --help | -h\n"
+  printf "  gc install direnv [OPTIONS]\n"
+  printf "  gc install direnv --help | -h\n"
   echo
 
   # :command.long_usage
@@ -425,20 +425,20 @@ gt_install_direnv_usage() {
 }
 
 # :command.usage
-gt_install_btop_usage() {
+gc_install_btop_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install btop - Install btop\n"
+    printf "gc install btop - Install btop\n"
     echo
 
   else
-    printf "gt install btop - Install btop\n"
+    printf "gc install btop - Install btop\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install btop [OPTIONS]\n"
-  printf "  gt install btop --help | -h\n"
+  printf "  gc install btop [OPTIONS]\n"
+  printf "  gc install btop --help | -h\n"
   echo
 
   # :command.long_usage
@@ -466,20 +466,20 @@ gt_install_btop_usage() {
 }
 
 # :command.usage
-gt_install_zsh_usage() {
+gc_install_zsh_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install zsh - Install zsh\n"
+    printf "gc install zsh - Install zsh\n"
     echo
 
   else
-    printf "gt install zsh - Install zsh\n"
+    printf "gc install zsh - Install zsh\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install zsh [OPTIONS]\n"
-  printf "  gt install zsh --help | -h\n"
+  printf "  gc install zsh [OPTIONS]\n"
+  printf "  gc install zsh --help | -h\n"
   echo
 
   # :command.long_usage
@@ -507,20 +507,20 @@ gt_install_zsh_usage() {
 }
 
 # :command.usage
-gt_install_antidote_usage() {
+gc_install_antidote_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install antidote - Install antidote (Zsh plugin manager)\n"
+    printf "gc install antidote - Install antidote (Zsh plugin manager)\n"
     echo
 
   else
-    printf "gt install antidote - Install antidote (Zsh plugin manager)\n"
+    printf "gc install antidote - Install antidote (Zsh plugin manager)\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install antidote [OPTIONS]\n"
-  printf "  gt install antidote --help | -h\n"
+  printf "  gc install antidote [OPTIONS]\n"
+  printf "  gc install antidote --help | -h\n"
   echo
 
   # :command.long_usage
@@ -548,20 +548,20 @@ gt_install_antidote_usage() {
 }
 
 # :command.usage
-gt_install_thefuck_usage() {
+gc_install_thefuck_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install thefuck - Install thefuck\n"
+    printf "gc install thefuck - Install thefuck\n"
     echo
 
   else
-    printf "gt install thefuck - Install thefuck\n"
+    printf "gc install thefuck - Install thefuck\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install thefuck [OPTIONS]\n"
-  printf "  gt install thefuck --help | -h\n"
+  printf "  gc install thefuck [OPTIONS]\n"
+  printf "  gc install thefuck --help | -h\n"
   echo
 
   # :command.long_usage
@@ -589,20 +589,20 @@ gt_install_thefuck_usage() {
 }
 
 # :command.usage
-gt_install_argocd_usage() {
+gc_install_argocd_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install argocd - Install argocd\n"
+    printf "gc install argocd - Install argocd\n"
     echo
 
   else
-    printf "gt install argocd - Install argocd\n"
+    printf "gc install argocd - Install argocd\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install argocd [OPTIONS]\n"
-  printf "  gt install argocd --help | -h\n"
+  printf "  gc install argocd [OPTIONS]\n"
+  printf "  gc install argocd --help | -h\n"
   echo
 
   # :command.long_usage
@@ -630,20 +630,20 @@ gt_install_argocd_usage() {
 }
 
 # :command.usage
-gt_install_velero_usage() {
+gc_install_velero_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install velero - Install velero\n"
+    printf "gc install velero - Install velero\n"
     echo
 
   else
-    printf "gt install velero - Install velero\n"
+    printf "gc install velero - Install velero\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install velero [OPTIONS]\n"
-  printf "  gt install velero --help | -h\n"
+  printf "  gc install velero [OPTIONS]\n"
+  printf "  gc install velero --help | -h\n"
   echo
 
   # :command.long_usage
@@ -671,20 +671,20 @@ gt_install_velero_usage() {
 }
 
 # :command.usage
-gt_install_kubeconform_usage() {
+gc_install_kubeconform_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install kubeconform - Install kubeconform\n"
+    printf "gc install kubeconform - Install kubeconform\n"
     echo
 
   else
-    printf "gt install kubeconform - Install kubeconform\n"
+    printf "gc install kubeconform - Install kubeconform\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install kubeconform [OPTIONS]\n"
-  printf "  gt install kubeconform --help | -h\n"
+  printf "  gc install kubeconform [OPTIONS]\n"
+  printf "  gc install kubeconform --help | -h\n"
   echo
 
   # :command.long_usage
@@ -712,20 +712,20 @@ gt_install_kubeconform_usage() {
 }
 
 # :command.usage
-gt_install_krew_usage() {
+gc_install_krew_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install krew - Install krew\n"
+    printf "gc install krew - Install krew\n"
     echo
 
   else
-    printf "gt install krew - Install krew\n"
+    printf "gc install krew - Install krew\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install krew [OPTIONS]\n"
-  printf "  gt install krew --help | -h\n"
+  printf "  gc install krew [OPTIONS]\n"
+  printf "  gc install krew --help | -h\n"
   echo
 
   # :command.long_usage
@@ -753,20 +753,20 @@ gt_install_krew_usage() {
 }
 
 # :command.usage
-gt_install_kubent_usage() {
+gc_install_kubent_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install kubent - Install kubent\n"
+    printf "gc install kubent - Install kubent\n"
     echo
 
   else
-    printf "gt install kubent - Install kubent\n"
+    printf "gc install kubent - Install kubent\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install kubent [OPTIONS]\n"
-  printf "  gt install kubent --help | -h\n"
+  printf "  gc install kubent [OPTIONS]\n"
+  printf "  gc install kubent --help | -h\n"
   echo
 
   # :command.long_usage
@@ -794,20 +794,20 @@ gt_install_kubent_usage() {
 }
 
 # :command.usage
-gt_install_sops_usage() {
+gc_install_sops_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install sops - Install sops\n"
+    printf "gc install sops - Install sops\n"
     echo
 
   else
-    printf "gt install sops - Install sops\n"
+    printf "gc install sops - Install sops\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install sops [OPTIONS]\n"
-  printf "  gt install sops --help | -h\n"
+  printf "  gc install sops [OPTIONS]\n"
+  printf "  gc install sops --help | -h\n"
   echo
 
   # :command.long_usage
@@ -835,20 +835,20 @@ gt_install_sops_usage() {
 }
 
 # :command.usage
-gt_install_age_usage() {
+gc_install_age_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install age - Install age\n"
+    printf "gc install age - Install age\n"
     echo
 
   else
-    printf "gt install age - Install age\n"
+    printf "gc install age - Install age\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install age [OPTIONS]\n"
-  printf "  gt install age --help | -h\n"
+  printf "  gc install age [OPTIONS]\n"
+  printf "  gc install age --help | -h\n"
   echo
 
   # :command.long_usage
@@ -876,20 +876,20 @@ gt_install_age_usage() {
 }
 
 # :command.usage
-gt_install_trivy_usage() {
+gc_install_trivy_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install trivy - Install trivy\n"
+    printf "gc install trivy - Install trivy\n"
     echo
 
   else
-    printf "gt install trivy - Install trivy\n"
+    printf "gc install trivy - Install trivy\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install trivy [OPTIONS]\n"
-  printf "  gt install trivy --help | -h\n"
+  printf "  gc install trivy [OPTIONS]\n"
+  printf "  gc install trivy --help | -h\n"
   echo
 
   # :command.long_usage
@@ -917,20 +917,20 @@ gt_install_trivy_usage() {
 }
 
 # :command.usage
-gt_install_kubens_usage() {
+gc_install_kubens_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install kubens - Install kubens\n"
+    printf "gc install kubens - Install kubens\n"
     echo
 
   else
-    printf "gt install kubens - Install kubens\n"
+    printf "gc install kubens - Install kubens\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install kubens [OPTIONS]\n"
-  printf "  gt install kubens --help | -h\n"
+  printf "  gc install kubens [OPTIONS]\n"
+  printf "  gc install kubens --help | -h\n"
   echo
 
   # :command.long_usage
@@ -958,20 +958,20 @@ gt_install_kubens_usage() {
 }
 
 # :command.usage
-gt_install_kubecolor_usage() {
+gc_install_kubecolor_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install kubecolor - Install kubecolor\n"
+    printf "gc install kubecolor - Install kubecolor\n"
     echo
 
   else
-    printf "gt install kubecolor - Install kubecolor\n"
+    printf "gc install kubecolor - Install kubecolor\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install kubecolor [OPTIONS]\n"
-  printf "  gt install kubecolor --help | -h\n"
+  printf "  gc install kubecolor [OPTIONS]\n"
+  printf "  gc install kubecolor --help | -h\n"
   echo
 
   # :command.long_usage
@@ -999,20 +999,20 @@ gt_install_kubecolor_usage() {
 }
 
 # :command.usage
-gt_install_popeye_usage() {
+gc_install_popeye_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install popeye - Install popeye\n"
+    printf "gc install popeye - Install popeye\n"
     echo
 
   else
-    printf "gt install popeye - Install popeye\n"
+    printf "gc install popeye - Install popeye\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install popeye [OPTIONS]\n"
-  printf "  gt install popeye --help | -h\n"
+  printf "  gc install popeye [OPTIONS]\n"
+  printf "  gc install popeye --help | -h\n"
   echo
 
   # :command.long_usage
@@ -1040,20 +1040,20 @@ gt_install_popeye_usage() {
 }
 
 # :command.usage
-gt_install_kube_linter_usage() {
+gc_install_kube_linter_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install kube-linter - Install kube-linter\n"
+    printf "gc install kube-linter - Install kube-linter\n"
     echo
 
   else
-    printf "gt install kube-linter - Install kube-linter\n"
+    printf "gc install kube-linter - Install kube-linter\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install kube-linter [OPTIONS]\n"
-  printf "  gt install kube-linter --help | -h\n"
+  printf "  gc install kube-linter [OPTIONS]\n"
+  printf "  gc install kube-linter --help | -h\n"
   echo
 
   # :command.long_usage
@@ -1081,20 +1081,20 @@ gt_install_kube_linter_usage() {
 }
 
 # :command.usage
-gt_install_kyverno_usage() {
+gc_install_kyverno_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install kyverno - Install kyverno\n"
+    printf "gc install kyverno - Install kyverno\n"
     echo
 
   else
-    printf "gt install kyverno - Install kyverno\n"
+    printf "gc install kyverno - Install kyverno\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install kyverno [OPTIONS]\n"
-  printf "  gt install kyverno --help | -h\n"
+  printf "  gc install kyverno [OPTIONS]\n"
+  printf "  gc install kyverno --help | -h\n"
   echo
 
   # :command.long_usage
@@ -1122,20 +1122,20 @@ gt_install_kyverno_usage() {
 }
 
 # :command.usage
-gt_install_conftest_usage() {
+gc_install_conftest_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install conftest - Install conftest\n"
+    printf "gc install conftest - Install conftest\n"
     echo
 
   else
-    printf "gt install conftest - Install conftest\n"
+    printf "gc install conftest - Install conftest\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install conftest [OPTIONS]\n"
-  printf "  gt install conftest --help | -h\n"
+  printf "  gc install conftest [OPTIONS]\n"
+  printf "  gc install conftest --help | -h\n"
   echo
 
   # :command.long_usage
@@ -1163,20 +1163,20 @@ gt_install_conftest_usage() {
 }
 
 # :command.usage
-gt_install_vault_usage() {
+gc_install_vault_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install vault - Install vault\n"
+    printf "gc install vault - Install vault\n"
     echo
 
   else
-    printf "gt install vault - Install vault\n"
+    printf "gc install vault - Install vault\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install vault [OPTIONS]\n"
-  printf "  gt install vault --help | -h\n"
+  printf "  gc install vault [OPTIONS]\n"
+  printf "  gc install vault --help | -h\n"
   echo
 
   # :command.long_usage
@@ -1204,20 +1204,20 @@ gt_install_vault_usage() {
 }
 
 # :command.usage
-gt_install_kubeseal_usage() {
+gc_install_kubeseal_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install kubeseal - Install kubeseal\n"
+    printf "gc install kubeseal - Install kubeseal\n"
     echo
 
   else
-    printf "gt install kubeseal - Install kubeseal\n"
+    printf "gc install kubeseal - Install kubeseal\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install kubeseal [OPTIONS]\n"
-  printf "  gt install kubeseal --help | -h\n"
+  printf "  gc install kubeseal [OPTIONS]\n"
+  printf "  gc install kubeseal --help | -h\n"
   echo
 
   # :command.long_usage
@@ -1245,20 +1245,20 @@ gt_install_kubeseal_usage() {
 }
 
 # :command.usage
-gt_install_zoxide_usage() {
+gc_install_zoxide_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install zoxide - Install zoxide\n"
+    printf "gc install zoxide - Install zoxide\n"
     echo
 
   else
-    printf "gt install zoxide - Install zoxide\n"
+    printf "gc install zoxide - Install zoxide\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install zoxide [OPTIONS]\n"
-  printf "  gt install zoxide --help | -h\n"
+  printf "  gc install zoxide [OPTIONS]\n"
+  printf "  gc install zoxide --help | -h\n"
   echo
 
   # :command.long_usage
@@ -1286,20 +1286,20 @@ gt_install_zoxide_usage() {
 }
 
 # :command.usage
-gt_install_eza_usage() {
+gc_install_eza_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install eza - Install eza\n"
+    printf "gc install eza - Install eza\n"
     echo
 
   else
-    printf "gt install eza - Install eza\n"
+    printf "gc install eza - Install eza\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install eza [OPTIONS]\n"
-  printf "  gt install eza --help | -h\n"
+  printf "  gc install eza [OPTIONS]\n"
+  printf "  gc install eza --help | -h\n"
   echo
 
   # :command.long_usage
@@ -1327,20 +1327,20 @@ gt_install_eza_usage() {
 }
 
 # :command.usage
-gt_install_bat_usage() {
+gc_install_bat_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install bat - Install bat\n"
+    printf "gc install bat - Install bat\n"
     echo
 
   else
-    printf "gt install bat - Install bat\n"
+    printf "gc install bat - Install bat\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install bat [OPTIONS]\n"
-  printf "  gt install bat --help | -h\n"
+  printf "  gc install bat [OPTIONS]\n"
+  printf "  gc install bat --help | -h\n"
   echo
 
   # :command.long_usage
@@ -1368,20 +1368,20 @@ gt_install_bat_usage() {
 }
 
 # :command.usage
-gt_install_ripgrep_usage() {
+gc_install_ripgrep_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install ripgrep - Install ripgrep\n"
+    printf "gc install ripgrep - Install ripgrep\n"
     echo
 
   else
-    printf "gt install ripgrep - Install ripgrep\n"
+    printf "gc install ripgrep - Install ripgrep\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install ripgrep [OPTIONS]\n"
-  printf "  gt install ripgrep --help | -h\n"
+  printf "  gc install ripgrep [OPTIONS]\n"
+  printf "  gc install ripgrep --help | -h\n"
   echo
 
   # :command.long_usage
@@ -1409,20 +1409,20 @@ gt_install_ripgrep_usage() {
 }
 
 # :command.usage
-gt_install_starship_usage() {
+gc_install_starship_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install starship - Install starship\n"
+    printf "gc install starship - Install starship\n"
     echo
 
   else
-    printf "gt install starship - Install starship\n"
+    printf "gc install starship - Install starship\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install starship [OPTIONS]\n"
-  printf "  gt install starship --help | -h\n"
+  printf "  gc install starship [OPTIONS]\n"
+  printf "  gc install starship --help | -h\n"
   echo
 
   # :command.long_usage
@@ -1450,20 +1450,20 @@ gt_install_starship_usage() {
 }
 
 # :command.usage
-gt_install_fzf_usage() {
+gc_install_fzf_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install fzf - Install fzf\n"
+    printf "gc install fzf - Install fzf\n"
     echo
 
   else
-    printf "gt install fzf - Install fzf\n"
+    printf "gc install fzf - Install fzf\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install fzf [OPTIONS]\n"
-  printf "  gt install fzf --help | -h\n"
+  printf "  gc install fzf [OPTIONS]\n"
+  printf "  gc install fzf --help | -h\n"
   echo
 
   # :command.long_usage
@@ -1491,20 +1491,20 @@ gt_install_fzf_usage() {
 }
 
 # :command.usage
-gt_install_fd_usage() {
+gc_install_fd_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install fd - Install fd (fast find alternative)\n"
+    printf "gc install fd - Install fd (fast find alternative)\n"
     echo
 
   else
-    printf "gt install fd - Install fd (fast find alternative)\n"
+    printf "gc install fd - Install fd (fast find alternative)\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install fd [OPTIONS]\n"
-  printf "  gt install fd --help | -h\n"
+  printf "  gc install fd [OPTIONS]\n"
+  printf "  gc install fd --help | -h\n"
   echo
 
   # :command.long_usage
@@ -1532,20 +1532,20 @@ gt_install_fd_usage() {
 }
 
 # :command.usage
-gt_install_mcfly_usage() {
+gc_install_mcfly_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install mcfly - Install mcfly (smart shell history)\n"
+    printf "gc install mcfly - Install mcfly (smart shell history)\n"
     echo
 
   else
-    printf "gt install mcfly - Install mcfly (smart shell history)\n"
+    printf "gc install mcfly - Install mcfly (smart shell history)\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install mcfly [OPTIONS]\n"
-  printf "  gt install mcfly --help | -h\n"
+  printf "  gc install mcfly [OPTIONS]\n"
+  printf "  gc install mcfly --help | -h\n"
   echo
 
   # :command.long_usage
@@ -1573,20 +1573,20 @@ gt_install_mcfly_usage() {
 }
 
 # :command.usage
-gt_install_infisical_usage() {
+gc_install_infisical_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install infisical - Install infisical CLI\n"
+    printf "gc install infisical - Install infisical CLI\n"
     echo
 
   else
-    printf "gt install infisical - Install infisical CLI\n"
+    printf "gc install infisical - Install infisical CLI\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install infisical [OPTIONS]\n"
-  printf "  gt install infisical --help | -h\n"
+  printf "  gc install infisical [OPTIONS]\n"
+  printf "  gc install infisical --help | -h\n"
   echo
 
   # :command.long_usage
@@ -1614,20 +1614,20 @@ gt_install_infisical_usage() {
 }
 
 # :command.usage
-gt_install_ksops_usage() {
+gc_install_ksops_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install ksops - Install ksops (kustomize-sops KRM plugin)\n"
+    printf "gc install ksops - Install ksops (kustomize-sops KRM plugin)\n"
     echo
 
   else
-    printf "gt install ksops - Install ksops (kustomize-sops KRM plugin)\n"
+    printf "gc install ksops - Install ksops (kustomize-sops KRM plugin)\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install ksops [OPTIONS]\n"
-  printf "  gt install ksops --help | -h\n"
+  printf "  gc install ksops [OPTIONS]\n"
+  printf "  gc install ksops --help | -h\n"
   echo
 
   # :command.long_usage
@@ -1655,20 +1655,20 @@ gt_install_ksops_usage() {
 }
 
 # :command.usage
-gt_install_skopeo_usage() {
+gc_install_skopeo_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install skopeo - Install skopeo (container image tool)\n"
+    printf "gc install skopeo - Install skopeo (container image tool)\n"
     echo
 
   else
-    printf "gt install skopeo - Install skopeo (container image tool)\n"
+    printf "gc install skopeo - Install skopeo (container image tool)\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install skopeo [OPTIONS]\n"
-  printf "  gt install skopeo --help | -h\n"
+  printf "  gc install skopeo [OPTIONS]\n"
+  printf "  gc install skopeo --help | -h\n"
   echo
 
   # :command.long_usage
@@ -1690,20 +1690,20 @@ gt_install_skopeo_usage() {
 }
 
 # :command.usage
-gt_install_helmfile_usage() {
+gc_install_helmfile_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install helmfile - Install helmfile\n"
+    printf "gc install helmfile - Install helmfile\n"
     echo
 
   else
-    printf "gt install helmfile - Install helmfile\n"
+    printf "gc install helmfile - Install helmfile\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install helmfile [OPTIONS]\n"
-  printf "  gt install helmfile --help | -h\n"
+  printf "  gc install helmfile [OPTIONS]\n"
+  printf "  gc install helmfile --help | -h\n"
   echo
 
   # :command.long_usage
@@ -1731,20 +1731,20 @@ gt_install_helmfile_usage() {
 }
 
 # :command.usage
-gt_install_helm_usage() {
+gc_install_helm_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install helm - Install helm\n"
+    printf "gc install helm - Install helm\n"
     echo
 
   else
-    printf "gt install helm - Install helm\n"
+    printf "gc install helm - Install helm\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install helm [OPTIONS]\n"
-  printf "  gt install helm --help | -h\n"
+  printf "  gc install helm [OPTIONS]\n"
+  printf "  gc install helm --help | -h\n"
   echo
 
   # :command.long_usage
@@ -1772,20 +1772,20 @@ gt_install_helm_usage() {
 }
 
 # :command.usage
-gt_install_chezmoi_usage() {
+gc_install_chezmoi_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install chezmoi - Install chezmoi (dotfile manager)\n"
+    printf "gc install chezmoi - Install chezmoi (dotfile manager)\n"
     echo
 
   else
-    printf "gt install chezmoi - Install chezmoi (dotfile manager)\n"
+    printf "gc install chezmoi - Install chezmoi (dotfile manager)\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install chezmoi [OPTIONS]\n"
-  printf "  gt install chezmoi --help | -h\n"
+  printf "  gc install chezmoi [OPTIONS]\n"
+  printf "  gc install chezmoi --help | -h\n"
   echo
 
   # :command.long_usage
@@ -1813,20 +1813,20 @@ gt_install_chezmoi_usage() {
 }
 
 # :command.usage
-gt_install_tmux_usage() {
+gc_install_tmux_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install tmux - Install tmux (terminal multiplexer)\n"
+    printf "gc install tmux - Install tmux (terminal multiplexer)\n"
     echo
 
   else
-    printf "gt install tmux - Install tmux (terminal multiplexer)\n"
+    printf "gc install tmux - Install tmux (terminal multiplexer)\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install tmux [OPTIONS]\n"
-  printf "  gt install tmux --help | -h\n"
+  printf "  gc install tmux [OPTIONS]\n"
+  printf "  gc install tmux --help | -h\n"
   echo
 
   # :command.long_usage
@@ -1848,20 +1848,20 @@ gt_install_tmux_usage() {
 }
 
 # :command.usage
-gt_install_rsync_usage() {
+gc_install_rsync_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install rsync - Install rsync\n"
+    printf "gc install rsync - Install rsync\n"
     echo
 
   else
-    printf "gt install rsync - Install rsync\n"
+    printf "gc install rsync - Install rsync\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install rsync [OPTIONS]\n"
-  printf "  gt install rsync --help | -h\n"
+  printf "  gc install rsync [OPTIONS]\n"
+  printf "  gc install rsync --help | -h\n"
   echo
 
   # :command.long_usage
@@ -1883,20 +1883,20 @@ gt_install_rsync_usage() {
 }
 
 # :command.usage
-gt_install_trino_usage() {
+gc_install_trino_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install trino - Install trino CLI\n"
+    printf "gc install trino - Install trino CLI\n"
     echo
 
   else
-    printf "gt install trino - Install trino CLI\n"
+    printf "gc install trino - Install trino CLI\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install trino [OPTIONS]\n"
-  printf "  gt install trino --help | -h\n"
+  printf "  gc install trino [OPTIONS]\n"
+  printf "  gc install trino --help | -h\n"
   echo
 
   # :command.long_usage
@@ -1924,20 +1924,20 @@ gt_install_trino_usage() {
 }
 
 # :command.usage
-gt_install_nerdctl_usage() {
+gc_install_nerdctl_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install nerdctl - Install nerdctl (containerd CLI)\n"
+    printf "gc install nerdctl - Install nerdctl (containerd CLI)\n"
     echo
 
   else
-    printf "gt install nerdctl - Install nerdctl (containerd CLI)\n"
+    printf "gc install nerdctl - Install nerdctl (containerd CLI)\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install nerdctl [OPTIONS]\n"
-  printf "  gt install nerdctl --help | -h\n"
+  printf "  gc install nerdctl [OPTIONS]\n"
+  printf "  gc install nerdctl --help | -h\n"
   echo
 
   # :command.long_usage
@@ -1965,20 +1965,20 @@ gt_install_nerdctl_usage() {
 }
 
 # :command.usage
-gt_install_viddy_usage() {
+gc_install_viddy_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install viddy - Install viddy (modern watch command)\n"
+    printf "gc install viddy - Install viddy (modern watch command)\n"
     echo
 
   else
-    printf "gt install viddy - Install viddy (modern watch command)\n"
+    printf "gc install viddy - Install viddy (modern watch command)\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install viddy [OPTIONS]\n"
-  printf "  gt install viddy --help | -h\n"
+  printf "  gc install viddy [OPTIONS]\n"
+  printf "  gc install viddy --help | -h\n"
   echo
 
   # :command.long_usage
@@ -2006,20 +2006,20 @@ gt_install_viddy_usage() {
 }
 
 # :command.usage
-gt_install_hyperfine_usage() {
+gc_install_hyperfine_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install hyperfine - Install hyperfine (benchmarking tool)\n"
+    printf "gc install hyperfine - Install hyperfine (benchmarking tool)\n"
     echo
 
   else
-    printf "gt install hyperfine - Install hyperfine (benchmarking tool)\n"
+    printf "gc install hyperfine - Install hyperfine (benchmarking tool)\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install hyperfine [OPTIONS]\n"
-  printf "  gt install hyperfine --help | -h\n"
+  printf "  gc install hyperfine [OPTIONS]\n"
+  printf "  gc install hyperfine --help | -h\n"
   echo
 
   # :command.long_usage
@@ -2047,20 +2047,20 @@ gt_install_hyperfine_usage() {
 }
 
 # :command.usage
-gt_install_jq_usage() {
+gc_install_jq_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install jq - Install jq (JSON processor)\n"
+    printf "gc install jq - Install jq (JSON processor)\n"
     echo
 
   else
-    printf "gt install jq - Install jq (JSON processor)\n"
+    printf "gc install jq - Install jq (JSON processor)\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install jq [OPTIONS]\n"
-  printf "  gt install jq --help | -h\n"
+  printf "  gc install jq [OPTIONS]\n"
+  printf "  gc install jq --help | -h\n"
   echo
 
   # :command.long_usage
@@ -2088,20 +2088,20 @@ gt_install_jq_usage() {
 }
 
 # :command.usage
-gt_install_yq_usage() {
+gc_install_yq_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install yq - Install yq (YAML processor)\n"
+    printf "gc install yq - Install yq (YAML processor)\n"
     echo
 
   else
-    printf "gt install yq - Install yq (YAML processor)\n"
+    printf "gc install yq - Install yq (YAML processor)\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install yq [OPTIONS]\n"
-  printf "  gt install yq --help | -h\n"
+  printf "  gc install yq [OPTIONS]\n"
+  printf "  gc install yq --help | -h\n"
   echo
 
   # :command.long_usage
@@ -2129,20 +2129,20 @@ gt_install_yq_usage() {
 }
 
 # :command.usage
-gt_install_gum_usage() {
+gc_install_gum_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install gum - Install gum (glamorous shell scripts)\n"
+    printf "gc install gum - Install gum (glamorous shell scripts)\n"
     echo
 
   else
-    printf "gt install gum - Install gum (glamorous shell scripts)\n"
+    printf "gc install gum - Install gum (glamorous shell scripts)\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install gum [OPTIONS]\n"
-  printf "  gt install gum --help | -h\n"
+  printf "  gc install gum [OPTIONS]\n"
+  printf "  gc install gum --help | -h\n"
   echo
 
   # :command.long_usage
@@ -2170,20 +2170,20 @@ gt_install_gum_usage() {
 }
 
 # :command.usage
-gt_install_uv_usage() {
+gc_install_uv_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install uv - Install uv (Python package manager)\n"
+    printf "gc install uv - Install uv (Python package manager)\n"
     echo
 
   else
-    printf "gt install uv - Install uv (Python package manager)\n"
+    printf "gc install uv - Install uv (Python package manager)\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install uv [OPTIONS]\n"
-  printf "  gt install uv --help | -h\n"
+  printf "  gc install uv [OPTIONS]\n"
+  printf "  gc install uv --help | -h\n"
   echo
 
   # :command.long_usage
@@ -2211,20 +2211,20 @@ gt_install_uv_usage() {
 }
 
 # :command.usage
-gt_install_bashly_usage() {
+gc_install_bashly_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install bashly - Install bashly (Bash CLI generator)\n"
+    printf "gc install bashly - Install bashly (Bash CLI generator)\n"
     echo
 
   else
-    printf "gt install bashly - Install bashly (Bash CLI generator)\n"
+    printf "gc install bashly - Install bashly (Bash CLI generator)\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install bashly [OPTIONS]\n"
-  printf "  gt install bashly --help | -h\n"
+  printf "  gc install bashly [OPTIONS]\n"
+  printf "  gc install bashly --help | -h\n"
   echo
 
   # :command.long_usage
@@ -2252,20 +2252,20 @@ gt_install_bashly_usage() {
 }
 
 # :command.usage
-gt_install_gem_usage() {
+gc_install_gem_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install gem - Install RubyGems (gem)\n"
+    printf "gc install gem - Install RubyGems (gem)\n"
     echo
 
   else
-    printf "gt install gem - Install RubyGems (gem)\n"
+    printf "gc install gem - Install RubyGems (gem)\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install gem [OPTIONS]\n"
-  printf "  gt install gem --help | -h\n"
+  printf "  gc install gem [OPTIONS]\n"
+  printf "  gc install gem --help | -h\n"
   echo
 
   # :command.long_usage
@@ -2287,20 +2287,20 @@ gt_install_gem_usage() {
 }
 
 # :command.usage
-gt_install_claude_usage() {
+gc_install_claude_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install claude - Install claude (Claude Code CLI)\n"
+    printf "gc install claude - Install claude (Claude Code CLI)\n"
     echo
 
   else
-    printf "gt install claude - Install claude (Claude Code CLI)\n"
+    printf "gc install claude - Install claude (Claude Code CLI)\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install claude [OPTIONS]\n"
-  printf "  gt install claude --help | -h\n"
+  printf "  gc install claude [OPTIONS]\n"
+  printf "  gc install claude --help | -h\n"
   echo
 
   # :command.long_usage
@@ -2328,20 +2328,20 @@ gt_install_claude_usage() {
 }
 
 # :command.usage
-gt_install_talisman_usage() {
+gc_install_talisman_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install talisman - Install talisman (git hook secrets scanner)\n"
+    printf "gc install talisman - Install talisman (git hook secrets scanner)\n"
     echo
 
   else
-    printf "gt install talisman - Install talisman (git hook secrets scanner)\n"
+    printf "gc install talisman - Install talisman (git hook secrets scanner)\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install talisman [OPTIONS]\n"
-  printf "  gt install talisman --help | -h\n"
+  printf "  gc install talisman [OPTIONS]\n"
+  printf "  gc install talisman --help | -h\n"
   echo
 
   # :command.long_usage
@@ -2369,20 +2369,20 @@ gt_install_talisman_usage() {
 }
 
 # :command.usage
-gt_install_copilot_usage() {
+gc_install_copilot_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install copilot - Install copilot\n"
+    printf "gc install copilot - Install copilot\n"
     echo
 
   else
-    printf "gt install copilot - Install copilot\n"
+    printf "gc install copilot - Install copilot\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install copilot [OPTIONS]\n"
-  printf "  gt install copilot --help | -h\n"
+  printf "  gc install copilot [OPTIONS]\n"
+  printf "  gc install copilot --help | -h\n"
   echo
 
   # :command.long_usage
@@ -2410,20 +2410,20 @@ gt_install_copilot_usage() {
 }
 
 # :command.usage
-gt_install_tailscale_usage() {
+gc_install_tailscale_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt install tailscale - Install tailscale\n"
+    printf "gc install tailscale - Install tailscale\n"
     echo
 
   else
-    printf "gt install tailscale - Install tailscale\n"
+    printf "gc install tailscale - Install tailscale\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt install tailscale [OPTIONS]\n"
-  printf "  gt install tailscale --help | -h\n"
+  printf "  gc install tailscale [OPTIONS]\n"
+  printf "  gc install tailscale --help | -h\n"
   echo
 
   # :command.long_usage
@@ -2451,20 +2451,20 @@ gt_install_tailscale_usage() {
 }
 
 # :command.usage
-gt_uninstall_usage() {
+gc_uninstall_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall - Uninstall tools and components\n"
+    printf "gc uninstall - Uninstall tools and components\n"
     echo
 
   else
-    printf "gt uninstall - Uninstall tools and components\n"
+    printf "gc uninstall - Uninstall tools and components\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall COMMAND\n"
-  printf "  gt uninstall [COMMAND] --help | -h\n"
+  printf "  gc uninstall COMMAND\n"
+  printf "  gc uninstall [COMMAND] --help | -h\n"
   echo
   # :command.usage_commands
   printf "%s\n" "Commands:"
@@ -2538,20 +2538,20 @@ gt_uninstall_usage() {
 }
 
 # :command.usage
-gt_uninstall_kustomize_usage() {
+gc_uninstall_kustomize_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall kustomize - Uninstall Kustomize\n"
+    printf "gc uninstall kustomize - Uninstall Kustomize\n"
     echo
 
   else
-    printf "gt uninstall kustomize - Uninstall Kustomize\n"
+    printf "gc uninstall kustomize - Uninstall Kustomize\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall kustomize\n"
-  printf "  gt uninstall kustomize --help | -h\n"
+  printf "  gc uninstall kustomize\n"
+  printf "  gc uninstall kustomize --help | -h\n"
   echo
 
   # :command.long_usage
@@ -2567,20 +2567,20 @@ gt_uninstall_kustomize_usage() {
 }
 
 # :command.usage
-gt_uninstall_k9s_usage() {
+gc_uninstall_k9s_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall k9s - Uninstall k9s\n"
+    printf "gc uninstall k9s - Uninstall k9s\n"
     echo
 
   else
-    printf "gt uninstall k9s - Uninstall k9s\n"
+    printf "gc uninstall k9s - Uninstall k9s\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall k9s\n"
-  printf "  gt uninstall k9s --help | -h\n"
+  printf "  gc uninstall k9s\n"
+  printf "  gc uninstall k9s --help | -h\n"
   echo
 
   # :command.long_usage
@@ -2596,20 +2596,20 @@ gt_uninstall_k9s_usage() {
 }
 
 # :command.usage
-gt_uninstall_kubectl_usage() {
+gc_uninstall_kubectl_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall kubectl - Uninstall kubectl\n"
+    printf "gc uninstall kubectl - Uninstall kubectl\n"
     echo
 
   else
-    printf "gt uninstall kubectl - Uninstall kubectl\n"
+    printf "gc uninstall kubectl - Uninstall kubectl\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall kubectl\n"
-  printf "  gt uninstall kubectl --help | -h\n"
+  printf "  gc uninstall kubectl\n"
+  printf "  gc uninstall kubectl --help | -h\n"
   echo
 
   # :command.long_usage
@@ -2625,20 +2625,20 @@ gt_uninstall_kubectl_usage() {
 }
 
 # :command.usage
-gt_uninstall_fastfetch_usage() {
+gc_uninstall_fastfetch_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall fastfetch - Uninstall fastfetch\n"
+    printf "gc uninstall fastfetch - Uninstall fastfetch\n"
     echo
 
   else
-    printf "gt uninstall fastfetch - Uninstall fastfetch\n"
+    printf "gc uninstall fastfetch - Uninstall fastfetch\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall fastfetch\n"
-  printf "  gt uninstall fastfetch --help | -h\n"
+  printf "  gc uninstall fastfetch\n"
+  printf "  gc uninstall fastfetch --help | -h\n"
   echo
 
   # :command.long_usage
@@ -2654,20 +2654,20 @@ gt_uninstall_fastfetch_usage() {
 }
 
 # :command.usage
-gt_uninstall_direnv_usage() {
+gc_uninstall_direnv_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall direnv - Uninstall direnv\n"
+    printf "gc uninstall direnv - Uninstall direnv\n"
     echo
 
   else
-    printf "gt uninstall direnv - Uninstall direnv\n"
+    printf "gc uninstall direnv - Uninstall direnv\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall direnv\n"
-  printf "  gt uninstall direnv --help | -h\n"
+  printf "  gc uninstall direnv\n"
+  printf "  gc uninstall direnv --help | -h\n"
   echo
 
   # :command.long_usage
@@ -2683,20 +2683,20 @@ gt_uninstall_direnv_usage() {
 }
 
 # :command.usage
-gt_uninstall_btop_usage() {
+gc_uninstall_btop_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall btop - Uninstall btop\n"
+    printf "gc uninstall btop - Uninstall btop\n"
     echo
 
   else
-    printf "gt uninstall btop - Uninstall btop\n"
+    printf "gc uninstall btop - Uninstall btop\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall btop\n"
-  printf "  gt uninstall btop --help | -h\n"
+  printf "  gc uninstall btop\n"
+  printf "  gc uninstall btop --help | -h\n"
   echo
 
   # :command.long_usage
@@ -2712,20 +2712,20 @@ gt_uninstall_btop_usage() {
 }
 
 # :command.usage
-gt_uninstall_zsh_usage() {
+gc_uninstall_zsh_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall zsh - Uninstall zsh\n"
+    printf "gc uninstall zsh - Uninstall zsh\n"
     echo
 
   else
-    printf "gt uninstall zsh - Uninstall zsh\n"
+    printf "gc uninstall zsh - Uninstall zsh\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall zsh\n"
-  printf "  gt uninstall zsh --help | -h\n"
+  printf "  gc uninstall zsh\n"
+  printf "  gc uninstall zsh --help | -h\n"
   echo
 
   # :command.long_usage
@@ -2741,20 +2741,20 @@ gt_uninstall_zsh_usage() {
 }
 
 # :command.usage
-gt_uninstall_antidote_usage() {
+gc_uninstall_antidote_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall antidote - Uninstall antidote\n"
+    printf "gc uninstall antidote - Uninstall antidote\n"
     echo
 
   else
-    printf "gt uninstall antidote - Uninstall antidote\n"
+    printf "gc uninstall antidote - Uninstall antidote\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall antidote\n"
-  printf "  gt uninstall antidote --help | -h\n"
+  printf "  gc uninstall antidote\n"
+  printf "  gc uninstall antidote --help | -h\n"
   echo
 
   # :command.long_usage
@@ -2770,20 +2770,20 @@ gt_uninstall_antidote_usage() {
 }
 
 # :command.usage
-gt_uninstall_thefuck_usage() {
+gc_uninstall_thefuck_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall thefuck - Uninstall thefuck\n"
+    printf "gc uninstall thefuck - Uninstall thefuck\n"
     echo
 
   else
-    printf "gt uninstall thefuck - Uninstall thefuck\n"
+    printf "gc uninstall thefuck - Uninstall thefuck\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall thefuck\n"
-  printf "  gt uninstall thefuck --help | -h\n"
+  printf "  gc uninstall thefuck\n"
+  printf "  gc uninstall thefuck --help | -h\n"
   echo
 
   # :command.long_usage
@@ -2799,20 +2799,20 @@ gt_uninstall_thefuck_usage() {
 }
 
 # :command.usage
-gt_uninstall_argocd_usage() {
+gc_uninstall_argocd_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall argocd - Uninstall argocd\n"
+    printf "gc uninstall argocd - Uninstall argocd\n"
     echo
 
   else
-    printf "gt uninstall argocd - Uninstall argocd\n"
+    printf "gc uninstall argocd - Uninstall argocd\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall argocd\n"
-  printf "  gt uninstall argocd --help | -h\n"
+  printf "  gc uninstall argocd\n"
+  printf "  gc uninstall argocd --help | -h\n"
   echo
 
   # :command.long_usage
@@ -2828,20 +2828,20 @@ gt_uninstall_argocd_usage() {
 }
 
 # :command.usage
-gt_uninstall_velero_usage() {
+gc_uninstall_velero_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall velero - Uninstall velero\n"
+    printf "gc uninstall velero - Uninstall velero\n"
     echo
 
   else
-    printf "gt uninstall velero - Uninstall velero\n"
+    printf "gc uninstall velero - Uninstall velero\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall velero\n"
-  printf "  gt uninstall velero --help | -h\n"
+  printf "  gc uninstall velero\n"
+  printf "  gc uninstall velero --help | -h\n"
   echo
 
   # :command.long_usage
@@ -2857,20 +2857,20 @@ gt_uninstall_velero_usage() {
 }
 
 # :command.usage
-gt_uninstall_kubeconform_usage() {
+gc_uninstall_kubeconform_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall kubeconform - Uninstall kubeconform\n"
+    printf "gc uninstall kubeconform - Uninstall kubeconform\n"
     echo
 
   else
-    printf "gt uninstall kubeconform - Uninstall kubeconform\n"
+    printf "gc uninstall kubeconform - Uninstall kubeconform\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall kubeconform\n"
-  printf "  gt uninstall kubeconform --help | -h\n"
+  printf "  gc uninstall kubeconform\n"
+  printf "  gc uninstall kubeconform --help | -h\n"
   echo
 
   # :command.long_usage
@@ -2886,20 +2886,20 @@ gt_uninstall_kubeconform_usage() {
 }
 
 # :command.usage
-gt_uninstall_krew_usage() {
+gc_uninstall_krew_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall krew - Uninstall krew\n"
+    printf "gc uninstall krew - Uninstall krew\n"
     echo
 
   else
-    printf "gt uninstall krew - Uninstall krew\n"
+    printf "gc uninstall krew - Uninstall krew\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall krew\n"
-  printf "  gt uninstall krew --help | -h\n"
+  printf "  gc uninstall krew\n"
+  printf "  gc uninstall krew --help | -h\n"
   echo
 
   # :command.long_usage
@@ -2915,20 +2915,20 @@ gt_uninstall_krew_usage() {
 }
 
 # :command.usage
-gt_uninstall_kubent_usage() {
+gc_uninstall_kubent_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall kubent - Uninstall kubent\n"
+    printf "gc uninstall kubent - Uninstall kubent\n"
     echo
 
   else
-    printf "gt uninstall kubent - Uninstall kubent\n"
+    printf "gc uninstall kubent - Uninstall kubent\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall kubent\n"
-  printf "  gt uninstall kubent --help | -h\n"
+  printf "  gc uninstall kubent\n"
+  printf "  gc uninstall kubent --help | -h\n"
   echo
 
   # :command.long_usage
@@ -2944,20 +2944,20 @@ gt_uninstall_kubent_usage() {
 }
 
 # :command.usage
-gt_uninstall_sops_usage() {
+gc_uninstall_sops_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall sops - Uninstall sops\n"
+    printf "gc uninstall sops - Uninstall sops\n"
     echo
 
   else
-    printf "gt uninstall sops - Uninstall sops\n"
+    printf "gc uninstall sops - Uninstall sops\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall sops\n"
-  printf "  gt uninstall sops --help | -h\n"
+  printf "  gc uninstall sops\n"
+  printf "  gc uninstall sops --help | -h\n"
   echo
 
   # :command.long_usage
@@ -2973,20 +2973,20 @@ gt_uninstall_sops_usage() {
 }
 
 # :command.usage
-gt_uninstall_age_usage() {
+gc_uninstall_age_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall age - Uninstall age\n"
+    printf "gc uninstall age - Uninstall age\n"
     echo
 
   else
-    printf "gt uninstall age - Uninstall age\n"
+    printf "gc uninstall age - Uninstall age\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall age\n"
-  printf "  gt uninstall age --help | -h\n"
+  printf "  gc uninstall age\n"
+  printf "  gc uninstall age --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3002,20 +3002,20 @@ gt_uninstall_age_usage() {
 }
 
 # :command.usage
-gt_uninstall_trivy_usage() {
+gc_uninstall_trivy_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall trivy - Uninstall trivy\n"
+    printf "gc uninstall trivy - Uninstall trivy\n"
     echo
 
   else
-    printf "gt uninstall trivy - Uninstall trivy\n"
+    printf "gc uninstall trivy - Uninstall trivy\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall trivy\n"
-  printf "  gt uninstall trivy --help | -h\n"
+  printf "  gc uninstall trivy\n"
+  printf "  gc uninstall trivy --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3031,20 +3031,20 @@ gt_uninstall_trivy_usage() {
 }
 
 # :command.usage
-gt_uninstall_kubens_usage() {
+gc_uninstall_kubens_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall kubens - Uninstall kubens\n"
+    printf "gc uninstall kubens - Uninstall kubens\n"
     echo
 
   else
-    printf "gt uninstall kubens - Uninstall kubens\n"
+    printf "gc uninstall kubens - Uninstall kubens\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall kubens\n"
-  printf "  gt uninstall kubens --help | -h\n"
+  printf "  gc uninstall kubens\n"
+  printf "  gc uninstall kubens --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3060,20 +3060,20 @@ gt_uninstall_kubens_usage() {
 }
 
 # :command.usage
-gt_uninstall_kubecolor_usage() {
+gc_uninstall_kubecolor_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall kubecolor - Uninstall kubecolor\n"
+    printf "gc uninstall kubecolor - Uninstall kubecolor\n"
     echo
 
   else
-    printf "gt uninstall kubecolor - Uninstall kubecolor\n"
+    printf "gc uninstall kubecolor - Uninstall kubecolor\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall kubecolor\n"
-  printf "  gt uninstall kubecolor --help | -h\n"
+  printf "  gc uninstall kubecolor\n"
+  printf "  gc uninstall kubecolor --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3089,20 +3089,20 @@ gt_uninstall_kubecolor_usage() {
 }
 
 # :command.usage
-gt_uninstall_popeye_usage() {
+gc_uninstall_popeye_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall popeye - Uninstall popeye\n"
+    printf "gc uninstall popeye - Uninstall popeye\n"
     echo
 
   else
-    printf "gt uninstall popeye - Uninstall popeye\n"
+    printf "gc uninstall popeye - Uninstall popeye\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall popeye\n"
-  printf "  gt uninstall popeye --help | -h\n"
+  printf "  gc uninstall popeye\n"
+  printf "  gc uninstall popeye --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3118,20 +3118,20 @@ gt_uninstall_popeye_usage() {
 }
 
 # :command.usage
-gt_uninstall_kube_linter_usage() {
+gc_uninstall_kube_linter_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall kube-linter - Uninstall kube-linter\n"
+    printf "gc uninstall kube-linter - Uninstall kube-linter\n"
     echo
 
   else
-    printf "gt uninstall kube-linter - Uninstall kube-linter\n"
+    printf "gc uninstall kube-linter - Uninstall kube-linter\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall kube-linter\n"
-  printf "  gt uninstall kube-linter --help | -h\n"
+  printf "  gc uninstall kube-linter\n"
+  printf "  gc uninstall kube-linter --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3147,20 +3147,20 @@ gt_uninstall_kube_linter_usage() {
 }
 
 # :command.usage
-gt_uninstall_kyverno_usage() {
+gc_uninstall_kyverno_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall kyverno - Uninstall kyverno\n"
+    printf "gc uninstall kyverno - Uninstall kyverno\n"
     echo
 
   else
-    printf "gt uninstall kyverno - Uninstall kyverno\n"
+    printf "gc uninstall kyverno - Uninstall kyverno\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall kyverno\n"
-  printf "  gt uninstall kyverno --help | -h\n"
+  printf "  gc uninstall kyverno\n"
+  printf "  gc uninstall kyverno --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3176,20 +3176,20 @@ gt_uninstall_kyverno_usage() {
 }
 
 # :command.usage
-gt_uninstall_conftest_usage() {
+gc_uninstall_conftest_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall conftest - Uninstall conftest\n"
+    printf "gc uninstall conftest - Uninstall conftest\n"
     echo
 
   else
-    printf "gt uninstall conftest - Uninstall conftest\n"
+    printf "gc uninstall conftest - Uninstall conftest\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall conftest\n"
-  printf "  gt uninstall conftest --help | -h\n"
+  printf "  gc uninstall conftest\n"
+  printf "  gc uninstall conftest --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3205,20 +3205,20 @@ gt_uninstall_conftest_usage() {
 }
 
 # :command.usage
-gt_uninstall_vault_usage() {
+gc_uninstall_vault_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall vault - Uninstall vault\n"
+    printf "gc uninstall vault - Uninstall vault\n"
     echo
 
   else
-    printf "gt uninstall vault - Uninstall vault\n"
+    printf "gc uninstall vault - Uninstall vault\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall vault\n"
-  printf "  gt uninstall vault --help | -h\n"
+  printf "  gc uninstall vault\n"
+  printf "  gc uninstall vault --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3234,20 +3234,20 @@ gt_uninstall_vault_usage() {
 }
 
 # :command.usage
-gt_uninstall_kubeseal_usage() {
+gc_uninstall_kubeseal_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall kubeseal - Uninstall kubeseal\n"
+    printf "gc uninstall kubeseal - Uninstall kubeseal\n"
     echo
 
   else
-    printf "gt uninstall kubeseal - Uninstall kubeseal\n"
+    printf "gc uninstall kubeseal - Uninstall kubeseal\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall kubeseal\n"
-  printf "  gt uninstall kubeseal --help | -h\n"
+  printf "  gc uninstall kubeseal\n"
+  printf "  gc uninstall kubeseal --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3263,20 +3263,20 @@ gt_uninstall_kubeseal_usage() {
 }
 
 # :command.usage
-gt_uninstall_zoxide_usage() {
+gc_uninstall_zoxide_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall zoxide - Uninstall zoxide\n"
+    printf "gc uninstall zoxide - Uninstall zoxide\n"
     echo
 
   else
-    printf "gt uninstall zoxide - Uninstall zoxide\n"
+    printf "gc uninstall zoxide - Uninstall zoxide\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall zoxide\n"
-  printf "  gt uninstall zoxide --help | -h\n"
+  printf "  gc uninstall zoxide\n"
+  printf "  gc uninstall zoxide --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3292,20 +3292,20 @@ gt_uninstall_zoxide_usage() {
 }
 
 # :command.usage
-gt_uninstall_eza_usage() {
+gc_uninstall_eza_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall eza - Uninstall eza\n"
+    printf "gc uninstall eza - Uninstall eza\n"
     echo
 
   else
-    printf "gt uninstall eza - Uninstall eza\n"
+    printf "gc uninstall eza - Uninstall eza\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall eza\n"
-  printf "  gt uninstall eza --help | -h\n"
+  printf "  gc uninstall eza\n"
+  printf "  gc uninstall eza --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3321,20 +3321,20 @@ gt_uninstall_eza_usage() {
 }
 
 # :command.usage
-gt_uninstall_bat_usage() {
+gc_uninstall_bat_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall bat - Uninstall bat\n"
+    printf "gc uninstall bat - Uninstall bat\n"
     echo
 
   else
-    printf "gt uninstall bat - Uninstall bat\n"
+    printf "gc uninstall bat - Uninstall bat\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall bat\n"
-  printf "  gt uninstall bat --help | -h\n"
+  printf "  gc uninstall bat\n"
+  printf "  gc uninstall bat --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3350,20 +3350,20 @@ gt_uninstall_bat_usage() {
 }
 
 # :command.usage
-gt_uninstall_ripgrep_usage() {
+gc_uninstall_ripgrep_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall ripgrep - Uninstall ripgrep\n"
+    printf "gc uninstall ripgrep - Uninstall ripgrep\n"
     echo
 
   else
-    printf "gt uninstall ripgrep - Uninstall ripgrep\n"
+    printf "gc uninstall ripgrep - Uninstall ripgrep\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall ripgrep\n"
-  printf "  gt uninstall ripgrep --help | -h\n"
+  printf "  gc uninstall ripgrep\n"
+  printf "  gc uninstall ripgrep --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3379,20 +3379,20 @@ gt_uninstall_ripgrep_usage() {
 }
 
 # :command.usage
-gt_uninstall_starship_usage() {
+gc_uninstall_starship_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall starship - Uninstall starship\n"
+    printf "gc uninstall starship - Uninstall starship\n"
     echo
 
   else
-    printf "gt uninstall starship - Uninstall starship\n"
+    printf "gc uninstall starship - Uninstall starship\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall starship\n"
-  printf "  gt uninstall starship --help | -h\n"
+  printf "  gc uninstall starship\n"
+  printf "  gc uninstall starship --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3408,20 +3408,20 @@ gt_uninstall_starship_usage() {
 }
 
 # :command.usage
-gt_uninstall_fzf_usage() {
+gc_uninstall_fzf_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall fzf - Uninstall fzf\n"
+    printf "gc uninstall fzf - Uninstall fzf\n"
     echo
 
   else
-    printf "gt uninstall fzf - Uninstall fzf\n"
+    printf "gc uninstall fzf - Uninstall fzf\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall fzf\n"
-  printf "  gt uninstall fzf --help | -h\n"
+  printf "  gc uninstall fzf\n"
+  printf "  gc uninstall fzf --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3437,20 +3437,20 @@ gt_uninstall_fzf_usage() {
 }
 
 # :command.usage
-gt_uninstall_fd_usage() {
+gc_uninstall_fd_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall fd - Uninstall fd\n"
+    printf "gc uninstall fd - Uninstall fd\n"
     echo
 
   else
-    printf "gt uninstall fd - Uninstall fd\n"
+    printf "gc uninstall fd - Uninstall fd\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall fd\n"
-  printf "  gt uninstall fd --help | -h\n"
+  printf "  gc uninstall fd\n"
+  printf "  gc uninstall fd --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3466,20 +3466,20 @@ gt_uninstall_fd_usage() {
 }
 
 # :command.usage
-gt_uninstall_mcfly_usage() {
+gc_uninstall_mcfly_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall mcfly - Uninstall mcfly\n"
+    printf "gc uninstall mcfly - Uninstall mcfly\n"
     echo
 
   else
-    printf "gt uninstall mcfly - Uninstall mcfly\n"
+    printf "gc uninstall mcfly - Uninstall mcfly\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall mcfly\n"
-  printf "  gt uninstall mcfly --help | -h\n"
+  printf "  gc uninstall mcfly\n"
+  printf "  gc uninstall mcfly --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3495,20 +3495,20 @@ gt_uninstall_mcfly_usage() {
 }
 
 # :command.usage
-gt_uninstall_infisical_usage() {
+gc_uninstall_infisical_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall infisical - Uninstall infisical\n"
+    printf "gc uninstall infisical - Uninstall infisical\n"
     echo
 
   else
-    printf "gt uninstall infisical - Uninstall infisical\n"
+    printf "gc uninstall infisical - Uninstall infisical\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall infisical\n"
-  printf "  gt uninstall infisical --help | -h\n"
+  printf "  gc uninstall infisical\n"
+  printf "  gc uninstall infisical --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3524,20 +3524,20 @@ gt_uninstall_infisical_usage() {
 }
 
 # :command.usage
-gt_uninstall_ksops_usage() {
+gc_uninstall_ksops_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall ksops - Uninstall ksops\n"
+    printf "gc uninstall ksops - Uninstall ksops\n"
     echo
 
   else
-    printf "gt uninstall ksops - Uninstall ksops\n"
+    printf "gc uninstall ksops - Uninstall ksops\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall ksops\n"
-  printf "  gt uninstall ksops --help | -h\n"
+  printf "  gc uninstall ksops\n"
+  printf "  gc uninstall ksops --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3553,20 +3553,20 @@ gt_uninstall_ksops_usage() {
 }
 
 # :command.usage
-gt_uninstall_skopeo_usage() {
+gc_uninstall_skopeo_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall skopeo - Uninstall skopeo\n"
+    printf "gc uninstall skopeo - Uninstall skopeo\n"
     echo
 
   else
-    printf "gt uninstall skopeo - Uninstall skopeo\n"
+    printf "gc uninstall skopeo - Uninstall skopeo\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall skopeo\n"
-  printf "  gt uninstall skopeo --help | -h\n"
+  printf "  gc uninstall skopeo\n"
+  printf "  gc uninstall skopeo --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3582,20 +3582,20 @@ gt_uninstall_skopeo_usage() {
 }
 
 # :command.usage
-gt_uninstall_helmfile_usage() {
+gc_uninstall_helmfile_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall helmfile - Uninstall helmfile\n"
+    printf "gc uninstall helmfile - Uninstall helmfile\n"
     echo
 
   else
-    printf "gt uninstall helmfile - Uninstall helmfile\n"
+    printf "gc uninstall helmfile - Uninstall helmfile\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall helmfile\n"
-  printf "  gt uninstall helmfile --help | -h\n"
+  printf "  gc uninstall helmfile\n"
+  printf "  gc uninstall helmfile --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3611,20 +3611,20 @@ gt_uninstall_helmfile_usage() {
 }
 
 # :command.usage
-gt_uninstall_helm_usage() {
+gc_uninstall_helm_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall helm - Uninstall helm\n"
+    printf "gc uninstall helm - Uninstall helm\n"
     echo
 
   else
-    printf "gt uninstall helm - Uninstall helm\n"
+    printf "gc uninstall helm - Uninstall helm\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall helm\n"
-  printf "  gt uninstall helm --help | -h\n"
+  printf "  gc uninstall helm\n"
+  printf "  gc uninstall helm --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3640,20 +3640,20 @@ gt_uninstall_helm_usage() {
 }
 
 # :command.usage
-gt_uninstall_chezmoi_usage() {
+gc_uninstall_chezmoi_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall chezmoi - Uninstall chezmoi\n"
+    printf "gc uninstall chezmoi - Uninstall chezmoi\n"
     echo
 
   else
-    printf "gt uninstall chezmoi - Uninstall chezmoi\n"
+    printf "gc uninstall chezmoi - Uninstall chezmoi\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall chezmoi\n"
-  printf "  gt uninstall chezmoi --help | -h\n"
+  printf "  gc uninstall chezmoi\n"
+  printf "  gc uninstall chezmoi --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3669,20 +3669,20 @@ gt_uninstall_chezmoi_usage() {
 }
 
 # :command.usage
-gt_uninstall_tmux_usage() {
+gc_uninstall_tmux_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall tmux - Uninstall tmux\n"
+    printf "gc uninstall tmux - Uninstall tmux\n"
     echo
 
   else
-    printf "gt uninstall tmux - Uninstall tmux\n"
+    printf "gc uninstall tmux - Uninstall tmux\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall tmux\n"
-  printf "  gt uninstall tmux --help | -h\n"
+  printf "  gc uninstall tmux\n"
+  printf "  gc uninstall tmux --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3698,20 +3698,20 @@ gt_uninstall_tmux_usage() {
 }
 
 # :command.usage
-gt_uninstall_rsync_usage() {
+gc_uninstall_rsync_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall rsync - Uninstall rsync\n"
+    printf "gc uninstall rsync - Uninstall rsync\n"
     echo
 
   else
-    printf "gt uninstall rsync - Uninstall rsync\n"
+    printf "gc uninstall rsync - Uninstall rsync\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall rsync\n"
-  printf "  gt uninstall rsync --help | -h\n"
+  printf "  gc uninstall rsync\n"
+  printf "  gc uninstall rsync --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3727,20 +3727,20 @@ gt_uninstall_rsync_usage() {
 }
 
 # :command.usage
-gt_uninstall_trino_usage() {
+gc_uninstall_trino_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall trino - Uninstall trino\n"
+    printf "gc uninstall trino - Uninstall trino\n"
     echo
 
   else
-    printf "gt uninstall trino - Uninstall trino\n"
+    printf "gc uninstall trino - Uninstall trino\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall trino\n"
-  printf "  gt uninstall trino --help | -h\n"
+  printf "  gc uninstall trino\n"
+  printf "  gc uninstall trino --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3756,20 +3756,20 @@ gt_uninstall_trino_usage() {
 }
 
 # :command.usage
-gt_uninstall_nerdctl_usage() {
+gc_uninstall_nerdctl_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall nerdctl - Uninstall nerdctl\n"
+    printf "gc uninstall nerdctl - Uninstall nerdctl\n"
     echo
 
   else
-    printf "gt uninstall nerdctl - Uninstall nerdctl\n"
+    printf "gc uninstall nerdctl - Uninstall nerdctl\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall nerdctl\n"
-  printf "  gt uninstall nerdctl --help | -h\n"
+  printf "  gc uninstall nerdctl\n"
+  printf "  gc uninstall nerdctl --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3785,20 +3785,20 @@ gt_uninstall_nerdctl_usage() {
 }
 
 # :command.usage
-gt_uninstall_viddy_usage() {
+gc_uninstall_viddy_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall viddy - Uninstall viddy\n"
+    printf "gc uninstall viddy - Uninstall viddy\n"
     echo
 
   else
-    printf "gt uninstall viddy - Uninstall viddy\n"
+    printf "gc uninstall viddy - Uninstall viddy\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall viddy\n"
-  printf "  gt uninstall viddy --help | -h\n"
+  printf "  gc uninstall viddy\n"
+  printf "  gc uninstall viddy --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3814,20 +3814,20 @@ gt_uninstall_viddy_usage() {
 }
 
 # :command.usage
-gt_uninstall_hyperfine_usage() {
+gc_uninstall_hyperfine_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall hyperfine - Uninstall hyperfine\n"
+    printf "gc uninstall hyperfine - Uninstall hyperfine\n"
     echo
 
   else
-    printf "gt uninstall hyperfine - Uninstall hyperfine\n"
+    printf "gc uninstall hyperfine - Uninstall hyperfine\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall hyperfine\n"
-  printf "  gt uninstall hyperfine --help | -h\n"
+  printf "  gc uninstall hyperfine\n"
+  printf "  gc uninstall hyperfine --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3843,20 +3843,20 @@ gt_uninstall_hyperfine_usage() {
 }
 
 # :command.usage
-gt_uninstall_jq_usage() {
+gc_uninstall_jq_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall jq - Uninstall jq\n"
+    printf "gc uninstall jq - Uninstall jq\n"
     echo
 
   else
-    printf "gt uninstall jq - Uninstall jq\n"
+    printf "gc uninstall jq - Uninstall jq\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall jq\n"
-  printf "  gt uninstall jq --help | -h\n"
+  printf "  gc uninstall jq\n"
+  printf "  gc uninstall jq --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3872,20 +3872,20 @@ gt_uninstall_jq_usage() {
 }
 
 # :command.usage
-gt_uninstall_yq_usage() {
+gc_uninstall_yq_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall yq - Uninstall yq\n"
+    printf "gc uninstall yq - Uninstall yq\n"
     echo
 
   else
-    printf "gt uninstall yq - Uninstall yq\n"
+    printf "gc uninstall yq - Uninstall yq\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall yq\n"
-  printf "  gt uninstall yq --help | -h\n"
+  printf "  gc uninstall yq\n"
+  printf "  gc uninstall yq --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3901,20 +3901,20 @@ gt_uninstall_yq_usage() {
 }
 
 # :command.usage
-gt_uninstall_gum_usage() {
+gc_uninstall_gum_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall gum - Uninstall gum\n"
+    printf "gc uninstall gum - Uninstall gum\n"
     echo
 
   else
-    printf "gt uninstall gum - Uninstall gum\n"
+    printf "gc uninstall gum - Uninstall gum\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall gum\n"
-  printf "  gt uninstall gum --help | -h\n"
+  printf "  gc uninstall gum\n"
+  printf "  gc uninstall gum --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3930,20 +3930,20 @@ gt_uninstall_gum_usage() {
 }
 
 # :command.usage
-gt_uninstall_uv_usage() {
+gc_uninstall_uv_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall uv - Uninstall uv\n"
+    printf "gc uninstall uv - Uninstall uv\n"
     echo
 
   else
-    printf "gt uninstall uv - Uninstall uv\n"
+    printf "gc uninstall uv - Uninstall uv\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall uv\n"
-  printf "  gt uninstall uv --help | -h\n"
+  printf "  gc uninstall uv\n"
+  printf "  gc uninstall uv --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3959,20 +3959,20 @@ gt_uninstall_uv_usage() {
 }
 
 # :command.usage
-gt_uninstall_bashly_usage() {
+gc_uninstall_bashly_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall bashly - Uninstall bashly\n"
+    printf "gc uninstall bashly - Uninstall bashly\n"
     echo
 
   else
-    printf "gt uninstall bashly - Uninstall bashly\n"
+    printf "gc uninstall bashly - Uninstall bashly\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall bashly\n"
-  printf "  gt uninstall bashly --help | -h\n"
+  printf "  gc uninstall bashly\n"
+  printf "  gc uninstall bashly --help | -h\n"
   echo
 
   # :command.long_usage
@@ -3988,20 +3988,20 @@ gt_uninstall_bashly_usage() {
 }
 
 # :command.usage
-gt_uninstall_gem_usage() {
+gc_uninstall_gem_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall gem - Uninstall gem\n"
+    printf "gc uninstall gem - Uninstall gem\n"
     echo
 
   else
-    printf "gt uninstall gem - Uninstall gem\n"
+    printf "gc uninstall gem - Uninstall gem\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall gem\n"
-  printf "  gt uninstall gem --help | -h\n"
+  printf "  gc uninstall gem\n"
+  printf "  gc uninstall gem --help | -h\n"
   echo
 
   # :command.long_usage
@@ -4017,20 +4017,20 @@ gt_uninstall_gem_usage() {
 }
 
 # :command.usage
-gt_uninstall_claude_usage() {
+gc_uninstall_claude_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall claude - Uninstall claude\n"
+    printf "gc uninstall claude - Uninstall claude\n"
     echo
 
   else
-    printf "gt uninstall claude - Uninstall claude\n"
+    printf "gc uninstall claude - Uninstall claude\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall claude\n"
-  printf "  gt uninstall claude --help | -h\n"
+  printf "  gc uninstall claude\n"
+  printf "  gc uninstall claude --help | -h\n"
   echo
 
   # :command.long_usage
@@ -4046,20 +4046,20 @@ gt_uninstall_claude_usage() {
 }
 
 # :command.usage
-gt_uninstall_talisman_usage() {
+gc_uninstall_talisman_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall talisman - Uninstall talisman\n"
+    printf "gc uninstall talisman - Uninstall talisman\n"
     echo
 
   else
-    printf "gt uninstall talisman - Uninstall talisman\n"
+    printf "gc uninstall talisman - Uninstall talisman\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall talisman\n"
-  printf "  gt uninstall talisman --help | -h\n"
+  printf "  gc uninstall talisman\n"
+  printf "  gc uninstall talisman --help | -h\n"
   echo
 
   # :command.long_usage
@@ -4075,20 +4075,20 @@ gt_uninstall_talisman_usage() {
 }
 
 # :command.usage
-gt_uninstall_copilot_usage() {
+gc_uninstall_copilot_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall copilot - Uninstall copilot\n"
+    printf "gc uninstall copilot - Uninstall copilot\n"
     echo
 
   else
-    printf "gt uninstall copilot - Uninstall copilot\n"
+    printf "gc uninstall copilot - Uninstall copilot\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall copilot\n"
-  printf "  gt uninstall copilot --help | -h\n"
+  printf "  gc uninstall copilot\n"
+  printf "  gc uninstall copilot --help | -h\n"
   echo
 
   # :command.long_usage
@@ -4104,20 +4104,20 @@ gt_uninstall_copilot_usage() {
 }
 
 # :command.usage
-gt_uninstall_tailscale_usage() {
+gc_uninstall_tailscale_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt uninstall tailscale - Uninstall tailscale\n"
+    printf "gc uninstall tailscale - Uninstall tailscale\n"
     echo
 
   else
-    printf "gt uninstall tailscale - Uninstall tailscale\n"
+    printf "gc uninstall tailscale - Uninstall tailscale\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt uninstall tailscale\n"
-  printf "  gt uninstall tailscale --help | -h\n"
+  printf "  gc uninstall tailscale\n"
+  printf "  gc uninstall tailscale --help | -h\n"
   echo
 
   # :command.long_usage
@@ -4133,26 +4133,27 @@ gt_uninstall_tailscale_usage() {
 }
 
 # :command.usage
-gt_setup_usage() {
+gc_setup_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt setup - Configure installed tools\n"
+    printf "gc setup - Configure installed tools\n"
     echo
 
   else
-    printf "gt setup - Configure installed tools\n"
+    printf "gc setup - Configure installed tools\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt setup COMMAND\n"
-  printf "  gt setup [COMMAND] --help | -h\n"
+  printf "  gc setup COMMAND\n"
+  printf "  gc setup [COMMAND] --help | -h\n"
   echo
   # :command.usage_commands
   printf "%s\n" "Commands:"
   printf "  %s   Configure multiple tools at once (comma or space separated)\n" "multi   "
   printf "  %s   Configure antidote Zsh plugin manager (~/.zshrc and ~/.zsh_plugins.txt)\n" "antidote"
   printf "  %s   Configure starship prompt (~/.config/starship.toml)\n" "starship"
+  printf "  %s   Configure Claude Code (~/.claude/settings.json)\n" "claude  "
   echo
 
   # :command.long_usage
@@ -4168,20 +4169,20 @@ gt_setup_usage() {
 }
 
 # :command.usage
-gt_setup_multi_usage() {
+gc_setup_multi_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt setup multi - Configure multiple tools at once (comma or space separated)\n"
+    printf "gc setup multi - Configure multiple tools at once (comma or space separated)\n"
     echo
 
   else
-    printf "gt setup multi - Configure multiple tools at once (comma or space separated)\n"
+    printf "gc setup multi - Configure multiple tools at once (comma or space separated)\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt setup multi TOOLS... [OPTIONS]\n"
-  printf "  gt setup multi --help | -h\n"
+  printf "  gc setup multi TOOLS... [OPTIONS]\n"
+  printf "  gc setup multi --help | -h\n"
   echo
 
   # :command.long_usage
@@ -4217,20 +4218,20 @@ gt_setup_multi_usage() {
 }
 
 # :command.usage
-gt_setup_antidote_usage() {
+gc_setup_antidote_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt setup antidote - Configure antidote Zsh plugin manager (~/.zshrc and ~/.zsh_plugins.txt)\n"
+    printf "gc setup antidote - Configure antidote Zsh plugin manager (~/.zshrc and ~/.zsh_plugins.txt)\n"
     echo
 
   else
-    printf "gt setup antidote - Configure antidote Zsh plugin manager (~/.zshrc and ~/.zsh_plugins.txt)\n"
+    printf "gc setup antidote - Configure antidote Zsh plugin manager (~/.zshrc and ~/.zsh_plugins.txt)\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt setup antidote [OPTIONS]\n"
-  printf "  gt setup antidote --help | -h\n"
+  printf "  gc setup antidote [OPTIONS]\n"
+  printf "  gc setup antidote --help | -h\n"
   echo
 
   # :command.long_usage
@@ -4268,20 +4269,20 @@ gt_setup_antidote_usage() {
 }
 
 # :command.usage
-gt_setup_starship_usage() {
+gc_setup_starship_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt setup starship - Configure starship prompt (~/.config/starship.toml)\n"
+    printf "gc setup starship - Configure starship prompt (~/.config/starship.toml)\n"
     echo
 
   else
-    printf "gt setup starship - Configure starship prompt (~/.config/starship.toml)\n"
+    printf "gc setup starship - Configure starship prompt (~/.config/starship.toml)\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt setup starship [OPTIONS]\n"
-  printf "  gt setup starship --help | -h\n"
+  printf "  gc setup starship [OPTIONS]\n"
+  printf "  gc setup starship --help | -h\n"
   echo
 
   # :command.long_usage
@@ -4319,20 +4320,66 @@ gt_setup_starship_usage() {
 }
 
 # :command.usage
-gt_outdated_usage() {
+gc_setup_claude_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt outdated - Check for outdated tools\n"
+    printf "gc setup claude - Configure Claude Code (~/.claude/settings.json)\n"
     echo
 
   else
-    printf "gt outdated - Check for outdated tools\n"
+    printf "gc setup claude - Configure Claude Code (~/.claude/settings.json)\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt outdated [TOOL] [OPTIONS]\n"
-  printf "  gt outdated --help | -h\n"
+  printf "  gc setup claude [OPTIONS]\n"
+  printf "  gc setup claude --help | -h\n"
+  echo
+
+  # :command.long_usage
+  if [[ -n $long_usage ]]; then
+    printf "%s\n" "Options:"
+
+    # :command.usage_flags
+    # :flag.usage
+    printf "  %s\n" "--skip-config"
+    printf "    Skip seeding ~/.claude/settings.json\n"
+    echo
+
+    # :flag.usage
+    printf "  %s\n" "--force-config"
+    printf "    Overwrite ~/.claude/settings.json even if it already has content\n"
+    echo
+
+    # :command.usage_fixed_flags
+    printf "  %s\n" "--help, -h"
+    printf "    Show this help\n"
+    echo
+
+    # :command.usage_examples
+    printf "%s\n" "Examples:"
+    printf "  gc setup claude\n"
+    printf "  gc setup claude --force-config\n"
+    echo
+
+  fi
+}
+
+# :command.usage
+gc_outdated_usage() {
+  if [[ -n $long_usage ]]; then
+    printf "gc outdated - Check for outdated tools\n"
+    echo
+
+  else
+    printf "gc outdated - Check for outdated tools\n"
+    echo
+
+  fi
+
+  printf "%s\n" "Usage:"
+  printf "  gc outdated [TOOL] [OPTIONS]\n"
+  printf "  gc outdated --help | -h\n"
   echo
 
   # :command.long_usage
@@ -4362,20 +4409,20 @@ gt_outdated_usage() {
 }
 
 # :command.usage
-gt_completions_usage() {
+gc_completions_usage() {
   if [[ -n $long_usage ]]; then
-    printf "gt completions - Generate shell completion script\n"
+    printf "gc completions - Generate shell completion script\n"
     echo
 
   else
-    printf "gt completions - Generate shell completion script\n"
+    printf "gc completions - Generate shell completion script\n"
     echo
 
   fi
 
   printf "%s\n" "Usage:"
-  printf "  gt completions [SHELL]\n"
-  printf "  gt completions --help | -h\n"
+  printf "  gc completions [SHELL]\n"
+  printf "  gc completions --help | -h\n"
   echo
 
   # :command.long_usage
@@ -6168,6 +6215,45 @@ ttungbmt/os-scripts path:plugins/zsh-mcfly
 EOF
 }
 
+# src/lib/templates/claude.sh
+
+template_claude_settings() {
+  cat <<'EOF'
+{
+  "permissions": {
+    "allow": [
+      "Bash(git status*)",
+      "Bash(git log*)",
+      "Bash(git diff*)",
+      "Bash(git show*)",
+      "Bash(git fetch*)",
+      "Bash(git branch*)",
+      "Bash(git checkout*)",
+      "Bash(git pull*)",
+      "Bash(git stash*)",
+      "Bash(kubectl get *)",
+      "Bash(kubectl describe *)",
+      "Bash(kustomize build *)",
+      "Bash(helm version *)",
+      "Bash(helm list *)",
+      "Bash(helm get *)",
+      "Bash(helmfile --version)",
+      "Bash(helmfile list *)",
+      "Bash(helmfile template *)",
+      "Bash(helmfile diff *)",
+      "Bash(chmod +x *)"
+    ],
+    "defaultMode": "auto"
+  },
+  "effortLevel": "medium",
+  "theme": "dark",
+  "editorMode": "normal",
+  "preferredNotifChannel": "auto",
+  "skipAutoPermissionPrompt": true
+}
+EOF
+}
+
 # src/lib/templates/starship.sh
 
 # Returns a curated default ~/.config/starship.toml tuned for devops workflows.
@@ -6416,7 +6502,7 @@ get_remote_version() {
 # :command.command_functions
 
 # :command.function
-gt_install_multi_command() {
+gc_install_multi_command() {
   # src/commands/install/multi.sh
   force=${args[--force]}
   eval "raw_tools=(${args['tools']})"
@@ -6474,7 +6560,7 @@ gt_install_multi_command() {
 }
 
 # :command.function
-gt_install_kustomize_command() {
+gc_install_kustomize_command() {
   # src/commands/install/kustomize.sh
   export TARGET_TOOL="kustomize"
   run_generic_install "kustomize" "${args[--version]}" "${args[--force]}"
@@ -6482,7 +6568,7 @@ gt_install_kustomize_command() {
 }
 
 # :command.function
-gt_install_k9s_command() {
+gc_install_k9s_command() {
   # src/commands/install/k9s.sh
   export TARGET_TOOL="k9s"
   run_generic_install "k9s" "${args[--version]}" "${args[--force]}"
@@ -6490,7 +6576,7 @@ gt_install_k9s_command() {
 }
 
 # :command.function
-gt_install_kubectl_command() {
+gc_install_kubectl_command() {
   # src/commands/install/kubectl.sh
   export TARGET_TOOL="kubectl"
   run_generic_install "kubectl" "${args[--version]}" "${args[--force]}"
@@ -6498,7 +6584,7 @@ gt_install_kubectl_command() {
 }
 
 # :command.function
-gt_install_fastfetch_command() {
+gc_install_fastfetch_command() {
   # src/commands/install/fastfetch.sh
   export TARGET_TOOL="fastfetch"
   run_generic_install "fastfetch" "${args[--version]}" "${args[--force]}"
@@ -6506,7 +6592,7 @@ gt_install_fastfetch_command() {
 }
 
 # :command.function
-gt_install_direnv_command() {
+gc_install_direnv_command() {
   # src/commands/install/direnv.sh
   export TARGET_TOOL="direnv"
   run_generic_install "direnv" "${args[--version]}" "${args[--force]}"
@@ -6514,7 +6600,7 @@ gt_install_direnv_command() {
 }
 
 # :command.function
-gt_install_btop_command() {
+gc_install_btop_command() {
   # src/commands/install/btop.sh
   export TARGET_TOOL="btop"
   run_generic_install "btop" "${args[--version]}" "${args[--force]}"
@@ -6522,7 +6608,7 @@ gt_install_btop_command() {
 }
 
 # :command.function
-gt_install_zsh_command() {
+gc_install_zsh_command() {
   # src/commands/install/zsh.sh
   version=${args[--version]}
   force=${args[--force]}
@@ -6548,7 +6634,7 @@ gt_install_zsh_command() {
 }
 
 # :command.function
-gt_install_antidote_command() {
+gc_install_antidote_command() {
   # src/commands/install/antidote.sh
   version=${args[--version]}
   force=${args[--force]}
@@ -6583,7 +6669,7 @@ gt_install_antidote_command() {
 }
 
 # :command.function
-gt_install_thefuck_command() {
+gc_install_thefuck_command() {
   # src/commands/install/thefuck.sh
   export TARGET_TOOL="thefuck"
   run_generic_install "thefuck" "${args[--version]}" "${args[--force]}"
@@ -6591,7 +6677,7 @@ gt_install_thefuck_command() {
 }
 
 # :command.function
-gt_install_argocd_command() {
+gc_install_argocd_command() {
   # src/commands/install/argocd.sh
   export TARGET_TOOL="argocd"
   run_generic_install "argocd" "${args[--version]}" "${args[--force]}"
@@ -6599,7 +6685,7 @@ gt_install_argocd_command() {
 }
 
 # :command.function
-gt_install_velero_command() {
+gc_install_velero_command() {
   # src/commands/install/velero.sh
   export TARGET_TOOL="velero"
   run_generic_install "velero" "${args[--version]}" "${args[--force]}"
@@ -6607,7 +6693,7 @@ gt_install_velero_command() {
 }
 
 # :command.function
-gt_install_kubeconform_command() {
+gc_install_kubeconform_command() {
   # src/commands/install/kubeconform.sh
   export TARGET_TOOL="kubeconform"
   run_generic_install "kubeconform" "${args[--version]}" "${args[--force]}"
@@ -6615,7 +6701,7 @@ gt_install_kubeconform_command() {
 }
 
 # :command.function
-gt_install_krew_command() {
+gc_install_krew_command() {
   # src/commands/install/krew.sh
   export TARGET_TOOL="krew"
   run_generic_install "krew" "${args[--version]}" "${args[--force]}"
@@ -6623,7 +6709,7 @@ gt_install_krew_command() {
 }
 
 # :command.function
-gt_install_kubent_command() {
+gc_install_kubent_command() {
   # src/commands/install/kubent.sh
   export TARGET_TOOL="kubent"
   run_generic_install "kubent" "${args[--version]}" "${args[--force]}"
@@ -6631,7 +6717,7 @@ gt_install_kubent_command() {
 }
 
 # :command.function
-gt_install_sops_command() {
+gc_install_sops_command() {
   # src/commands/install/sops.sh
   export TARGET_TOOL="sops"
   run_generic_install "sops" "${args[--version]}" "${args[--force]}"
@@ -6639,7 +6725,7 @@ gt_install_sops_command() {
 }
 
 # :command.function
-gt_install_age_command() {
+gc_install_age_command() {
   # src/commands/install/age.sh
   export TARGET_TOOL="age"
   run_generic_install "age" "${args[--version]}" "${args[--force]}"
@@ -6647,7 +6733,7 @@ gt_install_age_command() {
 }
 
 # :command.function
-gt_install_trivy_command() {
+gc_install_trivy_command() {
   # src/commands/install/trivy.sh
   export TARGET_TOOL="trivy"
   run_generic_install "trivy" "${args[--version]}" "${args[--force]}"
@@ -6655,7 +6741,7 @@ gt_install_trivy_command() {
 }
 
 # :command.function
-gt_install_kubens_command() {
+gc_install_kubens_command() {
   # src/commands/install/kubens.sh
   export TARGET_TOOL="kubens"
   run_generic_install "kubens" "${args[--version]}" "${args[--force]}"
@@ -6663,7 +6749,7 @@ gt_install_kubens_command() {
 }
 
 # :command.function
-gt_install_kubecolor_command() {
+gc_install_kubecolor_command() {
   # src/commands/install/kubecolor.sh
   export TARGET_TOOL="kubecolor"
   run_generic_install "kubecolor" "${args[--version]}" "${args[--force]}"
@@ -6671,7 +6757,7 @@ gt_install_kubecolor_command() {
 }
 
 # :command.function
-gt_install_popeye_command() {
+gc_install_popeye_command() {
   # src/commands/install/popeye.sh
   export TARGET_TOOL="popeye"
   run_generic_install "popeye" "${args[--version]}" "${args[--force]}"
@@ -6679,7 +6765,7 @@ gt_install_popeye_command() {
 }
 
 # :command.function
-gt_install_kube_linter_command() {
+gc_install_kube_linter_command() {
   # src/commands/install/kube-linter.sh
   export TARGET_TOOL="kube-linter"
   run_generic_install "kube-linter" "${args[--version]}" "${args[--force]}"
@@ -6687,7 +6773,7 @@ gt_install_kube_linter_command() {
 }
 
 # :command.function
-gt_install_kyverno_command() {
+gc_install_kyverno_command() {
   # src/commands/install/kyverno.sh
   export TARGET_TOOL="kyverno"
   run_generic_install "kyverno" "${args[--version]}" "${args[--force]}"
@@ -6695,7 +6781,7 @@ gt_install_kyverno_command() {
 }
 
 # :command.function
-gt_install_conftest_command() {
+gc_install_conftest_command() {
   # src/commands/install/conftest.sh
   export TARGET_TOOL="conftest"
   run_generic_install "conftest" "${args[--version]}" "${args[--force]}"
@@ -6703,7 +6789,7 @@ gt_install_conftest_command() {
 }
 
 # :command.function
-gt_install_vault_command() {
+gc_install_vault_command() {
   # src/commands/install/vault.sh
   export TARGET_TOOL="vault"
   run_generic_install "vault" "${args[--version]}" "${args[--force]}"
@@ -6711,7 +6797,7 @@ gt_install_vault_command() {
 }
 
 # :command.function
-gt_install_kubeseal_command() {
+gc_install_kubeseal_command() {
   # src/commands/install/kubeseal.sh
   export TARGET_TOOL="kubeseal"
   run_generic_install "kubeseal" "${args[--version]}" "${args[--force]}"
@@ -6719,7 +6805,7 @@ gt_install_kubeseal_command() {
 }
 
 # :command.function
-gt_install_zoxide_command() {
+gc_install_zoxide_command() {
   # src/commands/install/zoxide.sh
   version=${args[--version]}
   force=${args[--force]}
@@ -6777,7 +6863,7 @@ gt_install_zoxide_command() {
 }
 
 # :command.function
-gt_install_eza_command() {
+gc_install_eza_command() {
   # src/commands/install/eza.sh
   version=${args[--version]}
   force=${args[--force]}
@@ -6830,7 +6916,7 @@ gt_install_eza_command() {
 }
 
 # :command.function
-gt_install_bat_command() {
+gc_install_bat_command() {
   # src/commands/install/bat.sh
   version=${args[--version]}
   force=${args[--force]}
@@ -6890,7 +6976,7 @@ gt_install_bat_command() {
 }
 
 # :command.function
-gt_install_ripgrep_command() {
+gc_install_ripgrep_command() {
   # src/commands/install/ripgrep.sh
   version=${args[--version]}
   force=${args[--force]}
@@ -6950,7 +7036,7 @@ gt_install_ripgrep_command() {
 }
 
 # :command.function
-gt_install_starship_command() {
+gc_install_starship_command() {
   # src/commands/install/starship.sh
   version=${args[--version]}
   force=${args[--force]}
@@ -7009,7 +7095,7 @@ gt_install_starship_command() {
 }
 
 # :command.function
-gt_install_fzf_command() {
+gc_install_fzf_command() {
   # src/commands/install/fzf.sh
   version=${args[--version]}
   force=${args[--force]}
@@ -7064,7 +7150,7 @@ gt_install_fzf_command() {
 }
 
 # :command.function
-gt_install_fd_command() {
+gc_install_fd_command() {
   # src/commands/install/fd.sh
   version=${args[--version]}
   force=${args[--force]}
@@ -7120,7 +7206,7 @@ gt_install_fd_command() {
 }
 
 # :command.function
-gt_install_mcfly_command() {
+gc_install_mcfly_command() {
   # src/commands/install/mcfly.sh
   version=${args[--version]}
   force=${args[--force]}
@@ -7175,7 +7261,7 @@ gt_install_mcfly_command() {
 }
 
 # :command.function
-gt_install_infisical_command() {
+gc_install_infisical_command() {
   # src/commands/install/infisical.sh
   version=${args[--version]}
   force=${args[--force]}
@@ -7213,7 +7299,7 @@ gt_install_infisical_command() {
 }
 
 # :command.function
-gt_install_ksops_command() {
+gc_install_ksops_command() {
   # src/commands/install/ksops.sh
   version=${args[--version]}
   force=${args[--force]}
@@ -7254,7 +7340,7 @@ gt_install_ksops_command() {
 }
 
 # :command.function
-gt_install_skopeo_command() {
+gc_install_skopeo_command() {
   # src/commands/install/skopeo.sh
   force=${args[--force]}
   name="skopeo"
@@ -7276,7 +7362,7 @@ gt_install_skopeo_command() {
 }
 
 # :command.function
-gt_install_helmfile_command() {
+gc_install_helmfile_command() {
   # src/commands/install/helmfile.sh
   version=${args[--version]}
   force=${args[--force]}
@@ -7314,7 +7400,7 @@ gt_install_helmfile_command() {
 }
 
 # :command.function
-gt_install_helm_command() {
+gc_install_helm_command() {
   # src/commands/install/helm.sh
   version=${args[--version]}
   force=${args[--force]}
@@ -7355,7 +7441,7 @@ gt_install_helm_command() {
 }
 
 # :command.function
-gt_install_chezmoi_command() {
+gc_install_chezmoi_command() {
   # src/commands/install/chezmoi.sh
   version=${args[--version]}
   force=${args[--force]}
@@ -7394,7 +7480,7 @@ gt_install_chezmoi_command() {
 }
 
 # :command.function
-gt_install_tmux_command() {
+gc_install_tmux_command() {
   # src/commands/install/tmux.sh
   force=${args[--force]}
   name="tmux"
@@ -7416,7 +7502,7 @@ gt_install_tmux_command() {
 }
 
 # :command.function
-gt_install_rsync_command() {
+gc_install_rsync_command() {
   # src/commands/install/rsync.sh
   force=${args[--force]}
   name="rsync"
@@ -7438,7 +7524,7 @@ gt_install_rsync_command() {
 }
 
 # :command.function
-gt_install_trino_command() {
+gc_install_trino_command() {
   # src/commands/install/trino.sh
   version=${args[--version]}
   force=${args[--force]}
@@ -7471,7 +7557,7 @@ gt_install_trino_command() {
 }
 
 # :command.function
-gt_install_nerdctl_command() {
+gc_install_nerdctl_command() {
   # src/commands/install/nerdctl.sh
   version=${args[--version]}
   force=${args[--force]}
@@ -7509,7 +7595,7 @@ gt_install_nerdctl_command() {
 }
 
 # :command.function
-gt_install_viddy_command() {
+gc_install_viddy_command() {
   # src/commands/install/viddy.sh
   version=${args[--version]}
   force=${args[--force]}
@@ -7552,7 +7638,7 @@ gt_install_viddy_command() {
 }
 
 # :command.function
-gt_install_hyperfine_command() {
+gc_install_hyperfine_command() {
   # src/commands/install/hyperfine.sh
   version=${args[--version]}
   force=${args[--force]}
@@ -7593,7 +7679,7 @@ gt_install_hyperfine_command() {
 }
 
 # :command.function
-gt_install_jq_command() {
+gc_install_jq_command() {
   # src/commands/install/jq.sh
   version=${args[--version]}
   force=${args[--force]}
@@ -7630,7 +7716,7 @@ gt_install_jq_command() {
 }
 
 # :command.function
-gt_install_yq_command() {
+gc_install_yq_command() {
   # src/commands/install/yq.sh
   version=${args[--version]}
   force=${args[--force]}
@@ -7665,7 +7751,7 @@ gt_install_yq_command() {
 }
 
 # :command.function
-gt_install_gum_command() {
+gc_install_gum_command() {
   # src/commands/install/gum.sh
   version=${args[--version]}
   force=${args[--force]}
@@ -7708,7 +7794,7 @@ gt_install_gum_command() {
 }
 
 # :command.function
-gt_install_uv_command() {
+gc_install_uv_command() {
   # src/commands/install/uv.sh
   version=${args[--version]}
   force=${args[--force]}
@@ -7747,7 +7833,7 @@ gt_install_uv_command() {
 }
 
 # :command.function
-gt_install_bashly_command() {
+gc_install_bashly_command() {
   # src/commands/install/bashly.sh
   version=${args[--version]}
   force=${args[--force]}
@@ -7778,7 +7864,7 @@ gt_install_bashly_command() {
 }
 
 # :command.function
-gt_install_gem_command() {
+gc_install_gem_command() {
   # src/commands/install/gem.sh
   force=${args[--force]}
   name="gem"
@@ -7815,7 +7901,7 @@ gt_install_gem_command() {
 }
 
 # :command.function
-gt_install_claude_command() {
+gc_install_claude_command() {
   # src/commands/install/claude.sh
   version=${args[--version]}
   force=${args[--force]}
@@ -7846,7 +7932,7 @@ gt_install_claude_command() {
 }
 
 # :command.function
-gt_install_talisman_command() {
+gc_install_talisman_command() {
   # src/commands/install/talisman.sh
   version=${args[--version]}
   force=${args[--force]}
@@ -7890,7 +7976,7 @@ gt_install_talisman_command() {
 }
 
 # :command.function
-gt_install_copilot_command() {
+gc_install_copilot_command() {
   # src/commands/install/copilot.sh
   version=${args[--version]}
   force=${args[--force]}
@@ -7941,7 +8027,7 @@ gt_install_copilot_command() {
 }
 
 # :command.function
-gt_install_tailscale_command() {
+gc_install_tailscale_command() {
   # src/commands/install/tailscale.sh
   version=${args[--version]}
   force=${args[--force]}
@@ -7990,49 +8076,49 @@ gt_install_tailscale_command() {
 }
 
 # :command.function
-gt_uninstall_kustomize_command() {
+gc_uninstall_kustomize_command() {
   # src/commands/uninstall/kustomize.sh
   run_generic_uninstall "kustomize"
 
 }
 
 # :command.function
-gt_uninstall_k9s_command() {
+gc_uninstall_k9s_command() {
   # src/commands/uninstall/k9s.sh
   run_generic_uninstall "k9s"
 
 }
 
 # :command.function
-gt_uninstall_kubectl_command() {
+gc_uninstall_kubectl_command() {
   # src/commands/uninstall/kubectl.sh
   run_generic_uninstall "kubectl"
 
 }
 
 # :command.function
-gt_uninstall_fastfetch_command() {
+gc_uninstall_fastfetch_command() {
   # src/commands/uninstall/fastfetch.sh
   run_generic_uninstall "fastfetch"
 
 }
 
 # :command.function
-gt_uninstall_direnv_command() {
+gc_uninstall_direnv_command() {
   # src/commands/uninstall/direnv.sh
   run_generic_uninstall "direnv"
 
 }
 
 # :command.function
-gt_uninstall_btop_command() {
+gc_uninstall_btop_command() {
   # src/commands/uninstall/btop.sh
   run_generic_uninstall "btop"
 
 }
 
 # :command.function
-gt_uninstall_zsh_command() {
+gc_uninstall_zsh_command() {
   # src/commands/uninstall/zsh.sh
   name="zsh"
 
@@ -8060,7 +8146,7 @@ gt_uninstall_zsh_command() {
 }
 
 # :command.function
-gt_uninstall_antidote_command() {
+gc_uninstall_antidote_command() {
   # src/commands/uninstall/antidote.sh
   name="antidote"
   target="/usr/local/share/antidote"
@@ -8090,196 +8176,196 @@ gt_uninstall_antidote_command() {
 }
 
 # :command.function
-gt_uninstall_thefuck_command() {
+gc_uninstall_thefuck_command() {
   # src/commands/uninstall/thefuck.sh
   run_generic_uninstall "thefuck"
 
 }
 
 # :command.function
-gt_uninstall_argocd_command() {
+gc_uninstall_argocd_command() {
   # src/commands/uninstall/argocd.sh
   run_generic_uninstall "argocd"
 
 }
 
 # :command.function
-gt_uninstall_velero_command() {
+gc_uninstall_velero_command() {
   # src/commands/uninstall/velero.sh
   run_generic_uninstall "velero"
 
 }
 
 # :command.function
-gt_uninstall_kubeconform_command() {
+gc_uninstall_kubeconform_command() {
   # src/commands/uninstall/kubeconform.sh
   run_generic_uninstall "kubeconform"
 
 }
 
 # :command.function
-gt_uninstall_krew_command() {
+gc_uninstall_krew_command() {
   # src/commands/uninstall/krew.sh
   run_generic_uninstall "krew"
 
 }
 
 # :command.function
-gt_uninstall_kubent_command() {
+gc_uninstall_kubent_command() {
   # src/commands/uninstall/kubent.sh
   run_generic_uninstall "kubent"
 
 }
 
 # :command.function
-gt_uninstall_sops_command() {
+gc_uninstall_sops_command() {
   # src/commands/uninstall/sops.sh
   run_generic_uninstall "sops"
 
 }
 
 # :command.function
-gt_uninstall_age_command() {
+gc_uninstall_age_command() {
   # src/commands/uninstall/age.sh
   run_generic_uninstall "age"
 
 }
 
 # :command.function
-gt_uninstall_trivy_command() {
+gc_uninstall_trivy_command() {
   # src/commands/uninstall/trivy.sh
   run_generic_uninstall "trivy"
 
 }
 
 # :command.function
-gt_uninstall_kubens_command() {
+gc_uninstall_kubens_command() {
   # src/commands/uninstall/kubens.sh
   run_generic_uninstall "kubens"
 
 }
 
 # :command.function
-gt_uninstall_kubecolor_command() {
+gc_uninstall_kubecolor_command() {
   # src/commands/uninstall/kubecolor.sh
   run_generic_uninstall "kubecolor"
 
 }
 
 # :command.function
-gt_uninstall_popeye_command() {
+gc_uninstall_popeye_command() {
   # src/commands/uninstall/popeye.sh
   run_generic_uninstall "popeye"
 
 }
 
 # :command.function
-gt_uninstall_kube_linter_command() {
+gc_uninstall_kube_linter_command() {
   # src/commands/uninstall/kube-linter.sh
   run_generic_uninstall "kube-linter"
 
 }
 
 # :command.function
-gt_uninstall_kyverno_command() {
+gc_uninstall_kyverno_command() {
   # src/commands/uninstall/kyverno.sh
   run_generic_uninstall "kyverno"
 
 }
 
 # :command.function
-gt_uninstall_conftest_command() {
+gc_uninstall_conftest_command() {
   # src/commands/uninstall/conftest.sh
   run_generic_uninstall "conftest"
 
 }
 
 # :command.function
-gt_uninstall_vault_command() {
+gc_uninstall_vault_command() {
   # src/commands/uninstall/vault.sh
   run_generic_uninstall "vault"
 
 }
 
 # :command.function
-gt_uninstall_kubeseal_command() {
+gc_uninstall_kubeseal_command() {
   # src/commands/uninstall/kubeseal.sh
   run_generic_uninstall "kubeseal"
 
 }
 
 # :command.function
-gt_uninstall_zoxide_command() {
+gc_uninstall_zoxide_command() {
   # src/commands/uninstall/zoxide.sh
   uninstall_tool "zoxide" "/usr/local/bin/zoxide"
 
 }
 
 # :command.function
-gt_uninstall_eza_command() {
+gc_uninstall_eza_command() {
   # src/commands/uninstall/eza.sh
   uninstall_tool "eza" "/usr/local/bin/eza"
 
 }
 
 # :command.function
-gt_uninstall_bat_command() {
+gc_uninstall_bat_command() {
   # src/commands/uninstall/bat.sh
   uninstall_tool "bat" "/usr/local/bin/bat"
 
 }
 
 # :command.function
-gt_uninstall_ripgrep_command() {
+gc_uninstall_ripgrep_command() {
   # src/commands/uninstall/ripgrep.sh
   uninstall_tool "ripgrep" "/usr/local/bin/rg"
 
 }
 
 # :command.function
-gt_uninstall_starship_command() {
+gc_uninstall_starship_command() {
   # src/commands/uninstall/starship.sh
   uninstall_tool "starship" "/usr/local/bin/starship"
 
 }
 
 # :command.function
-gt_uninstall_fzf_command() {
+gc_uninstall_fzf_command() {
   # src/commands/uninstall/fzf.sh
   uninstall_tool "fzf" "/usr/local/bin/fzf"
 
 }
 
 # :command.function
-gt_uninstall_fd_command() {
+gc_uninstall_fd_command() {
   # src/commands/uninstall/fd.sh
   uninstall_tool "fd" "/usr/local/bin/fd"
 
 }
 
 # :command.function
-gt_uninstall_mcfly_command() {
+gc_uninstall_mcfly_command() {
   # src/commands/uninstall/mcfly.sh
   uninstall_tool "mcfly" "/usr/local/bin/mcfly"
 
 }
 
 # :command.function
-gt_uninstall_infisical_command() {
+gc_uninstall_infisical_command() {
   # src/commands/uninstall/infisical.sh
   uninstall_tool "infisical" "/usr/local/bin/infisical"
 
 }
 
 # :command.function
-gt_uninstall_ksops_command() {
+gc_uninstall_ksops_command() {
   # src/commands/uninstall/ksops.sh
   uninstall_tool "ksops" "/usr/local/bin/ksops"
 
 }
 
 # :command.function
-gt_uninstall_skopeo_command() {
+gc_uninstall_skopeo_command() {
   # src/commands/uninstall/skopeo.sh
   name="skopeo"
 
@@ -8301,28 +8387,28 @@ gt_uninstall_skopeo_command() {
 }
 
 # :command.function
-gt_uninstall_helmfile_command() {
+gc_uninstall_helmfile_command() {
   # src/commands/uninstall/helmfile.sh
   uninstall_tool "helmfile" "/usr/local/bin/helmfile"
 
 }
 
 # :command.function
-gt_uninstall_helm_command() {
+gc_uninstall_helm_command() {
   # src/commands/uninstall/helm.sh
   uninstall_tool "helm" "/usr/local/bin/helm"
 
 }
 
 # :command.function
-gt_uninstall_chezmoi_command() {
+gc_uninstall_chezmoi_command() {
   # src/commands/uninstall/chezmoi.sh
   uninstall_tool "chezmoi" "/usr/local/bin/chezmoi"
 
 }
 
 # :command.function
-gt_uninstall_tmux_command() {
+gc_uninstall_tmux_command() {
   # src/commands/uninstall/tmux.sh
   name="tmux"
 
@@ -8344,7 +8430,7 @@ gt_uninstall_tmux_command() {
 }
 
 # :command.function
-gt_uninstall_rsync_command() {
+gc_uninstall_rsync_command() {
   # src/commands/uninstall/rsync.sh
   name="rsync"
 
@@ -8366,63 +8452,63 @@ gt_uninstall_rsync_command() {
 }
 
 # :command.function
-gt_uninstall_trino_command() {
+gc_uninstall_trino_command() {
   # src/commands/uninstall/trino.sh
   uninstall_tool "trino" "/usr/local/bin/trino"
 
 }
 
 # :command.function
-gt_uninstall_nerdctl_command() {
+gc_uninstall_nerdctl_command() {
   # src/commands/uninstall/nerdctl.sh
   uninstall_tool "nerdctl" "/usr/local/bin/nerdctl"
 
 }
 
 # :command.function
-gt_uninstall_viddy_command() {
+gc_uninstall_viddy_command() {
   # src/commands/uninstall/viddy.sh
   uninstall_tool "viddy" "/usr/local/bin/viddy"
 
 }
 
 # :command.function
-gt_uninstall_hyperfine_command() {
+gc_uninstall_hyperfine_command() {
   # src/commands/uninstall/hyperfine.sh
   uninstall_tool "hyperfine" "/usr/local/bin/hyperfine"
 
 }
 
 # :command.function
-gt_uninstall_jq_command() {
+gc_uninstall_jq_command() {
   # src/commands/uninstall/jq.sh
   uninstall_tool "jq" "/usr/local/bin/jq"
 
 }
 
 # :command.function
-gt_uninstall_yq_command() {
+gc_uninstall_yq_command() {
   # src/commands/uninstall/yq.sh
   uninstall_tool "yq" "/usr/local/bin/yq"
 
 }
 
 # :command.function
-gt_uninstall_gum_command() {
+gc_uninstall_gum_command() {
   # src/commands/uninstall/gum.sh
   uninstall_tool "gum" "/usr/local/bin/gum"
 
 }
 
 # :command.function
-gt_uninstall_uv_command() {
+gc_uninstall_uv_command() {
   # src/commands/uninstall/uv.sh
   uninstall_tool "uv" "/usr/local/bin/uv"
 
 }
 
 # :command.function
-gt_uninstall_bashly_command() {
+gc_uninstall_bashly_command() {
   # src/commands/uninstall/bashly.sh
   name="bashly"
 
@@ -8449,7 +8535,7 @@ gt_uninstall_bashly_command() {
 }
 
 # :command.function
-gt_uninstall_gem_command() {
+gc_uninstall_gem_command() {
   # src/commands/uninstall/gem.sh
   name="gem"
 
@@ -8484,7 +8570,7 @@ gt_uninstall_gem_command() {
 }
 
 # :command.function
-gt_uninstall_claude_command() {
+gc_uninstall_claude_command() {
   # src/commands/uninstall/claude.sh
   name="claude"
 
@@ -8512,21 +8598,21 @@ gt_uninstall_claude_command() {
 }
 
 # :command.function
-gt_uninstall_talisman_command() {
+gc_uninstall_talisman_command() {
   # src/commands/uninstall/talisman.sh
   uninstall_tool "talisman" "/usr/local/bin/talisman"
 
 }
 
 # :command.function
-gt_uninstall_copilot_command() {
+gc_uninstall_copilot_command() {
   # src/commands/uninstall/copilot.sh
   uninstall_tool "copilot" "/usr/local/bin/copilot"
 
 }
 
 # :command.function
-gt_uninstall_tailscale_command() {
+gc_uninstall_tailscale_command() {
   # src/commands/uninstall/tailscale.sh
   name="tailscale"
   target_cli="/usr/local/bin/tailscale"
@@ -8558,7 +8644,7 @@ gt_uninstall_tailscale_command() {
 }
 
 # :command.function
-gt_setup_multi_command() {
+gc_setup_multi_command() {
   # src/commands/setup/multi.sh
   skip_shell=${args[--skip-shell]}
   eval "raw_tools=(${args['tools']})"
@@ -8605,7 +8691,7 @@ gt_setup_multi_command() {
 }
 
 # :command.function
-gt_setup_antidote_command() {
+gc_setup_antidote_command() {
   # src/commands/setup/antidote.sh
   skip_plugins=${args[--skip-plugins]}
   force_plugins=${args[--force-plugins]}
@@ -8675,7 +8761,7 @@ gt_setup_antidote_command() {
 }
 
 # :command.function
-gt_setup_starship_command() {
+gc_setup_starship_command() {
   # src/commands/setup/starship.sh
   preset=${args[--preset]}
   skip_config=${args[--skip-config]}
@@ -8743,7 +8829,66 @@ gt_setup_starship_command() {
 }
 
 # :command.function
-gt_outdated_command() {
+gc_setup_claude_command() {
+  # src/commands/setup/claude.sh
+  skip_config=${args[--skip-config]}
+  force_config=${args[--force-config]}
+
+  name="claude"
+  config_dir="$HOME/.claude"
+  config_file="$config_dir/settings.json"
+
+  echo "Configuring $(cyan_bold "$name")..."
+  echo ""
+
+  # ===================================================================
+  # Step 1: Check claude installation
+  # ===================================================================
+  echo "$(bold "▸ Step 1/2:") Checking claude installation..."
+
+  claude_bin=$(command -v claude 2>/dev/null || true)
+  require_installed "claude" "$claude_bin"
+  claude_version=$(claude --version 2>/dev/null | head -1 || echo "unknown")
+  echo "$(green_bold "✓") claude found at $claude_bin ($claude_version)"
+
+  # ===================================================================
+  # Step 2: Seed ~/.claude/settings.json
+  # ===================================================================
+  echo ""
+  echo "$(bold "▸ Step 2/2:") Seeding $(cyan "$config_file")..."
+
+  if [ -n "$skip_config" ]; then
+    echo "$(yellow "⚠") Skipping config (--skip-config)"
+  else
+    mkdir -p "$config_dir"
+
+    if [ -n "$force_config" ] && [ -f "$config_file" ]; then
+      # Backup existing config before overwriting
+      backup_file="${config_file}.bak.$(date +%Y%m%d%H%M%S)"
+      cp "$config_file" "$backup_file"
+      echo "$(yellow "⚠") Backed up existing config to $(cyan "$backup_file")"
+      rm -f "$config_file"
+    fi
+
+    seed_file "$config_file" "$(template_claude_settings)"
+  fi
+
+  # ===================================================================
+  # Summary
+  # ===================================================================
+  echo ""
+  echo "$(green_bold "━━━ Configuration complete ━━━")"
+  echo ""
+  echo "Next steps:"
+  echo "  1. Login:            $(bold "claude login")"
+  echo "  2. Edit settings:    $(bold "vim $config_file")"
+  echo "  3. Start coding:     $(bold "claude")"
+  echo "  4. Docs:             $(bold "https://docs.anthropic.com/en/docs/claude-code")"
+
+}
+
+# :command.function
+gc_outdated_command() {
   # src/commands/outdated.sh
   all=${args[--all]}
   target_tool=${args[tool]}
@@ -8794,7 +8939,7 @@ gt_outdated_command() {
 }
 
 # :command.function
-gt_completions_command() {
+gc_completions_command() {
   # src/commands/completions.sh
   send_completions
 
@@ -8812,7 +8957,7 @@ parse_requirements() {
 
       --help | -h)
         long_usage=yes
-        gt_usage
+        gc_usage
         exit
         ;;
 
@@ -8852,41 +8997,41 @@ parse_requirements() {
     install)
       action="install"
       shift
-      gt_install_parse_requirements "$@"
+      gc_install_parse_requirements "$@"
       shift $#
       ;;
 
     uninstall)
       action="uninstall"
       shift
-      gt_uninstall_parse_requirements "$@"
+      gc_uninstall_parse_requirements "$@"
       shift $#
       ;;
 
     setup)
       action="setup"
       shift
-      gt_setup_parse_requirements "$@"
+      gc_setup_parse_requirements "$@"
       shift $#
       ;;
 
     outdated)
       action="outdated"
       shift
-      gt_outdated_parse_requirements "$@"
+      gc_outdated_parse_requirements "$@"
       shift $#
       ;;
 
     completions)
       action="completions"
       shift
-      gt_completions_parse_requirements "$@"
+      gc_completions_parse_requirements "$@"
       shift $#
       ;;
 
     # :command.command_fallback
     "")
-      gt_usage >&2
+      gc_usage >&2
       exit 1
       ;;
 
@@ -8921,13 +9066,13 @@ parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_parse_requirements() {
+gc_install_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_usage
+        gc_install_usage
         exit
         ;;
 
@@ -8947,398 +9092,398 @@ gt_install_parse_requirements() {
     multi)
       action="multi"
       shift
-      gt_install_multi_parse_requirements "$@"
+      gc_install_multi_parse_requirements "$@"
       shift $#
       ;;
 
     kustomize)
       action="kustomize"
       shift
-      gt_install_kustomize_parse_requirements "$@"
+      gc_install_kustomize_parse_requirements "$@"
       shift $#
       ;;
 
     k9s)
       action="k9s"
       shift
-      gt_install_k9s_parse_requirements "$@"
+      gc_install_k9s_parse_requirements "$@"
       shift $#
       ;;
 
     kubectl)
       action="kubectl"
       shift
-      gt_install_kubectl_parse_requirements "$@"
+      gc_install_kubectl_parse_requirements "$@"
       shift $#
       ;;
 
     fastfetch)
       action="fastfetch"
       shift
-      gt_install_fastfetch_parse_requirements "$@"
+      gc_install_fastfetch_parse_requirements "$@"
       shift $#
       ;;
 
     direnv)
       action="direnv"
       shift
-      gt_install_direnv_parse_requirements "$@"
+      gc_install_direnv_parse_requirements "$@"
       shift $#
       ;;
 
     btop)
       action="btop"
       shift
-      gt_install_btop_parse_requirements "$@"
+      gc_install_btop_parse_requirements "$@"
       shift $#
       ;;
 
     zsh)
       action="zsh"
       shift
-      gt_install_zsh_parse_requirements "$@"
+      gc_install_zsh_parse_requirements "$@"
       shift $#
       ;;
 
     antidote)
       action="antidote"
       shift
-      gt_install_antidote_parse_requirements "$@"
+      gc_install_antidote_parse_requirements "$@"
       shift $#
       ;;
 
     thefuck)
       action="thefuck"
       shift
-      gt_install_thefuck_parse_requirements "$@"
+      gc_install_thefuck_parse_requirements "$@"
       shift $#
       ;;
 
     argocd)
       action="argocd"
       shift
-      gt_install_argocd_parse_requirements "$@"
+      gc_install_argocd_parse_requirements "$@"
       shift $#
       ;;
 
     velero)
       action="velero"
       shift
-      gt_install_velero_parse_requirements "$@"
+      gc_install_velero_parse_requirements "$@"
       shift $#
       ;;
 
     kubeconform)
       action="kubeconform"
       shift
-      gt_install_kubeconform_parse_requirements "$@"
+      gc_install_kubeconform_parse_requirements "$@"
       shift $#
       ;;
 
     krew)
       action="krew"
       shift
-      gt_install_krew_parse_requirements "$@"
+      gc_install_krew_parse_requirements "$@"
       shift $#
       ;;
 
     kubent)
       action="kubent"
       shift
-      gt_install_kubent_parse_requirements "$@"
+      gc_install_kubent_parse_requirements "$@"
       shift $#
       ;;
 
     sops)
       action="sops"
       shift
-      gt_install_sops_parse_requirements "$@"
+      gc_install_sops_parse_requirements "$@"
       shift $#
       ;;
 
     age)
       action="age"
       shift
-      gt_install_age_parse_requirements "$@"
+      gc_install_age_parse_requirements "$@"
       shift $#
       ;;
 
     trivy)
       action="trivy"
       shift
-      gt_install_trivy_parse_requirements "$@"
+      gc_install_trivy_parse_requirements "$@"
       shift $#
       ;;
 
     kubens)
       action="kubens"
       shift
-      gt_install_kubens_parse_requirements "$@"
+      gc_install_kubens_parse_requirements "$@"
       shift $#
       ;;
 
     kubecolor)
       action="kubecolor"
       shift
-      gt_install_kubecolor_parse_requirements "$@"
+      gc_install_kubecolor_parse_requirements "$@"
       shift $#
       ;;
 
     popeye)
       action="popeye"
       shift
-      gt_install_popeye_parse_requirements "$@"
+      gc_install_popeye_parse_requirements "$@"
       shift $#
       ;;
 
     kube-linter)
       action="kube-linter"
       shift
-      gt_install_kube_linter_parse_requirements "$@"
+      gc_install_kube_linter_parse_requirements "$@"
       shift $#
       ;;
 
     kyverno)
       action="kyverno"
       shift
-      gt_install_kyverno_parse_requirements "$@"
+      gc_install_kyverno_parse_requirements "$@"
       shift $#
       ;;
 
     conftest)
       action="conftest"
       shift
-      gt_install_conftest_parse_requirements "$@"
+      gc_install_conftest_parse_requirements "$@"
       shift $#
       ;;
 
     vault)
       action="vault"
       shift
-      gt_install_vault_parse_requirements "$@"
+      gc_install_vault_parse_requirements "$@"
       shift $#
       ;;
 
     kubeseal)
       action="kubeseal"
       shift
-      gt_install_kubeseal_parse_requirements "$@"
+      gc_install_kubeseal_parse_requirements "$@"
       shift $#
       ;;
 
     zoxide)
       action="zoxide"
       shift
-      gt_install_zoxide_parse_requirements "$@"
+      gc_install_zoxide_parse_requirements "$@"
       shift $#
       ;;
 
     eza)
       action="eza"
       shift
-      gt_install_eza_parse_requirements "$@"
+      gc_install_eza_parse_requirements "$@"
       shift $#
       ;;
 
     bat)
       action="bat"
       shift
-      gt_install_bat_parse_requirements "$@"
+      gc_install_bat_parse_requirements "$@"
       shift $#
       ;;
 
     ripgrep)
       action="ripgrep"
       shift
-      gt_install_ripgrep_parse_requirements "$@"
+      gc_install_ripgrep_parse_requirements "$@"
       shift $#
       ;;
 
     starship)
       action="starship"
       shift
-      gt_install_starship_parse_requirements "$@"
+      gc_install_starship_parse_requirements "$@"
       shift $#
       ;;
 
     fzf)
       action="fzf"
       shift
-      gt_install_fzf_parse_requirements "$@"
+      gc_install_fzf_parse_requirements "$@"
       shift $#
       ;;
 
     fd)
       action="fd"
       shift
-      gt_install_fd_parse_requirements "$@"
+      gc_install_fd_parse_requirements "$@"
       shift $#
       ;;
 
     mcfly)
       action="mcfly"
       shift
-      gt_install_mcfly_parse_requirements "$@"
+      gc_install_mcfly_parse_requirements "$@"
       shift $#
       ;;
 
     infisical)
       action="infisical"
       shift
-      gt_install_infisical_parse_requirements "$@"
+      gc_install_infisical_parse_requirements "$@"
       shift $#
       ;;
 
     ksops)
       action="ksops"
       shift
-      gt_install_ksops_parse_requirements "$@"
+      gc_install_ksops_parse_requirements "$@"
       shift $#
       ;;
 
     skopeo)
       action="skopeo"
       shift
-      gt_install_skopeo_parse_requirements "$@"
+      gc_install_skopeo_parse_requirements "$@"
       shift $#
       ;;
 
     helmfile)
       action="helmfile"
       shift
-      gt_install_helmfile_parse_requirements "$@"
+      gc_install_helmfile_parse_requirements "$@"
       shift $#
       ;;
 
     helm)
       action="helm"
       shift
-      gt_install_helm_parse_requirements "$@"
+      gc_install_helm_parse_requirements "$@"
       shift $#
       ;;
 
     chezmoi)
       action="chezmoi"
       shift
-      gt_install_chezmoi_parse_requirements "$@"
+      gc_install_chezmoi_parse_requirements "$@"
       shift $#
       ;;
 
     tmux)
       action="tmux"
       shift
-      gt_install_tmux_parse_requirements "$@"
+      gc_install_tmux_parse_requirements "$@"
       shift $#
       ;;
 
     rsync)
       action="rsync"
       shift
-      gt_install_rsync_parse_requirements "$@"
+      gc_install_rsync_parse_requirements "$@"
       shift $#
       ;;
 
     trino)
       action="trino"
       shift
-      gt_install_trino_parse_requirements "$@"
+      gc_install_trino_parse_requirements "$@"
       shift $#
       ;;
 
     nerdctl)
       action="nerdctl"
       shift
-      gt_install_nerdctl_parse_requirements "$@"
+      gc_install_nerdctl_parse_requirements "$@"
       shift $#
       ;;
 
     viddy)
       action="viddy"
       shift
-      gt_install_viddy_parse_requirements "$@"
+      gc_install_viddy_parse_requirements "$@"
       shift $#
       ;;
 
     hyperfine)
       action="hyperfine"
       shift
-      gt_install_hyperfine_parse_requirements "$@"
+      gc_install_hyperfine_parse_requirements "$@"
       shift $#
       ;;
 
     jq)
       action="jq"
       shift
-      gt_install_jq_parse_requirements "$@"
+      gc_install_jq_parse_requirements "$@"
       shift $#
       ;;
 
     yq)
       action="yq"
       shift
-      gt_install_yq_parse_requirements "$@"
+      gc_install_yq_parse_requirements "$@"
       shift $#
       ;;
 
     gum)
       action="gum"
       shift
-      gt_install_gum_parse_requirements "$@"
+      gc_install_gum_parse_requirements "$@"
       shift $#
       ;;
 
     uv)
       action="uv"
       shift
-      gt_install_uv_parse_requirements "$@"
+      gc_install_uv_parse_requirements "$@"
       shift $#
       ;;
 
     bashly)
       action="bashly"
       shift
-      gt_install_bashly_parse_requirements "$@"
+      gc_install_bashly_parse_requirements "$@"
       shift $#
       ;;
 
     gem)
       action="gem"
       shift
-      gt_install_gem_parse_requirements "$@"
+      gc_install_gem_parse_requirements "$@"
       shift $#
       ;;
 
     claude)
       action="claude"
       shift
-      gt_install_claude_parse_requirements "$@"
+      gc_install_claude_parse_requirements "$@"
       shift $#
       ;;
 
     talisman)
       action="talisman"
       shift
-      gt_install_talisman_parse_requirements "$@"
+      gc_install_talisman_parse_requirements "$@"
       shift $#
       ;;
 
     copilot)
       action="copilot"
       shift
-      gt_install_copilot_parse_requirements "$@"
+      gc_install_copilot_parse_requirements "$@"
       shift $#
       ;;
 
     tailscale)
       action="tailscale"
       shift
-      gt_install_tailscale_parse_requirements "$@"
+      gc_install_tailscale_parse_requirements "$@"
       shift $#
       ;;
 
     # :command.command_fallback
     "")
-      gt_install_usage >&2
+      gc_install_usage >&2
       exit 1
       ;;
 
@@ -9373,13 +9518,13 @@ gt_install_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_multi_parse_requirements() {
+gc_install_multi_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_multi_usage
+        gc_install_multi_usage
         exit
         ;;
 
@@ -9429,20 +9574,20 @@ gt_install_multi_parse_requirements() {
   done
   # :command.required_args_filter
   if [[ -z ${args['tools']+x} ]]; then
-    printf "missing required argument: TOOLS\nusage: gt install multi TOOLS... [OPTIONS]\n" >&2
+    printf "missing required argument: TOOLS\nusage: gc install multi TOOLS... [OPTIONS]\n" >&2
     exit 1
   fi
 
 }
 
 # :command.parse_requirements
-gt_install_kustomize_parse_requirements() {
+gc_install_kustomize_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_kustomize_usage
+        gc_install_kustomize_usage
         exit
         ;;
 
@@ -9504,13 +9649,13 @@ gt_install_kustomize_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_k9s_parse_requirements() {
+gc_install_k9s_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_k9s_usage
+        gc_install_k9s_usage
         exit
         ;;
 
@@ -9572,13 +9717,13 @@ gt_install_k9s_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_kubectl_parse_requirements() {
+gc_install_kubectl_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_kubectl_usage
+        gc_install_kubectl_usage
         exit
         ;;
 
@@ -9640,13 +9785,13 @@ gt_install_kubectl_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_fastfetch_parse_requirements() {
+gc_install_fastfetch_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_fastfetch_usage
+        gc_install_fastfetch_usage
         exit
         ;;
 
@@ -9708,13 +9853,13 @@ gt_install_fastfetch_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_direnv_parse_requirements() {
+gc_install_direnv_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_direnv_usage
+        gc_install_direnv_usage
         exit
         ;;
 
@@ -9776,13 +9921,13 @@ gt_install_direnv_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_btop_parse_requirements() {
+gc_install_btop_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_btop_usage
+        gc_install_btop_usage
         exit
         ;;
 
@@ -9844,13 +9989,13 @@ gt_install_btop_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_zsh_parse_requirements() {
+gc_install_zsh_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_zsh_usage
+        gc_install_zsh_usage
         exit
         ;;
 
@@ -9912,13 +10057,13 @@ gt_install_zsh_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_antidote_parse_requirements() {
+gc_install_antidote_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_antidote_usage
+        gc_install_antidote_usage
         exit
         ;;
 
@@ -9980,13 +10125,13 @@ gt_install_antidote_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_thefuck_parse_requirements() {
+gc_install_thefuck_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_thefuck_usage
+        gc_install_thefuck_usage
         exit
         ;;
 
@@ -10048,13 +10193,13 @@ gt_install_thefuck_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_argocd_parse_requirements() {
+gc_install_argocd_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_argocd_usage
+        gc_install_argocd_usage
         exit
         ;;
 
@@ -10116,13 +10261,13 @@ gt_install_argocd_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_velero_parse_requirements() {
+gc_install_velero_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_velero_usage
+        gc_install_velero_usage
         exit
         ;;
 
@@ -10184,13 +10329,13 @@ gt_install_velero_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_kubeconform_parse_requirements() {
+gc_install_kubeconform_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_kubeconform_usage
+        gc_install_kubeconform_usage
         exit
         ;;
 
@@ -10252,13 +10397,13 @@ gt_install_kubeconform_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_krew_parse_requirements() {
+gc_install_krew_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_krew_usage
+        gc_install_krew_usage
         exit
         ;;
 
@@ -10320,13 +10465,13 @@ gt_install_krew_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_kubent_parse_requirements() {
+gc_install_kubent_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_kubent_usage
+        gc_install_kubent_usage
         exit
         ;;
 
@@ -10388,13 +10533,13 @@ gt_install_kubent_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_sops_parse_requirements() {
+gc_install_sops_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_sops_usage
+        gc_install_sops_usage
         exit
         ;;
 
@@ -10456,13 +10601,13 @@ gt_install_sops_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_age_parse_requirements() {
+gc_install_age_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_age_usage
+        gc_install_age_usage
         exit
         ;;
 
@@ -10524,13 +10669,13 @@ gt_install_age_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_trivy_parse_requirements() {
+gc_install_trivy_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_trivy_usage
+        gc_install_trivy_usage
         exit
         ;;
 
@@ -10592,13 +10737,13 @@ gt_install_trivy_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_kubens_parse_requirements() {
+gc_install_kubens_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_kubens_usage
+        gc_install_kubens_usage
         exit
         ;;
 
@@ -10660,13 +10805,13 @@ gt_install_kubens_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_kubecolor_parse_requirements() {
+gc_install_kubecolor_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_kubecolor_usage
+        gc_install_kubecolor_usage
         exit
         ;;
 
@@ -10728,13 +10873,13 @@ gt_install_kubecolor_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_popeye_parse_requirements() {
+gc_install_popeye_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_popeye_usage
+        gc_install_popeye_usage
         exit
         ;;
 
@@ -10796,13 +10941,13 @@ gt_install_popeye_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_kube_linter_parse_requirements() {
+gc_install_kube_linter_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_kube_linter_usage
+        gc_install_kube_linter_usage
         exit
         ;;
 
@@ -10864,13 +11009,13 @@ gt_install_kube_linter_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_kyverno_parse_requirements() {
+gc_install_kyverno_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_kyverno_usage
+        gc_install_kyverno_usage
         exit
         ;;
 
@@ -10932,13 +11077,13 @@ gt_install_kyverno_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_conftest_parse_requirements() {
+gc_install_conftest_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_conftest_usage
+        gc_install_conftest_usage
         exit
         ;;
 
@@ -11000,13 +11145,13 @@ gt_install_conftest_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_vault_parse_requirements() {
+gc_install_vault_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_vault_usage
+        gc_install_vault_usage
         exit
         ;;
 
@@ -11076,13 +11221,13 @@ gt_install_vault_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_kubeseal_parse_requirements() {
+gc_install_kubeseal_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_kubeseal_usage
+        gc_install_kubeseal_usage
         exit
         ;;
 
@@ -11144,13 +11289,13 @@ gt_install_kubeseal_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_zoxide_parse_requirements() {
+gc_install_zoxide_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_zoxide_usage
+        gc_install_zoxide_usage
         exit
         ;;
 
@@ -11212,13 +11357,13 @@ gt_install_zoxide_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_eza_parse_requirements() {
+gc_install_eza_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_eza_usage
+        gc_install_eza_usage
         exit
         ;;
 
@@ -11280,13 +11425,13 @@ gt_install_eza_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_bat_parse_requirements() {
+gc_install_bat_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_bat_usage
+        gc_install_bat_usage
         exit
         ;;
 
@@ -11348,13 +11493,13 @@ gt_install_bat_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_ripgrep_parse_requirements() {
+gc_install_ripgrep_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_ripgrep_usage
+        gc_install_ripgrep_usage
         exit
         ;;
 
@@ -11416,13 +11561,13 @@ gt_install_ripgrep_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_starship_parse_requirements() {
+gc_install_starship_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_starship_usage
+        gc_install_starship_usage
         exit
         ;;
 
@@ -11484,13 +11629,13 @@ gt_install_starship_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_fzf_parse_requirements() {
+gc_install_fzf_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_fzf_usage
+        gc_install_fzf_usage
         exit
         ;;
 
@@ -11552,13 +11697,13 @@ gt_install_fzf_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_fd_parse_requirements() {
+gc_install_fd_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_fd_usage
+        gc_install_fd_usage
         exit
         ;;
 
@@ -11620,13 +11765,13 @@ gt_install_fd_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_mcfly_parse_requirements() {
+gc_install_mcfly_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_mcfly_usage
+        gc_install_mcfly_usage
         exit
         ;;
 
@@ -11688,13 +11833,13 @@ gt_install_mcfly_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_infisical_parse_requirements() {
+gc_install_infisical_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_infisical_usage
+        gc_install_infisical_usage
         exit
         ;;
 
@@ -11756,13 +11901,13 @@ gt_install_infisical_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_ksops_parse_requirements() {
+gc_install_ksops_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_ksops_usage
+        gc_install_ksops_usage
         exit
         ;;
 
@@ -11824,13 +11969,13 @@ gt_install_ksops_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_skopeo_parse_requirements() {
+gc_install_skopeo_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_skopeo_usage
+        gc_install_skopeo_usage
         exit
         ;;
 
@@ -11875,13 +12020,13 @@ gt_install_skopeo_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_helmfile_parse_requirements() {
+gc_install_helmfile_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_helmfile_usage
+        gc_install_helmfile_usage
         exit
         ;;
 
@@ -11943,13 +12088,13 @@ gt_install_helmfile_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_helm_parse_requirements() {
+gc_install_helm_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_helm_usage
+        gc_install_helm_usage
         exit
         ;;
 
@@ -12011,13 +12156,13 @@ gt_install_helm_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_chezmoi_parse_requirements() {
+gc_install_chezmoi_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_chezmoi_usage
+        gc_install_chezmoi_usage
         exit
         ;;
 
@@ -12079,13 +12224,13 @@ gt_install_chezmoi_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_tmux_parse_requirements() {
+gc_install_tmux_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_tmux_usage
+        gc_install_tmux_usage
         exit
         ;;
 
@@ -12130,13 +12275,13 @@ gt_install_tmux_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_rsync_parse_requirements() {
+gc_install_rsync_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_rsync_usage
+        gc_install_rsync_usage
         exit
         ;;
 
@@ -12181,13 +12326,13 @@ gt_install_rsync_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_trino_parse_requirements() {
+gc_install_trino_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_trino_usage
+        gc_install_trino_usage
         exit
         ;;
 
@@ -12249,13 +12394,13 @@ gt_install_trino_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_nerdctl_parse_requirements() {
+gc_install_nerdctl_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_nerdctl_usage
+        gc_install_nerdctl_usage
         exit
         ;;
 
@@ -12317,13 +12462,13 @@ gt_install_nerdctl_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_viddy_parse_requirements() {
+gc_install_viddy_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_viddy_usage
+        gc_install_viddy_usage
         exit
         ;;
 
@@ -12385,13 +12530,13 @@ gt_install_viddy_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_hyperfine_parse_requirements() {
+gc_install_hyperfine_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_hyperfine_usage
+        gc_install_hyperfine_usage
         exit
         ;;
 
@@ -12453,13 +12598,13 @@ gt_install_hyperfine_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_jq_parse_requirements() {
+gc_install_jq_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_jq_usage
+        gc_install_jq_usage
         exit
         ;;
 
@@ -12521,13 +12666,13 @@ gt_install_jq_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_yq_parse_requirements() {
+gc_install_yq_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_yq_usage
+        gc_install_yq_usage
         exit
         ;;
 
@@ -12589,13 +12734,13 @@ gt_install_yq_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_gum_parse_requirements() {
+gc_install_gum_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_gum_usage
+        gc_install_gum_usage
         exit
         ;;
 
@@ -12657,13 +12802,13 @@ gt_install_gum_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_uv_parse_requirements() {
+gc_install_uv_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_uv_usage
+        gc_install_uv_usage
         exit
         ;;
 
@@ -12725,13 +12870,13 @@ gt_install_uv_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_bashly_parse_requirements() {
+gc_install_bashly_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_bashly_usage
+        gc_install_bashly_usage
         exit
         ;;
 
@@ -12801,13 +12946,13 @@ gt_install_bashly_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_gem_parse_requirements() {
+gc_install_gem_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_gem_usage
+        gc_install_gem_usage
         exit
         ;;
 
@@ -12852,13 +12997,13 @@ gt_install_gem_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_claude_parse_requirements() {
+gc_install_claude_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_claude_usage
+        gc_install_claude_usage
         exit
         ;;
 
@@ -12928,13 +13073,13 @@ gt_install_claude_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_talisman_parse_requirements() {
+gc_install_talisman_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_talisman_usage
+        gc_install_talisman_usage
         exit
         ;;
 
@@ -12996,13 +13141,13 @@ gt_install_talisman_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_copilot_parse_requirements() {
+gc_install_copilot_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_copilot_usage
+        gc_install_copilot_usage
         exit
         ;;
 
@@ -13064,13 +13209,13 @@ gt_install_copilot_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_install_tailscale_parse_requirements() {
+gc_install_tailscale_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_install_tailscale_usage
+        gc_install_tailscale_usage
         exit
         ;;
 
@@ -13132,13 +13277,13 @@ gt_install_tailscale_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_parse_requirements() {
+gc_uninstall_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_usage
+        gc_uninstall_usage
         exit
         ;;
 
@@ -13158,391 +13303,391 @@ gt_uninstall_parse_requirements() {
     kustomize)
       action="kustomize"
       shift
-      gt_uninstall_kustomize_parse_requirements "$@"
+      gc_uninstall_kustomize_parse_requirements "$@"
       shift $#
       ;;
 
     k9s)
       action="k9s"
       shift
-      gt_uninstall_k9s_parse_requirements "$@"
+      gc_uninstall_k9s_parse_requirements "$@"
       shift $#
       ;;
 
     kubectl)
       action="kubectl"
       shift
-      gt_uninstall_kubectl_parse_requirements "$@"
+      gc_uninstall_kubectl_parse_requirements "$@"
       shift $#
       ;;
 
     fastfetch)
       action="fastfetch"
       shift
-      gt_uninstall_fastfetch_parse_requirements "$@"
+      gc_uninstall_fastfetch_parse_requirements "$@"
       shift $#
       ;;
 
     direnv)
       action="direnv"
       shift
-      gt_uninstall_direnv_parse_requirements "$@"
+      gc_uninstall_direnv_parse_requirements "$@"
       shift $#
       ;;
 
     btop)
       action="btop"
       shift
-      gt_uninstall_btop_parse_requirements "$@"
+      gc_uninstall_btop_parse_requirements "$@"
       shift $#
       ;;
 
     zsh)
       action="zsh"
       shift
-      gt_uninstall_zsh_parse_requirements "$@"
+      gc_uninstall_zsh_parse_requirements "$@"
       shift $#
       ;;
 
     antidote)
       action="antidote"
       shift
-      gt_uninstall_antidote_parse_requirements "$@"
+      gc_uninstall_antidote_parse_requirements "$@"
       shift $#
       ;;
 
     thefuck)
       action="thefuck"
       shift
-      gt_uninstall_thefuck_parse_requirements "$@"
+      gc_uninstall_thefuck_parse_requirements "$@"
       shift $#
       ;;
 
     argocd)
       action="argocd"
       shift
-      gt_uninstall_argocd_parse_requirements "$@"
+      gc_uninstall_argocd_parse_requirements "$@"
       shift $#
       ;;
 
     velero)
       action="velero"
       shift
-      gt_uninstall_velero_parse_requirements "$@"
+      gc_uninstall_velero_parse_requirements "$@"
       shift $#
       ;;
 
     kubeconform)
       action="kubeconform"
       shift
-      gt_uninstall_kubeconform_parse_requirements "$@"
+      gc_uninstall_kubeconform_parse_requirements "$@"
       shift $#
       ;;
 
     krew)
       action="krew"
       shift
-      gt_uninstall_krew_parse_requirements "$@"
+      gc_uninstall_krew_parse_requirements "$@"
       shift $#
       ;;
 
     kubent)
       action="kubent"
       shift
-      gt_uninstall_kubent_parse_requirements "$@"
+      gc_uninstall_kubent_parse_requirements "$@"
       shift $#
       ;;
 
     sops)
       action="sops"
       shift
-      gt_uninstall_sops_parse_requirements "$@"
+      gc_uninstall_sops_parse_requirements "$@"
       shift $#
       ;;
 
     age)
       action="age"
       shift
-      gt_uninstall_age_parse_requirements "$@"
+      gc_uninstall_age_parse_requirements "$@"
       shift $#
       ;;
 
     trivy)
       action="trivy"
       shift
-      gt_uninstall_trivy_parse_requirements "$@"
+      gc_uninstall_trivy_parse_requirements "$@"
       shift $#
       ;;
 
     kubens)
       action="kubens"
       shift
-      gt_uninstall_kubens_parse_requirements "$@"
+      gc_uninstall_kubens_parse_requirements "$@"
       shift $#
       ;;
 
     kubecolor)
       action="kubecolor"
       shift
-      gt_uninstall_kubecolor_parse_requirements "$@"
+      gc_uninstall_kubecolor_parse_requirements "$@"
       shift $#
       ;;
 
     popeye)
       action="popeye"
       shift
-      gt_uninstall_popeye_parse_requirements "$@"
+      gc_uninstall_popeye_parse_requirements "$@"
       shift $#
       ;;
 
     kube-linter)
       action="kube-linter"
       shift
-      gt_uninstall_kube_linter_parse_requirements "$@"
+      gc_uninstall_kube_linter_parse_requirements "$@"
       shift $#
       ;;
 
     kyverno)
       action="kyverno"
       shift
-      gt_uninstall_kyverno_parse_requirements "$@"
+      gc_uninstall_kyverno_parse_requirements "$@"
       shift $#
       ;;
 
     conftest)
       action="conftest"
       shift
-      gt_uninstall_conftest_parse_requirements "$@"
+      gc_uninstall_conftest_parse_requirements "$@"
       shift $#
       ;;
 
     vault)
       action="vault"
       shift
-      gt_uninstall_vault_parse_requirements "$@"
+      gc_uninstall_vault_parse_requirements "$@"
       shift $#
       ;;
 
     kubeseal)
       action="kubeseal"
       shift
-      gt_uninstall_kubeseal_parse_requirements "$@"
+      gc_uninstall_kubeseal_parse_requirements "$@"
       shift $#
       ;;
 
     zoxide)
       action="zoxide"
       shift
-      gt_uninstall_zoxide_parse_requirements "$@"
+      gc_uninstall_zoxide_parse_requirements "$@"
       shift $#
       ;;
 
     eza)
       action="eza"
       shift
-      gt_uninstall_eza_parse_requirements "$@"
+      gc_uninstall_eza_parse_requirements "$@"
       shift $#
       ;;
 
     bat)
       action="bat"
       shift
-      gt_uninstall_bat_parse_requirements "$@"
+      gc_uninstall_bat_parse_requirements "$@"
       shift $#
       ;;
 
     ripgrep)
       action="ripgrep"
       shift
-      gt_uninstall_ripgrep_parse_requirements "$@"
+      gc_uninstall_ripgrep_parse_requirements "$@"
       shift $#
       ;;
 
     starship)
       action="starship"
       shift
-      gt_uninstall_starship_parse_requirements "$@"
+      gc_uninstall_starship_parse_requirements "$@"
       shift $#
       ;;
 
     fzf)
       action="fzf"
       shift
-      gt_uninstall_fzf_parse_requirements "$@"
+      gc_uninstall_fzf_parse_requirements "$@"
       shift $#
       ;;
 
     fd)
       action="fd"
       shift
-      gt_uninstall_fd_parse_requirements "$@"
+      gc_uninstall_fd_parse_requirements "$@"
       shift $#
       ;;
 
     mcfly)
       action="mcfly"
       shift
-      gt_uninstall_mcfly_parse_requirements "$@"
+      gc_uninstall_mcfly_parse_requirements "$@"
       shift $#
       ;;
 
     infisical)
       action="infisical"
       shift
-      gt_uninstall_infisical_parse_requirements "$@"
+      gc_uninstall_infisical_parse_requirements "$@"
       shift $#
       ;;
 
     ksops)
       action="ksops"
       shift
-      gt_uninstall_ksops_parse_requirements "$@"
+      gc_uninstall_ksops_parse_requirements "$@"
       shift $#
       ;;
 
     skopeo)
       action="skopeo"
       shift
-      gt_uninstall_skopeo_parse_requirements "$@"
+      gc_uninstall_skopeo_parse_requirements "$@"
       shift $#
       ;;
 
     helmfile)
       action="helmfile"
       shift
-      gt_uninstall_helmfile_parse_requirements "$@"
+      gc_uninstall_helmfile_parse_requirements "$@"
       shift $#
       ;;
 
     helm)
       action="helm"
       shift
-      gt_uninstall_helm_parse_requirements "$@"
+      gc_uninstall_helm_parse_requirements "$@"
       shift $#
       ;;
 
     chezmoi)
       action="chezmoi"
       shift
-      gt_uninstall_chezmoi_parse_requirements "$@"
+      gc_uninstall_chezmoi_parse_requirements "$@"
       shift $#
       ;;
 
     tmux)
       action="tmux"
       shift
-      gt_uninstall_tmux_parse_requirements "$@"
+      gc_uninstall_tmux_parse_requirements "$@"
       shift $#
       ;;
 
     rsync)
       action="rsync"
       shift
-      gt_uninstall_rsync_parse_requirements "$@"
+      gc_uninstall_rsync_parse_requirements "$@"
       shift $#
       ;;
 
     trino)
       action="trino"
       shift
-      gt_uninstall_trino_parse_requirements "$@"
+      gc_uninstall_trino_parse_requirements "$@"
       shift $#
       ;;
 
     nerdctl)
       action="nerdctl"
       shift
-      gt_uninstall_nerdctl_parse_requirements "$@"
+      gc_uninstall_nerdctl_parse_requirements "$@"
       shift $#
       ;;
 
     viddy)
       action="viddy"
       shift
-      gt_uninstall_viddy_parse_requirements "$@"
+      gc_uninstall_viddy_parse_requirements "$@"
       shift $#
       ;;
 
     hyperfine)
       action="hyperfine"
       shift
-      gt_uninstall_hyperfine_parse_requirements "$@"
+      gc_uninstall_hyperfine_parse_requirements "$@"
       shift $#
       ;;
 
     jq)
       action="jq"
       shift
-      gt_uninstall_jq_parse_requirements "$@"
+      gc_uninstall_jq_parse_requirements "$@"
       shift $#
       ;;
 
     yq)
       action="yq"
       shift
-      gt_uninstall_yq_parse_requirements "$@"
+      gc_uninstall_yq_parse_requirements "$@"
       shift $#
       ;;
 
     gum)
       action="gum"
       shift
-      gt_uninstall_gum_parse_requirements "$@"
+      gc_uninstall_gum_parse_requirements "$@"
       shift $#
       ;;
 
     uv)
       action="uv"
       shift
-      gt_uninstall_uv_parse_requirements "$@"
+      gc_uninstall_uv_parse_requirements "$@"
       shift $#
       ;;
 
     bashly)
       action="bashly"
       shift
-      gt_uninstall_bashly_parse_requirements "$@"
+      gc_uninstall_bashly_parse_requirements "$@"
       shift $#
       ;;
 
     gem)
       action="gem"
       shift
-      gt_uninstall_gem_parse_requirements "$@"
+      gc_uninstall_gem_parse_requirements "$@"
       shift $#
       ;;
 
     claude)
       action="claude"
       shift
-      gt_uninstall_claude_parse_requirements "$@"
+      gc_uninstall_claude_parse_requirements "$@"
       shift $#
       ;;
 
     talisman)
       action="talisman"
       shift
-      gt_uninstall_talisman_parse_requirements "$@"
+      gc_uninstall_talisman_parse_requirements "$@"
       shift $#
       ;;
 
     copilot)
       action="copilot"
       shift
-      gt_uninstall_copilot_parse_requirements "$@"
+      gc_uninstall_copilot_parse_requirements "$@"
       shift $#
       ;;
 
     tailscale)
       action="tailscale"
       shift
-      gt_uninstall_tailscale_parse_requirements "$@"
+      gc_uninstall_tailscale_parse_requirements "$@"
       shift $#
       ;;
 
     # :command.command_fallback
     "")
-      gt_uninstall_usage >&2
+      gc_uninstall_usage >&2
       exit 1
       ;;
 
@@ -13577,13 +13722,13 @@ gt_uninstall_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_kustomize_parse_requirements() {
+gc_uninstall_kustomize_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_kustomize_usage
+        gc_uninstall_kustomize_usage
         exit
         ;;
 
@@ -13621,13 +13766,13 @@ gt_uninstall_kustomize_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_k9s_parse_requirements() {
+gc_uninstall_k9s_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_k9s_usage
+        gc_uninstall_k9s_usage
         exit
         ;;
 
@@ -13665,13 +13810,13 @@ gt_uninstall_k9s_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_kubectl_parse_requirements() {
+gc_uninstall_kubectl_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_kubectl_usage
+        gc_uninstall_kubectl_usage
         exit
         ;;
 
@@ -13709,13 +13854,13 @@ gt_uninstall_kubectl_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_fastfetch_parse_requirements() {
+gc_uninstall_fastfetch_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_fastfetch_usage
+        gc_uninstall_fastfetch_usage
         exit
         ;;
 
@@ -13753,13 +13898,13 @@ gt_uninstall_fastfetch_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_direnv_parse_requirements() {
+gc_uninstall_direnv_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_direnv_usage
+        gc_uninstall_direnv_usage
         exit
         ;;
 
@@ -13797,13 +13942,13 @@ gt_uninstall_direnv_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_btop_parse_requirements() {
+gc_uninstall_btop_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_btop_usage
+        gc_uninstall_btop_usage
         exit
         ;;
 
@@ -13841,13 +13986,13 @@ gt_uninstall_btop_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_zsh_parse_requirements() {
+gc_uninstall_zsh_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_zsh_usage
+        gc_uninstall_zsh_usage
         exit
         ;;
 
@@ -13885,13 +14030,13 @@ gt_uninstall_zsh_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_antidote_parse_requirements() {
+gc_uninstall_antidote_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_antidote_usage
+        gc_uninstall_antidote_usage
         exit
         ;;
 
@@ -13929,13 +14074,13 @@ gt_uninstall_antidote_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_thefuck_parse_requirements() {
+gc_uninstall_thefuck_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_thefuck_usage
+        gc_uninstall_thefuck_usage
         exit
         ;;
 
@@ -13973,13 +14118,13 @@ gt_uninstall_thefuck_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_argocd_parse_requirements() {
+gc_uninstall_argocd_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_argocd_usage
+        gc_uninstall_argocd_usage
         exit
         ;;
 
@@ -14017,13 +14162,13 @@ gt_uninstall_argocd_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_velero_parse_requirements() {
+gc_uninstall_velero_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_velero_usage
+        gc_uninstall_velero_usage
         exit
         ;;
 
@@ -14061,13 +14206,13 @@ gt_uninstall_velero_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_kubeconform_parse_requirements() {
+gc_uninstall_kubeconform_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_kubeconform_usage
+        gc_uninstall_kubeconform_usage
         exit
         ;;
 
@@ -14105,13 +14250,13 @@ gt_uninstall_kubeconform_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_krew_parse_requirements() {
+gc_uninstall_krew_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_krew_usage
+        gc_uninstall_krew_usage
         exit
         ;;
 
@@ -14149,13 +14294,13 @@ gt_uninstall_krew_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_kubent_parse_requirements() {
+gc_uninstall_kubent_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_kubent_usage
+        gc_uninstall_kubent_usage
         exit
         ;;
 
@@ -14193,13 +14338,13 @@ gt_uninstall_kubent_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_sops_parse_requirements() {
+gc_uninstall_sops_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_sops_usage
+        gc_uninstall_sops_usage
         exit
         ;;
 
@@ -14237,13 +14382,13 @@ gt_uninstall_sops_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_age_parse_requirements() {
+gc_uninstall_age_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_age_usage
+        gc_uninstall_age_usage
         exit
         ;;
 
@@ -14281,13 +14426,13 @@ gt_uninstall_age_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_trivy_parse_requirements() {
+gc_uninstall_trivy_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_trivy_usage
+        gc_uninstall_trivy_usage
         exit
         ;;
 
@@ -14325,13 +14470,13 @@ gt_uninstall_trivy_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_kubens_parse_requirements() {
+gc_uninstall_kubens_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_kubens_usage
+        gc_uninstall_kubens_usage
         exit
         ;;
 
@@ -14369,13 +14514,13 @@ gt_uninstall_kubens_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_kubecolor_parse_requirements() {
+gc_uninstall_kubecolor_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_kubecolor_usage
+        gc_uninstall_kubecolor_usage
         exit
         ;;
 
@@ -14413,13 +14558,13 @@ gt_uninstall_kubecolor_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_popeye_parse_requirements() {
+gc_uninstall_popeye_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_popeye_usage
+        gc_uninstall_popeye_usage
         exit
         ;;
 
@@ -14457,13 +14602,13 @@ gt_uninstall_popeye_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_kube_linter_parse_requirements() {
+gc_uninstall_kube_linter_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_kube_linter_usage
+        gc_uninstall_kube_linter_usage
         exit
         ;;
 
@@ -14501,13 +14646,13 @@ gt_uninstall_kube_linter_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_kyverno_parse_requirements() {
+gc_uninstall_kyverno_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_kyverno_usage
+        gc_uninstall_kyverno_usage
         exit
         ;;
 
@@ -14545,13 +14690,13 @@ gt_uninstall_kyverno_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_conftest_parse_requirements() {
+gc_uninstall_conftest_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_conftest_usage
+        gc_uninstall_conftest_usage
         exit
         ;;
 
@@ -14589,13 +14734,13 @@ gt_uninstall_conftest_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_vault_parse_requirements() {
+gc_uninstall_vault_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_vault_usage
+        gc_uninstall_vault_usage
         exit
         ;;
 
@@ -14633,13 +14778,13 @@ gt_uninstall_vault_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_kubeseal_parse_requirements() {
+gc_uninstall_kubeseal_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_kubeseal_usage
+        gc_uninstall_kubeseal_usage
         exit
         ;;
 
@@ -14677,13 +14822,13 @@ gt_uninstall_kubeseal_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_zoxide_parse_requirements() {
+gc_uninstall_zoxide_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_zoxide_usage
+        gc_uninstall_zoxide_usage
         exit
         ;;
 
@@ -14721,13 +14866,13 @@ gt_uninstall_zoxide_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_eza_parse_requirements() {
+gc_uninstall_eza_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_eza_usage
+        gc_uninstall_eza_usage
         exit
         ;;
 
@@ -14765,13 +14910,13 @@ gt_uninstall_eza_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_bat_parse_requirements() {
+gc_uninstall_bat_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_bat_usage
+        gc_uninstall_bat_usage
         exit
         ;;
 
@@ -14809,13 +14954,13 @@ gt_uninstall_bat_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_ripgrep_parse_requirements() {
+gc_uninstall_ripgrep_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_ripgrep_usage
+        gc_uninstall_ripgrep_usage
         exit
         ;;
 
@@ -14853,13 +14998,13 @@ gt_uninstall_ripgrep_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_starship_parse_requirements() {
+gc_uninstall_starship_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_starship_usage
+        gc_uninstall_starship_usage
         exit
         ;;
 
@@ -14897,13 +15042,13 @@ gt_uninstall_starship_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_fzf_parse_requirements() {
+gc_uninstall_fzf_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_fzf_usage
+        gc_uninstall_fzf_usage
         exit
         ;;
 
@@ -14941,13 +15086,13 @@ gt_uninstall_fzf_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_fd_parse_requirements() {
+gc_uninstall_fd_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_fd_usage
+        gc_uninstall_fd_usage
         exit
         ;;
 
@@ -14985,13 +15130,13 @@ gt_uninstall_fd_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_mcfly_parse_requirements() {
+gc_uninstall_mcfly_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_mcfly_usage
+        gc_uninstall_mcfly_usage
         exit
         ;;
 
@@ -15029,13 +15174,13 @@ gt_uninstall_mcfly_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_infisical_parse_requirements() {
+gc_uninstall_infisical_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_infisical_usage
+        gc_uninstall_infisical_usage
         exit
         ;;
 
@@ -15073,13 +15218,13 @@ gt_uninstall_infisical_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_ksops_parse_requirements() {
+gc_uninstall_ksops_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_ksops_usage
+        gc_uninstall_ksops_usage
         exit
         ;;
 
@@ -15117,13 +15262,13 @@ gt_uninstall_ksops_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_skopeo_parse_requirements() {
+gc_uninstall_skopeo_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_skopeo_usage
+        gc_uninstall_skopeo_usage
         exit
         ;;
 
@@ -15161,13 +15306,13 @@ gt_uninstall_skopeo_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_helmfile_parse_requirements() {
+gc_uninstall_helmfile_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_helmfile_usage
+        gc_uninstall_helmfile_usage
         exit
         ;;
 
@@ -15205,13 +15350,13 @@ gt_uninstall_helmfile_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_helm_parse_requirements() {
+gc_uninstall_helm_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_helm_usage
+        gc_uninstall_helm_usage
         exit
         ;;
 
@@ -15249,13 +15394,13 @@ gt_uninstall_helm_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_chezmoi_parse_requirements() {
+gc_uninstall_chezmoi_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_chezmoi_usage
+        gc_uninstall_chezmoi_usage
         exit
         ;;
 
@@ -15293,13 +15438,13 @@ gt_uninstall_chezmoi_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_tmux_parse_requirements() {
+gc_uninstall_tmux_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_tmux_usage
+        gc_uninstall_tmux_usage
         exit
         ;;
 
@@ -15337,13 +15482,13 @@ gt_uninstall_tmux_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_rsync_parse_requirements() {
+gc_uninstall_rsync_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_rsync_usage
+        gc_uninstall_rsync_usage
         exit
         ;;
 
@@ -15381,13 +15526,13 @@ gt_uninstall_rsync_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_trino_parse_requirements() {
+gc_uninstall_trino_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_trino_usage
+        gc_uninstall_trino_usage
         exit
         ;;
 
@@ -15425,13 +15570,13 @@ gt_uninstall_trino_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_nerdctl_parse_requirements() {
+gc_uninstall_nerdctl_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_nerdctl_usage
+        gc_uninstall_nerdctl_usage
         exit
         ;;
 
@@ -15469,13 +15614,13 @@ gt_uninstall_nerdctl_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_viddy_parse_requirements() {
+gc_uninstall_viddy_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_viddy_usage
+        gc_uninstall_viddy_usage
         exit
         ;;
 
@@ -15513,13 +15658,13 @@ gt_uninstall_viddy_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_hyperfine_parse_requirements() {
+gc_uninstall_hyperfine_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_hyperfine_usage
+        gc_uninstall_hyperfine_usage
         exit
         ;;
 
@@ -15557,13 +15702,13 @@ gt_uninstall_hyperfine_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_jq_parse_requirements() {
+gc_uninstall_jq_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_jq_usage
+        gc_uninstall_jq_usage
         exit
         ;;
 
@@ -15601,13 +15746,13 @@ gt_uninstall_jq_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_yq_parse_requirements() {
+gc_uninstall_yq_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_yq_usage
+        gc_uninstall_yq_usage
         exit
         ;;
 
@@ -15645,13 +15790,13 @@ gt_uninstall_yq_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_gum_parse_requirements() {
+gc_uninstall_gum_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_gum_usage
+        gc_uninstall_gum_usage
         exit
         ;;
 
@@ -15689,13 +15834,13 @@ gt_uninstall_gum_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_uv_parse_requirements() {
+gc_uninstall_uv_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_uv_usage
+        gc_uninstall_uv_usage
         exit
         ;;
 
@@ -15733,13 +15878,13 @@ gt_uninstall_uv_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_bashly_parse_requirements() {
+gc_uninstall_bashly_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_bashly_usage
+        gc_uninstall_bashly_usage
         exit
         ;;
 
@@ -15785,13 +15930,13 @@ gt_uninstall_bashly_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_gem_parse_requirements() {
+gc_uninstall_gem_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_gem_usage
+        gc_uninstall_gem_usage
         exit
         ;;
 
@@ -15829,13 +15974,13 @@ gt_uninstall_gem_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_claude_parse_requirements() {
+gc_uninstall_claude_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_claude_usage
+        gc_uninstall_claude_usage
         exit
         ;;
 
@@ -15881,13 +16026,13 @@ gt_uninstall_claude_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_talisman_parse_requirements() {
+gc_uninstall_talisman_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_talisman_usage
+        gc_uninstall_talisman_usage
         exit
         ;;
 
@@ -15925,13 +16070,13 @@ gt_uninstall_talisman_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_copilot_parse_requirements() {
+gc_uninstall_copilot_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_copilot_usage
+        gc_uninstall_copilot_usage
         exit
         ;;
 
@@ -15969,13 +16114,13 @@ gt_uninstall_copilot_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_uninstall_tailscale_parse_requirements() {
+gc_uninstall_tailscale_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_uninstall_tailscale_usage
+        gc_uninstall_tailscale_usage
         exit
         ;;
 
@@ -16013,13 +16158,13 @@ gt_uninstall_tailscale_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_setup_parse_requirements() {
+gc_setup_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_setup_usage
+        gc_setup_usage
         exit
         ;;
 
@@ -16039,27 +16184,34 @@ gt_setup_parse_requirements() {
     multi)
       action="multi"
       shift
-      gt_setup_multi_parse_requirements "$@"
+      gc_setup_multi_parse_requirements "$@"
       shift $#
       ;;
 
     antidote)
       action="antidote"
       shift
-      gt_setup_antidote_parse_requirements "$@"
+      gc_setup_antidote_parse_requirements "$@"
       shift $#
       ;;
 
     starship)
       action="starship"
       shift
-      gt_setup_starship_parse_requirements "$@"
+      gc_setup_starship_parse_requirements "$@"
+      shift $#
+      ;;
+
+    claude)
+      action="claude"
+      shift
+      gc_setup_claude_parse_requirements "$@"
       shift $#
       ;;
 
     # :command.command_fallback
     "")
-      gt_setup_usage >&2
+      gc_setup_usage >&2
       exit 1
       ;;
 
@@ -16094,13 +16246,13 @@ gt_setup_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_setup_multi_parse_requirements() {
+gc_setup_multi_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_setup_multi_usage
+        gc_setup_multi_usage
         exit
         ;;
 
@@ -16150,20 +16302,20 @@ gt_setup_multi_parse_requirements() {
   done
   # :command.required_args_filter
   if [[ -z ${args['tools']+x} ]]; then
-    printf "missing required argument: TOOLS\nusage: gt setup multi TOOLS... [OPTIONS]\n" >&2
+    printf "missing required argument: TOOLS\nusage: gc setup multi TOOLS... [OPTIONS]\n" >&2
     exit 1
   fi
 
 }
 
 # :command.parse_requirements
-gt_setup_antidote_parse_requirements() {
+gc_setup_antidote_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_setup_antidote_usage
+        gc_setup_antidote_usage
         exit
         ;;
 
@@ -16239,13 +16391,13 @@ gt_setup_antidote_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_setup_starship_parse_requirements() {
+gc_setup_starship_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_setup_starship_usage
+        gc_setup_starship_usage
         exit
         ;;
 
@@ -16312,13 +16464,72 @@ gt_setup_starship_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_outdated_parse_requirements() {
+gc_setup_claude_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_outdated_usage
+        gc_setup_claude_usage
+        exit
+        ;;
+
+      *)
+        break
+        ;;
+
+    esac
+  done
+
+  # :command.command_filter
+  action="setup claude"
+
+  # :command.parse_requirements_while
+  while [[ $# -gt 0 ]]; do
+    key="$1"
+    case "$key" in
+      # :flag.case
+      --skip-config)
+
+        # :flag.case_no_arg
+        args['--skip-config']=1
+        shift
+        ;;
+
+      # :flag.case
+      --force-config)
+
+        # :flag.case_no_arg
+        args['--force-config']=1
+        shift
+        ;;
+
+      -?*)
+        printf "invalid option: %s\n" "$key" >&2
+        exit 1
+        ;;
+
+      *)
+        # :command.parse_requirements_case
+        # :command.parse_requirements_case_simple
+        printf "invalid argument: %s\n" "$key" >&2
+        exit 1
+
+        ;;
+
+    esac
+  done
+
+}
+
+# :command.parse_requirements
+gc_outdated_parse_requirements() {
+  # :command.fixed_flags_filter
+  while [[ $# -gt 0 ]]; do
+    case "${1:-}" in
+      --help | -h)
+        long_usage=yes
+        gc_outdated_usage
         exit
         ;;
 
@@ -16369,13 +16580,13 @@ gt_outdated_parse_requirements() {
 }
 
 # :command.parse_requirements
-gt_completions_parse_requirements() {
+gc_completions_parse_requirements() {
   # :command.fixed_flags_filter
   while [[ $# -gt 0 ]]; do
     case "${1:-}" in
       --help | -h)
         long_usage=yes
-        gt_completions_usage
+        gc_completions_usage
         exit
         ;;
 
@@ -16446,125 +16657,126 @@ run() {
   parse_requirements "${input[@]}"
 
   case "$action" in
-    "install") gt_install_command ;;
-    "install multi") gt_install_multi_command ;;
-    "install kustomize") gt_install_kustomize_command ;;
-    "install k9s") gt_install_k9s_command ;;
-    "install kubectl") gt_install_kubectl_command ;;
-    "install fastfetch") gt_install_fastfetch_command ;;
-    "install direnv") gt_install_direnv_command ;;
-    "install btop") gt_install_btop_command ;;
-    "install zsh") gt_install_zsh_command ;;
-    "install antidote") gt_install_antidote_command ;;
-    "install thefuck") gt_install_thefuck_command ;;
-    "install argocd") gt_install_argocd_command ;;
-    "install velero") gt_install_velero_command ;;
-    "install kubeconform") gt_install_kubeconform_command ;;
-    "install krew") gt_install_krew_command ;;
-    "install kubent") gt_install_kubent_command ;;
-    "install sops") gt_install_sops_command ;;
-    "install age") gt_install_age_command ;;
-    "install trivy") gt_install_trivy_command ;;
-    "install kubens") gt_install_kubens_command ;;
-    "install kubecolor") gt_install_kubecolor_command ;;
-    "install popeye") gt_install_popeye_command ;;
-    "install kube-linter") gt_install_kube_linter_command ;;
-    "install kyverno") gt_install_kyverno_command ;;
-    "install conftest") gt_install_conftest_command ;;
-    "install vault") gt_install_vault_command ;;
-    "install kubeseal") gt_install_kubeseal_command ;;
-    "install zoxide") gt_install_zoxide_command ;;
-    "install eza") gt_install_eza_command ;;
-    "install bat") gt_install_bat_command ;;
-    "install ripgrep") gt_install_ripgrep_command ;;
-    "install starship") gt_install_starship_command ;;
-    "install fzf") gt_install_fzf_command ;;
-    "install fd") gt_install_fd_command ;;
-    "install mcfly") gt_install_mcfly_command ;;
-    "install infisical") gt_install_infisical_command ;;
-    "install ksops") gt_install_ksops_command ;;
-    "install skopeo") gt_install_skopeo_command ;;
-    "install helmfile") gt_install_helmfile_command ;;
-    "install helm") gt_install_helm_command ;;
-    "install chezmoi") gt_install_chezmoi_command ;;
-    "install tmux") gt_install_tmux_command ;;
-    "install rsync") gt_install_rsync_command ;;
-    "install trino") gt_install_trino_command ;;
-    "install nerdctl") gt_install_nerdctl_command ;;
-    "install viddy") gt_install_viddy_command ;;
-    "install hyperfine") gt_install_hyperfine_command ;;
-    "install jq") gt_install_jq_command ;;
-    "install yq") gt_install_yq_command ;;
-    "install gum") gt_install_gum_command ;;
-    "install uv") gt_install_uv_command ;;
-    "install bashly") gt_install_bashly_command ;;
-    "install gem") gt_install_gem_command ;;
-    "install claude") gt_install_claude_command ;;
-    "install talisman") gt_install_talisman_command ;;
-    "install copilot") gt_install_copilot_command ;;
-    "install tailscale") gt_install_tailscale_command ;;
-    "uninstall") gt_uninstall_command ;;
-    "uninstall kustomize") gt_uninstall_kustomize_command ;;
-    "uninstall k9s") gt_uninstall_k9s_command ;;
-    "uninstall kubectl") gt_uninstall_kubectl_command ;;
-    "uninstall fastfetch") gt_uninstall_fastfetch_command ;;
-    "uninstall direnv") gt_uninstall_direnv_command ;;
-    "uninstall btop") gt_uninstall_btop_command ;;
-    "uninstall zsh") gt_uninstall_zsh_command ;;
-    "uninstall antidote") gt_uninstall_antidote_command ;;
-    "uninstall thefuck") gt_uninstall_thefuck_command ;;
-    "uninstall argocd") gt_uninstall_argocd_command ;;
-    "uninstall velero") gt_uninstall_velero_command ;;
-    "uninstall kubeconform") gt_uninstall_kubeconform_command ;;
-    "uninstall krew") gt_uninstall_krew_command ;;
-    "uninstall kubent") gt_uninstall_kubent_command ;;
-    "uninstall sops") gt_uninstall_sops_command ;;
-    "uninstall age") gt_uninstall_age_command ;;
-    "uninstall trivy") gt_uninstall_trivy_command ;;
-    "uninstall kubens") gt_uninstall_kubens_command ;;
-    "uninstall kubecolor") gt_uninstall_kubecolor_command ;;
-    "uninstall popeye") gt_uninstall_popeye_command ;;
-    "uninstall kube-linter") gt_uninstall_kube_linter_command ;;
-    "uninstall kyverno") gt_uninstall_kyverno_command ;;
-    "uninstall conftest") gt_uninstall_conftest_command ;;
-    "uninstall vault") gt_uninstall_vault_command ;;
-    "uninstall kubeseal") gt_uninstall_kubeseal_command ;;
-    "uninstall zoxide") gt_uninstall_zoxide_command ;;
-    "uninstall eza") gt_uninstall_eza_command ;;
-    "uninstall bat") gt_uninstall_bat_command ;;
-    "uninstall ripgrep") gt_uninstall_ripgrep_command ;;
-    "uninstall starship") gt_uninstall_starship_command ;;
-    "uninstall fzf") gt_uninstall_fzf_command ;;
-    "uninstall fd") gt_uninstall_fd_command ;;
-    "uninstall mcfly") gt_uninstall_mcfly_command ;;
-    "uninstall infisical") gt_uninstall_infisical_command ;;
-    "uninstall ksops") gt_uninstall_ksops_command ;;
-    "uninstall skopeo") gt_uninstall_skopeo_command ;;
-    "uninstall helmfile") gt_uninstall_helmfile_command ;;
-    "uninstall helm") gt_uninstall_helm_command ;;
-    "uninstall chezmoi") gt_uninstall_chezmoi_command ;;
-    "uninstall tmux") gt_uninstall_tmux_command ;;
-    "uninstall rsync") gt_uninstall_rsync_command ;;
-    "uninstall trino") gt_uninstall_trino_command ;;
-    "uninstall nerdctl") gt_uninstall_nerdctl_command ;;
-    "uninstall viddy") gt_uninstall_viddy_command ;;
-    "uninstall hyperfine") gt_uninstall_hyperfine_command ;;
-    "uninstall jq") gt_uninstall_jq_command ;;
-    "uninstall yq") gt_uninstall_yq_command ;;
-    "uninstall gum") gt_uninstall_gum_command ;;
-    "uninstall uv") gt_uninstall_uv_command ;;
-    "uninstall bashly") gt_uninstall_bashly_command ;;
-    "uninstall gem") gt_uninstall_gem_command ;;
-    "uninstall claude") gt_uninstall_claude_command ;;
-    "uninstall talisman") gt_uninstall_talisman_command ;;
-    "uninstall copilot") gt_uninstall_copilot_command ;;
-    "uninstall tailscale") gt_uninstall_tailscale_command ;;
-    "setup") gt_setup_command ;;
-    "setup multi") gt_setup_multi_command ;;
-    "setup antidote") gt_setup_antidote_command ;;
-    "setup starship") gt_setup_starship_command ;;
-    "outdated") gt_outdated_command ;;
-    "completions") gt_completions_command ;;
+    "install") gc_install_command ;;
+    "install multi") gc_install_multi_command ;;
+    "install kustomize") gc_install_kustomize_command ;;
+    "install k9s") gc_install_k9s_command ;;
+    "install kubectl") gc_install_kubectl_command ;;
+    "install fastfetch") gc_install_fastfetch_command ;;
+    "install direnv") gc_install_direnv_command ;;
+    "install btop") gc_install_btop_command ;;
+    "install zsh") gc_install_zsh_command ;;
+    "install antidote") gc_install_antidote_command ;;
+    "install thefuck") gc_install_thefuck_command ;;
+    "install argocd") gc_install_argocd_command ;;
+    "install velero") gc_install_velero_command ;;
+    "install kubeconform") gc_install_kubeconform_command ;;
+    "install krew") gc_install_krew_command ;;
+    "install kubent") gc_install_kubent_command ;;
+    "install sops") gc_install_sops_command ;;
+    "install age") gc_install_age_command ;;
+    "install trivy") gc_install_trivy_command ;;
+    "install kubens") gc_install_kubens_command ;;
+    "install kubecolor") gc_install_kubecolor_command ;;
+    "install popeye") gc_install_popeye_command ;;
+    "install kube-linter") gc_install_kube_linter_command ;;
+    "install kyverno") gc_install_kyverno_command ;;
+    "install conftest") gc_install_conftest_command ;;
+    "install vault") gc_install_vault_command ;;
+    "install kubeseal") gc_install_kubeseal_command ;;
+    "install zoxide") gc_install_zoxide_command ;;
+    "install eza") gc_install_eza_command ;;
+    "install bat") gc_install_bat_command ;;
+    "install ripgrep") gc_install_ripgrep_command ;;
+    "install starship") gc_install_starship_command ;;
+    "install fzf") gc_install_fzf_command ;;
+    "install fd") gc_install_fd_command ;;
+    "install mcfly") gc_install_mcfly_command ;;
+    "install infisical") gc_install_infisical_command ;;
+    "install ksops") gc_install_ksops_command ;;
+    "install skopeo") gc_install_skopeo_command ;;
+    "install helmfile") gc_install_helmfile_command ;;
+    "install helm") gc_install_helm_command ;;
+    "install chezmoi") gc_install_chezmoi_command ;;
+    "install tmux") gc_install_tmux_command ;;
+    "install rsync") gc_install_rsync_command ;;
+    "install trino") gc_install_trino_command ;;
+    "install nerdctl") gc_install_nerdctl_command ;;
+    "install viddy") gc_install_viddy_command ;;
+    "install hyperfine") gc_install_hyperfine_command ;;
+    "install jq") gc_install_jq_command ;;
+    "install yq") gc_install_yq_command ;;
+    "install gum") gc_install_gum_command ;;
+    "install uv") gc_install_uv_command ;;
+    "install bashly") gc_install_bashly_command ;;
+    "install gem") gc_install_gem_command ;;
+    "install claude") gc_install_claude_command ;;
+    "install talisman") gc_install_talisman_command ;;
+    "install copilot") gc_install_copilot_command ;;
+    "install tailscale") gc_install_tailscale_command ;;
+    "uninstall") gc_uninstall_command ;;
+    "uninstall kustomize") gc_uninstall_kustomize_command ;;
+    "uninstall k9s") gc_uninstall_k9s_command ;;
+    "uninstall kubectl") gc_uninstall_kubectl_command ;;
+    "uninstall fastfetch") gc_uninstall_fastfetch_command ;;
+    "uninstall direnv") gc_uninstall_direnv_command ;;
+    "uninstall btop") gc_uninstall_btop_command ;;
+    "uninstall zsh") gc_uninstall_zsh_command ;;
+    "uninstall antidote") gc_uninstall_antidote_command ;;
+    "uninstall thefuck") gc_uninstall_thefuck_command ;;
+    "uninstall argocd") gc_uninstall_argocd_command ;;
+    "uninstall velero") gc_uninstall_velero_command ;;
+    "uninstall kubeconform") gc_uninstall_kubeconform_command ;;
+    "uninstall krew") gc_uninstall_krew_command ;;
+    "uninstall kubent") gc_uninstall_kubent_command ;;
+    "uninstall sops") gc_uninstall_sops_command ;;
+    "uninstall age") gc_uninstall_age_command ;;
+    "uninstall trivy") gc_uninstall_trivy_command ;;
+    "uninstall kubens") gc_uninstall_kubens_command ;;
+    "uninstall kubecolor") gc_uninstall_kubecolor_command ;;
+    "uninstall popeye") gc_uninstall_popeye_command ;;
+    "uninstall kube-linter") gc_uninstall_kube_linter_command ;;
+    "uninstall kyverno") gc_uninstall_kyverno_command ;;
+    "uninstall conftest") gc_uninstall_conftest_command ;;
+    "uninstall vault") gc_uninstall_vault_command ;;
+    "uninstall kubeseal") gc_uninstall_kubeseal_command ;;
+    "uninstall zoxide") gc_uninstall_zoxide_command ;;
+    "uninstall eza") gc_uninstall_eza_command ;;
+    "uninstall bat") gc_uninstall_bat_command ;;
+    "uninstall ripgrep") gc_uninstall_ripgrep_command ;;
+    "uninstall starship") gc_uninstall_starship_command ;;
+    "uninstall fzf") gc_uninstall_fzf_command ;;
+    "uninstall fd") gc_uninstall_fd_command ;;
+    "uninstall mcfly") gc_uninstall_mcfly_command ;;
+    "uninstall infisical") gc_uninstall_infisical_command ;;
+    "uninstall ksops") gc_uninstall_ksops_command ;;
+    "uninstall skopeo") gc_uninstall_skopeo_command ;;
+    "uninstall helmfile") gc_uninstall_helmfile_command ;;
+    "uninstall helm") gc_uninstall_helm_command ;;
+    "uninstall chezmoi") gc_uninstall_chezmoi_command ;;
+    "uninstall tmux") gc_uninstall_tmux_command ;;
+    "uninstall rsync") gc_uninstall_rsync_command ;;
+    "uninstall trino") gc_uninstall_trino_command ;;
+    "uninstall nerdctl") gc_uninstall_nerdctl_command ;;
+    "uninstall viddy") gc_uninstall_viddy_command ;;
+    "uninstall hyperfine") gc_uninstall_hyperfine_command ;;
+    "uninstall jq") gc_uninstall_jq_command ;;
+    "uninstall yq") gc_uninstall_yq_command ;;
+    "uninstall gum") gc_uninstall_gum_command ;;
+    "uninstall uv") gc_uninstall_uv_command ;;
+    "uninstall bashly") gc_uninstall_bashly_command ;;
+    "uninstall gem") gc_uninstall_gem_command ;;
+    "uninstall claude") gc_uninstall_claude_command ;;
+    "uninstall talisman") gc_uninstall_talisman_command ;;
+    "uninstall copilot") gc_uninstall_copilot_command ;;
+    "uninstall tailscale") gc_uninstall_tailscale_command ;;
+    "setup") gc_setup_command ;;
+    "setup multi") gc_setup_multi_command ;;
+    "setup antidote") gc_setup_antidote_command ;;
+    "setup starship") gc_setup_starship_command ;;
+    "setup claude") gc_setup_claude_command ;;
+    "outdated") gc_outdated_command ;;
+    "completions") gc_completions_command ;;
   esac
 }
 
