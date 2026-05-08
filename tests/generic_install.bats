@@ -22,3 +22,37 @@ setup() {
   run "$TARGET_DIR/fake-tool"
   [ "$output" = "fake v1.0.0" ]
 }
+
+@test "run_generic_install with mise type calls mise use -g with package" {
+  # Set up fake tool registry vars
+  FAKE_INSTALL_TYPE="mise"
+  FAKE_MISE_PKG="npm:fake-tool"
+
+  # Stub mise to just print what it would do
+  mise() { echo "mise $*"; return 0; }
+  export -f mise
+
+  # Stub command -v to say fake is NOT installed (so guard passes)
+  # We override guard_existing to be a no-op since we're unit testing the mise branch
+  guard_existing() { return 0; }
+  export -f guard_existing
+
+  run run_generic_install "fake" "latest" ""
+  [ "$status" -eq 0 ]
+  [[ "$output" == *"mise use -g npm:fake-tool"* ]]
+}
+
+@test "run_generic_install with mise type appends version to package" {
+  FAKE_INSTALL_TYPE="mise"
+  FAKE_MISE_PKG="npm:fake-tool"
+
+  mise() { echo "mise $*"; return 0; }
+  export -f mise
+
+  guard_existing() { return 0; }
+  export -f guard_existing
+
+  run run_generic_install "fake" "v1.2.3" ""
+  [ "$status" -eq 0 ]
+  [[ "$output" == *"mise use -g npm:fake-tool@1.2.3"* ]]
+}

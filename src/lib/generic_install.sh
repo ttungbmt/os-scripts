@@ -170,5 +170,32 @@ run_generic_install() {
       echo "$(red ✗ Failed to install $name.)"
       exit 1
     fi
+
+  elif [[ "$install_type" == "mise" ]]; then
+    local mise_pkg_var="${tool_upper}_MISE_PKG"
+    local mise_pkg="${!mise_pkg_var}"
+
+    if [[ -z "$mise_pkg" ]]; then
+      echo "$(red "Error: ${tool_upper}_MISE_PKG not defined for $name")"
+      exit 1
+    fi
+
+    if ! command -v mise >/dev/null 2>&1; then
+      echo "$(red "Error: mise is not installed. Run: gc install mise")"
+      exit 1
+    fi
+
+    local mise_install_pkg="$mise_pkg"
+    if [[ "$version" != "latest" ]]; then
+      local dl_version="${version#v}"
+      mise_install_pkg="${mise_pkg}@${dl_version}"
+    fi
+
+    if mise use -g "$mise_install_pkg"; then
+      echo "$(green_bold ✓) $name installed successfully via mise."
+    else
+      echo "$(red ✗ Failed to install $name.)"
+      exit 1
+    fi
   fi
 }
