@@ -182,3 +182,6 @@ commands:
 
 - name: mosh
   help: Uninstall mosh
+
+- name: bun
+  help: Uninstall bun

@@ -356,3 +356,15 @@ commands:
   - long: --force
     short: -f
     help: Force overwrite if node is already installed
+
+- name: bun
+  help: Install bun via mise
+  flags:
+  - long: --version
+    short: -v
+    arg: version
+    help: bun version to install (e.g., latest)
+    default: latest
+  - long: --force
+    short: -f
+    help: Force overwrite if bun is already installed
