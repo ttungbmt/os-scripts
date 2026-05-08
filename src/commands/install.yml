@@ -255,8 +255,6 @@ commands:
 
 - name: claude
   help: Install claude (Claude Code CLI)
-  dependencies:
-  - npm
   flags:
   - long: --version
     short: -v
