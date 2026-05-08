@@ -31,4 +31,5 @@ RUN gc install multi gem
 RUN gc install multi bashly
 RUN gc install multi mise node
 RUN gc install multi starship zsh antidote starship direnv zoxide bat eza fzf fd ripgrep thefuck mcfly
-RUN zsh -c 'gc setup antidote && source ~/.zshrc && antidote update'
+# RUN touch /home/ubuntu/.zshrc && \
+#     gc setup antidote && antidote update

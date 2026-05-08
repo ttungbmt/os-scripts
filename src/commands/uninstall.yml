@@ -176,3 +176,9 @@ commands:
 
 - name: tailscale
   help: Uninstall tailscale
+
+- name: python
+  help: Uninstall python
+
+- name: mosh
+  help: Uninstall mosh

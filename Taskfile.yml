@@ -13,7 +13,7 @@ tasks:
   up:
     desc: Start the Docker containers in the background
     cmds:
-      - docker compose up -d shell
+      - docker compose up -d zsh
 
   down:
     desc: Stop and remove the Docker containers

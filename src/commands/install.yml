@@ -320,3 +320,27 @@ commands:
   - long: --force
     short: -f
     help: Force overwrite if tailscale is already installed
+
+- name: python
+  help: Install python via mise
+  flags:
+  - long: --version
+    short: -v
+    arg: version
+    help: python version to install (e.g., 3.12 or latest)
+    default: latest
+  - long: --force
+    short: -f
+    help: Force overwrite if python is already installed
+
+- name: mosh
+  help: Install mosh (Mobile Shell)
+  flags:
+  - long: --version
+    short: -v
+    arg: version
+    help: mosh version to install (e.g., latest)
+    default: latest
+  - long: --force
+    short: -f
+    help: Force overwrite if mosh is already installed

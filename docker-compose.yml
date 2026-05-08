@@ -5,7 +5,6 @@ services:
       dockerfile: docker/Dockerfile
     volumes:
       - .:/home/ubuntu/workspace
-    working_dir: /home/ubuntu/workspace
     user: ubuntu
     environment:
       - GITHUB_TOKEN

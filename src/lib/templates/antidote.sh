@@ -98,7 +98,7 @@ ohmyzsh/ohmyzsh path:plugins/profiles
 # Remote / terminal
 ohmyzsh/ohmyzsh path:plugins/ssh
 ohmyzsh/ohmyzsh path:plugins/mosh
-ohmyzsh/ohmyzsh path:plugins/tmux
+ohmyzsh/ohmyzsh path:plugins/tmux conditional:"command -v tmux >/dev/null"
 
 # SCM
 ohmyzsh/ohmyzsh path:plugins/git
