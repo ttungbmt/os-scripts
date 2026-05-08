@@ -29,3 +29,8 @@ tasks:
     desc: Access the interactive shell inside the container
     cmds:
       - docker compose exec shell bash
+
+  zsh:
+    desc: Access the interactive zsh inside the container
+    cmds:
+      - docker compose exec shell zsh

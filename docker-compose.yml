@@ -1,5 +1,6 @@
 volumes:
   ubuntu_home:
+    external: true
 
 services:
   shell:
