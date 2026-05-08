@@ -10,9 +10,10 @@ services:
     volumes:
       - .:/home/ubuntu/workspace
       - ubuntu_home:/home/ubuntu
-    user: ubuntu
     environment:
       - GITHUB_TOKEN
+    ports:
+      - "2222:22"
     stdin_open: true
     tty: true
 
