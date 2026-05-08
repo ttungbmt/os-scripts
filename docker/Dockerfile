@@ -27,8 +27,12 @@ RUN chmod +x /usr/local/bin/gc
 USER ubuntu
 
 RUN gc install multi git bats rsync 
-RUN gc install multi gem
-RUN gc install multi bashly
-RUN gc install multi mise node
-RUN gc install multi starship zsh antidote starship direnv zoxide bat eza fzf fd ripgrep thefuck mcfly
+RUN gc install multi mise
+RUN gc install python --version 3.11 && \
+    gc install multi node
+RUN gc install multi gem bashly
+RUN gc install multi starship zsh antidote direnv zoxide bat eza fzf fd ripgrep thefuck mcfly
+
+RUN gc install claude
+
 RUN zsh -c 'gc setup antidote && source ~/.zshrc && antidote update'

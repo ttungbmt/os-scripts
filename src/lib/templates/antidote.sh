@@ -33,6 +33,9 @@ fi
 source ${zsh_plugins}.zsh
 unset zsh_plugins
 
+# Remove omz git plugin's gc alias so it doesn't conflict with our own gc command
+unalias gc 2>/dev/null || true
+
 # NOTE: per-tool shell init (starship, zoxide, mcfly, fzf, direnv, thefuck …)
 # is owned by `gt setup <tool>` — each writes its own marker block in this rc
 # file so the plugin manager stays decoupled from individual tool integrations.

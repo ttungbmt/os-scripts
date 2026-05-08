@@ -344,3 +344,15 @@ commands:
   - long: --force
     short: -f
     help: Force overwrite if mosh is already installed
+
+- name: node
+  help: Install nodejs via mise
+  flags:
+  - long: --version
+    short: -v
+    arg: version
+    help: node version to install (e.g., 20 or latest)
+    default: latest
+  - long: --force
+    short: -f
+    help: Force overwrite if node is already installed
