@@ -33,3 +33,14 @@ EOF
   [ "$status" -eq 0 ]
   [[ "$output" == *"0.6.8"* ]]
 }
+
+@test "claude_fetch_remote_version uses mise latest" {
+  source "${GT_PROJECT_ROOT}/src/lib/registry/claude.sh"
+
+  mise() { echo "1.2.3"; }
+  export -f mise
+
+  run claude_fetch_remote_version
+  [ "$status" -eq 0 ]
+  [ "$output" = "1.2.3" ]
+}
